@@ -1,21 +1,60 @@
-\documentclass{article}
-\usepackage[utf8]{inputenc}
-\usepackage[slovak]{babel}
+% Nejprve uvedeme tridu dokumentu s volbami
+\documentclass[slovak,bachelorpractice,dept460,male,csharp,cpdeclaration]{diploma}
+% Dalsi doplnujici baliky maker
+\usepackage[autostyle=true,czech=quotes]{csquotes} % korektni sazba uvozovek, podpora pro balik biblatex
+\usepackage[backend=biber, style=iso-numeric, alldates=iso]{biblatex} % bibliografie
+\usepackage{dcolumn} % sloupce tabulky s ciselnymi hodnotami
+\usepackage{subfig} % makra pro "podobrazky" a "podtabulky"
 
-\title{Bakalárska práca}
-\author{Miroslav Kačeriak}
-\date{\today}
+
+% Zadame pozadovane vstupy pro generovani titulnich stran.
+\ThesisAuthor{Miroslav Kačeriak}
+\SubmissionDate{\today}
+
+\Thanks{Rád bych na tomto místě poděkoval všem, kteří mi s prací pomohli, protože bez nich by tato práce nevznikla.}
+
+
+% Zadame cestu a jmeno souboru ci nekolika souboru s digitalizovanou podobou zadani prace.
+% Pokud toto makro zapoznamkujeme sazi se stranka s upozornenim.
+%\ThesisAssignmentImagePath{Figures/Assignment}
+
+% Zadame soubor s digitalizovanou podobou prohlaseni autora zaverecne prace.
+% Pokud toto makro zapoznamkujeme sazi se cisty text prohlaseni.
+%\AuthorDeclarationImageFile{Figures/AuthorDeclaration.jpg}
+
+
+% Zadame soubor s digitalizovanou podobou souhlasu spolupracujici prav. nebo fyz. osoby.
+% Pokud toto makro zapoznamkujeme sazi se cisty text souhlasu.
+%\CooperatingPersonsDeclarationImageFile{Figures/CoopPersonDeclaration.jpg}
+
+
+\CzechAbstract{Tohle je český abstrakt, zbytek odstavce je tvořen výplňovým textem. Naší si rozmachu potřebami s posílat v poskytnout ty má plot. Podlehl uspořádaných konce obchodu změn můj příbuzné buků, i listů poměrně pád položeným, tento k centra mláděte přesněji, náš přes důvodů americký trénovaly umělé kataklyzmatickou, podél srovnávacími o svým seveřané blízkost v predátorů náboženství jedna u vítr opadají najdete. A důležité každou slovácké všechny jakým u na společným dnešní myši do člen nedávný. Zjistí hází vymíráním výborná.}
+
+\CzechKeywords{typografie; \LaTeX; diplomová práce}
+
+\EnglishAbstract{This is English abstract. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Fusce tellus odio, dapibus id fermentum quis, suscipit id erat. Aenean placerat. Vivamus ac leo pretium faucibus. Duis risus. Fusce consectetuer risus a nunc. Duis ante orci, molestie vitae vehicula venenatis, tincidunt ac pede. Aliquam erat volutpat. Donec vitae arcu. Nullam lectus justo, vulputate eget mollis sed, tempor sed magna. Curabitur ligula sapien, pulvinar a vestibulum quis, facilisis vel sapien. Vestibulum fermentum tortor id mi. Etiam bibendum elit eget erat. Pellentesque pretium lectus id turpis. Nulla quis diam.}
+
+\EnglishKeywords{typography; \LaTeX; master thesis}
+
+\AddAcronym{DVD}{Digital Versatile Disc}
+\AddAcronym{TNT}{Trinitrotoluen}
+\AddAcronym{UML}{Unified Modeling Language}
+\AddAcronym{HTML}{Hyper Text Markup Language}
+\AddAcronym{TUG}{\TeX{} Users Group}
+
+% Cesty k suborom s literarnymi zdrojmi, mozno nebude treba 
+\addbibresource{biblatex-examples.bib}
+\addbibresource{coffee.bib}
+
+% Novy druh tabulkoveho sloupce, ve kterem jsou cisla zarovnana podle desetinne carky
+\newcolumntype{d}[1]{D{,}{,}{#1}}
 
 
 \begin{document}
-\maketitle
+\MakeTitlePages
 
-\section{Introduction}
-
-%komentar jednoriadkovy
-%viacriadkovy neni, ide pouzit \begin{comment} z package verbatim alebo \if false \fi, pokial ho ale nezalomis mozes pisat koment stale
-
-
-Hello, World!
+% A nasleduje text zaverecne prace.
+\section{Úvod}
+\label{sec:Introduction}
 
 \end{document}

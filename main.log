@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.2.17)  4 MAR 2021 00:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.2.17)  4 MAR 2021 00:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1094,7 +1094,13 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 [8
 
 
-] [9
+]
+Overfull \hbox (0.91725pt too wide) in paragraph at lines 61--62
+\T1/lmr/m/n/10.95 ²ích aj men-²ích pro-jek-tov z ob-lastí ako sú au-to-ma-ti-zá
+-cia a ze-fek-tív-ne-nie []
+ []
+
+[9
 
 
 ] (./main.aux)
@@ -1118,7 +1124,7 @@ mf-dist/fonts/type1/public/lm/lmbx10.pfb><d:/texlive/2020/texmf-dist/fonts/type
 pfb><d:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmr12.pfb><d:/texlive/202
 0/texmf-dist/fonts/type1/public/lm/lmr8.pfb><d:/texlive/2020/texmf-dist/fonts/t
 ype1/public/lm/lmssbx10.pfb>
-Output written on main.pdf (9 pages, 184157 bytes).
+Output written on main.pdf (9 pages, 184151 bytes).
 PDF statistics:
  91 PDF objects out of 1000 (max. 8388607)
  11 named destinations out of 1000 (max. 500000)

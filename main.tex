@@ -39,10 +39,12 @@
 \AddAcronym{OS}{Operating System}
 \AddAcronym{RPG}{Role Playing Game}
 \AddAcronym{EOS}{Epic Online Services}
+\AddAcronym{REST}{Representational State Transfer}
+\AddAcronym{API}{Application programming interface}
 
 % Cesty k suborom s literarnymi zdrojmi, mozno nebude treba 
 %\addbibresource{biblatex-examples.bib}
-%\addbibresource{coffee.bib}
+\addbibresource{literature.bib}
 
 % Novy druh tabulkoveho sloupce, ve kterem jsou cisla zarovnana podle desetinne carky
 \newcolumntype{d}[1]{D{,}{,}{#1}}
@@ -63,7 +65,7 @@ Do firmy som nastúpil na konci životného cyklu projektu, takže som sa nemoho
 % TODO: Overit info u Jirky
 \subsection{Popis firmy a vyvíjaného produktu}
 \label{sec:Firm}
-Perun Creative s.r.o je české nezávislé herné štúdio, ktoré od roku 2015 vyvíja počítačovú hru Hobo: Tough Life.
+Perun Creative s.r.o \cite{Perun} je české nezávislé herné štúdio, ktoré od roku 2015 vyvíja počítačovú hru Hobo: Tough Life \cite{Hobo}.
 
 Hra samotná by sa dala charakterizovať ako RPG z mestského prostredia, kde sa hráč ocitne v role bezdomovca. Ústrednou hernou mechanikou je snaha prežiť v nehostinnom prostredí ulice. Okrem prežitia na hráča čaká aj pútavý príbeh a možnosť hrať kooperatívne až s troma ďalšími hráčmi. Hobo: Tough Life v súčasnosti vychádza na platformách Microsoft Windows a Linux. V budúcnosti sa počíta aj s vydaním na konzolách novej a starej generácie. 
 
@@ -72,20 +74,37 @@ Hra samotná by sa dala charakterizovať ako RPG z mestského prostredia, kde sa
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=0.20\textwidth]{Pictures/perunLogo.png}
-	\caption{Logo spoločnosti Perun Creative}
+	\caption{Logo spoločnosti Perun Creative \cite{PerunLinkedIn}}
 	\label{pic:perunLogo}
 \end{figure}
 
 \subsection{Pracovné zaradenie}
 \label{sec:Me}
-Môj prínos štúdiu Perun Creative spočíval hlavne v automatizácií a zefektívnení jednotlivých interných postupov. Do tejto kategórie by som zaradil projekty ako automatizované zostavenie hry na serveri, zefektívnenie spôsobu nahlasovania jednotlivých problémov prípadne prepracovanie importovania objektov zo starej verzie projektu do novej. K zefektívneniu práce rozhodne prispelo aj vytvorenie systému klávesových skratiek v editore Unity, ladenie zostavenej verzie hry zo vzdialeného PC prípadne program na vytvorenie tzv. \enquote{Release notes}. Ten bol primárne určený pre testerov ale do budúcna sa plánuje jeho využitie aj pri informovaní hráčov o novinkách v rámci hry.
+Môj prínos štúdiu Perun Creative spočíval hlavne v automatizácií a zefektívnení jednotlivých interných postupov. Do tejto kategórie by som zaradil projekty ako automatizované zostavenie hry na serveri, zefektívnenie spôsobu nahlasovania jednotlivých problémov prípadne prepracovanie importovania objektov zo starej verzie projektu do novej. K zefektívneniu práce rozhodne prispelo aj vytvorenie systému klávesových skratiek v hernom engine Unity (bližšie popísanom v sekcií \ref{sec:Unity}), ladenie zostavenej verzie hry zo vzdialeného PC prípadne program na vytvorenie tzv. \enquote{Release notes}. Ten bol primárne určený pre testerov, ale do budúcna sa plánuje jeho využitie aj pri informovaní hráčov o novinkách v rámci hry.
 
-Okrem vyššie uvedených projektov som pracoval na novom systéme líhania postavy k spánku, optimalizácií a uvedeniu hry na OS Linux, prevode online časti hry z platformy Steam na platformu EOS prípadne ďalších menších projektoch.
+Okrem vyššie uvedených projektov som pracoval na novom systéme líhania postavy k spánku, optimalizácií a uvedeniu hry na OS Linux, prevode online časti hry z platformy Steam na platformu EOS a ďalších menších projektoch.
 % End of section 2
 
 % Section 3
 \section{Použité technológie}
 \label{sec:Tech}
+V nasledujúcej kapitole by som rád v krátkosti zhrnul jednotlivé technológie, s ktorými som sa v rámci odbornej praxe stretol. Niektoré som aktívne využíval počas celého obdobia praxe a ich osvojovanie teda prebiehalo organicky. Iné boli špecifické pre konkrétny projekt a danú technológiu som si musel naštudovať počas realizácie projektu. V niektorých prípadoch bolo nutné sa zoznámiť s viacerými technológiami, aby som bol schopný posúdiť ich výhody a nevýhody pri nasadení na konkrétny projekt a vybrať tú správnu. Informácie som poväčšine čerpal z dokumentácií k daným technológiám aj keď nie vždy bola ich úroveň dostatočná.
+\subsection{Unity Engine}
+\label{sec:Unity}
+\subsection{Programovací jazyk C\#}
+\label{sec:Csharp}
+\subsection{.NET Framework}
+\label{sec:DotNet}
+\subsection{Windows Forms}
+\label{sec:WinForms}
+\subsection{Verzovací systém GIT}
+\label{sec:Git}
+\subsection{GitLab CI-CD}
+\label{sec:GitLab}
+\subsection{REST API}
+\label{sec:RestApi}
+\subsection{EOS}
+\label{sec:Eos}
 % End of section 3
 
 % Section 4
@@ -93,4 +112,6 @@ Okrem vyššie uvedených projektov som pracoval na novom systéme líhania post
 \label{sec:Projects}
 U niektorych prebiehala tvorba inkrementalne a bola zavisla na spatnej vazbe bla bla.
 % End of section 4
+
+\printbibliography[title={Literatura}, heading=bibintoc]
 \end{document}

@@ -39,8 +39,12 @@
 \AddAcronym{OS}{Operating System}
 \AddAcronym{RPG}{Role Playing Game}
 \AddAcronym{EOS}{Epic Online Services}
-\AddAcronym{REST}{Representational State Transfer}
-\AddAcronym{API}{Application programming interface}
+\AddAcronym{CLR}{Common Language Runtime}
+\AddAcronym{JIT}{Just-In-Time}
+\AddAcronym{IL}{Intermediate Language}
+\AddAcronym{XML}{eXtensible Markup Language}
+\AddAcronym{WPF}{Windows Presentation Foundation}
+\AddAcronym{LFS}{Large File Storage}
 
 \addbibresource{literature.bib}
 
@@ -86,10 +90,10 @@ Okrem vyššie uvedených projektov som pracoval na novom systéme líhania post
 % Section 3
 \section{Použité technológie}
 \label{sec:Tech}
-V nasledujúcej kapitole by som rád v krátkosti zhrnul jednotlivé technológie, s ktorými som sa v rámci odbornej praxe stretol. Niektoré som aktívne využíval počas celého obdobia praxe a ich osvojovanie teda prebiehalo organicky. Iné boli špecifické pre konkrétny projekt a danú technológiu som si musel naštudovať počas realizácie projektu. V niektorých prípadoch bolo nutné sa zoznámiť s viacerými technológiami, aby som bol schopný posúdiť ich výhody a nevýhody pri nasadení na konkrétny projekt a vybrať tú správnu. Informácie som poväčšine čerpal z dokumentácií k daným technológiám aj keď nie vždy bola ich úroveň dostatočná.
+V nasledujúcej kapitole by som rád v krátkosti zhrnul najdôležitejšie technológie, s ktorými som sa v rámci odbornej praxe stretol. Niektoré som aktívne využíval počas celého obdobia praxe a ich osvojovanie teda prebiehalo organicky. Iné boli špecifické pre konkrétny projekt a danú technológiu som si musel naštudovať počas realizácie projektu. V niektorých prípadoch bolo nutné sa zoznámiť s viacerými technológiami, aby som bol schopný posúdiť ich výhody a nevýhody pri nasadení na konkrétny projekt a vybrať tú správnu. Informácie som poväčšine čerpal z dokumentácií k daným technológiám aj keď nie vždy bola ich úroveň dostatočná.
 \subsection{Unity Engine}
 \label{sec:Unity}
-Unity Engine \cite{Unity} je platforma pre tvorbu 2D a 3D interaktívneho obsahu renderovaného v reálnom čase. Najväčšie uplatnenie nachádza pri tvorbe malých až stredne veľkých hier, ale je čoraz častejšie využívaný aj v iných odvetviach ako napríklad automobilový či filmový priemysel. Je dostupný pre operačné systémy Windows, Linux a Mac OS. Distribuuje sa zdarma pre študentov alebo jednotlivcov do určitého finančného obratu a za ročný poplatok pre firmy, ktorého výška závisí od rôznych faktorov. Samotný engine je napísaný v jazyku C++ a umožňuje vývoj obsahu v jazyku C\# pre širokú škálu platforiem (Obr. \ref{pic:UnityPlatforms}).
+Unity Engine \cite{Unity} je platforma pre tvorbu 2D a 3D interaktívneho obsahu renderovaného v reálnom čase. Najväčšie uplatnenie nachádza pri tvorbe malých až stredne veľkých hier, ale je čoraz častejšie využívaný aj v iných odvetviach ako napríklad automobilový či filmový priemysel. Je dostupný pre operačné systémy Windows, Linux a Mac OS. Distribuuje sa zdarma pre študentov alebo jednotlivcov do určitého finančného obratu a za ročný poplatok pre firmy, ktorého výška závisí od rôznych faktorov. Samotný engine je napísaný v jazyku C++ a umožňuje vývoj obsahu v jazyku C\# (bližšie popísanom v sekcií \ref{sec:CsharpDotNet}) pre širokú škálu platforiem, čo znázorňuje obrázok \ref{pic:UnityPlatforms}.
 
 \begin{figure}[!htbp]
 	\centering
@@ -98,18 +102,31 @@ Unity Engine \cite{Unity} je platforma pre tvorbu 2D a 3D interaktívneho obsahu
 	\label{pic:UnityPlatforms}
 \end{figure}
 
-\subsection{Programovací jazyk C\# a .NET Framework}
+\subsection{Programovací jazyk C\# a architektúra .NET}
 \label{sec:CsharpDotNet}
-\subsection{Windows Forms}
-\label{sec:WinForms}
-\subsection{Verzovací systém GIT}
+C\# \cite{CSharpLang} je objektovo orientovaný, typovo bezpečný programovací jazyk umožňujúci vytvárať aplikácie v .NET ekosystéme. Syntax jazyka C\# vychádza z programovacích jazykov C a C++. Narozdiel od nich ale ponúka vyššiu úroveň abstrakcie. Tá sa prejavuje napríklad na úrovni správy pamäte, čo z jazyka C\# robí voľbu číslo jedna pre začínajúcich programátorov, ktorí by si chceli skúsiť herný vývoj na vlastnej koži.
+
+Architektúra .NET \cite{CSharpLang} potom ponúka okrem virtuálneho stroja CLR, ktorý vykonáva JIT kompiláciu IL kódu do strojových inštrukcií, aj sadu veľmi užitočných knižníc. Tieto knižnice sú organizované do menných priestorov a poskytujú širokú škálu metód vhodných napríklad na prácu so súbormi či sieťovou infraštruktúrou. Veľmi užitočné sú aj nástroje na syntaktickú analýzu XML prípadne platforma Windows Forms, ktorá sa v rámci mojej odbornej praxe vo firme Perun Creative ukázala byť vhodná hlavne na rýchlu tvorbu vývojárskych nástrojov. Kvôli limitáciám tejto technológie sa ale v budúcnosti plánuje prechod na systém WPF.
+%pridaj aj winforms
+\subsection{Verzovací systém Git}
 \label{sec:Git}
-\subsection{GitLab CI-CD}
+Git \cite{ProGit} je open source distribuovaný systém na správu verzií vyvinutý Linusom Thorvaldsom a komunitou okolo OS Linux v roku 2005. Umožňuje vrátiť celý projekt alebo vybrané časti do predchádzajúceho stavu, porovnávať zmeny v súboroch, prípadne efektívnu kolaboráciu viacerých vývojárov na spoločnom projekte. Každý člen tímu má k dispozícií kompletný repozitár vrátane histórie jednotlivých súborov, čo pridáva ďalšiu vrstvu ochrany proti výpadkom a poruchám hardvéru. Po každom spustení príkazu \textit{commit} sa uloží aktuálny stav projektu, ktorý je možné spätne dohľadať v prípade nejakého problému.
+
+S gitom je možné pracovať priamo z príkazového riadku ale pre väčšie projekty ako je aj hra Hobo: Tough Life je takýto prístup značne nepraktický a neefektívny. Existuje ale množstvo programov tretích strán, ktoré umožňujú pracovať s gitom z užívateľského rozhrania. Jedným takým je aj nástroj Sourcetree, s ktorým som v rámci mojej odbornej praxe pracoval.
+
+Nakoľko git samotný nie je dobre prispôsobený na správu verzií veľkých súborov, bolo nutné využívať aj jeho rozšírenie Git LFS. 
+\subsection{GitLab CI/CD}
 \label{sec:GitLab}
-\subsection{REST API}
-\label{sec:RestApi}
+Gitlab CI/CD je nástroj na vývoj softvéru prostredníctvom metodík ako:
+\begin{itemize}
+  \item \textbf{Continuous Integration (CI)} - 
+  \item \textbf{Continuous Delivery (CD)} - 
+  \item \textbf{Continuous Deployment (CD)} - 
+\end{itemize}
+
 \subsection{EOS}
 \label{sec:Eos}
+kkjnn
 % End of section 3
 
 % Section 4

@@ -52,6 +52,7 @@
 \AddAcronym{AI}{Artificial intelligence}
 \AddAcronym{REST}{Representational State Transfer}
 \AddAcronym{API}{Application Programming Interface}
+\AddAcronym{JSON}{JavaScript Object Notation}
 
 \addbibresource{literature.bib}
 
@@ -170,11 +171,38 @@ Takýto postup je značne neefektívny nakoľko na pozadí zahŕňa hneď nieko�
 \textbf{Navrhované riešenia:} \\ Nakoľko bola toto moja prvá úloha v rámci odbornej praxe, mal som len minimálne skúsenosti s webovými technológiami ako je REST API a celkovo klient-server architektúrou, navrhol som riešenie postavené na nejakom nástroji na automatizovanie webového prehliadača. Takýmto nástrojom je napríklad Selenium WebDriver, s ktorým som sa stretol pri práci na vlastných projektoch. Ten je veľmi obľúbený napríklad pri testovaní webových aplikácií. Dokázal by zapnúť webový prehliadač, či už s užívateľským rozhraním alebo bez, otvoriť požadovanú stránku a vyplniť detaily reportu za užívateľa. V spojení s nejakým vlastným nástrojom na ukladanie snímky obrazovky, prípadne nástrojom, ktorý by testerovi umožnil vypísať zhrnutie či popis reportu priamo v hre by sa naozaj jednalo o relatívne dobré riešenie. Po užívateľovi by to ale vyžadovalo nutnosť inštalácie nejakého konkrétneho prehliadača v požadovanej verzií, aby bola zaistená správna kompatibilita a veľmi pravdepodobne by sa v budúcnosti objavili aj ďalšie problémy s nasadením či používaním. Po preskúmaní ďalších možností a následnej porade s kolegami som sa teda rozhodol dať prednosť riešeniu postavenému na už spomínanom REST API a ak by sa to ukázalo ako nerealizovateľné spätne sa vrátiť k môjmu prvému nápadu.
 \begin{figure}[!htbp]
 	\centering
-	\includegraphics[width=0.6\textwidth]{Pictures/mantis.png}
+	\includegraphics[width=0.7\textwidth]{Pictures/mantis.png}
 	\caption{Ručné vloženie reportu do služby Mantis Bug Tracker}
 	\label{pic:Mantis}
 \end{figure} \\
-\textbf{Realizácia:} \\ Pri hľadaní možností založených na REST API som narazil na open source projekt MantisSharp \cite{MantisSharp}
+\textbf{Realizácia:} \\ Pri preskúmavaní možností založených na REST API som narazil na open source projekt \mbox{MantisSharp \cite{MantisSharp}.} Po zoznámení sa s týmto projektom a niekoľkými pokusmi ho \enquote{ohnúť} pre účely môjho projektu som sa rozhodol, že bude jednoduchšie napísať si aplikáciu sám. Využil som k tomu ale dve triedy z projektu MantisSharp, a síce RestClient a MantisClient, ktoré som následne ešte ďalej modifikoval. Trieda RestClient vykonáva najnižšiu úroveň komunikácie so serverom a síce odosiela GET a POST žiadosti. Trieda MantisClient potom dostáva dáta od mojej aplikácie, zabalí ich do formy vhodnej pre transport a následne ich predá triede RestClient, čo pridáva určitý level abstrakcie.
+
+Túto problematiku som sa rozhodol demonštrovať na pridaní nového reportu vo výpise \ref{src:SendIssue}. Aplikácia vytvorí na základe vstupných dát inštanciu triedy Issue, ktorú predá metóde \mbox{SendIssue}. Tá ju následne zabalí ako JSON objekt a ďalej predá v metóde ExecutePost na finálne odoslanie. 
+
+Služba Mantis Bug Tracker po úspešnom pridaní nového reportu tento report vráti v odpovedi, čo som ďalej využil na informovanie užívateľa o úspešnom zaevidovaní, ktoré som doplnil o identifikátor, ktorý danému reportu pridelil server. 
+\begin{lstlisting}[label=src:SendIssue,caption={Metóda SendIssue triedy MantisClient}]
+public int SendIssue(Issue issue)
+{
+    string uri = this.GetUri(issuesUri);
+    string answerFromServer;
+    int id = -1;
+
+    restClient.ExecutePost(uri, () => JsonConvert.SerializeObject(issue),
+        reader => 
+        { 
+            answerFromServer = reader.ReadToEnd();
+            JObject obj = JObject.Parse(answerFromServer);
+            string temp = obj["issue"].ToString();
+            obj = JObject.Parse(temp);
+            id = (int) obj["id"];
+        });
+
+    return id;
+}
+\end{lstlisting}
+
+Systém nahlasovania reportov mal byť pôvodne implementovaný ako súčasť hry, čo sa ale ukázalo ako problematické z hľadiska zachytávania užívateľského vstupu v Unity engine. V praxi by to znamenalo, že ak by užívateľ popisoval chybu napríklad do nejakého textového poľa, hra samotná by naďalej vykonávala akcie na základe stlačených kláves. Rozhodli sme sa pre to začleniť tento systém do už existujúceho vývojárskeho nástroja s názvom HoboThor. Tento nástroj je veľmi komplexný a jeho popis by bol nad rámec tejto kapitoly.
+
 \subsubsection{Vytváranie \enquote{Release notes} pre QA oddelenie (GitLogger)}
 \label{sec:GitLogger}
 \subsubsection{Automatizované zostavenie hry na serveri (Build Server)}

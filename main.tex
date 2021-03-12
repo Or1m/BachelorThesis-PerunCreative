@@ -50,6 +50,8 @@
 \AddAcronym{CD}{Continuous Delivery}
 \AddAcronym{CD}{Continuous Deployment}
 \AddAcronym{AI}{Artificial intelligence}
+\AddAcronym{REST}{Representational State Transfer}
+\AddAcronym{API}{Application Programming Interface}
 
 \addbibresource{literature.bib}
 
@@ -159,20 +161,20 @@ V tejto kapitole by som rád podrobne prebral konkrétne projekty na ktorých so
 \label{sec:QACode}
 \subsubsection{Evidovanie chybových reportov (Mantis Report)}
 \label{sec:Report}
-\textbf{Časová náročnosť:} 8 dní + ? \\
-\textbf{Úvod do problému:} Ako som spomenul v sekcií \ref{sec:GitLab} možnosti automatizovaného testovania hry tohto rozsahu sú na rozdiel od bežného softvéru značne obmedzené. Veľké štúdiá si vytvárajú vlastné nástroje založené na AI, nikdy sa to však úplne neobíde bez tvrdej práce ľudí z QA oddelenia ľudovo nazývaných aj ako testeri. Úlohou testera je teda hrať celú hru alebo jej určené časti, nájsť a následne ohlásiť nájdené chyby. 
+\textbf{Časová náročnosť:} \\ 8 dní + ? \\
+\textbf{Úvod do problému:} \\ Ako som spomenul v sekcií \ref{sec:GitLab} možnosti automatizovaného testovania hry tohto rozsahu sú na rozdiel od bežného softvéru značne obmedzené. Veľké štúdiá si vytvárajú vlastné nástroje založené na AI, nikdy sa to však úplne neobíde bez tvrdej práce ľudí z QA oddelenia ľudovo nazývaných aj ako testeri. Úlohou testera je teda hrať celú hru alebo jej určené časti, nájsť a následne ohlásiť nájdené chyby. 
 
 Takéto ohlásenie chyby zvyčajne pozostávalo z vytvorenia snímky obrazovky, ktorá zachytávala daný problém a ručného vyplnenia detailov o probléme v službe Mantis Bug Tracker. Vyplnenie reportu je znázornené na obrázku \ref{pic:Mantis}.
 
+Takýto postup je značne neefektívny nakoľko na pozadí zahŕňa hneď niekoľko ďalších krokov ako minimalizácia hry, uloženie snímky obrazovky, otvorenie stránky na vloženie problému a nakoniec aj samotné vypĺňanie detailov reportu. Táto neefektívnosť samozrejme priamo úmerne rastie s počtom nájdených chýb, čo môžu byť aj vyššie jednotky denne. Mojou úlohou bolo teda optimalizovať tento postup. \\
+\textbf{Navrhované riešenia:} \\ Nakoľko bola toto moja prvá úloha v rámci odbornej praxe, mal som len minimálne skúsenosti s webovými technológiami ako je REST API a celkovo klient-server architektúrou, navrhol som riešenie postavené na nejakom nástroji na automatizovanie webového prehliadača. Takýmto nástrojom je napríklad Selenium WebDriver, s ktorým som sa stretol pri práci na vlastných projektoch. Ten je veľmi obľúbený napríklad pri testovaní webových aplikácií. Dokázal by zapnúť webový prehliadač, či už s užívateľským rozhraním alebo bez, otvoriť požadovanú stránku a vyplniť detaily reportu za užívateľa. V spojení s nejakým vlastným nástrojom na ukladanie snímky obrazovky, prípadne nástrojom, ktorý by testerovi umožnil vypísať zhrnutie či popis reportu priamo v hre by sa naozaj jednalo o relatívne dobré riešenie. Po užívateľovi by to ale vyžadovalo nutnosť inštalácie nejakého konkrétneho prehliadača v požadovanej verzií, aby bola zaistená správna kompatibilita a veľmi pravdepodobne by sa v budúcnosti objavili aj ďalšie problémy s nasadením či používaním. Po preskúmaní ďalších možností a následnej porade s kolegami som sa teda rozhodol dať prednosť riešeniu postavenému na už spomínanom REST API a ak by sa to ukázalo ako nerealizovateľné spätne sa vrátiť k môjmu prvému nápadu.
 \begin{figure}[!htbp]
 	\centering
-	\includegraphics[width=0.55\textwidth]{Pictures/mantis.png}
+	\includegraphics[width=0.6\textwidth]{Pictures/mantis.png}
 	\caption{Ručné vloženie reportu do služby Mantis Bug Tracker}
 	\label{pic:Mantis}
-\end{figure}
-
-Takýto postup je značne neefektívny nakoľko na pozadí zahŕňa hneď niekoľko ďalších krokov ako minimalizácia hry, uloženie snímky obrazovky, otvorenie stránky na vloženie problému a nakoniec aj samotné vypĺňanie detailov reportu. Táto neefektívnosť samozrejme priamo úmerne rastie s počtom nájdených chýb, čo môžu byť aj vyššie jednotky denne. Mojou úlohou bolo teda optimalizovať tento postup. \\
-\textbf{Navrhované riešenia:}
+\end{figure} \\
+\textbf{Realizácia:} \\ Pri hľadaní možností založených na REST API som narazil na open source projekt MantisSharp \cite{MantisSharp}
 \subsubsection{Vytváranie \enquote{Release notes} pre QA oddelenie (GitLogger)}
 \label{sec:GitLogger}
 \subsubsection{Automatizované zostavenie hry na serveri (Build Server)}

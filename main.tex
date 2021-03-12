@@ -35,6 +35,7 @@
 
 \EnglishKeywords{typography; \LaTeX; master thesis}
 
+\AddAcronym{QA}{Quality Assurance}
 \AddAcronym{PC}{Personal Computer}
 \AddAcronym{OS}{Operating System}
 \AddAcronym{RPG}{Role Playing Game}
@@ -48,6 +49,7 @@
 \AddAcronym{CI}{Continuous Integration}
 \AddAcronym{CD}{Continuous Delivery}
 \AddAcronym{CD}{Continuous Deployment}
+\AddAcronym{AI}{Artificial intelligence}
 
 \addbibresource{literature.bib}
 
@@ -75,7 +77,7 @@ Perun Creative s.r.o \cite{Perun} je české nezávislé herné štúdio, ktoré
 Hra samotná by sa dala charakterizovať ako RPG z mestského prostredia, kde sa hráč ocitne v role bezdomovca. Ústrednou hernou mechanikou je snaha prežiť v nehostinnom prostredí ulice. Okrem prežitia na hráča čaká aj pútavý príbeh a možnosť hrať kooperatívne až s troma ďalšími hráčmi. Hobo: Tough Life v súčasnosti vychádza na platformách Microsoft Windows a Linux. V budúcnosti sa počíta aj s vydaním na konzolách novej a starej generácie. 
 
 Štúdio Perun Creative má aktuálne dve pobočky. Prvá sa nachádza v Ostrave a jej osadenstvo tvoria výhradne programátori. Pobočka v Olomouci naopak slúži pre menej technicky zameranú časť firmy a síce pre grafika, herného dizajnéra a komunitného manažéra. Štúdio tvorí menej ako desať vývojárov a teda sa svojou veľkosťou radí k menším. Využíva ale aj služby externých pracovníkov prípadne spoločností špecializovaných na testovanie, zvukovú stránku hry a v neposlednom rade aj na preklad textov do rôznych svetových jazykov.
-\vspace{-15pt}
+\vspace{-20pt}
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=0.5\textwidth]{Pictures/perunLogo.pdf}
@@ -83,10 +85,10 @@ Hra samotná by sa dala charakterizovať ako RPG z mestského prostredia, kde sa
 	\caption{Logo spoločnosti Perun Creative}
 	\label{pic:perunLogo}
 \end{figure}
-\vspace{-10pt}
+\vspace{-20pt}
 \subsection{Pracovné zaradenie}
 \label{sec:Me}
-Môj prínos štúdiu Perun Creative spočíval hlavne v automatizácií a zefektívnení jednotlivých interných postupov. Do tejto kategórie by som zaradil projekty ako automatizované zostavenie hry na serveri, zefektívnenie spôsobu nahlasovania jednotlivých problémov prípadne prepracovanie importovania objektov zo starej verzie projektu do novej. K zefektívneniu práce rozhodne prispelo aj vytvorenie systému klávesových skratiek v hernom engine Unity (bližšie popísanom v sekcií \ref{sec:Unity}), ladenie zostavenej verzie hry zo vzdialeného PC prípadne program na vytvorenie tzv. \enquote{Release notes}. Ten bol primárne určený pre testerov, ale do budúcna sa plánuje jeho využitie aj pri informovaní hráčov o novinkách v rámci hry.
+Môj prínos štúdiu Perun Creative spočíval hlavne v automatizácií a zefektívnení jednotlivých interných postupov resp. vývoji pomocných nástrojov pre QA oddelenie či ostatných programátorov. Do tejto kategórie by som zaradil projekty ako automatizované zostavenie hry na serveri, zefektívnenie spôsobu nahlasovania jednotlivých problémov prípadne prepracovanie importovania objektov zo starej verzie projektu do novej. K zefektívneniu práce rozhodne prispelo aj vytvorenie systému klávesových skratiek v hernom engine Unity (bližšie popísanom v sekcií \ref{sec:Unity}), ladenie zostavenej verzie hry zo vzdialeného PC prípadne program na vytvorenie tzv. \mbox{\enquote{Release notes}}. Ten bol primárne určený pre testerov, ale do budúcna sa plánuje jeho využitie aj pri informovaní hráčov o novinkách v rámci hry.
 
 Okrem vyššie uvedených projektov som pracoval na novom systéme líhania postavy k spánku, optimalizácií a uvedeniu hry na OS Linux, prevode online časti hry z platformy Steam na platformu EOS a ďalších menších projektoch.
 % End of section 2
@@ -146,10 +148,51 @@ Nakoľko sa do budúcna počíta s vydaním hry Hobo: Tough Life na rôzne platf
 % End of section 3
 
 % Section 4
-\section{Popis projektov}
+\section{Zadané projekty a ich riešenia}
 \label{sec:Projects}
-U niektorych prebiehala tvorba inkrementalne a bola zavisla na spatnej vazbe bla bla.
+V tejto kapitole by som rád podrobne prebral konkrétne projekty na ktorých som v rámci mojej odbornej praxe pracoval. Poradie v akom budú prezentované nutne neodzrkadľuje poradie ich vypracovania, ale budú usporiadané do logických celkov podľa typu projektu. 
+
+Čo sa časovej náročnosti týka, nie vždy je možné ju určiť presne nakoľko niektoré z projektov boli vyvíjané inkrementálne podľa spätnej väzby QA oddelenia alebo nových požiadaviek od ostatných programátorov.
+%U niektorych prebiehala tvorba inkrementalne a bola zavisla na spatnej vazbe bla bla.
+
+\subsection{Vývoj pomocných nástrojov pre QA oddelenie a programátorov}
+\label{sec:QACode}
+\subsubsection{Evidovanie chybových reportov (Mantis Report)}
+\label{sec:Report}
+\textbf{Časová náročnosť:} 8 dní + ? \\
+\textbf{Úvod do problému:} Ako som spomenul v sekcií \ref{sec:GitLab} možnosti automatizovaného testovania hry tohto rozsahu sú na rozdiel od bežného softvéru značne obmedzené. Veľké štúdiá si vytvárajú vlastné nástroje založené na AI, nikdy sa to však úplne neobíde bez tvrdej práce ľudí z QA oddelenia ľudovo nazývaných aj ako testeri. Úlohou testera je teda hrať celú hru alebo jej určené časti, nájsť a následne ohlásiť nájdené chyby. 
+
+Takéto ohlásenie chyby zvyčajne pozostávalo z vytvorenia snímky obrazovky, ktorá zachytávala daný problém a ručného vyplnenia detailov o probléme v službe Mantis Bug Tracker. Vyplnenie reportu je znázornené na obrázku \ref{pic:Mantis}.
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.55\textwidth]{Pictures/mantis.png}
+	\caption{Ručné vloženie reportu do služby Mantis Bug Tracker}
+	\label{pic:Mantis}
+\end{figure}
+
+Takýto postup je značne neefektívny nakoľko na pozadí zahŕňa hneď niekoľko ďalších krokov ako minimalizácia hry, uloženie snímky obrazovky, otvorenie stránky na vloženie problému a nakoniec aj samotné vypĺňanie detailov reportu. Táto neefektívnosť samozrejme priamo úmerne rastie s počtom nájdených chýb, čo môžu byť aj vyššie jednotky denne. Mojou úlohou bolo teda optimalizovať tento postup. \\
+\textbf{Navrhované riešenia:}
+\subsubsection{Vytváranie \enquote{Release notes} pre QA oddelenie (GitLogger)}
+\label{sec:GitLogger}
+\subsubsection{Automatizované zostavenie hry na serveri (Build Server)}
+\label{sec:BuildServer}
+\subsection{Optimalizácia a prevod hry na ďalšie platformy}
+\label{sec:Port}
+\subsection{Ostatné projekty}
+\label{sec:Others}
+asd
 % End of section 4
+
+% Section 5
+%\section{Postup riešenia zadaných projektov}
+%\label{sec:Processes}
+%adasd
+% End of section 5
+
+%d) Teoretické a praktické znalosti a dovednosti získané v průběhu studia uplatněné studentem v průběhu odborné praxe.
+%e) Znalosti či dovednosti scházející studentovi v průběhu odborné praxe.
+%f) Dosažené výsledky v průběhu odborné praxe a její celkové zhodnocení.
 
 \printbibliography[title={Literatúra}, heading=bibintoc]
 \end{document}

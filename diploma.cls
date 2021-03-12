@@ -511,7 +511,7 @@ literate={á}{{\'{a}}}1 {Á}{{\'{A}}}1 {ä}{{\"{a}}}1 {Ä}{{\"{A}}}1 {č}{{\v{c}
 }
 \catcode30=12
 \onehalfspacing
-\setcounter{tocdepth}{2}
+\setcounter{tocdepth}{3}
 \setcounter{secnumdepth}{5}
 \widowpenalty=9000
 \clubpenalty=9000

@@ -56,6 +56,9 @@
 \AddAcronym{TCP}{Transmission Control Protocol}
 \AddAcronym{IP}{Internet Protocol}
 \AddAcronym{DLL}{Dynamic Link Library}
+\AddAcronym{SSH}{Secure Shell}
+\AddAcronym{HTTPS}{Hypertext Transfer Protocol Secure}
+\AddAcronym{URL}{Uniform Resource Locator}
 
 \addbibresource{literature.bib}
 
@@ -313,7 +316,7 @@ private void ZipAndSendToLinkManager()
 }
 \end{lstlisting}
 
-Mojou poslednou úlohou v rámci tejto časti reportovacieho systému, ktorá prišla ako požiadavka od programátorov bolo pridať možnosť odosielať reporty priamo z editoru bez nutnosti mať spustenú hru. Typický use case bolo nahlasovanie chýb nájdených popri práci s náhľadom scény. Väčšina  kódu bola prebratá z vyššie popísanej časti, problém ale nastal so snímkou obrazovky. Pôvodne použitá metóda CaptureScreenshotAsTexture funguje iba v rámci spustenej hry, nie v editore. Tú som teda nahradil metódou ReadScreenPixel, ktorá ale potrebuje vedieť presnú lokáciu a rozmery okna. Získať tieto údaje sa mi nakoniec podarilo až volaním C++ metód z user32.dll. Následným testovaním na 4K monitore sa ukázalo, že tento postup nevhodne vyhodnocuje veľkosť okna s nastaveným škálovaním v OS Windows. Toto bolo nutné upraviť ručne, čo ukazuje výpis \ref{src:DLL}.
+Mojou poslednou úlohou v rámci tejto časti reportovacieho systému, ktorá prišla ako požiadavka od programátorov bolo pridať možnosť odosielať reporty priamo z editoru bez nutnosti mať spustenú hru. Typický prípad použitia bolo nahlasovanie chýb nájdených popri práci s náhľadom scény. Väčšina  kódu bola prebratá z vyššie popísanej časti, problém ale nastal so snímkou obrazovky. Pôvodne použitá metóda CaptureScreenshotAsTexture funguje iba v rámci spustenej hry, nie v editore. Tú som teda nahradil metódou ReadScreenPixel, ktorá ale potrebuje vedieť presnú lokáciu a rozmery okna. Získať tieto údaje sa mi nakoniec podarilo až volaním C++ metód z user32.dll. Následným testovaním na 4K monitore sa ukázalo, že tento postup nevhodne vyhodnocuje veľkosť okna s nastaveným škálovaním v OS Windows. Toto bolo nutné upraviť ručne, čo ukazuje výpis \ref{src:DLL}.
 \vspace{10pt}
 \begin{lstlisting}[label=src:DLL,caption={Získanie veľkosti okna Unity editoru}]
 [DllImport("user32.dll")]
@@ -344,20 +347,133 @@ private static Rect GetUnityBounds()
 }
 \end{lstlisting}
 
-Na strane Windows Forms aplikácie implementovanej do nástroja HoboThor bolo nutné najskôr vytvoriť sadu tried a enumov, ktoré by po serializácií/deserializácií presne kopírovali štruktúru projektu či reportu s ktorou pracuje služba Mantis Bug Tracker. Následne bolo nutné vytvoriť užívateľské rozhranie, ktoré ale postupne prechádzalo iteratívnymi zmenami až do svojej finálnej podoby znázornenej na obrázku \ref{pic:Report}.
+Na strane Windows Forms aplikácie implementovanej do nástroja HoboThor bolo nutné najskôr vytvoriť sadu tried a enumov, ktoré by po serializácií/deserializácií presne kopírovali štruktúru projektu či reportu s ktorou pracuje služba Mantis Bug Tracker. Následne bolo nutné vytvoriť užívateľské rozhranie. To prechádzalo iteratívnymi zmenami na základe spätnej väzby až do svojej finálnej podoby znázornenej na obrázku \ref{pic:Report}. 
+
+Po spustení aplikácie sa načíta uložená snímka obrazovky a zobrazí sa v náhľadovom okne na pravej strane. Vzhľadom na to, že v dobe spúšťania tento obrázok ešte nemusí byť plne k dispozícií je táto funkcionalita realizované v separátnom vlákne pomocou tzv. \enquote{Background Workera}. Ten v cykle prehľadáva zložku s reportom kvôli prítomnosti obrázku až následne, keď je k dispozícií ho zobrazí.
+
 \begin{figure}[!htbp]
 	\centering
 	\setlength{\fboxsep}{0pt}
 	\setlength{\fboxrule}{1pt}
 	\fbox {
-		\includegraphics[width=1\textwidth]{Pictures/report.png}
+		\includegraphics[width=.98\textwidth]{Pictures/report.png}
 	}
 	\caption{Užívateľské rozhranie aplikácie Mantis Report}
 	\label{pic:Report}
 \end{figure}
-%Mantis form a picture edit TODO
+
+Ďalším krokom je načítanie dát z report zložky do polí \enquote{Shrnutí} a \enquote{Popis}. Ak sa v zložke nenachádzajú uložené pozície alebo logovací súbor, aplikácia zablokuje príslušné zaškrtávacie polia. Následne sú odoslané dve GET žiadosti na server. Prvá požaduje dáta o užívateľovi, ktorému náleží príslušný api kľúč odoslaný spolu so žiadosťou a druhá požaduje informácie o projekte. Medzi tieto informácie patria aj kategórie evidované pre daný projekt. Tie sú vložené do kombinovaného poľa \enquote{Kategorie}. Tento postup bol zvolený z dôvodu možných budúcich zmien v štruktúre kategórií na serveri. Ostatné kombinované polia boli vyplnené vopred pripravenými enumami. U nich sa žiadna budúca zmena nepredpokladá.
+
+Užívateľ zadá potrebné informácie k nájdenej chybe a report odošle na server. Táto akcia zahŕňa získanie vyplnených a vybraných dát zo všetkých dostupných polí a následné vytvorenie inštancie triedy Issue, ktorá tieto dáta zapúzdruje. Všetky prílohy určené na odoslanie sú následne prečítané a uložené do polí bytov. Tie sú následne prevedené na reťazce s kódovaním base64 obdobným postupom ako je uvedený vo výpise \ref{src:Zip}.
+
+V tomto momente bola aplikácia prakticky hotová ale z QA oddelenia prišla požiadavka na možnosť úpravy obrázka pred odoslaním bez nutnosti použitia externých nástrojov. Vytvoril som teda druhé okno pre túto aplikáciu, ktoré sa otvorí po kliknutí na náhľadový obrázok a umožňuje do neho kresliť. Toto okno je znázornené na obrázku \ref{pic:Paint}. 
+
+Postupne bola pridaná podpora viacerých hrúbok a farieb čiar či tlačítko reset, ktoré slúži na návrat k pôvodnému obrázku. Zmeny v tomto okne sú spätne reflektované aj náhľadovým obrázkom v hlavnom okne reportovacej aplikácie. 
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=1\textwidth]{Pictures/pictureEditBox.png}
+	\caption{Okno úpravy obrázka}
+	\label{pic:Paint}
+\end{figure}
+
+Na kreslenie bolo využité vlastné riešenie založené na vykresľovaní čiary medzi dvoma bodmi. Tento postup je demonštrovaný vo výpise \ref{src:Paint}.
+\vspace{10pt}
+\begin{lstlisting}[label=src:Paint,caption={Implementácia kreslenia v prostredí Windows Forms}]
+private void pictureBoxBcg_MouseDown(object sender, MouseEventArgs e)
+{
+    moving = true;
+    x = e.X;
+    y = e.Y;
+}
+private void pictureBoxBcg_MouseMove(object sender, MouseEventArgs e)
+{
+    if (moving && x != -1 && y != -1)
+    {
+        g.DrawLine(pen, new Point(x, y), e.Location);
+        x = e.X;
+        y = e.Y;
+        pictureBoxBcg.Invalidate();
+    }
+}
+private void pictureBoxBcg_MouseUp(object sender, MouseEventArgs e)
+{
+    moving = false;
+    x = -1;
+    y = -1;
+}
+\end{lstlisting}
 \subsubsection{Vytváranie \enquote{Release notes} pre QA oddelenie (GitLogger)}
 \label{sec:GitLogger}
+\textbf{Časová náročnosť:} \\ Nasadenie: 3 dni.\\
+\textbf{Úvod do problému:} \\ S blížiacim sa dátumom vydania hry sa zvyšuje aj frekvencia testovania a rýchlosť s akou pribúdajú opravy chýb. Medzi jednotlivými zostaveniami aplikácie býva nejaké časové obdobie - zvyčajne jeden týždeň. Toto obdobie je zakončené nahraním najnovšie zostavenej verzie hry na platformu Steam, kde ju môže QA oddelenie začať testovať. Informovanie testerov o najnovších zmenách a opravách môže byť pracné a náchylné na vynechanie niektorých dôležitých vecí. Mojou úlohou bolo tento proces pokiaľ možno čo najviac optimalizovať.\\
+\textbf{Navrhované riešenia:} \\ Prvý navrhovaným riešením, ktoré sa už využívalo v niektorých vývojárskych nástrojoch bolo použitie knižnice, ktorá sa po zadaní správnych prihlasovacích údajov pripojí na Git server a prevedie prítomné \textit{commity} na štruktúru tried, s ktorou je potom možné ďalej pohodlne pracovať. Po preskúmaní tohto riešenia sa ukázalo, že jednotlivé knihovne nemajú vyriešenú podporu pripojenia na server pomocou protokolu SSH ale iba HTTPS, čo sa ukázalo ako veľký problém. Prišiel som teda s riešením, ktoré by si stiahlo \textit{commity} iba z lokálneho repozitára a to pomocou PowerShellu v OS Windows.  \\
+\textbf{Realizácia:} \\ Po založení testovacieho projektu na platforme .NET bolo mojím prvým krokom zistiť, ako programovo spustiť rôzne skripty a príkazy vo Windows PowerShell. Postupne som narazil na triedu PowerShell v mennom priestore System.Management.Automation určenú presne pre tento prípad použitia. Pomocou tejto triedy som si vytvoril metódu, ktorá vie spustiť ľubovoľný príkaz a vrátiť jeho výsledok ako pole reťazcov. Túto metódu ukazuje výpis \ref{src:Shell}. 
+
+Ako sa ukázalo, Windows PowerShell v predvolenom nastavení pre český jazyk nepoužíval kódovanie UTF-8, čo zapríčinilo nesprávnu interpretáciu znakov s diakritikou. Bolo nutné v nastaveniach systému v sekcií región túto voľbu ručne zapnúť, nakoľko je stále vo fáze vývoja.
+\vspace{10pt}
+\begin{lstlisting}[label=src:Shell,caption={Metóda InvokePowershellScript triedy GitLogger}]
+private string[] InvokePowershellScript(string gitCmd)
+{
+    string[] results;
+    using (PowerShell powershell = PowerShell.Create())
+    {
+        powershell.AddScript($"cd {projectDirectory}");
+        powershell.AddScript(gitCmd);
+
+        results = powershell.Invoke().Select(r => r.ToString()).ToArray();
+    }
+
+    return results;
+}
+\end{lstlisting}
+
+Po vyskúšaní rôznych preddefinovaných variant príkazu \textit{git log} som sa rozhodol zostaviť si vlastný príkaz, nakoľko mi žiadna preddefinovaná varianta úplne nevyhovovala. Hlavným dôvodom bola snaha čo najviac zjednodušiť následnú syntaktickú analýzu. Tento príkaz som sa rozhodol generovať dynamicky, aby sa dal v prípade potreby jednoducho upraviť. Ukážka tohto postupu je vo výpise \ref{src:Log}.
+\vspace{10pt}
+\begin{lstlisting}[label=src:Log,caption={Generovanie vlastného príkazu git log}]
+private const char mainSplitter = '&';
+private string gitLog = "git log ";
+
+public GitLogger()
+{
+    gitLog += string.Format("--pretty=format:\"%an%{0}%ad%{0}%s\"" +
+        " --date=format:'%d.%m.%Y'", ((int)mainSplitter).ToHex());
+}
+\end{lstlisting}
+
+Následne bolo nutné v cykle prejsť všetky výsledky od najnovšieho \textit{commitu} až po \textit{commit}, ktorý značil posledné zostavenie dostupné na platforme Steam pre testerov. Z týchto výsledkov sa odstránili všetky zlúčenia jednotlivých vetiev a ďalšie  \textit{commity}, ktoré neobsahovali ani opravy chýb ani novo pridané vylepšenia. Opravy boli značené tzv. \enquote{bugMarkerom} (@b) a vylepšenia tzv. \enquote{featureMarkerom} (@f). Tých mohlo byť v jednom \textit{commite} hneď niekoľko, preto bol na každý z nich aplikovaný regulárny výraz a jednotlivé časti boli ďalej spracovávané samostatne. Tento regulárny výraz zobrazuje výpis \ref{src:Regex}. Každá časť navyše mohla byť rozdelená na viacero menších častí rovnakého druhu pomocou reťazca ``. `` alebo znaku `;`. Jednotlivé elementárne časti boli následne štruktúrovane uložené do súboru.
+\vspace{10pt}
+\begin{lstlisting}[label=src:Regex,caption={Regulárny výraz na rozdelenie tela \textit{commitu}}]
+var matches = Regex.Matches(body, string.Format("({0}|{1})[^@]*", bugMarker, featureMarker));
+\end{lstlisting}
+
+Pôvodný prípad použitia mal zahŕňať automatické otvorenie tohto súboru v predvolenom textovom editore a jeho ručné skopírovanie do programu Microsof Teams, ktorý sa používa na komunikáciu vo firme. Rozhodol som sa ale preskúmať možnosti automatizovaného odosielania správ v tejto službe a pokúsil sa implementovať lepšie riešenie.
+
+Služba Microsoft Teams podporuje automatizované posielanie správ okrem iných možností aj pomocou tzv. \enquote{Webhooks}. Tie sa dajú nakonfigurovať priamo v užívateľskom rozhraní služby a to buď pre konkrétny kanál alebo konverzáciu. \enquote{Webhook} vygeneruje jedinečnú URL adresu, na ktorú je možné posielať POST žiadosti, ktoré som už spínal v sekcií \ref{sec:QACode}. Dáta sú prenášané ako štruktúrovaný JSON reťazec. Okrem jednoduchých správ je možné posielať aj formátovaný text pomocou značkovacieho jazyka MarkDown prípadne tzv. karty. 
+
+Pomocou nástroja Postman som vo formáte JSON vytvoril dva návrhy takejto karty a nechal kolegov rozhodnúť o tom, ktorý sa nakoniec použije. Vybratú kartu som si uložil do súboru na disk a následne podľa nej vytvoril triedu Message, ktorá svojou vnútornou štruktúrou kopíruje spomínaný JSON súbor. Následne som tento súbor prečítal a jeho obsah deserializoval na túto triedu. Do tela správy som vložil dáta získané z \textit{commitov} po syntaktickej analýze a použil metódu vo výpise \ref{src:Shell} na odoslanie správy. Tento postup demonštruje výpis \ref{src:Message}. 
+\vspace{10pt}
+\begin{lstlisting}[label=src:Message,caption={Vytvorenie a odoslanie správy do služby Microsoft Teams}]
+Message message = Message.FromJson(File.ReadAllText(pathToJSON));
+Content content = message.Attachments[0].Content;
+
+content.Title = header;
+content.Sections[0].ActivityText = PrintListToJsonString(features);
+content.Sections[1].ActivityText = PrintListToJsonString(bugs);
+
+// cmdBegin == "Invoke-RestMethod -Method post -ContentType 'Application/Json; charset=UTF-8' -Body '";
+string command = cmdBegin + Serialize.ToJson(message) + "' -Uri " + webHook;
+string result = InvokePowershellScript(command)[0];
+\end{lstlisting}
+
+Metóda PrintListToJsonString do dát pridá značky jazyka MarkDown, čím sa ešte upraví finálny vzhľad a zároveň pomocou regulárneho výrazu \mbox{``\#\\d+``} nahradí všetky výskyty číselných reťazcov začínajúcich znakom \# za konkrétny odkaz reportu v službe Mantis Bug Tracker, na ktorý sa dá kliknúť. To je užitočné v prípadoch keď \textit{commit} priamo opravuje nejakú nahlásenú chybu. Finálnu kartu môžeme vidieť na obrázku \ref{pic:Logger}.
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=1\textwidth]{Pictures/gitlogger.png}
+	\caption{Karta v programe Microsoft Teams}
+	\label{pic:Logger}
+\end{figure}
+
 \subsubsection{Automatizované zostavenie hry na serveri (Build Server)}
 \label{sec:BuildServer}
 \subsection{Optimalizácia a prevod hry na ďalšie platformy}

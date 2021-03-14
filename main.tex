@@ -53,6 +53,9 @@
 \AddAcronym{REST}{Representational State Transfer}
 \AddAcronym{API}{Application Programming Interface}
 \AddAcronym{JSON}{JavaScript Object Notation}
+\AddAcronym{TCP}{Transmission Control Protocol}
+\AddAcronym{IP}{Internet Protocol}
+\AddAcronym{DLL}{Dynamic Link Library}
 
 \addbibresource{literature.bib}
 
@@ -162,7 +165,7 @@ V tejto kapitole by som rád podrobne prebral konkrétne projekty na ktorých so
 \label{sec:QACode}
 \subsubsection{Evidovanie chybových reportov (Mantis Report)}
 \label{sec:Report}
-\textbf{Časová náročnosť:} \\ 8 dní + ? \\
+\textbf{Časová náročnosť:} \\ Nasadenie: 8 dní, pridanie ďalšej funkcionality podľa požidaviek: spolu 7 dní.\\
 \textbf{Úvod do problému:} \\ Ako som spomenul v sekcií \ref{sec:GitLab} možnosti automatizovaného testovania hry tohto rozsahu sú na rozdiel od bežného softvéru značne obmedzené. Veľké štúdiá si vytvárajú vlastné nástroje založené na AI, nikdy sa to však úplne neobíde bez tvrdej práce ľudí z QA oddelenia ľudovo nazývaných aj ako testeri. Úlohou testera je teda hrať celú hru alebo jej určené časti, nájsť a následne ohlásiť nájdené chyby. 
 
 Takéto ohlásenie chyby je značne neefektívny proces nakoľko na pozadí zahŕňa hneď niekoľko ďalších krokov ako minimalizácia hry, otvorenie stránky so službou Mantis Bug Tracker, vloženie problému a nakoniec aj samotné vypĺňanie detailov reportu, ktoré znázorňuje obrázok \ref{pic:Mantis}.
@@ -258,9 +261,9 @@ if (HBTLink_Manager.sender_ServerIP == HBTLink_Manager.Instance.LocalIPAddress()
         Application.OpenURL(exeFile);
     }
 }
+// Remote report
 else
 {
-    // Remote report
     float time = 0;
     while (time <= maxWaitTime)
     {
@@ -277,8 +280,8 @@ else
 
 Odoslanie reportu na server z lokálneho PC pokračuje vytvorením tzv. \enquote{Mantis argumentu}. Ide o textový súbor, ktorého obsah je cesta k naposledy vytvorenému reportu. Ten je uložený do zložky, kde sa nachádza spúšťací súbor nástroja HoboThor. Následne je tento nástroj spustený a pokiaľ je pri tomto procese  prítomný už spomínaný súbor, nespustí sa hlavné okno aplikácie ale len okno určené na odoslanie reportu. Po prečítaní obsahu je súbor samozrejme zmazaný, aby ďalšie spustenie nástroja HoboThor bolo plnohodnotné.
 
-Pokiaľ ide o odoslanie reportu zo vzdialeného PC ukázala sa ako problematická doba ukladania snímky obrazovky na disk. Kvôli tomuto problému musí aplikácia najskôr počkať na uloženie súboru a až následne vykonávať ďalšie inštrukcie. Toho som docielil jednoduchou slučkou, ktorá sa sama ukončí v prípade nájdenia požadovaného súboru alebo po pretečení určitého času. To slúži ako ochrana pred zacyklením. Na premennú \textit{screenSaved} zareaguje metóda OnUpdate z výpisu \ref{src:OnUpdate} a spustí metódu ZipAndSendToLinkManager. Tá pomocou knižnice DotNetZip \cite{DotNetZip} prevedie celú zložku s reportom na zip súbor so zachovaním hierarchickej štruktúry podzložiek a súborov. Následne ho prevedie na reťazec s kódovaním base64 a predá triede HBTLink\_Manager na odoslanie do vzdialeného PC. Táto metóda je znázornená vo výpise \ref{src:Zip}.
-\vspace{10pt}
+Pokiaľ ide o odoslanie reportu zo vzdialeného PC ukázala sa ako problematická doba ukladania snímky obrazovky na disk. Kvôli tomuto problému musí aplikácia najskôr počkať na uloženie súboru a až následne vykonávať ďalšie inštrukcie. Toho som docielil jednoduchou slučkou, ktorá sa sama ukončí v prípade nájdenia požadovaného súboru alebo po pretečení určitého času. To slúži ako ochrana pred zacyklením. Na premennú \textit{screenSaved} zareaguje metóda OnUpdate z výpisu \ref{src:OnUpdate} a spustí metódu ZipAndSendToLinkManager. Tá pomocou knižnice DotNetZip \cite{DotNetZip} prevedie celú zložku s reportom na zip súbor so zachovaním hierarchickej štruktúry podzložiek a súborov. Následne ho prevedie na reťazec s kódovaním base64 a predá triede HBTLink\_Manager na odoslanie do vzdialeného PC. Táto metóda je znázornená vo výpise \ref{src:Zip}. Rreťazec je následne pomocou TCP protokolu odoslaný na IP adresu určenú v konfiguračnom súbore alebo vybratú z prednastavených možností vo vývojárskej konzole počas hrania. Na vzdialenom PC musí byť spustený nástroj HoboThor a \enquote{počúvať} na určenom porte. Dáta sú po prijatí uložené do dočasnej zložky poskytovanej operačným systémom a následne rozbalené. Cesta k tejto zložke je opäť zapísaná do \enquote{Mantis argumentu} a HoboThor je následne automaticky spustený znova. To vyústi k otvoreniu okna určeného na nahlasovanie chýb a načítaniu dát zo zložky s reportom.
+\vspace{20pt}
 \begin{lstlisting}[label=src:Zip,caption={Metóda ZipAndSendToLinkManager triedy ReportingManager}]
 private void ZipAndSendToLinkManager()
 {
@@ -310,7 +313,49 @@ private void ZipAndSendToLinkManager()
 }
 \end{lstlisting}
 
+Mojou poslednou úlohou v rámci tejto časti reportovacieho systému, ktorá prišla ako požiadavka od programátorov bolo pridať možnosť odosielať reporty priamo z editoru bez nutnosti mať spustenú hru. Typický use case bolo nahlasovanie chýb nájdených popri práci s náhľadom scény. Väčšina  kódu bola prebratá z vyššie popísanej časti, problém ale nastal so snímkou obrazovky. Pôvodne použitá metóda CaptureScreenshotAsTexture funguje iba v rámci spustenej hry, nie v editore. Tú som teda nahradil metódou ReadScreenPixel, ktorá ale potrebuje vedieť presnú lokáciu a rozmery okna. Získať tieto údaje sa mi nakoniec podarilo až volaním C++ metód z user32.dll. Následným testovaním na 4K monitore sa ukázalo, že tento postup nevhodne vyhodnocuje veľkosť okna s nastaveným škálovaním v OS Windows. Toto bolo nutné upraviť ručne, čo ukazuje výpis \ref{src:DLL}.
+\vspace{10pt}
+\begin{lstlisting}[label=src:DLL,caption={Získanie veľkosti okna Unity editoru}]
+[DllImport("user32.dll")]
+private static extern bool GetWindowRect(IntPtr hwnd, ref Rect rectangle);
 
+[DllImport("user32.dll")]
+private static extern IntPtr GetActiveWindow();
+
+private struct Rect
+{
+    public int Left { get; set; }
+    public int Top { get; set; }
+    public int Right { get; set; }
+    public int Bottom { get; set; }
+}
+
+private static Rect GetUnityBounds()
+{
+    Rect unityWindowBounds = new Rect();
+    float scale = Screen.dpi / 96;
+
+    GetWindowRect(GetActiveWindow(), ref unityWindowBounds);
+
+    unityWindowBounds.Right = (int)(unityWindowBounds.Right / scale);
+    unityWindowBounds.Bottom = (int)(unityWindowBounds.Bottom / scale);
+
+    return unityWindowBounds;
+}
+\end{lstlisting}
+
+Na strane Windows Forms aplikácie implementovanej do nástroja HoboThor bolo nutné najskôr vytvoriť sadu tried a enumov, ktoré by po serializácií/deserializácií presne kopírovali štruktúru projektu či reportu s ktorou pracuje služba Mantis Bug Tracker. Následne bolo nutné vytvoriť užívateľské rozhranie, ktoré ale postupne prechádzalo iteratívnymi zmenami až do svojej finálnej podoby znázornenej na obrázku \ref{pic:Report}.
+\begin{figure}[!htbp]
+	\centering
+	\setlength{\fboxsep}{0pt}
+	\setlength{\fboxrule}{1pt}
+	\fbox {
+		\includegraphics[width=1\textwidth]{Pictures/report.png}
+	}
+	\caption{Užívateľské rozhranie aplikácie Mantis Report}
+	\label{pic:Report}
+\end{figure}
+%Mantis form a picture edit TODO
 \subsubsection{Vytváranie \enquote{Release notes} pre QA oddelenie (GitLogger)}
 \label{sec:GitLogger}
 \subsubsection{Automatizované zostavenie hry na serveri (Build Server)}

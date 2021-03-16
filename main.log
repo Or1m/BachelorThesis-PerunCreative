@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.2.17)  16 MAR 2021 23:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.2.17)  16 MAR 2021 23:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -666,8 +666,8 @@ Language: slovak 2008/07/06 v3.1a Slovak support from the babel system
 File: thb.sty 2014/10/28 v2.2c Theorem extension package (FMi)
 )
 \c@Dipl@examplebody=\count295
-Package hyperref Info: Option `unicode' set `true' on input line 368.
-Package hyperref Info: Option `colorlinks' set `true' on input line 368.
+Package hyperref Info: Option `unicode' set `true' on input line 369.
+Package hyperref Info: Option `colorlinks' set `true' on input line 369.
 )
 (d:/texlive/2020/texmf-dist/tex/latex/csquotes/csquotes.sty
 Package: csquotes 2021-01-04 v5.2k context-sensitive quotations (JAW)
@@ -1200,7 +1200,7 @@ File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 
 pdfTeX warning: pdflatex.exe (file ./Pictures/FEI_CZ.pdf): PDF inclusion: found
  PDF version <1.6>, but at most version <1.5> allowed
-<Pictures/FEI_CZ.pdf, id=86, 350.70023pt x 109.21pt>
+<Pictures/FEI_CZ.pdf, id=90, 350.70023pt x 109.21pt>
 File: Pictures/FEI_CZ.pdf Graphic file (type pdf)
 <use Pictures/FEI_CZ.pdf>
 Package pdftex.def Info: Pictures/FEI_CZ.pdf  used on input line 63.
@@ -1249,11 +1249,11 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 ] (./main.toc
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 17.
+(Font)              <10.95> on input line 21.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 17.
+(Font)              <8> on input line 21.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 17.
+(Font)              <6> on input line 21.
 )
 \tf@toc=\write6
 \openout6 = `main.toc'.
@@ -1271,14 +1271,20 @@ LaTeX Font Info:    External font `lmex10' loaded for size
  [6
 
 
+] (./main.lol)
+\tf@lol=\write8
+\openout8 = `main.lol'.
+
+ [7
+
+
 ]
 Kapitola 1.
-[7
-
+[8
 
 ]
 Kapitola 2.
-<Pictures/perunLogo.pdf, id=187, 9301.75125pt x 6976.0625pt>
+<Pictures/perunLogo.pdf, id=219, 9301.75125pt x 6976.0625pt>
 File: Pictures/perunLogo.pdf Graphic file (type pdf)
 <use Pictures/perunLogo.pdf>
 Package pdftex.def Info: Pictures/perunLogo.pdf  used on input line 85.
@@ -1286,38 +1292,38 @@ Package pdftex.def Info: Pictures/perunLogo.pdf  used on input line 85.
 
 Underfull \vbox (badness 2285) has occurred while \output is active []
 
- [8
+ [9
 
- <./Pictures/PerunLogo.pdf>] [9]
+ <./Pictures/PerunLogo.pdf>] [10]
 Kapitola 3.
-<Pictures/platforms.png, id=202, 876.27374pt x 255.95625pt>
+<Pictures/platforms.png, id=234, 876.27374pt x 255.95625pt>
 File: Pictures/platforms.png Graphic file (type png)
 <use Pictures/platforms.png>
 Package pdftex.def Info: Pictures/platforms.png  used on input line 108.
 (pdftex.def)             Requested size: 472.03123pt x 137.87842pt.
-[10
+[11
 
 ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [11 <./Pictures/platforms.png>]
+ [12 <./Pictures/platforms.png>]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
 30.
  (d:/texlive/2020/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-<Pictures/gitlab.png, id=223, 1003.75pt x 556.0775pt>
+<Pictures/gitlab.png, id=254, 1003.75pt x 556.0775pt>
 File: Pictures/gitlab.png Graphic file (type png)
 <use Pictures/gitlab.png>
 Package pdftex.def Info: Pictures/gitlab.png  used on input line 140.
 (pdftex.def)             Requested size: 472.03123pt x 261.50919pt.
 
-[12] [13 <./Pictures/gitlab.png>]
+[13] [14 <./Pictures/gitlab.png>]
 Kapitola 4.
-[14
+[15
 
 ]
-<Pictures/mantis.png, id=245, 444.91219pt x 471.26062pt>
+<Pictures/mantis.png, id=276, 444.91219pt x 471.26062pt>
 File: Pictures/mantis.png Graphic file (type png)
 <use Pictures/mantis.png>
 Package pdftex.def Info: Pictures/mantis.png  used on input line 174.
@@ -1328,7 +1334,7 @@ Overfull \hbox (23.02666pt too wide) in paragraph at lines 171--179
 a-ra-zil na open source pro-jekt []
  []
 
-[15 <./Pictures/mantis.png>]
+[16 <./Pictures/mantis.png>]
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 184.
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
@@ -1338,32 +1344,24 @@ File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 Underfull \vbox (badness 1259) has occurred while \output is active []
 
- [16]
-[17] [18] [19]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [20]
-[21]
-<Pictures/report.png, id=411, 554.07pt x 322.20375pt>
+ [17]
+[18] [19] [20] [21]
+<Pictures/report.png, id=398, 554.07pt x 322.20375pt>
 File: Pictures/report.png Graphic file (type png)
 <use Pictures/report.png>
-Package pdftex.def Info: Pictures/report.png  used on input line 353.
+Package pdftex.def Info: Pictures/report.png  used on input line 336.
 (pdftex.def)             Requested size: 462.5886pt x 269.00722pt.
- [22 <./Pictures/report.png>]
-<Pictures/pictureEditBox.png, id=426, 1445.4pt x 811.53188pt>
+ [22]
+<Pictures/pictureEditBox.png, id=429, 1445.4pt x 811.53188pt>
 File: Pictures/pictureEditBox.png Graphic file (type png)
 <use Pictures/pictureEditBox.png>
-Package pdftex.def Info: Pictures/pictureEditBox.png  used on input line 367.
+Package pdftex.def Info: Pictures/pictureEditBox.png  used on input line 350.
 (pdftex.def)             Requested size: 472.03123pt x 265.02017pt.
- [23] [24 <./Pictures/pictureEditBox.png>]
-Underfull \vbox (badness 1789) has occurred while \output is active []
-
- [25]
-[26]
-<Pictures/gitlogger.png, id=500, 688.07062pt x 368.87813pt>
+ [23 <./Pictures/report.png>] [24 <./Pictures/pictureEditBox.png>] [25] [26]
+<Pictures/gitlogger.png, id=493, 688.07062pt x 368.87813pt>
 File: Pictures/gitlogger.png Graphic file (type png)
 <use Pictures/gitlogger.png>
-Package pdftex.def Info: Pictures/gitlogger.png  used on input line 465.
+Package pdftex.def Info: Pictures/gitlogger.png  used on input line 441.
 (pdftex.def)             Requested size: 472.03123pt x 253.0571pt.
  [27] [28 <./Pictures/gitlogger.png>]
 
@@ -1377,16 +1375,16 @@ Package biblatex Warning: '\mainlang' is deprecated in favour of
 
 ] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 2BDED8488AB51708E8774351C9E9DA37;4212.
+(rerunfilecheck)             Checksum: E00052365FB2FC3363E9E9C5B8D29A21;4425.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 27100 strings out of 479302
- 438613 string characters out of 5871204
- 1252700 words of memory out of 5000000
- 43602 multiletter control sequences out of 15000+600000
+ 27083 strings out of 479302
+ 438289 string characters out of 5871204
+ 1264898 words of memory out of 5000000
+ 43605 multiletter control sequences out of 15000+600000
  465596 words of font info for 64 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  103i,8n,131p,1598b,4778s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1399,9 +1397,9 @@ type1/public/lm/lmss12.pfb><d:/texlive/2020/texmf-dist/fonts/type1/public/lm/lm
 ss17.pfb><d:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><d:/tex
 live/2020/texmf-dist/fonts/type1/public/lm/lmtt10.pfb><d:/texlive/2020/texmf-di
 st/fonts/type1/public/lm/lmtto10.pfb>
-Output written on main.pdf (29 pages, 2558130 bytes).
+Output written on main.pdf (29 pages, 2557852 bytes).
 PDF statistics:
- 643 PDF objects out of 1000 (max. 8388607)
- 255 named destinations out of 1000 (max. 500000)
- 213 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 630 PDF objects out of 1000 (max. 8388607)
+ 232 named destinations out of 1000 (max. 500000)
+ 221 words of extra memory for PDF output out of 10000 (max. 10000000)
 

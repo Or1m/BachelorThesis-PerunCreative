@@ -209,6 +209,7 @@
 \Dipl@WriteAcronymsPage
 \ifthenelse{\totvalue{Dipl@TotalFigures}>0}{\listoffigures\clearpage}{\relax}
 %\ifthenelse{\totvalue{Dipl@TotalTables}>0}{\listoftables\clearpage}{\relax}
+\lstlistoflistings
 }
 {\theorembodyfont{\itshape}\newtheorem{definition}{\Dipl@LanguageDependentText{Definice}{Definícia}{Definition}}}
 {\theorembodyfont{\itshape}\newtheorem{theorem}{\Dipl@LanguageDependentText{Věta}{Veta}{Theorem}}}
@@ -377,7 +378,10 @@ Ostrava,~\ifthenelse{\equal{\the\Dipl@SubmissionYear}{\empty}}{\number\year}{\th
 }
 {
 \selectlanguage{slovak}
-}
+\def\lstlistlistingname{Zoznam výpisov zdrojového kódu}
+\def\lstlistingname{Výpis}
+}{}
+\renewcommand{\lstlistoflistings}{\begingroup\tocfile{\lstlistlistingname}{lol}\endgroup}
 {
 \selectlanguage{english}
 }

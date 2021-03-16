@@ -182,14 +182,12 @@ Problematiku odosielania dát na server som sa rozhodol demonštrovať na pridan
 Služba Mantis Bug Tracker po úspešnom pridaní nového reportu tento report vráti v odpovedi, čo som ďalej využil na informovanie užívateľa o úspešnom zaevidovaní, ktoré som doplnil o serverom pridelený identifikátor.
 \vspace{10pt}
 \begin{lstlisting}[label=src:SendIssue,caption={Metóda SendIssue triedy MantisClient}]
-public int SendIssue(Issue issue)
-{
+public int SendIssue(Issue issue) {
 	string uri = this.GetUri(issuesUri);
 	int id = -1;
 
 	restClient.ExecutePost(uri, () => JsonConvert.SerializeObject(issue),
-        reader =>
-        {
+        reader => {
             string answerFromServer = reader.ReadToEnd();
             JObject obj = JObject.Parse(answerFromServer);
             id = (int)obj["issue"]["id"];
@@ -207,20 +205,16 @@ Logika aplikácie bola teda rozdelená do dvoch častí. Časť, s ktorou intera
 Kontrola, či boli stlačené konkrétne klávesy musí prebiehať každú snímku, aby sa zabezpečilo, že odchytenie prebehne úspešne. Kód zabezpečujúci túto funkcionalitu bol teda vložený do metódy OnUpdate triedy ReportingManager, čo znázorňuje výpis \ref{src:OnUpdate}. Projekt Hobo: Tough Life do veľkej miery stojí na hierarchickej štruktúre tried, tzv. \enquote{Manageroch}, ktorí, ako názov napovedá obstarávajú určité časti aplikácie. Metóda OnUpdate triedy ReportingManager je teda každú snímku volaná inou triedou, ktorá je vyššie v hierarchickej štruktúre projektu. Na najvyššom stupni hierarchie potom stojí trieda MainManager. Tá obsahuje metódu Update, ktorá je priamo volaná natívnym C++ kódom enginu Unity a táto metóda potom obsahuje volania metód OnUpdate jednotlivých \enquote{Managerov}, ktorí jej náležia.
 \vspace{10pt}
 \begin{lstlisting}[label=src:OnUpdate,caption={Metóda OnUpdate triedy ReportingManager}]
-public void OnUpdate()
-{
-    if (Keyboard.current.f11Key.wasPressedThisFrame)
-    {
-        if (Keyboard.current.leftShiftKey.isPressed)
-        {
+public void OnUpdate() {
+    if (Keyboard.current.f11Key.wasPressedThisFrame) {
+        if (Keyboard.current.leftShiftKey.isPressed) {
             screenSaved = false;
             StartCoroutine(StartCreateReport());
             return;
         }
     }
 
-    if (screenSaved)
-    {
+    if (screenSaved) {
         ZipAndSendToLinkManager();
         screenSaved = false;
     }
@@ -243,11 +237,9 @@ Následne sa logika aplikácie delí na dve vetvy. Prvá obstaráva vytvorenie l
 \vspace{10pt}
 \begin{lstlisting}[label=src:Report,caption={Vytváranie lokálneho a vzdialeného reportu}]
 // Local report
-if (HBTLink_Manager.sender_ServerIP == HBTLink_Manager.Instance.LocalIPAddress().ToString())
-{
+if (HBTLink_Manager.sender_ServerIP == HBTLink_Manager.Instance.LocalIPAddress().ToString()) {
     string exeFile = GameConfiguration.pathConfig.exeFile;
-    if (File.Exists(exeFile))
-    {
+    if (File.Exists(exeFile)) {
         var argFile = GameConfiguration.pathConfig.mantisArguments;
 
         if (File.Exists(argFile))
@@ -258,15 +250,12 @@ if (HBTLink_Manager.sender_ServerIP == HBTLink_Manager.Instance.LocalIPAddress()
     }
 }
 // Remote report
-else
-{
+else {
     float time = 0;
-    while (time <= maxWaitTime)
-    {
+    while (time <= maxWaitTime) {
         yield return new WaitForSeconds(.1f);
         time++;
-        if (File.Exists(screenFileName))
-        {
+        if (File.Exists(screenFileName)) {
             screenSaved = true;
             yield break;
         }
@@ -279,15 +268,12 @@ Odoslanie reportu na server z lokálneho PC pokračuje vytvorením tzv. \enquote
 Pokiaľ ide o odoslanie reportu zo vzdialeného PC ukázala sa ako problematická doba ukladania snímky obrazovky na disk. Kvôli tomuto problému musí aplikácia najskôr počkať na uloženie súboru a až následne vykonávať ďalšie inštrukcie. Toho som docielil jednoduchou slučkou, ktorá sa sama ukončí v prípade nájdenia požadovaného súboru alebo po pretečení určitého času. To slúži ako ochrana pred zacyklením. Na premennú \textit{screenSaved} zareaguje metóda OnUpdate z výpisu \ref{src:OnUpdate} a spustí metódu ZipAndSendToLinkManager. Tá pomocou knižnice DotNetZip \cite{DotNetZip} prevedie celú zložku s reportom na zip súbor so zachovaním hierarchickej štruktúry podzložiek a súborov. Následne ho prevedie na reťazec s kódovaním base64 a predá triede HBTLink\_Manager na odoslanie do vzdialeného PC. Táto metóda je znázornená vo výpise \ref{src:Zip}. Rreťazec je následne pomocou TCP protokolu odoslaný na IP adresu určenú v konfiguračnom súbore alebo vybratú z prednastavených možností vo vývojárskej konzole počas hrania. Na vzdialenom PC musí byť spustený nástroj HoboThor a \enquote{počúvať} na určenom porte. Dáta sú po prijatí uložené do dočasnej zložky poskytovanej operačným systémom a následne rozbalené. Cesta k tejto zložke je opäť zapísaná do \enquote{Mantis argumentu} a HoboThor je následne automaticky spustený znova. To vyústi k otvoreniu okna určeného na nahlasovanie chýb a načítaniu dát zo zložky s reportom.
 \vspace{20pt}
 \begin{lstlisting}[label=src:Zip,caption={Metóda ZipAndSendToLinkManager triedy ReportingManager}]
-private void ZipAndSendToLinkManager()
-{
+private void ZipAndSendToLinkManager() {
     string pathToZip = directoryReport.FullName + @"\report.zip";
 
-    using (ZipFile zip = new ZipFile())
-    {
+    using (ZipFile zip = new ZipFile()) {
         var files = Directory.EnumerateFiles(directoryReport.FullName, "*.*", SearchOption.AllDirectories);
-        foreach (string file in files)
-        {
+        foreach (string file in files) {
             if (file.Contains("Characters"))
                 zip.AddFile(file, @"\Saves\Characters");
             else if (file.Contains("Worlds"))
@@ -300,8 +286,7 @@ private void ZipAndSendToLinkManager()
         Debug.Log("Zipped to " + pathToZip);
     }
 
-    if (File.Exists(pathToZip))
-    {
+    if (File.Exists(pathToZip)) {
         string base64zip = System.Convert.ToBase64String(File.ReadAllBytes(pathToZip));
         HBTLink_Manager.Send_MantisReport(base64zip);
         File.Delete(pathToZip);
@@ -318,16 +303,14 @@ private static extern bool GetWindowRect(IntPtr hwnd, ref Rect rectangle);
 [DllImport("user32.dll")]
 private static extern IntPtr GetActiveWindow();
 
-private struct Rect
-{
+private struct Rect {
     public int Left { get; set; }
     public int Top { get; set; }
     public int Right { get; set; }
     public int Bottom { get; set; }
 }
 
-private static Rect GetUnityBounds()
-{
+private static Rect GetUnityBounds() {
     Rect unityWindowBounds = new Rect();
     float scale = Screen.dpi / 96;
 
@@ -372,24 +355,20 @@ Postupne bola pridaná podpora viacerých hrúbok a farieb čiar či tlačítko 
 Na kreslenie bolo využité vlastné riešenie založené na vykresľovaní čiary medzi dvoma bodmi. Tento postup je demonštrovaný vo výpise \ref{src:Paint}.
 \vspace{10pt}
 \begin{lstlisting}[label=src:Paint,caption={Implementácia kreslenia v prostredí Windows Forms}]
-private void pictureBoxBcg_MouseDown(object sender, MouseEventArgs e)
-{
+private void pictureBoxBcg_MouseDown(object sender, MouseEventArgs e) {
     moving = true;
     x = e.X;
     y = e.Y;
 }
-private void pictureBoxBcg_MouseMove(object sender, MouseEventArgs e)
-{
-    if (moving && x != -1 && y != -1)
-    {
+private void pictureBoxBcg_MouseMove(object sender, MouseEventArgs e) {
+    if (moving && x != -1 && y != -1) {
         g.DrawLine(pen, new Point(x, y), e.Location);
         x = e.X;
         y = e.Y;
         pictureBoxBcg.Invalidate();
     }
 }
-private void pictureBoxBcg_MouseUp(object sender, MouseEventArgs e)
-{
+private void pictureBoxBcg_MouseUp(object sender, MouseEventArgs e) {
     moving = false;
     x = -1;
     y = -1;
@@ -405,11 +384,9 @@ private void pictureBoxBcg_MouseUp(object sender, MouseEventArgs e)
 Ako sa ukázalo, Windows PowerShell v predvolenom nastavení pre český jazyk nepoužíval kódovanie UTF-8, čo zapríčinilo nesprávnu interpretáciu znakov s diakritikou. Bolo nutné v nastaveniach systému v sekcií región túto voľbu ručne zapnúť, nakoľko je stále vo fáze vývoja.
 \vspace{10pt}
 \begin{lstlisting}[label=src:Shell,caption={Metóda InvokePowershellScript triedy GitLogger}]
-private string[] InvokePowershellScript(string gitCmd)
-{
+private string[] InvokePowershellScript(string gitCmd) {
     string[] results;
-    using (PowerShell powershell = PowerShell.Create())
-    {
+    using (PowerShell powershell = PowerShell.Create()) {
         powershell.AddScript($"cd {projectDirectory}");
         powershell.AddScript(gitCmd);
 
@@ -426,8 +403,7 @@ Po vyskúšaní rôznych preddefinovaných variant príkazu \textit{git log} som
 private const char mainSplitter = '&';
 private string gitLog = "git log ";
 
-public GitLogger()
-{
+public GitLogger() {
     gitLog += string.Format("--pretty=format:\"%an%{0}%ad%{0}%s\"" +
         " --date=format:'%d.%m.%Y'", ((int)mainSplitter).ToHex());
 }

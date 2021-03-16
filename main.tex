@@ -234,7 +234,7 @@ public void OnUpdate()
 }
 \end{lstlisting}
 
-Kód vo výpise \ref{src:OnUpdate} teda každú snímku testuje, či bola stlačená klávesa F11 a to práve v tom danom snímku. Toto zabezpečí, že sa blok kódu tejto podmienky vykoná len raz, bez ohľadu na to, ako dlho užívateľ danú klávesu držal stlačenú. Ak je popri tom stlačená aj klávesa Shift, spustí sa tzv. \enquote{Coroutine}. V tomto prípade je ňou mnou definovaná metóda StartCreateReport. Výhoda korutiny spočíva v možnosti pozastaviť vykonávanie svojho kódu. Pozastavenie môže byť na programátorom definovanú dobu alebo do doby než nastane určitá udalosť. V tomto prípade bolo tou udalosťou kompletné vykreslenie aktuálneho snímku a to z dôvodu zachytenia tohto snímku ako obrázku.
+Kód vo výpise \ref{src:OnUpdate} teda každú snímku testuje, či bola stlačená klávesa F11 a to práve v tom danom snímku. Toto zabezpečí, že sa blok kódu tejto podFmienky vykoná len raz, bez ohľadu na to, ako dlho užívateľ danú klávesu držal stlačenú. Ak je popri tom stlačená aj klávesa Shift, spustí sa tzv. \enquote{Coroutine}. V tomto prípade je ňou mnou definovaná metóda StartCreateReport. Výhoda korutiny spočíva v možnosti pozastaviť vykonávanie svojho kódu. Pozastavenie môže byť na programátorom definovanú dobu alebo do doby než nastane určitá udalosť. V tomto prípade bolo tou udalosťou kompletné vykreslenie aktuálneho snímku a to z dôvodu zachytenia tohto snímku ako obrázku.
 
 Metóda StartCreateReport má za úlohu zozbierať rôzne dáta o aplikácií alebo systéme, na ktorom je spustená. Ide o dáta ako verzia aplikácie, pozícia a rotácia kamery v momente vyvolania akcie či posledný záznam v logovacom systéme. Tieto dáta sú následne spolu so spomínanou snímkou obrazovky a naposledy uloženým postupom hrou uložené na disk. Zložka, do ktorej sú súbory uložené závisí od toho, či je hra spustená z editoru Unity alebo samostatne. Takéto vetvenie kódu sa realizuje pomocou direktívy UNITY\_EDITOR, ktorá je spolu s ďalšími platformovo závislými direktívami definovaná samotným editorom. Jednoduchý príklad použitia takýchto direktív demonštruje výpis \ref{src:Pragma}. Nakoľko táto zložka obsahuje celú históriu reportov, jednotlivé reporty majú poradové čísla a každý ďalší dostane pridelené poradové číslo o jedna väčšie ako ten predchádzajúci.
 \vspace{10pt}
@@ -448,9 +448,9 @@ var matches = Regex.Matches(body, string.Format("({0}|{1})[^@]*", bugMarker, fea
 
 Pôvodný prípad použitia mal zahŕňať automatické otvorenie tohto súboru v predvolenom textovom editore a jeho ručné skopírovanie do programu Microsof Teams, ktorý sa používa na komunikáciu vo firme. Rozhodol som sa ale preskúmať možnosti automatizovaného odosielania správ v tejto službe a pokúsil sa implementovať lepšie riešenie.
 
-Služba Microsoft Teams podporuje automatizované posielanie správ okrem iných možností aj pomocou tzv. \enquote{Webhooks}. Tie sa dajú nakonfigurovať priamo v užívateľskom rozhraní služby a to buď pre konkrétny kanál alebo konverzáciu. \enquote{Webhook} vygeneruje jedinečnú URL adresu, na ktorú je možné posielať POST žiadosti, ktoré som už spínal v sekcií \ref{sec:QACode}. Dáta sú prenášané ako štruktúrovaný JSON reťazec. Okrem jednoduchých správ je možné posielať aj formátovaný text pomocou značkovacieho jazyka MarkDown prípadne tzv. karty. 
+Služba Microsoft Teams podporuje automatizované posielanie správ okrem iných možností aj pomocou tzv. \enquote{Webhooks}. Tie sa dajú nakonfigurovať priamo v užívateľskom rozhraní služby a to buď pre konkrétny kanál alebo konverzáciu. \enquote{Webhook} vygeneruje jedinečnú URL adresu, na ktorú je možné posielať POST žiadosti, ktoré som už spomínal v sekcií \ref{sec:QACode}. Dáta sú prenášané ako štruktúrovaný JSON reťazec. Okrem jednoduchých správ je možné posielať aj formátovaný text pomocou značkovacieho jazyka MarkDown, prípadne tzv. karty. 
 
-Pomocou nástroja Postman som vo formáte JSON vytvoril dva návrhy takejto karty a nechal kolegov rozhodnúť o tom, ktorý sa nakoniec použije. Vybratú kartu som si uložil do súboru na disk a následne podľa nej vytvoril triedu Message, ktorá svojou vnútornou štruktúrou kopíruje spomínaný JSON súbor. Následne som tento súbor prečítal a jeho obsah deserializoval na túto triedu. Do tela správy som vložil dáta získané z \textit{commitov} po syntaktickej analýze a použil metódu vo výpise \ref{src:Shell} na odoslanie správy. Tento postup demonštruje výpis \ref{src:Message}. 
+Pomocou nástroja Postman som vo formáte JSON vytvoril dva návrhy takejto karty a nechal kolegov rozhodnúť o tom, ktorý sa nakoniec použije. Zvolenú kartu som si uložil do súboru na disk a následne podľa nej vytvoril triedu Message, ktorá svojou vnútornou štruktúrou kopíruje spomínaný JSON súbor. Následne som tento súbor prečítal a jeho obsah deserializoval na túto triedu. Do tela správy som vložil dáta získané z \textit{commitov} po syntaktickej analýze a použil metódu vo výpise \ref{src:Shell} na odoslanie správy. Tento postup demonštruje výpis \ref{src:Message}. 
 \vspace{10pt}
 \begin{lstlisting}[label=src:Message,caption={Vytvorenie a odoslanie správy do služby Microsoft Teams}]
 Message message = Message.FromJson(File.ReadAllText(pathToJSON));
@@ -474,8 +474,15 @@ Metóda PrintListToJsonString do dát pridá značky jazyka MarkDown, čím sa e
 	\label{pic:Logger}
 \end{figure}
 
+Poslednou pridanou funkcionalitou bolo, aby sa táto karta neposielala pri každom zostavení hry na serveri ale iba vtedy, keď je to skutočne žiadúce. Aplikácia teda prečíta obsah súboru BuildSettings.asset a ak v ňom nájde reťazec ``sendPatchNotesToTeams: 1`` vykoná odoslanie. V opačnom prípade nie. Tento súbor je podrobne popísaný v sekcií \ref{sec:BuildServer}.
+
+Aplikácia bola nasadená ako externý spúštací súbor, ktorý je spustený službou Gitlab CI/CD bližšie popísanou v sekcií \ref{sec:GitLab}.
 \subsubsection{Automatizované zostavenie hry na serveri (Build Server)}
 \label{sec:BuildServer}
+\textbf{Časová náročnosť:} \\ Nasadenie: 6 dní.\\
+\textbf{Úvod do problému:} \\ Ako som spomenul v sekcií \\
+\textbf{Navrhované riešenia:} \\ Nakoľko bola \\
+\textbf{Realizácia:} \\ Pri preskúmavaní mož
 \subsection{Optimalizácia a prevod hry na ďalšie platformy}
 \label{sec:Port}
 \subsection{Ostatné projekty}

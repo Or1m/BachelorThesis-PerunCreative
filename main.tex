@@ -1,16 +1,21 @@
 % Nejprve uvedeme tridu dokumentu s volbami
-\documentclass[slovak,bachelorpractice,dept460,male,csharp,cpdeclaration]{diploma}
+\documentclass[slovak,bachelorpractice]{diploma}
 % Dalsi doplnujici baliky maker
 \usepackage[autostyle=true,czech=quotes]{csquotes} % korektni sazba uvozovek, podpora pro balik biblatex
 \usepackage[backend=biber, style=iso-numeric, alldates=iso]{biblatex} % bibliografie
 \usepackage{dcolumn} % sloupce tabulky s ciselnymi hodnotami
 \usepackage{subfig} % makra pro "podobrazky" a "podtabulky"
+\usepackage[csharp]{diplomalst}
 
 % Zadame pozadovane vstupy pro generovani titulnich stran.
 \ThesisAuthor{Miroslav Kačeriak}
-\SubmissionDate{\today}
 
-\Thanks{\textcolor{red}{Rád bych na tomto místě poděkoval všem, kteří mi s prací pomohli, pretože bez nich by tato práce nevznikla.}}
+\ThesisSupervisor{Ing. Pavel Dohnálek, Ph.D}
+
+\SubmissionYear{2021}
+
+% Pokud nechceme nikomu dekovat makro zapoznamkujeme.
+\Acknowledgement{Rád bych na tomto místě poděkoval všem, kteří mi s prací pomohli, protože bez nich by tato práce nevznikla.}
 
 
 % Zadame cestu a jmeno souboru ci nekolika souboru s digitalizovanou podobou zadani prace.
@@ -69,17 +74,17 @@
 \MakeTitlePages
 
 % A nasleduje text zaverecne prace.
-\section{Úvod}
+\chapter{Úvod}
 \label{sec:Introduction}
 V rámci mojej odbornej praxe som dostal možnosť nahliadnuť za oponu herného vývoja v českom nezávislom štúdiu Perun Creative. Nakoľko sa o hry a herný priemysel dlhodobo zaujímam, táto firma a jej tvorba mi bola vopred známa. Aj po prednáške jej dvoch spoluzakladateľov a zároveň programátorov, ktorá sa uskutočnila v priestoroch Vysokej školy báňskej, som bol stále prekvapený vysokou technologickou úrovňou ich prvého projektu. Firmu som chcel kontaktovať so žiadosťou o prácu nezávisle od odbornej praxe, no keď som sa dozvedel, že už niekoho práve na odbornú prax hľadajú, rozhodol som sa to využiť. Pracovnému pohovoru predchádzalo zaslanie programátorského portfólia zloženého zo školských ale aj vlastných prác. Samotný pohovor potom prebiehal online s oboma programátormi Bc. Jánom Polachom a Bc. Jirkou Vašicou, ktorí sa neskôr stali aj mojimi kolegami.
 
 Do firmy som nastúpil na konci životného cyklu projektu, takže som sa nemohol podieľať na vývoji základných herných mechaník. Naopak to znamenalo nutnosť dôkladne sa s celým projektom zoznámiť a pochopiť, ako jednotlivé veci fungujú. Počas praxe som sa podieľal na širokej škále väčších aj menších projektov z oblastí ako sú automatizácia a zefektívnenie vývojárskych či testerských postupov, nasadenie projektu, sieťová infraštruktúra a došlo aj na nejaké tie herné mechaniky. Pri riešení rôznych problémov mi okrem kolegov boli nápomocné aj rôzne teoretické znalosti nadobudnuté počas vysokoškolského štúdia.
 
 % Section 2
-\section{Popis firmy a pracovné zaradenie}
+\chapter{Popis firmy a pracovné zaradenie}
 \label{sec:Firm and me}
 % TODO: Overit info u Jirky
-\subsection{Popis firmy a vyvíjaného produktu}
+\section{Popis firmy a vyvíjaného produktu}
 \label{sec:Firm}
 Perun Creative s.r.o \cite{Perun} je české nezávislé herné štúdio, ktoré od roku 2015 vyvíja počítačovú hru Hobo: Tough Life \cite{Hobo}.
 
@@ -95,7 +100,7 @@ Hra samotná by sa dala charakterizovať ako RPG z mestského prostredia, kde sa
 	\label{pic:perunLogo}
 \end{figure}
 \vspace{-20pt}
-\subsection{Pracovné zaradenie}
+\section{Pracovné zaradenie}
 \label{sec:Me}
 Môj prínos štúdiu Perun Creative spočíval hlavne v automatizácií a zefektívnení jednotlivých interných postupov resp. vývoji pomocných nástrojov pre QA oddelenie či ostatných programátorov. Do tejto kategórie by som zaradil projekty ako automatizované zostavenie hry na serveri, zefektívnenie spôsobu nahlasovania jednotlivých problémov prípadne prepracovanie importovania objektov zo starej verzie projektu do novej. K zefektívneniu práce rozhodne prispelo aj vytvorenie systému klávesových skratiek v hernom engine Unity (bližšie popísanom v sekcií \ref{sec:Unity}), ladenie zostavenej verzie hry zo vzdialeného PC prípadne program na vytvorenie tzv. \mbox{\enquote{Release notes}}. Ten bol primárne určený pre testerov, ale do budúcna sa plánuje jeho využitie aj pri informovaní hráčov o novinkách v rámci hry.
 
@@ -103,10 +108,10 @@ Okrem vyššie uvedených projektov som pracoval na novom systéme líhania post
 % End of section 2
 
 % Section 3
-\section{Použité technológie}
+\chapter{Použité technológie}
 \label{sec:Tech}
 V nasledujúcej kapitole by som rád v krátkosti zhrnul najdôležitejšie technológie, s ktorými som sa v rámci odbornej praxe stretol. Niektoré som aktívne využíval počas celého obdobia praxe a ich osvojovanie teda prebiehalo organicky. Iné boli špecifické pre konkrétny projekt a danú technológiu som si musel naštudovať počas realizácie projektu. V niektorých prípadoch bolo nutné sa zoznámiť s viacerými technológiami, aby som bol schopný posúdiť ich výhody a nevýhody pri nasadení na konkrétny projekt a vybrať tú správnu. Informácie som poväčšine čerpal z dokumentácií k daným technológiám aj keď nie vždy bola ich úroveň dostatočná.
-\subsection{Unity Engine}
+\section{Unity Engine}
 \label{sec:Unity}
 Unity Engine \cite{Unity} je platforma pre tvorbu 2D a 3D interaktívneho obsahu renderovaného v reálnom čase. Najväčšie uplatnenie nachádza pri tvorbe malých až stredne veľkých hier, ale je čoraz častejšie využívaný aj v iných odvetviach ako napríklad automobilový či filmový priemysel. Je dostupný pre operačné systémy Windows, Linux a Mac OS. Distribuuje sa zdarma pre študentov alebo jednotlivcov do určitého finančného obratu a za ročný poplatok pre firmy, ktorého výška závisí od rôznych faktorov. Samotný engine je napísaný v jazyku C++ a umožňuje vývoj obsahu v jazyku C\# (bližšie popísanom v sekcií \ref{sec:CsharpDotNet}) pre širokú škálu platforiem, čo znázorňuje \mbox{obrázok \ref{pic:UnityPlatforms}}.
 
@@ -117,20 +122,20 @@ Unity Engine \cite{Unity} je platforma pre tvorbu 2D a 3D interaktívneho obsahu
 	\label{pic:UnityPlatforms}
 \end{figure}
 
-\subsection{Programovací jazyk C\# a architektúra .NET}
+\section{Programovací jazyk C\# a architektúra .NET}
 \label{sec:CsharpDotNet}
 C\# \cite{CSharpLang} je objektovo orientovaný, typovo bezpečný programovací jazyk umožňujúci vytvárať aplikácie v .NET ekosystéme. Syntax jazyka C\# vychádza z programovacích jazykov C a C++. Narozdiel od nich ale ponúka vyššiu úroveň abstrakcie. Tá sa prejavuje napríklad na úrovni správy pamäte, čo z jazyka C\# robí voľbu číslo jedna pre začínajúcich programátorov, ktorí by si chceli skúsiť herný vývoj na vlastnej koži.
 
 Architektúra .NET \cite{CSharpLang} potom ponúka okrem virtuálneho stroja CLR, ktorý vykonáva JIT kompiláciu IL kódu do strojových inštrukcií, aj sadu veľmi užitočných knižníc. Tieto knižnice sú organizované do menných priestorov a poskytujú širokú škálu metód vhodných napríklad na prácu so súbormi či sieťovou infraštruktúrou. Veľmi užitočné sú aj nástroje na syntaktickú analýzu XML prípadne platforma Windows Forms, ktorá sa v rámci mojej odbornej praxe vo firme Perun Creative ukázala byť vhodná hlavne na rýchlu tvorbu vývojárskych nástrojov. Kvôli limitáciám tejto technológie sa ale v budúcnosti plánuje prechod na systém WPF.
 %pridaj aj winforms
-\subsection{Verzovací systém Git}
+\section{Verzovací systém Git}
 \label{sec:Git}
 Git \cite{ProGit} je open source distribuovaný systém na správu verzií vyvinutý Linusom Thorvaldsom a komunitou okolo OS Linux v roku 2005. Umožňuje vrátiť celý projekt alebo vybrané časti do predchádzajúceho stavu, porovnávať zmeny v súboroch, prípadne efektívnu kolaboráciu viacerých vývojárov na spoločnom projekte. Každý člen tímu má k dispozícií kompletný repozitár vrátane histórie jednotlivých súborov, čo pridáva ďalšiu vrstvu ochrany proti výpadkom a poruchám hardvéru. Po každom spustení príkazu \textit{commit} sa uloží aktuálny stav projektu, ktorý je možné spätne dohľadať v prípade nejakého problému.
 
 S gitom je možné pracovať priamo z príkazového riadku ale pre väčšie projekty ako je aj hra Hobo: Tough Life je takýto prístup značne nepraktický a neefektívny. Existuje ale množstvo programov tretích strán, ktoré umožňujú pracovať s gitom z užívateľského rozhrania. Jedným takým je aj nástroj Sourcetree, s ktorým som v rámci mojej odbornej praxe pracoval.
 
 Nakoľko git samotný nie je dobre prispôsobený na správu verzií veľkých súborov, bolo nutné využívať aj jeho rozšírenie Git LFS. 
-\subsection{GitLab CI/CD}
+\section{GitLab CI/CD}
 \label{sec:GitLab}
 Gitlab CI/CD \cite{Cicd} je súčasť nástroja Gitlab a slúži na vývoj softvéru prostredníctvom kontinuálnych metód ako:
 \begin{itemize}
@@ -149,7 +154,7 @@ V rámci mojej odbornej praxe som sa stretol hlavne s metódou CI. Možnosti aut
 	\label{pic:Gitlab}
 \end{figure}
 
-\subsection{Epic Online Services}
+\section{Epic Online Services}
 \label{sec:Eos}
 Epic Online Services alebo EOS \cite{Epic} je skupina nástrojov od spoločnosti Epic Games, ktoré sa snažia zjednodušiť a zjednotiť niektoré aspekty herného vývoja naprieč platformami. Typicky sa zameriavajú na kooperatívnu či kompetetívnu zložku hry pre viacerých hráčov, zahŕňajú však aj služby ako nákup herných predmetov za reálne peniaze, zber hráčskych štatistik, prípadne získavanie herných úspechov. Za normálnych okolností je nutné tieto služby implementovať zvlášť takmer pre každú platformu, na ktorú bude hra vychádzať. EOS sú zdarma dostupné pre vývojárov a podporujú širokú škálu platforiem, čo znamená väčšiu slobodu z pohľadu hráča ale aj z pohľadu vývojára. Hráč môže ďalej ťažiť aj z online synchronizácie postupu hrou naprieč viacerými platformami, prípadne z prístupu k úspechom či priateľom z jedného centrálneho miesta. 
 
@@ -157,16 +162,16 @@ Nakoľko sa do budúcna počíta s vydaním hry Hobo: Tough Life na rôzne platf
 % End of section 3
 
 % Section 4
-\section{Zadané projekty a ich riešenia}
+\chapter{Zadané projekty a ich riešenia}
 \label{sec:Projects}
 V tejto kapitole by som rád podrobne prebral konkrétne projekty na ktorých som v rámci mojej odbornej praxe pracoval. Poradie v akom budú prezentované nutne neodzrkadľuje poradie ich vypracovania, ale budú usporiadané do logických celkov podľa typu projektu. 
 
 Čo sa časovej náročnosti týka, nie vždy je možné ju určiť presne nakoľko niektoré z projektov boli vyvíjané inkrementálne podľa spätnej väzby QA oddelenia alebo nových požiadaviek od ostatných programátorov.
 %U niektorych prebiehala tvorba inkrementalne a bola zavisla na spatnej vazbe bla bla.
 
-\subsection{Vývoj pomocných nástrojov pre QA oddelenie a programátorov}
+\section{Vývoj pomocných nástrojov pre QA oddelenie a programátorov}
 \label{sec:QACode}
-\subsubsection{Evidovanie chybových reportov (Mantis Report)}
+\subsection{Evidovanie chybových reportov (Mantis Report)}
 \label{sec:Report}
 \textbf{Časová náročnosť:} \\ Nasadenie: 8 dní, pridanie ďalšej funkcionality podľa požidaviek: spolu 7 dní.\\
 \textbf{Úvod do problému:} \\ Ako som spomenul v sekcií \ref{sec:GitLab} možnosti automatizovaného testovania hry tohto rozsahu sú na rozdiel od bežného softvéru značne obmedzené. Veľké štúdiá si vytvárajú vlastné nástroje založené na AI, nikdy sa to však úplne neobíde bez tvrdej práce ľudí z QA oddelenia ľudovo nazývaných aj ako testeri. Úlohou testera je teda hrať celú hru alebo jej určené časti, nájsť a následne ohlásiť nájdené chyby. 
@@ -402,7 +407,7 @@ private void pictureBoxBcg_MouseUp(object sender, MouseEventArgs e)
     y = -1;
 }
 \end{lstlisting}
-\subsubsection{Vytváranie \enquote{Release notes} pre QA oddelenie (GitLogger)}
+\subsection{Vytváranie \enquote{Release notes} pre QA oddelenie (GitLogger)}
 \label{sec:GitLogger}
 \textbf{Časová náročnosť:} \\ Nasadenie: 3 dni.\\
 \textbf{Úvod do problému:} \\ S blížiacim sa dátumom vydania hry sa zvyšuje aj frekvencia testovania a rýchlosť s akou pribúdajú opravy chýb. Medzi jednotlivými zostaveniami aplikácie býva nejaké časové obdobie - zvyčajne jeden týždeň. Toto obdobie je zakončené nahraním najnovšie zostavenej verzie hry na platformu Steam, kde ju môže QA oddelenie začať testovať. Informovanie testerov o najnovších zmenách a opravách môže byť pracné a náchylné na vynechanie niektorých dôležitých vecí. Mojou úlohou bolo tento proces pokiaľ možno čo najviac optimalizovať.\\
@@ -477,21 +482,21 @@ Metóda PrintListToJsonString do dát pridá značky jazyka MarkDown, čím sa e
 Poslednou pridanou funkcionalitou bolo, aby sa táto karta neposielala pri každom zostavení hry na serveri ale iba vtedy, keď je to skutočne žiadúce. Aplikácia teda prečíta obsah súboru BuildSettings.asset a ak v ňom nájde reťazec ``sendPatchNotesToTeams: 1`` vykoná odoslanie. V opačnom prípade nie. Tento súbor je podrobne popísaný v sekcií \ref{sec:BuildServer}.
 
 Aplikácia bola nasadená ako externý spúštací súbor, ktorý je spustený službou Gitlab CI/CD bližšie popísanou v sekcií \ref{sec:GitLab}.
-\subsubsection{Automatizované zostavenie hry na serveri (Build Server)}
+\subsection{Automatizované zostavenie hry na serveri (Build Server)}
 \label{sec:BuildServer}
 \textbf{Časová náročnosť:} \\ Nasadenie: 6 dní.\\
 \textbf{Úvod do problému:} \\ Ako som spomenul v sekcií \\
 \textbf{Navrhované riešenia:} \\ Nakoľko bola \\
 \textbf{Realizácia:} \\ Pri preskúmavaní mož
-\subsection{Optimalizácia a prevod hry na ďalšie platformy}
+\section{Optimalizácia a prevod hry na ďalšie platformy}
 \label{sec:Port}
-\subsection{Ostatné projekty}
+\section{Ostatné projekty}
 \label{sec:Others}
 asd
 % End of section 4
 
 % Section 5
-%\section{Postup riešenia zadaných projektov}
+%\chapter{Postup riešenia zadaných projektov}
 %\label{sec:Processes}
 %adasd
 % End of section 5

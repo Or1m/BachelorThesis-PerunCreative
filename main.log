@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.2.17)  16 MAR 2021 18:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.2.17)  16 MAR 2021 23:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1008,7 +1008,7 @@ File: lstlang1.sty 2020/03/24 1.8d listings language file
 ))
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 73
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 62
 .
 
 (d:/texlive/2020/texmf-dist/tex/latex/lm/t1lmr.fd
@@ -1022,24 +1022,24 @@ File: l3backend-pdftex.def 2021-02-06 L3 backend support: PDF output (pdfTeX)
 (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
  (d:/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count443
@@ -1110,7 +1110,7 @@ Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: rotating package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring ON on input line 73.
+Package hyperref Info: Link coloring ON on input line 62.
 (d:/texlive/2020/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 
@@ -1122,9 +1122,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count449
 )
-LaTeX Info: Redefining \ref on input line 73.
-LaTeX Info: Redefining \pageref on input line 73.
-LaTeX Info: Redefining \nameref on input line 73.
+LaTeX Info: Redefining \ref on input line 62.
+LaTeX Info: Redefining \pageref on input line 62.
+LaTeX Info: Redefining \nameref on input line 62.
 
 (./main.out) (./main.out)
 \@outlinefile=\write5
@@ -1189,51 +1189,51 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
 
 (./main.bbl)
-Package biblatex Info: Reference section=0 on input line 73.
-Package biblatex Info: Reference segment=0 on input line 73.
+Package biblatex Info: Reference section=0 on input line 62.
+Package biblatex Info: Reference segment=0 on input line 62.
 \c@lstlisting=\count450
-LaTeX Font Info:    Trying to load font information for T1+lmss on input line 7
-4.
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 6
+3.
  (d:/texlive/2020/texmf-dist/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 
 pdfTeX warning: pdflatex.exe (file ./Pictures/FEI_CZ.pdf): PDF inclusion: found
  PDF version <1.6>, but at most version <1.5> allowed
-<Pictures/FEI_CZ.pdf, id=90, 350.70023pt x 109.21pt>
+<Pictures/FEI_CZ.pdf, id=86, 350.70023pt x 109.21pt>
 File: Pictures/FEI_CZ.pdf Graphic file (type pdf)
 <use Pictures/FEI_CZ.pdf>
-Package pdftex.def Info: Pictures/FEI_CZ.pdf  used on input line 74.
+Package pdftex.def Info: Pictures/FEI_CZ.pdf  used on input line 63.
 (pdftex.def)             Requested size: 274.11765pt x 85.35826pt.
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 7
-4.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 6
+3.
 (d:/texlive/2020/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 7
-4.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 6
+3.
 
 (d:/texlive/2020/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-74.
+63.
 
 (d:/texlive/2020/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-74.
+63.
 
 (d:/texlive/2020/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 74.
+(Font)              <14.4> on input line 63.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 74.
+(Font)              <10> on input line 63.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 74.
+(Font)              <7> on input line 63.
  [1
 
 
@@ -1242,19 +1242,19 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 
 
- <./Pictures/FEI_CZ.pdf>]
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 74.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 74.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 74.
- [2
+ <./Pictures/FEI_CZ.pdf>] [2
 
 
 ] [3
 
-] (./main.toc)
+] (./main.toc
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.95> on input line 17.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 17.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 17.
+)
 \tf@toc=\write6
 \openout6 = `main.toc'.
 
@@ -1271,108 +1271,101 @@ LaTeX Font Info:    External font `lmex10' loaded for size
  [6
 
 
-] (./main.lot)
-\tf@lot=\write8
-\openout8 = `main.lot'.
-
- [7
-
-
 ]
 Kapitola 1.
-[8
+[7
 
 
 ]
 Kapitola 2.
-<Pictures/perunLogo.pdf, id=197, 9301.75125pt x 6976.0625pt>
+<Pictures/perunLogo.pdf, id=187, 9301.75125pt x 6976.0625pt>
 File: Pictures/perunLogo.pdf Graphic file (type pdf)
 <use Pictures/perunLogo.pdf>
-Package pdftex.def Info: Pictures/perunLogo.pdf  used on input line 97.
+Package pdftex.def Info: Pictures/perunLogo.pdf  used on input line 85.
 (pdftex.def)             Requested size: 236.01561pt x 176.91325pt.
 
 Underfull \vbox (badness 2285) has occurred while \output is active []
 
- [9
+ [8
 
- <./Pictures/PerunLogo.pdf>] [10]
+ <./Pictures/PerunLogo.pdf>] [9]
 Kapitola 3.
-<Pictures/platforms.png, id=212, 876.27374pt x 255.95625pt>
+<Pictures/platforms.png, id=202, 876.27374pt x 255.95625pt>
 File: Pictures/platforms.png Graphic file (type png)
 <use Pictures/platforms.png>
-Package pdftex.def Info: Pictures/platforms.png  used on input line 120.
+Package pdftex.def Info: Pictures/platforms.png  used on input line 108.
 (pdftex.def)             Requested size: 472.03123pt x 137.87842pt.
-[11
+[10
 
 ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [12 <./Pictures/platforms.png>]
+ [11 <./Pictures/platforms.png>]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
-42.
+30.
  (d:/texlive/2020/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-<Pictures/gitlab.png, id=233, 1003.75pt x 556.0775pt>
+<Pictures/gitlab.png, id=223, 1003.75pt x 556.0775pt>
 File: Pictures/gitlab.png Graphic file (type png)
 <use Pictures/gitlab.png>
-Package pdftex.def Info: Pictures/gitlab.png  used on input line 152.
+Package pdftex.def Info: Pictures/gitlab.png  used on input line 140.
 (pdftex.def)             Requested size: 472.03123pt x 261.50919pt.
 
-[13] [14 <./Pictures/gitlab.png>]
+[12] [13 <./Pictures/gitlab.png>]
 Kapitola 4.
-[15
+[14
 
 ]
-<Pictures/mantis.png, id=255, 444.91219pt x 471.26062pt>
+<Pictures/mantis.png, id=245, 444.91219pt x 471.26062pt>
 File: Pictures/mantis.png Graphic file (type png)
 <use Pictures/mantis.png>
-Package pdftex.def Info: Pictures/mantis.png  used on input line 186.
+Package pdftex.def Info: Pictures/mantis.png  used on input line 174.
 (pdftex.def)             Requested size: 330.42041pt x 349.9858pt.
 
-Overfull \hbox (23.02666pt too wide) in paragraph at lines 183--191
+Overfull \hbox (23.02666pt too wide) in paragraph at lines 171--179
 \T1/lmr/m/n/10.95 Pri pre-skú-ma-vaní moº-ností za-lo-ºe-ných na REST API som n
 a-ra-zil na open source pro-jekt []
  []
 
-[16 <./Pictures/mantis.png>]
+[15 <./Pictures/mantis.png>]
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 196.
+nput line 184.
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
-96.
+84.
  (d:/texlive/2020/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 Underfull \vbox (badness 1259) has occurred while \output is active []
 
- [17]
-[18] [19] [20]
+ [16]
+[17] [18] [19]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [21]
-[22]
-<Pictures/report.png, id=421, 554.07pt x 322.20375pt>
+ [20]
+[21]
+<Pictures/report.png, id=411, 554.07pt x 322.20375pt>
 File: Pictures/report.png Graphic file (type png)
 <use Pictures/report.png>
-Package pdftex.def Info: Pictures/report.png  used on input line 365.
+Package pdftex.def Info: Pictures/report.png  used on input line 353.
 (pdftex.def)             Requested size: 462.5886pt x 269.00722pt.
- [23 <./Pictures/report.png>]
-<Pictures/pictureEditBox.png, id=436, 1445.4pt x 811.53188pt>
+ [22 <./Pictures/report.png>]
+<Pictures/pictureEditBox.png, id=426, 1445.4pt x 811.53188pt>
 File: Pictures/pictureEditBox.png Graphic file (type png)
 <use Pictures/pictureEditBox.png>
-Package pdftex.def Info: Pictures/pictureEditBox.png  used on input line 379.
+Package pdftex.def Info: Pictures/pictureEditBox.png  used on input line 367.
 (pdftex.def)             Requested size: 472.03123pt x 265.02017pt.
- [24] [25 <./Pictures/pictureEditBox.png>]
+ [23] [24 <./Pictures/pictureEditBox.png>]
 Underfull \vbox (badness 1789) has occurred while \output is active []
 
- [26]
-[27]
-<Pictures/gitlogger.png, id=510, 688.07062pt x 368.87813pt>
+ [25]
+[26]
+<Pictures/gitlogger.png, id=500, 688.07062pt x 368.87813pt>
 File: Pictures/gitlogger.png Graphic file (type png)
 <use Pictures/gitlogger.png>
-Package pdftex.def Info: Pictures/gitlogger.png  used on input line 477.
+Package pdftex.def Info: Pictures/gitlogger.png  used on input line 465.
 (pdftex.def)             Requested size: 472.03123pt x 253.0571pt.
- [28] [29 <./Pictures/gitlogger.png>]
+ [27] [28 <./Pictures/gitlogger.png>]
 
 Package biblatex Warning: '\mainlang' is deprecated in favour of
 (biblatex)                '\textmainlang'.
@@ -1380,36 +1373,35 @@ Package biblatex Warning: '\mainlang' is deprecated in favour of
 (biblatex)                but note that the syntax is different.
 (biblatex)                Using the old, problematic definition.
 
-[30
+[29
 
 ] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 7F033547E34CCA038313A8CE43853526;4335.
+(rerunfilecheck)             Checksum: 2BDED8488AB51708E8774351C9E9DA37;4212.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 27112 strings out of 479302
- 438712 string characters out of 5871204
- 1251882 words of memory out of 5000000
- 43608 multiletter control sequences out of 15000+600000
- 468588 words of font info for 65 fonts, out of 8000000 for 9000
+ 27100 strings out of 479302
+ 438613 string characters out of 5871204
+ 1252700 words of memory out of 5000000
+ 43602 multiletter control sequences out of 15000+600000
+ 465596 words of font info for 64 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  103i,8n,131p,1598b,4778s stack positions out of 5000i,500n,10000p,200000b,80000s
 {d:/texlive/2020/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{d:/texlive/2020/tex
 mf-dist/fonts/enc/dvips/lm/lm-ts1.enc}<d:/texlive/2020/texmf-dist/fonts/type1/p
 ublic/lm/lmbx10.pfb><d:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmcsc10.p
 fb><d:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmr10.pfb><d:/texlive/2020
-/texmf-dist/fonts/type1/public/lm/lmr8.pfb><d:/texlive/2020/texmf-dist/fonts/ty
-pe1/public/lm/lmri10.pfb><d:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmss
-12.pfb><d:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmss17.pfb><d:/texlive
-/2020/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><d:/texlive/2020/texmf-dist
-/fonts/type1/public/lm/lmtt10.pfb><d:/texlive/2020/texmf-dist/fonts/type1/publi
-c/lm/lmtto10.pfb>
-Output written on main.pdf (30 pages, 2575026 bytes).
+/texmf-dist/fonts/type1/public/lm/lmri10.pfb><d:/texlive/2020/texmf-dist/fonts/
+type1/public/lm/lmss12.pfb><d:/texlive/2020/texmf-dist/fonts/type1/public/lm/lm
+ss17.pfb><d:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><d:/tex
+live/2020/texmf-dist/fonts/type1/public/lm/lmtt10.pfb><d:/texlive/2020/texmf-di
+st/fonts/type1/public/lm/lmtto10.pfb>
+Output written on main.pdf (29 pages, 2558130 bytes).
 PDF statistics:
- 657 PDF objects out of 1000 (max. 8388607)
- 257 named destinations out of 1000 (max. 500000)
- 221 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 643 PDF objects out of 1000 (max. 8388607)
+ 255 named destinations out of 1000 (max. 500000)
+ 213 words of extra memory for PDF output out of 10000 (max. 10000000)
 

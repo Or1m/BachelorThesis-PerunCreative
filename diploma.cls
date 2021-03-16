@@ -208,7 +208,7 @@
 \tableofcontents\clearpage
 \Dipl@WriteAcronymsPage
 \ifthenelse{\totvalue{Dipl@TotalFigures}>0}{\listoffigures\clearpage}{\relax}
-\ifthenelse{\totvalue{Dipl@TotalTables}>0}{\listoftables\clearpage}{\relax}
+%\ifthenelse{\totvalue{Dipl@TotalTables}>0}{\listoftables\clearpage}{\relax}
 }
 {\theorembodyfont{\itshape}\newtheorem{definition}{\Dipl@LanguageDependentText{Definice}{Definícia}{Definition}}}
 {\theorembodyfont{\itshape}\newtheorem{theorem}{\Dipl@LanguageDependentText{Věta}{Veta}{Theorem}}}

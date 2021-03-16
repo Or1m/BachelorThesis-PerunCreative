@@ -1,45 +1,35 @@
-% Nejprve uvedeme tridu dokumentu s volbami
-\documentclass[slovak,bachelorpractice]{diploma}
-% Dalsi doplnujici baliky maker
-\usepackage[autostyle=true,czech=quotes]{csquotes} % korektni sazba uvozovek, podpora pro balik biblatex
+\documentclass[slovak, bachelorpractice]{diploma}
+
+% Packages (balíky makier)
+\usepackage[autostyle=true, czech=quotes]{csquotes} % korektni sazba uvozovek, podpora pro balik biblatex
 \usepackage[backend=biber, style=iso-numeric, alldates=iso]{biblatex} % bibliografie
 \usepackage{dcolumn} % sloupce tabulky s ciselnymi hodnotami
 \usepackage{subfig} % makra pro "podobrazky" a "podtabulky"
 \usepackage[csharp]{diplomalst}
 
-% Zadame pozadovane vstupy pro generovani titulnich stran.
+% Novy druh tabulkoveho sloupce, ve kterem jsou cisla zarovnana podle desetinne carky
+\newcolumntype{d}[1]{D{,}{,}{#1}}
+
+% ------------------------------------------------------
+
+% Titulné strany
 \ThesisAuthor{Miroslav Kačeriak}
-
-\ThesisSupervisor{Ing. Pavel Dohnálek, Ph.D}
-
+\ThesisSupervisor{Ing. Pavel Dohnálek, Ph.D.}
 \SubmissionYear{2021}
 
-% Pokud nechceme nikomu dekovat makro zapoznamkujeme.
-\Acknowledgement{Rád bych na tomto místě poděkoval všem, kteří mi s prací pomohli, protože bez nich by tato práce nevznikla.}
+% Poďakovanie
+\Acknowledgement{Rád by som na tomto mieste poďakoval mojím dvom kolegom, a zároveň spoluzakladateľom herného štúdia Perun Creative, Bc. Jánovi Polachovi a Bc. Jirkovi Vašicovi za prejavenú dôveru, trpezlivosť a ochotu počas absolvovania odbornej praxe. Poďakovanie patrí aj mojej priateľke za podnetné rady a postrehy poskytnuté pri písaní tejto práce.}
 
+% Abstrakty
+\CzechAbstract{Cieľom tejto bakalárskej práce je popísať absolvovanie odbornej praxe v českom nezávislom hernom štúdiu Perun Creative. Prvá časť si kladie za cieľ charakterizovať štúdio ako také a uviesť základnú klasifikáciu vyvíjaného produktu, teda počítačovej hry Hobo: Tough Life. Následne by som chcel špecifikovať moje pracovné zaradenie v rámci štruktúry spoločnosti a uviesť najdôležitejšie technológie, s ktorými som mal možnosť pracovať. Hlavnú časť tejto práce tvorí popis realizácie konkrétnych projektov. Tie sa týkali najmä vývoja pomocných nástrojov, optimalizácie a prevodu hry na iné platformy, ale aj implementácie konkrétnych herných mechaník. Záver je potom venovaný celkovému zhodnoteniu absolvovanej odbornej praxe so zameraním na uplatnené a novonadobudnuté znalosti a zručnosti.}
 
-% Zadame cestu a jmeno souboru ci nekolika souboru s digitalizovanou podobou zadani prace.
-% Pokud toto makro zapoznamkujeme sazi se stranka s upozornenim.
-%\ThesisAssignmentImagePath{Figures/Assignment}
+\CzechKeywords{Unity engine; C\#; herný vývoj, automatizácia, optimalizácia, vývojárske nástroje}
 
-% Zadame soubor s digitalizovanou podobou prohlaseni autora zaverecne prace.
-% Pokud toto makro zapoznamkujeme sazi se cisty text prohlaseni.
-%\AuthorDeclarationImageFile{Figures/AuthorDeclaration.jpg}
+\EnglishAbstract{Main purpose of this bachelor thesis is to describe how my individual professional practise in czech indie game studio Perun Creative went. First part aims to characterize the studio as such and give a basic classification of the developed product, i.e. the computer game Hobo: Tough Life. Afterwards, I would like to specify my position within the company structure and mention the most important technologies that I had the opportunity to work with. The main part of this thesis is dealing with the implementation of specific projects. These were mainly focused on the creation of development tools, optimization and porting of the game to other platforms, but also the implementation of some game mechanics. The conclusion is then aimed to the overall evaluation of the completed individual professional practice with focus on applied and newly acquired knowledge and skills.}
 
+\EnglishKeywords{Unity engine; C\#; game development, automatisation, optimization, development tools}
 
-% Zadame soubor s digitalizovanou podobou souhlasu spolupracujici prav. nebo fyz. osoby.
-% Pokud toto makro zapoznamkujeme sazi se cisty text souhlasu.
-%\CooperatingPersonsDeclarationImageFile{Figures/CoopPersonDeclaration.jpg}
-
-
-\CzechAbstract{\textcolor{red}{Tohle je český abstrakt, zbytek odstavce je tvořen výplňovým textem. Naší si rozmachu potřebami s posílat v poskytnout ty má plot. Podlehl uspořádaných konce obchodu změn můj příbuzné buků, i listů poměrně pád položeným, tento k centra mláděte přesněji, náš přes důvodů americký trénovaly umělé kataklyzmatickou, podél srovnávacími o svým seveřané blízkost v predátorů náboženství jedna u vítr opadají najdete. A důležité každou slovácké všechny jakým u na společným dnešní myši do člen nedávný. Zjistí hází vymíráním výborná.}}
-
-\CzechKeywords{typografie; \LaTeX; diplomová práce}
-
-\EnglishAbstract{\textcolor{red}{This is English abstract. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Fusce tellus odio, dapibus id fermentum quis, suscipit id erat. Aenean placerat. Vivamus ac leo pretium faucibus. Duis risus. Fusce consectetuer risus a nunc. Duis ante orci, molestie vitae vehicula venenatis, tincidunt ac pede. Aliquam erat volutpat. Donec vitae arcu. Nullam lectus justo, vulputate eget mollis sed, tempor sed magna. Curabitur ligula sapien, pulvinar a vestibulum quis, facilisis vel sapien. Vestibulum fermentum tortor id mi. Etiam bibendum elit eget erat. Pellentesque pretium lectus id turpis. Nulla quis diam.}}
-
-\EnglishKeywords{typography; \LaTeX; master thesis}
-
+% Skratky
 \AddAcronym{QA}{Quality Assurance}
 \AddAcronym{PC}{Personal Computer}
 \AddAcronym{OS}{Operating System}
@@ -65,15 +55,13 @@
 \AddAcronym{HTTPS}{Hypertext Transfer Protocol Secure}
 \AddAcronym{URL}{Uniform Resource Locator}
 
+% Literatura
 \addbibresource{literature.bib}
 
-% Novy druh tabulkoveho sloupce, ve kterem jsou cisla zarovnana podle desetinne carky
-\newcolumntype{d}[1]{D{,}{,}{#1}}
-
+% Samotný dokument
 \begin{document}
 \MakeTitlePages
 
-% A nasleduje text zaverecne prace.
 \chapter{Úvod}
 \label{sec:Introduction}
 V rámci mojej odbornej praxe som dostal možnosť nahliadnuť za oponu herného vývoja v českom nezávislom štúdiu Perun Creative. Nakoľko sa o hry a herný priemysel dlhodobo zaujímam, táto firma a jej tvorba mi bola vopred známa. Aj po prednáške jej dvoch spoluzakladateľov a zároveň programátorov, ktorá sa uskutočnila v priestoroch Vysokej školy báňskej, som bol stále prekvapený vysokou technologickou úrovňou ich prvého projektu. Firmu som chcel kontaktovať so žiadosťou o prácu nezávisle od odbornej praxe, no keď som sa dozvedel, že už niekoho práve na odbornú prax hľadajú, rozhodol som sa to využiť. Pracovnému pohovoru predchádzalo zaslanie programátorského portfólia zloženého zo školských ale aj vlastných prác. Samotný pohovor potom prebiehal online s oboma programátormi Bc. Jánom Polachom a Bc. Jirkou Vašicou, ktorí sa neskôr stali aj mojimi kolegami.
@@ -196,10 +184,10 @@ Služba Mantis Bug Tracker po úspešnom pridaní nového reportu tento report v
 \begin{lstlisting}[label=src:SendIssue,caption={Metóda SendIssue triedy MantisClient}]
 public int SendIssue(Issue issue)
 {
-    string uri = this.GetUri(issuesUri);
-    int id = -1;
+	string uri = this.GetUri(issuesUri);
+	int id = -1;
 
-    restClient.ExecutePost(uri, () => JsonConvert.SerializeObject(issue),
+	restClient.ExecutePost(uri, () => JsonConvert.SerializeObject(issue),
         reader =>
         {
             string answerFromServer = reader.ReadToEnd();

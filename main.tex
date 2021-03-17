@@ -1,13 +1,13 @@
 \documentclass[slovak, bachelorpractice]{diploma}
 
 % Packages (balíky makier)
-\usepackage[autostyle=true, czech=quotes]{csquotes} % korektni sazba uvozovek, podpora pro balik biblatex
-\usepackage[backend=biber, style=iso-numeric, alldates=iso]{biblatex} % bibliografie
-\usepackage{dcolumn} % sloupce tabulky s ciselnymi hodnotami
-\usepackage{subfig} % makra pro "podobrazky" a "podtabulky"
-\usepackage[csharp]{diplomalst}
+\usepackage[autostyle=true, czech=quotes]{csquotes} % korektná sadzba úvozoviek, podpora pre balík biblatex
+\usepackage[backend=biber, style=iso-numeric, alldates=iso]{biblatex} % bibliografia
+\usepackage{dcolumn} % stĺpce tabuľky s číselnými hodnotami
+\usepackage{subfig} % makrá pre "podobrázky" a "podtabuľky"
+\usepackage[csharp]{diplomalst} % sádzanie zdrojákov
 
-% Novy druh tabulkoveho sloupce, ve kterem jsou cisla zarovnana podle desetinne carky
+% Novy druh tabuľkového stĺpca, v kterom sú čísla zarovnané podľa desetinnej čiarky
 \newcolumntype{d}[1]{D{,}{,}{#1}}
 
 % ------------------------------------------------------
@@ -55,13 +55,14 @@
 \AddAcronym{HTTPS}{Hypertext Transfer Protocol Secure}
 \AddAcronym{URL}{Uniform Resource Locator}
 
-% Literatura
+% Literatúra
 \addbibresource{literature.bib}
 
 % Samotný dokument
 \begin{document}
 \MakeTitlePages
 
+% Chapter 1
 \chapter{Úvod}
 \label{sec:Introduction}
 V rámci mojej odbornej praxe som dostal možnosť nahliadnuť za oponu herného vývoja v českom nezávislom štúdiu Perun Creative. Nakoľko sa o hry a herný priemysel dlhodobo zaujímam, táto firma a jej tvorba mi bola vopred známa. Aj po prednáške jej dvoch spoluzakladateľov a zároveň programátorov, ktorá sa uskutočnila v priestoroch Vysokej školy báňskej, som bol stále prekvapený vysokou technologickou úrovňou ich prvého projektu. Firmu som chcel kontaktovať so žiadosťou o prácu nezávisle od odbornej praxe, no keď som sa dozvedel, že už niekoho práve na odbornú prax hľadajú, rozhodol som sa to využiť. Pracovnému pohovoru predchádzalo zaslanie programátorského portfólia zloženého zo školských ale aj vlastných prác. Samotný pohovor potom prebiehal online s oboma programátormi Bc. Jánom Polachom a Bc. Jirkou Vašicou, ktorí sa neskôr stali aj mojimi kolegami.
@@ -69,7 +70,7 @@ V rámci mojej odbornej praxe som dostal možnosť nahliadnuť za oponu herného
 Do firmy som nastúpil na konci životného cyklu projektu, takže som sa nemohol podieľať na vývoji základných herných mechaník. Naopak to znamenalo nutnosť dôkladne sa s celým projektom zoznámiť a pochopiť, ako jednotlivé veci fungujú. Počas praxe som sa podieľal na širokej škále väčších aj menších projektov z oblastí ako sú automatizácia a zefektívnenie vývojárskych či testerských postupov, nasadenie projektu, sieťová infraštruktúra a došlo aj na nejaké tie herné mechaniky. Pri riešení rôznych problémov mi okrem kolegov boli nápomocné aj rôzne teoretické znalosti nadobudnuté počas vysokoškolského štúdia.
 
 % Section 2
-\chapter{Popis firmy a pracovné zaradenie}
+\chapter{Popis firmy a pracovného zaradenia}
 \label{sec:Firm and me}
 % TODO: Overit info u Jirky
 \section{Popis firmy a vyvíjaného produktu}
@@ -138,7 +139,7 @@ V rámci mojej odbornej praxe som sa stretol hlavne s metódou CI. Možnosti aut
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=1\textwidth]{Pictures/gitlab.png}
-	\caption{Princíp Gitab CI/CD \cite{Cicd}}
+	\caption{Princíp fungovania Gitab CI/CD \cite{Cicd}}
 	\label{pic:Gitlab}
 \end{figure}
 
@@ -348,7 +349,7 @@ Postupne bola pridaná podpora viacerých hrúbok a farieb čiar či tlačítko 
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=1\textwidth]{Pictures/pictureEditBox.png}
-	\caption{Okno úpravy obrázka}
+	\caption{Okno úpravy obrázka aplikácie Mantis Report}
 	\label{pic:Paint}
 \end{figure}
 
@@ -439,7 +440,7 @@ Metóda PrintListToJsonString do dát pridá značky jazyka MarkDown, čím sa e
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=1\textwidth]{Pictures/gitlogger.png}
-	\caption{Karta v programe Microsoft Teams}
+	\caption{Vytvorená karta v aplikácií Microsoft Teams}
 	\label{pic:Logger}
 \end{figure}
 

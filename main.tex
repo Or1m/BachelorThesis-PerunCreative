@@ -5,10 +5,37 @@
 \usepackage[backend=biber, style=iso-numeric, alldates=iso]{biblatex} % bibliografia
 \usepackage{dcolumn} % stĺpce tabuľky s číselnými hodnotami
 \usepackage{subfig} % makrá pre "podobrázky" a "podtabuľky"
-\usepackage[csharp]{diplomalst} % sádzanie zdrojákov
+\usepackage[csharp]{diplomalst} % sádzanie 
+\usepackage{color}
 
 % Novy druh tabuľkového stĺpca, v kterom sú čísla zarovnané podľa desetinnej čiarky
 \newcolumntype{d}[1]{D{,}{,}{#1}}
+
+\lstdefinelanguage{yml}{
+  morekeywords={variables, GIT_CLONE_PATH, GIT_CLEAN_FLAGS, unity-build, stage, only, script, tags},
+  alsoletter=-,
+}
+
+\makeatletter
+\lst@InstallKeywords k{methods}{methodstyle}\slshape{methodstyle}{}ld
+\lst@InstallKeywords k{classes}{classstyle}\slshape{classstyle}{}ld
+\lst@InstallKeywords k{properties}{propsstyle}\slshape{propsstyle}{}ld
+\makeatother
+
+\definecolor{methods}{rgb}{.45, .33, .12}
+\definecolor{classes}{rgb}{.12, .45, .16}
+\definecolor{words}{rgb}{.17, .57, .69}
+%\definecolor{props}{rgb}{0, 0, 0}
+
+\lstset{
+ moremethods={ExecutePost, GetUri, SendIssue, SerializeObject, ReadToEnd, Parse, OnUpdate, StartCreateReport, ZipAndSendToLinkManager, Log, StartCoroutine, LocalIPAddress, ToString, Exists, Delete, WriteAllText, OpenURL, WaitForSeconds, EnumerateFiles, Contains, AddFile, Save, ReadAllBytes, Send_MantisReport, ToBase64String, AcceptTcpClient, GetStream, Read, GetString, CreateReport, GetWindowRect, GetActiveWindow, GetUnityBounds, pictureBoxBcg_MouseDown, pictureBoxBcg_MouseUp, pictureBoxBcg_MouseMove, Invalidate, DrawLine, InvokePowershellScript, AddScript, Invoke, Select, ToArray, Create, Format, ToHex, Matches, FromJson, ReadAllText, PrintListToJsonString, ToJson},
+ methodstyle=\bfseries\color{methods},
+ moreclasses={Issue, JsonConvert, JObject, Keyboard, Debug, HBTLink_Manager, GameConfiguration, File, Application, ZipFile, Directory, SearchOption, Convert, TcpClient, NetworkStream, Encoding, Rect, Screen, IntPtr, MouseEventArgs, Point, PowerShell, GitLogger, Regex, Message, Content, Serialize},
+ classstyle = \bfseries\color{classes},
+ morekeywords={endif, var, yield},
+ %properties={isPressed, wasPressedThisFrame, current, f11Key, leftShiftKey, UNITY_EDITOR, sender_ServerIP, Instance, pathConfig, exeFile, mantisArguments, FullName, AllDirectories, System},
+ %propsstyle=\bfseries\color{props}
+}
 
 % ------------------------------------------------------
 
@@ -251,15 +278,15 @@ Pokiaľ ide o odoslanie reportu zo vzdialeného PC ukázala sa ako problematick�
 \begin{lstlisting}[label=src:Report,caption={Vytváranie lokálneho a vzdialeného reportu}]
 // Local report
 if (HBTLink_Manager.sender_ServerIP == HBTLink_Manager.Instance.LocalIPAddress().ToString()) {
-    string exeFile = GameConfiguration.pathConfig.exeFile;
-    if (File.Exists(exeFile)) {
+    string exefile = GameConfiguration.pathConfig.exeFile;
+    if (File.Exists(exefile)) {
         var argFile = GameConfiguration.pathConfig.mantisArguments;
 
         if (File.Exists(argFile))
             File.Delete(argFile);
 
         File.WriteAllText(argFile, directoryReport.FullName);
-        Application.OpenURL(exeFile);
+        Application.OpenURL(exefile);
     }
 }
 // Remote report
@@ -427,7 +454,7 @@ private void pictureBoxBcg_MouseUp(object sender, MouseEventArgs e) {
 \end{lstlisting}
 \subsection{Vytváranie \enquote{Patch notes} pre QA oddelenie (GitLogger)}
 \label{sec:GitLogger}
-\textbf{Časová náročnosť:} \\ Nasadenie: 3 dni.\\
+\textbf{Časová náročnosť:} \\ Nasadenie: 3 dni, následné úpravy: 1 deň.\\
 \textbf{Úvod do problému:} \\ S blížiacim sa dátumom vydania hry sa zvyšuje aj frekvencia testovania a rýchlosť s akou pribúdajú opravy chýb. Medzi jednotlivými zostaveniami aplikácie býva nejaké časové obdobie - zvyčajne jeden týždeň. Toto obdobie je zakončené nahraním najnovšie zostavenej verzie hry na platformu Steam, kde ju môže QA oddelenie začať testovať. Informovanie testerov o najnovších zmenách a opravách môže byť pracné a náchylné na vynechanie niektorých dôležitých vecí. Mojou úlohou bolo tento proces pokiaľ možno čo najviac optimalizovať.\\
 \textbf{Navrhované riešenia:} \\ Prvým navrhovaným riešením, ktoré sa už využívalo v niektorých vývojárskych nástrojoch bolo použitie knižnice, ktorá sa po zadaní správnych prihlasovacích údajov pripojí na Git server a prevedie prítomné \textit{commity} na štruktúru tried, s ktorou je potom možné ďalej pohodlne pracovať. Po preskúmaní tohto riešenia sa ukázalo, že jednotlivé knihovne nemajú vyriešenú podporu pripojenia na server pomocou protokolu SSH ale iba HTTPS, čo sa ukázalo ako veľký problém. Prišiel som teda s riešením, ktoré by si stiahlo \textit{commity} iba z lokálneho repozitára a to pomocou PowerShellu v OS Windows.  \\
 \textbf{Realizácia:} \\ Po založení testovacieho projektu na platforme .NET bolo mojím prvým krokom zistiť, ako programovo spustiť rôzne skripty a príkazy v programe Windows PowerShell či klasickom príkazovom riadku. Postupne som narazil na triedu \textit{PowerShell} určenú presne pre tento prípad použitia. Pomocou tejto triedy som si vytvoril metódu, ktorá vie spustiť ľubovoľný príkaz a vrátiť jeho výsledok ako pole reťazcov. Táto metóda je znázornená vo výpise \ref{src:Shell}. 
@@ -468,15 +495,15 @@ var matches = Regex.Matches(body, string.Format("({0}|{1})[^@]*", bugMarker, fea
 
 Pôvodný prípad použitia mal zahŕňať automatické otvorenie tohto súboru v predvolenom textovom editore a jeho ručné skopírovanie do programu Microsof Teams, ktorý sa používa na komunikáciu vo firme. Rozhodol som sa ale preskúmať možnosti automatizovaného odosielania správ v tejto službe a pokúsil sa implementovať lepšie riešenie.
 
-Služba Microsoft Teams podporuje automatizované posielanie správ okrem iného aj pomocou tzv. \enquote{Webhooks}. Tie sa dajú nakonfigurovať priamo v užívateľskom rozhraní služby a to buď pre konkrétny kanál alebo konverzáciu. \enquote{Webhook} vygeneruje jedinečnú URL adresu, na ktorú je možné posielať POST žiadosti, ktoré sú spomenuté aj v sekcií \ref{sec:QACode}. Telo takejto žiadosti sa potom v aplikácií Microsoft Teams zobrazí ako správa odoslaná \enquote{Webhookom}. Dáta sú prenášané ako štruktúrovaný JSON reťazec. Okrem jednoduchých správ je možné posielať aj formátovaný text pomocou značkovacieho jazyka MarkDown, prípadne tzv. karty. 
+Služba Microsoft Teams podporuje automatizované posielanie správ okrem iného aj pomocou tzv. \enquote{Webhooks}. Tie sa dajú nakonfigurovať priamo v užívateľskom rozhraní služby a to buď pre konkrétny kanál alebo konverzáciu. \enquote{Webhook} vygeneruje jedinečnú URL adresu, na ktorú je možné posielať POST žiadosti, ktoré sú spomenuté aj v sekcií \ref{sec:QACode}. Telo takejto žiadosti sa potom v aplikácií Microsoft Teams zobrazí ako správa odoslaná \enquote{Webhookom}. Dáta sú prenášané ako štruktúrovaný JSON reťazec. Okrem jednoduchých správ je možné posielať aj formátovaný text pomocou značkovacieho jazyka Markdown, prípadne tzv. karty. 
 
-Pomocou nástroja Postman som vo formáte JSON vytvoril dva návrhy takejto karty a nechal kolegov rozhodnúť o tom, ktorý sa nakoniec použije. Podľa zvoleného návrhu som následne implementoval triedu \textit{Message} tak, aby svojou vnútornou štruktúrou odpovedala štruktúre danej karty. 
+Pomocou nástroja Postman som vo formáte JSON vytvoril dva návrhy takejto karty a nechal kolegov rozhodnúť o tom, ktorý sa nakoniec použije. Podľa zvoleného návrhu som následne implementoval triedu \textit{Message} tak, aby svojou vnútornou štruktúrou odpovedala štruktúre danej karty a bolo možné ju použiť na serializáciu či deserializáciu. 
 
-Základnú kostru karty, ktorá sa počas vykonávania programu nebude meniť, som uložil do súboru. Pri každej novej POST žiadosti je tento súbor prečítaný a jeho obsah deserializovaný na novú inštanciu triedy \textit{Message}. Do tela správy sú vložené dáta získané z \textit{commitov} po syntaktickej analýze a následne je celá správa odoslaná do \enquote{WebHooku} metódu uvedenou vo výpise \ref{src:Shell}. Tento postup demonštruje výpis \ref{src:Message}. 
+Základnú kostru karty, ktorá sa počas vykonávania programu nebude meniť, som uložil do súboru. Pri každej novej POST žiadosti je tento súbor prečítaný a jeho obsah deserializovaný na novú inštanciu triedy \textit{Message}. Do tela správy sú vložené dáta získané z \textit{commitov} po syntaktickej analýze a následne je celá správa odoslaná do \enquote{Webhooku} metódu uvedenou vo výpise \ref{src:Shell}. Tento postup demonštruje výpis \ref{src:Message}. 
 \vspace{10pt}
-\begin{lstlisting}[label=src:Message,caption={Vytvorenie a odoslanie správy do služby Microsoft Teams}]
+\begin{lstlisting}[label=src:Message,caption={Vytvorenie a odoslanie správy do služby Microsoft Teams}, escapechar={|}]
 Message message = Message.FromJson(File.ReadAllText(pathToJSON));
-Content content = message.Attachments[0].Content;
+Content content = message.Attachments[0].|\color{words}Content|;
 
 content.Title = header;
 content.Sections[0].ActivityText = PrintListToJsonString(features);
@@ -487,7 +514,7 @@ string command = cmdBegin + Serialize.ToJson(message) + "' -Uri " + webHook;
 string result = InvokePowershellScript(command)[0];
 \end{lstlisting}
 
-Metóda \textit{PrintListToJsonString} použitá vo výpise  \ref{src:Message} pridá do dát značky jazyka MarkDown, čím sa ešte upraví finálny vzhľad. Zároveň pomocou regulárneho výrazu \mbox{``\#\\d+``} nahradí všetky výskyty číselných reťazcov začínajúcich znakom `\#` za klikateľný odkaz na stránku konkrétneho reportu v službe Mantis Bug Tracker. To je užitočné v prípadoch keď \textit{commit} priamo opravuje nejakú nahlásenú chybu. Vytvorená karta je znázornená na obrázku \ref{pic:Logger}.
+Metóda \textit{PrintListToJsonString} použitá vo výpise  \ref{src:Message} pridá do dát značky jazyka Markdown, čím sa ešte upraví finálny vzhľad. Zároveň pomocou regulárneho výrazu \mbox{``\#\\d+``} nahradí všetky výskyty číselných reťazcov začínajúcich znakom `\#` za klikateľný odkaz na stránku konkrétneho reportu v službe Mantis Bug Tracker. To je užitočné v prípadoch keď \textit{commit} priamo opravuje nejakú nahlásenú chybu. Vytvorená karta je znázornená na obrázku \ref{pic:Logger}.
 
 \begin{figure}[!htbp]
 	\centering
@@ -501,10 +528,28 @@ Poslednou pridanou funkcionalitou bolo, aby sa táto karta neposielala pri každ
 Aplikácia bola nasadená ako externý súbor, ktorý je spustený službou Gitlab CI/CD bližšie popísanou v sekcií \ref{sec:GitLab}.
 \subsection{Automatizované zostavenie hry na serveri (Build Server)}
 \label{sec:BuildServer}
-\textbf{Časová náročnosť:} \\ Nasadenie: 6 dní.\\
-\textbf{Úvod do problému:} \\ Ako som spomenul v sekcií \\
-\textbf{Navrhované riešenia:} \\ Nakoľko bola \\
-\textbf{Realizácia:} \\ Pri preskúmavaní mož
+\textbf{Časová náročnosť:} \\ Nasadenie: 6 dní, následné úpravy podľa požiadaviek: 2 dni.\\
+\textbf{Úvod do problému:} \\ Zostavenie projektu Hobo: Tough Life môže v závislosti od rôznych faktorov trvať aj viac ako hodinu čistého času. Počas tejto doby samozrejme nie je možné do projektu zasahovať, čo do značnej miery obmedzuje možnosť ďalej vyvíjať. Zostavenie navyše často končí neúspechom a je nutné po vykonaní opráv proces opakovať. Mojou úlohou bolo teda preskúmať rôzne možnosti ako toto zostavenie vykonať automaticky a bez zablokovania pracovnej stanice. \\
+\textbf{Navrhované riešenia:} \\ Prvou možnosťou, ktorá sa však hneď zavrhla bolo použitie riešenia priamo od firmy Unity Technologies a síce ich ponúkaného \enquote{Unity Cloud Buildu}. Táto možnost je dostupná za určitý poplatok závislý od veľkosti repozitára. Tá je v našom prípade značná, čo by toto riešenie predražilo a zároveň by nahrávanie repozitára mimo lokálnu sieť bolo časovo náročné. Po preskúmaní rôznych riešení použiteľných na lokálnom serveri sa finálny výber zúžil na služby Jenkins, TeamCity a Gitlab \mbox{CI/CD}. Voľba nakoniec padla na Gitlab CI/CD nakoľko na firemnom serveri je využívaná služba Gitlab a očakávala sa teda najlepšia kompatibilita spomedzi ponúkaných možností.\\
+\textbf{Realizácia:} \\ Kvôli už spomínanému rozsahu hry nie je vhodné testovať automatizované zostavenie priamo na nej, bolo teda nutné vytvoriť testovací projekt. Zostavenie tohto projektu na pracovnej stanici pomocou metódy \textit{BuildPipeline.BuildPlayer} prebehlo úspešne. Táto metóda prijíma niekoľko nastavení ako napríklad cieľová platforma, scény určené na zostavenie či cestu k zostavenému spustiteľnému súboru a následne sama toto zostavenie vykoná. Kľúčom bolo teda túto metódu spolu s nejakou ďalšou logikou zavolať v rámci reakcie na nejakú udalosť, ktorá nastane na serveri. Táto udalosť môže byť napríklad zlúčenie zmien v rôznych vetvách či nahranie najnovších zmien v kóde do určitej vetvy vo vzdialenom repozitári. Druhú spomínanú variantu sme sa rozhodli využiť a teda spustiť zostavenie po vykonaní príkazu \textit{push} do vetvy master, ktorá je hlavnou vetvou vo verzovacom systéme.
+
+Po úspešnom zostavení projektu na pracovnej stanici pomocou skriptu bolo teda ďalším krokom nasadenie na server. K nasadeniu bolo nutné vytvoriť konfiguračný súbor .gitlab-ci.yml, v ktorom sú uložené príkazy, ktoré majú byť vykonané ako reakcia na konkrétnu udalosť. Tieto príkazy sú organizované do etáp. Každá etapa sa potom stará o určitú sadu úloh, ktoré spolu súvisia. Príkladom by mohli byť etapy ako otestuj, zostav či nasaď. Na prvý pohľad je jasné, čo bude mať daná etapa na starosť. V našom prípade bola nutná iba jedna fáza, je ale možné, že do budúcna sa tento počet bude zvyšovať. Obsah súboru .gitlab-ci.yml, ktorý bol použitý v projekte je možné vidieť vo výpise \ref{src:YML}.
+
+\vspace{10pt}
+\begin{lstlisting}[language=yml,label=src:YML,caption={Obsah súboru .gitlab-ci.yml}]
+variables:
+  GIT_CLONE_PATH: $CI_BUILDS_DIR\
+  GIT_CLEAN_FLAGS: none
+
+unity-build: 
+  stage: build
+  only:
+    - master
+  script:
+    - C:\PerunCreative\Projekty\Hobo\Build\runBuild.bat
+  tags: 
+    - unity
+\end{lstlisting}
 \section{Optimalizácia a prevod hry na ďalšie platformy}
 \label{sec:Port}
 \section{Ostatné projekty}

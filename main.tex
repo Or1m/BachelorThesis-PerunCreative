@@ -16,6 +16,11 @@
   alsoletter=-,
 }
 
+\lstdefinestyle{Batch}{
+morekeywords={SET, @ECHO, ECHO, IF, EXIT, START, ELSE, GTR},
+deletekeywords={var}
+}
+
 \makeatletter
 \lst@InstallKeywords k{methods}{methodstyle}\slshape{methodstyle}{}ld
 \lst@InstallKeywords k{classes}{classstyle}\slshape{classstyle}{}ld
@@ -533,7 +538,7 @@ Aplikácia bola nasadená ako externý súbor, ktorý je spustený službou Gitl
 \textbf{Navrhované riešenia:} \\ Prvou možnosťou, ktorá sa však hneď zavrhla bolo použitie riešenia priamo od firmy Unity Technologies a síce ich ponúkaného \enquote{Unity Cloud Buildu}. Táto možnost je dostupná za určitý poplatok závislý od veľkosti repozitára. Tá je v našom prípade značná, čo by toto riešenie predražilo a zároveň by nahrávanie repozitára mimo lokálnu sieť bolo časovo náročné. Po preskúmaní rôznych riešení použiteľných na lokálnom serveri sa finálny výber zúžil na služby Jenkins, TeamCity a Gitlab \mbox{CI/CD}. Voľba nakoniec padla na Gitlab CI/CD nakoľko na firemnom serveri je využívaná služba Gitlab a očakávala sa teda najlepšia kompatibilita spomedzi ponúkaných možností.\\
 \textbf{Realizácia:} \\ Kvôli už spomínanému rozsahu hry nie je vhodné testovať automatizované zostavenie priamo na nej, bolo teda nutné vytvoriť testovací projekt. Zostavenie tohto projektu na pracovnej stanici pomocou metódy \textit{BuildPipeline.BuildPlayer} prebehlo úspešne. Táto metóda prijíma niekoľko nastavení ako napríklad cieľová platforma, scény určené na zostavenie či cestu k zostavenému spustiteľnému súboru a následne sama toto zostavenie vykoná. Kľúčom bolo teda túto metódu spolu s nejakou ďalšou logikou zavolať v rámci reakcie na nejakú udalosť, ktorá nastane na serveri. Táto udalosť môže byť napríklad zlúčenie zmien v rôznych vetvách či nahranie najnovších zmien v kóde do určitej vetvy vo vzdialenom repozitári. Druhú spomínanú variantu sme sa rozhodli využiť a teda spustiť zostavenie po vykonaní príkazu \textit{push} do vetvy master, ktorá je hlavnou vetvou vo verzovacom systéme.
 
-Po úspešnom zostavení projektu na pracovnej stanici pomocou skriptu bolo teda ďalším krokom nasadenie na server. K nasadeniu bolo nutné vytvoriť konfiguračný súbor .gitlab-ci.yml, v ktorom sú uložené príkazy, ktoré majú byť vykonané ako reakcia na konkrétnu udalosť. Tieto príkazy sú organizované do etáp. Každá etapa sa potom stará o určitú sadu úloh, ktoré spolu súvisia. Príkladom by mohli byť etapy ako otestuj, zostav či nasaď. Na prvý pohľad je jasné, čo bude mať daná etapa na starosť. V našom prípade bola nutná iba jedna fáza, je ale možné, že do budúcna sa tento počet bude zvyšovať. Obsah súboru .gitlab-ci.yml, ktorý bol použitý v projekte je možné vidieť vo výpise \ref{src:YML}.
+Po úspešnom zostavení projektu na pracovnej stanici pomocou skriptu bolo teda ďalším krokom nasadenie na server. K nasadeniu bolo nutné vytvoriť konfiguračný súbor .gitlab-ci.yml, v ktorom sú uložené príkazy, ktoré majú byť vykonané ako reakcia na konkrétnu udalosť. Tieto príkazy sú organizované do etáp. Každá etapa sa potom stará o určitú sadu úloh, ktoré spolu súvisia. Príkladom by mohli byť etapy ako otestuj, zostav či nasaď. Na prvý pohľad je jasné, čo bude mať daná etapa na starosť. V našom prípade bola nutná iba jedna etapa, je ale možné, že do budúcna sa tento počet bude zvyšovať. Obsah súboru .gitlab-ci.yml, ktorý bol použitý v projekte je možné vidieť vo výpise \ref{src:YML}. 
 
 \vspace{10pt}
 \begin{lstlisting}[language=yml,label=src:YML,caption={Obsah súboru .gitlab-ci.yml}]
@@ -549,6 +554,31 @@ unity-build:
     - C:\PerunCreative\Projekty\Hobo\Build\runBuild.bat
   tags: 
     - unity
+\end{lstlisting}
+
+asdasd
+
+\vspace{10pt}
+\begin{lstlisting}[style=Batch,label=src:batch,caption={Skript zabezpečujúci zostavenie hry na serveri}]
+@ECHO off
+SET project_path="C:\PerunCreative\Projekty\Hobo\HoboTL"
+SET path_to_log="C:\PerunCreative\Projekty\Hobo\Build\build.log"
+
+SET /p var=<%project_path%\ProjectSettings\ProjectVersion.txt
+SET version=%var:~17%
+ECHO Project version is: %version%
+
+C:\"Program Files"\Unity\Hub\Editor\%version%\Editor\Unity.exe -quit -batchmode -logfile %path_to_log% -projectPath %project_path% -executeMethod Dev.Build.BuildScript.Build
+
+IF %ERRORLEVEL% GTR 0 (
+	ECHO An error with errorlevel %ERRORLEVEL% occurs
+	ECHO Check logfile build.txt in project folder for more details
+) ELSE (
+	ECHO Build succeeded
+	START "" "GitLogger.exe"
+)
+
+EXIT %errorlevel%
 \end{lstlisting}
 \section{Optimalizácia a prevod hry na ďalšie platformy}
 \label{sec:Port}

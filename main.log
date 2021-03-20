@@ -1,41 +1,41 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.2.17)  17 MAR 2021 01:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.2.19)  20 MAR 2021 17:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **main.tex
 (./main.tex
 LaTeX2e <2020-10-01> patch level 4
-L3 programming layer <2021-02-06> (./diploma.cls
+L3 programming layer <2021-02-18> (./diploma.cls
 Document Class: diploma 2021/03/15 5.0 diploma LaTeX document class
-(d:/texlive/2020/texmf-dist/tex/latex/base/ifthen.sty
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-(d:/texlive/2020/texmf-dist/tex/latex/base/inputenc.sty
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2020/08/01 v1.3d Input encoding file
 \inpenc@prehook=\toks15
 \inpenc@posthook=\toks16
 )
-(d:/texlive/2020/texmf-dist/tex/latex/totcount/totcount.sty
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/totcount/totcount.sty
 Package: totcount 2011/01/25 v1.2 package for gettingthe total value of LaTeX c
 ounters
 
-(d:/texlive/2020/texmf-dist/tex/latex/graphics/keyval.sty
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks17
 ))
-(d:/texlive/2020/texmf-dist/tex/latex/assoccnt/assoccnt.sty
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/assoccnt/assoccnt.sty
 Package: assoccnt 2015/09/29 v0.8-- Associate counters stepping
 
 assoccnt.sty{} -- version v0.8
-(d:/texlive/2020/texmf-dist/tex/latex/xcolor/xcolor.sty
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 
-(d:/texlive/2020/texmf-dist/tex/latex/graphics-cfg/color.cfg
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
 
-(d:/texlive/2020/texmf-dist/tex/latex/graphics-def/pdftex.def
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
 )
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
@@ -48,29 +48,29 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 )
-(d:/texlive/2020/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count177
+\etb@tempcnta=\count179
 )
-(d:/texlive/2020/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/xkeyval/xkeyval.sty
 Package: xkeyval 2020/11/20 v2.8 package option processing (HA)
 
-(d:/texlive/2020/texmf-dist/tex/generic/xkeyval/xkeyval.tex
-(d:/texlive/2020/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+(d:/Programy/texlive/2020/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(d:/Programy/texlive/2020/texmf-dist/tex/generic/xkeyval/xkvutils.tex
 \XKV@toks=\toks18
 \XKV@tempa@toks=\toks19
 )
-\XKV@depth=\count178
+\XKV@depth=\count180
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
-(d:/texlive/2020/texmf-dist/tex/generic/xstring/xstring.sty
-(d:/texlive/2020/texmf-dist/tex/generic/xstring/xstring.tex
-\integerpart=\count179
-\decimalpart=\count180
+(d:/Programy/texlive/2020/texmf-dist/tex/generic/xstring/xstring.sty
+(d:/Programy/texlive/2020/texmf-dist/tex/generic/xstring/xstring.tex
+\integerpart=\count181
+\decimalpart=\count182
 )
 Package: xstring 2019/02/06 v1.83 String manipulations (CT)
 )
-\c@@@assoccnt@@internalcounter=\count181
+\c@@@assoccnt@@internalcounter=\count183
 )
 \Dipl@ThesisAuthor=\toks20
 \Dipl@ThesisSupervisor=\toks21
@@ -89,35 +89,35 @@ Package: xstring 2019/02/06 v1.83 String manipulations (CT)
 \Dipl@FacultyLogoFileName=\toks34
 \Dipl@CzechAbstractCaption=\toks35
 \Dipl@EnglishAbstractCaption=\toks36
-\c@Dipl@CurrentThesisType=\count182
-\c@Dipl@CurrentThesisLanguage=\count183
-\c@Dipl@TotalFigures=\count184
-\c@Dipl@TotalFigures@totc=\count185
-\c@Dipl@TotalTables=\count186
-\c@Dipl@TotalTables@totc=\count187
+\c@Dipl@CurrentThesisType=\count184
+\c@Dipl@CurrentThesisLanguage=\count185
+\c@Dipl@TotalFigures=\count186
+\c@Dipl@TotalFigures@totc=\count187
+\c@Dipl@TotalTables=\count188
+\c@Dipl@TotalTables@totc=\count189
 
-(d:/texlive/2020/texmf-dist/tex/latex/base/book.cls
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/base/book.cls
 Document Class: book 2020/04/10 v1.4m Standard LaTeX document class
-(d:/texlive/2020/texmf-dist/tex/latex/base/bk11.clo
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/base/bk11.clo
 File: bk11.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
 )
-\c@part=\count188
-\c@chapter=\count189
-\c@section=\count190
-\c@subsection=\count191
-\c@subsubsection=\count192
-\c@paragraph=\count193
-\c@subparagraph=\count194
-\c@figure=\count195
-\c@table=\count196
+\c@part=\count190
+\c@chapter=\count191
+\c@section=\count192
+\c@subsection=\count193
+\c@subsubsection=\count194
+\c@paragraph=\count195
+\c@subparagraph=\count196
+\c@figure=\count197
+\c@table=\count198
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
 \bibindent=\dimen138
 )
-(d:/texlive/2020/texmf-dist/tex/latex/base/fontenc.sty
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2020/08/10 v2.0s Standard LaTeX package
 )
-(d:/texlive/2020/texmf-dist/tex/latex/lm/lmodern.sty
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/lm/lmodern.sty
 Package: lmodern 2009/10/30 v1.6 Latin Modern Fonts
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
@@ -152,18 +152,18 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
 )
-(d:/texlive/2020/texmf-dist/tex/latex/geometry/geometry.sty
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
 
-(d:/texlive/2020/texmf-dist/tex/generic/iftex/ifvtex.sty
+(d:/Programy/texlive/2020/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 
-(d:/texlive/2020/texmf-dist/tex/generic/iftex/iftex.sty
+(d:/Programy/texlive/2020/texmf-dist/tex/generic/iftex/iftex.sty
 Package: iftex 2020/03/06 v1.0d TeX engine tests
 ))
-\Gm@cnth=\count197
-\Gm@cntv=\count198
-\c@Gm@tempcnt=\count199
+\Gm@cnth=\count199
+\Gm@cntv=\count266
+\c@Gm@tempcnt=\count267
 \Gm@bindingoffset=\dimen139
 \Gm@wd@mp=\dimen140
 \Gm@odd@mp=\dimen141
@@ -174,7 +174,7 @@ Package: iftex 2020/03/06 v1.0d TeX engine tests
 \Gm@layoutvoffset=\dimen146
 \Gm@dimlist=\toks37
 )
-(d:/texlive/2020/texmf-dist/tex/latex/booktabs/booktabs.sty
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \heavyrulewidth=\dimen147
 \lightrulewidth=\dimen148
@@ -186,24 +186,24 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \cmidrulesep=\dimen154
 \cmidrulekern=\dimen155
 \defaultaddspace=\dimen156
-\@cmidla=\count266
-\@cmidlb=\count267
+\@cmidla=\count268
+\@cmidlb=\count269
 \@aboverulesep=\dimen157
 \@belowrulesep=\dimen158
-\@thisruleclass=\count268
-\@lastruleclass=\count269
+\@thisruleclass=\count270
+\@lastruleclass=\count271
 \@thisrulewidth=\dimen159
 )
-(d:/texlive/2020/texmf-dist/tex/latex/graphics/graphicx.sty
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2020/09/09 v1.2b Enhanced LaTeX Graphics (DPC,SPQR)
 
-(d:/texlive/2020/texmf-dist/tex/latex/graphics/graphics.sty
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2020/08/30 v1.4c Standard LaTeX Graphics (DPC,SPQR)
 
-(d:/texlive/2020/texmf-dist/tex/latex/graphics/trig.sty
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-(d:/texlive/2020/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 105.
@@ -211,28 +211,28 @@ Package graphics Info: Driver file: pdftex.def on input line 105.
 \Gin@req@height=\dimen160
 \Gin@req@width=\dimen161
 )
-(d:/texlive/2020/texmf-dist/tex/latex/tools/longtable.sty
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/tools/longtable.sty
 Package: longtable 2020/01/07 v4.13 Multi-page Table package (DPC)
 \LTleft=\skip49
 \LTright=\skip50
 \LTpre=\skip51
 \LTpost=\skip52
-\LTchunksize=\count270
+\LTchunksize=\count272
 \LTcapwidth=\dimen162
 \LT@head=\box47
 \LT@firsthead=\box48
 \LT@foot=\box49
 \LT@lastfoot=\box50
-\LT@cols=\count271
-\LT@rows=\count272
-\c@LT@tables=\count273
-\c@LT@chunks=\count274
+\LT@cols=\count273
+\LT@rows=\count274
+\c@LT@tables=\count275
+\c@LT@chunks=\count276
 \LT@p@ftn=\toks38
 )
-(d:/texlive/2020/texmf-dist/tex/latex/caption/caption.sty
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2020/10/26 v3.5g Customizing captions (AR)
 
-(d:/texlive/2020/texmf-dist/tex/latex/caption/caption3.sty
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2020/10/21 v2.2e caption3 kernel (AR)
 \captionmargin=\dimen163
 \captionmargin@=\dimen164
@@ -243,35 +243,35 @@ Package: caption3 2020/10/21 v2.2e caption3 kernel (AR)
 \caption@hangindent=\dimen169
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count275
-\c@continuedfloat=\count276
+\c@caption@flags=\count277
+\c@continuedfloat=\count278
 Package caption Info: longtable package is loaded.
 
-(d:/texlive/2020/texmf-dist/tex/latex/caption/ltcaption.sty
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/caption/ltcaption.sty
 Package: ltcaption 2020/05/30 v1.4b longtable captions (AR)
 ))
-(d:/texlive/2020/texmf-dist/tex/latex/graphics/rotating.sty
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/graphics/rotating.sty
 Package: rotating 2016/08/11 v2.16d rotated objects in LaTeX
-\c@r@tfl@t=\count277
+\c@r@tfl@t=\count279
 \rotFPtop=\skip53
 \rotFPbot=\skip54
 \rot@float@box=\box51
 \rot@mess@toks=\toks39
 )
-(d:/texlive/2020/texmf-dist/tex/latex/setspace/setspace.sty
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2011/12/19 v6.7a set line spacing
 )
-(d:/texlive/2020/texmf-dist/tex/latex/tools/theorem.sty
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/tools/theorem.sty
 Package: theorem 2014/10/28 v2.2c Theorem extension package (FMi)
 \theorem@style=\toks40
 \theorem@bodyfont=\toks41
 \theorempreskipamount=\skip55
 \theorempostskipamount=\skip56
 
-(d:/texlive/2020/texmf-dist/tex/latex/tools/thp.sty
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/tools/thp.sty
 File: thp.sty 2014/10/28 v2.2c Theorem extension package (FMi)
 ))
-(d:/texlive/2020/texmf-dist/tex/latex/titlesec/titlesec.sty
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2019/10/16 v2.13 Sectioning titles
 \ttl@box=\box52
 \beforetitleunit=\skip57
@@ -283,32 +283,32 @@ Package: titlesec 2019/10/16 v2.13 Sectioning titles
 \titlewidthlast=\dimen173
 \titlewidthfirst=\dimen174
 )
-(d:/texlive/2020/texmf-dist/tex/latex/tocbibind/tocbibind.sty
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/tocbibind/tocbibind.sty
 Package: tocbibind 2010/10/13 v1.5k extra ToC listings
 Package tocbibind Info: The document has chapter divisions on input line 50.
 
 
 Package tocbibind Note: Using chapter style headings, unless overridden.
 
-) (d:/texlive/2020/texmf-dist/tex/latex/pdfx/pdfx.sty
+) (d:/Programy/texlive/2020/texmf-dist/tex/latex/pdfx/pdfx.sty
 Package: pdfx 2019/02/27 v1.6.3 PDF/X and PDF/A support (CVR/HTH/RRM/PS)
-\pdfx@minorversion=\count278
+\pdfx@minorversion=\count280
 
-(d:/texlive/2020/texmf-dist/tex/generic/iftex/ifpdf.sty
+(d:/Programy/texlive/2020/texmf-dist/tex/generic/iftex/ifpdf.sty
 Package: ifpdf 2019/10/25 v3.4 ifpdf legacy package. Use iftex instead.
 )
-(d:/texlive/2020/texmf-dist/tex/generic/iftex/ifxetex.sty
+(d:/Programy/texlive/2020/texmf-dist/tex/generic/iftex/ifxetex.sty
 Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
 )
-(d:/texlive/2020/texmf-dist/tex/latex/base/everyshi-ltx.sty
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/base/everyshi-ltx.sty
 Package: everyshi-ltx 2020/08/17 v1.0a Emulation of the original everyshi packa
 ge
 with kernel methods
 )
-(d:/texlive/2020/texmf-dist/tex/generic/iftex/ifluatex.sty
+(d:/Programy/texlive/2020/texmf-dist/tex/generic/iftex/ifluatex.sty
 Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
-){d:/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
-(d:/texlive/2020/texmf-dist/tex/latex/pdfx/l8u-penc.def
+){d:/Programy/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/pdfx/l8u-penc.def
 File: l8u-penc.def 2017/06/23 v0.8 Custom LaTeX file, for UTF8 encoded letters 
 and symbols
 LaTeX Info: Composite with undeclared \b in encoding L8U on input line 278.
@@ -316,64 +316,63 @@ LaTeX Info: Composite with undeclared \b in encoding L8U on input line 278.
 \pdfxsafeforxmp@toks=\toks43
 \pdfx@tmptoks=\toks44
 
-(d:/texlive/2020/texmf-dist/tex/latex/hyperref/hyperref.sty
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2021-02-10 v7.00j Hypertext links for LaTeX
 
-(d:/texlive/2020/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+(d:/Programy/texlive/2020/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
 Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
 )
-(d:/texlive/2020/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+(d:/Programy/texlive/2020/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
 Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
 )
 
-(d:/texlive/2020/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+(d:/Programy/texlive/2020/texmf-dist/tex/generic/infwarerr/infwarerr.sty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 )
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 )
-(d:/texlive/2020/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
+(d:/Programy/texlive/2020/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
 Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
 )
-(d:/texlive/2020/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+(d:/Programy/texlive/2020/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
-)
-(d:/texlive/2020/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+) (d:/Programy/texlive/2020/texmf-dist/tex/generic/pdfescape/pdfescape.sty
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
 )
-(d:/texlive/2020/texmf-dist/tex/latex/hycolor/hycolor.sty
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/hycolor/hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
 )
-(d:/texlive/2020/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
 Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
 )
-(d:/texlive/2020/texmf-dist/tex/latex/auxhook/auxhook.sty
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/auxhook/auxhook.sty
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 )
-(d:/texlive/2020/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
 )
 \@linkdim=\dimen175
-\Hy@linkcounter=\count279
-\Hy@pagecounter=\count280
+\Hy@linkcounter=\count281
+\Hy@pagecounter=\count282
 
-(d:/texlive/2020/texmf-dist/tex/latex/hyperref/pd1enc.def
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2021-02-10 v7.00j Hyperref: PDFDocEncoding definition (HO)
 )
-(d:/texlive/2020/texmf-dist/tex/latex/hyperref/hyperref-langpatches.def
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/hyperref/hyperref-langpatches.de
+f
 File: hyperref-langpatches.def 2021-02-10 v7.00j Hyperref: patches for babel la
 nguages
-)
-(d:/texlive/2020/texmf-dist/tex/generic/intcalc/intcalc.sty
+) (d:/Programy/texlive/2020/texmf-dist/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-(d:/texlive/2020/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+(d:/Programy/texlive/2020/texmf-dist/tex/generic/etexcmds/etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count281
+\Hy@SavedSpaceFactor=\count283
 
-(d:/texlive/2020/texmf-dist/tex/latex/hyperref/puenc.def
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2021-02-10 v7.00j Hyperref: PDF Unicode definition (HO)
 )
 Package hyperref Info: Option `pdfa' set `true' on input line 4073.
@@ -384,23 +383,23 @@ Package hyperref Info: Plain pages OFF on input line 4207.
 Package hyperref Info: Backreferencing OFF on input line 4212.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4445.
-\c@Hy@tempcnt=\count282
+\c@Hy@tempcnt=\count284
 
-(d:/texlive/2020/texmf-dist/tex/latex/url/url.sty
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip16
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4804.
 \XeTeXLinkMargin=\dimen176
 
-(d:/texlive/2020/texmf-dist/tex/generic/bitset/bitset.sty
+(d:/Programy/texlive/2020/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 
-(d:/texlive/2020/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+(d:/Programy/texlive/2020/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count283
+\Fld@menulength=\count285
 \Field@Width=\dimen177
 \Fld@charsize=\dimen178
 Package hyperref Info: Hyper figures OFF on input line 6075.
@@ -413,32 +412,34 @@ Package hyperref Info: PDF/A mode ON on input line 6103.
 LaTeX Info: Redefining \ref on input line 6145.
 LaTeX Info: Redefining \pageref on input line 6149.
 
-(d:/texlive/2020/texmf-dist/tex/latex/base/atbegshi-ltx.sty
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/base/atbegshi-ltx.sty
 Package: atbegshi-ltx 2020/08/17 v1.0a Emulation of the original atbegshi packa
 ge
 with kernel methods
 )
-\Hy@abspage=\count284
-\c@Item=\count285
-\c@Hfootnote=\count286
+\Hy@abspage=\count286
+\c@Item=\count287
+\c@Hfootnote=\count288
 )
 Package hyperref Info: Driver: hpdftex.
 
-(d:/texlive/2020/texmf-dist/tex/latex/hyperref/hpdftex.def
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2021-02-10 v7.00j Hyperref driver for pdfTeX
 
-(d:/texlive/2020/texmf-dist/tex/latex/base/atveryend-ltx.sty
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/base/atveryend-ltx.sty
 Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atvery packag
 e
 with kernel methods
 )
-\Fld@listcount=\count287
-\c@bookmark@seq@number=\count288
+\Fld@listcount=\count289
+\c@bookmark@seq@number=\count290
 
-(d:/texlive/2020/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.st
+y
 Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
 
-(d:/texlive/2020/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+(d:/Programy/texlive/2020/texmf-dist/tex/generic/uniquecounter/uniquecounter.st
+y
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
@@ -447,48 +448,47 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 \Hy@SectionHShift=\skip59
 )
 Package hyperref Info: Option `unicode' set `true' on input line 1463.
-
-(d:/texlive/2020/texmf-dist/tex/generic/stringenc/stringenc.sty
+ (d:/Programy/texlive/2020/texmf-dist/tex/generic/stringenc/stringenc.sty
 Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
 )
 )
 Package hyperref Info: Option `psdextra' set `true' on input line 1465.
 
-(d:/texlive/2020/texmf-dist/tex/latex/greek-fontenc/puenc-greek.def
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/greek-fontenc/puenc-greek.def
 File: puenc-greek.def 2020/10/18 2.0 Greek LICRs for PDF strings
 
-(d:/texlive/2020/texmf-dist/tex/latex/greek-fontenc/greek-fontenc.def
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/greek-fontenc/greek-fontenc.def
 File: greek-fontenc.def 2020/10/30 2.0 Common Greek font encoding definitions
-))
-(d:/texlive/2020/texmf-dist/tex/latex/hyperref/psdextra.def
+)) (d:/Programy/texlive/2020/texmf-dist/tex/latex/hyperref/psdextra.def
 File: psdextra.def 2021-02-10 v7.00j Hyperref: Additions to PDF string support
 )
-(d:/texlive/2020/texmf-dist/tex/generic/colorprofiles/colorprofiles.sty
+(d:/Programy/texlive/2020/texmf-dist/tex/generic/colorprofiles/colorprofiles.st
+y
 Package: colorprofiles 2018/11/01 v1.0.1 color profiles for PDF/X and PDF/A sup
 port
 
-(d:/texlive/2020/texmf-dist/tex/generic/colorprofiles/colorprofiles.tex))
-(d:/texlive/2020/texmf-dist/tex/generic/stringenc/se-pdfdoc.def
+(d:/Programy/texlive/2020/texmf-dist/tex/generic/colorprofiles/colorprofiles.te
+x)) (d:/Programy/texlive/2020/texmf-dist/tex/generic/stringenc/se-pdfdoc.def
 File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
 )
-(d:/texlive/2020/texmf-dist/tex/latex/pdfx/AdobeColorProfiles.tex)
-(d:/texlive/2020/texmf-dist/tex/latex/pdfx/8bit.def
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/pdfx/AdobeColorProfiles.tex)
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/pdfx/8bit.def
 File: 8bit.def 2008/03/30 v1.1d Input encoding file
 )
 ** pdfx: No file main.xmpdata . Metadata will be incomplete!
-<<sRGB.icc>> (d:/texlive/2020/texmf-dist/tex/latex/pdfx/8bit.def
+<<sRGB.icc>> (d:/Programy/texlive/2020/texmf-dist/tex/latex/pdfx/8bit.def
 File: 8bit.def 2008/03/30 v1.1d Input encoding file
 )
 Package hyperref Info: Option `unicode' set `true' on input line 2411.
 Package hyperref Info: Option `unicode' set `true' on input line 2412.
 
-(d:/texlive/2020/texmf-dist/tex/generic/pdftex/glyphtounicode.tex)
-(d:/texlive/2020/texmf-dist/tex/latex/pdfx/glyphtounicode-cmr.tex)
-(d:/texlive/2020/texmf-dist/tex/latex/pdfx/glyphtounicode-ntx.tex)
-(d:/texlive/2020/texmf-dist/tex/latex/xmpincl/xmpincl.sty
+(d:/Programy/texlive/2020/texmf-dist/tex/generic/pdftex/glyphtounicode.tex)
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/pdfx/glyphtounicode-cmr.tex)
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/pdfx/glyphtounicode-ntx.tex)
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/xmpincl/xmpincl.sty
 Package: xmpincl 2008/05/10 v2.2 Include XMP data in pdflatex
 )
-(d:/texlive/2020/texmf-dist/tex/latex/pdfx/8bit.def
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/pdfx/8bit.def
 File: 8bit.def 2008/03/30 v1.1d Input encoding file
 )
 Using XMP template file: pdfa.xmp
@@ -496,21 +496,20 @@ Using XMP template file: pdfa.xmp
 \xmpinclRead=\read2
 \openout3 = `pdfa.xmpi'.
 
-<<pdfa.xmpi>>) (d:/texlive/2020/texmf-dist/tex/generic/babel/babel.sty
+<<pdfa.xmpi>>) (d:/Programy/texlive/2020/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2021/01/26 3.53 The Babel package
-
-(d:/texlive/2020/texmf-dist/tex/generic/babel/babel.def
+(d:/Programy/texlive/2020/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2021/01/26 3.53 Babel common definitions
-\babel@savecnt=\count289
+\babel@savecnt=\count291
 \U@D=\dimen179
 \l@babelnohyphens=\language86
 
-(d:/texlive/2020/texmf-dist/tex/generic/babel/txtbabel.def)
+(d:/Programy/texlive/2020/texmf-dist/tex/generic/babel/txtbabel.def)
 \bbl@readstream=\read3
 )
-\bbl@dirlevel=\count290
+\bbl@dirlevel=\count292
 
-(d:/texlive/2020/texmf-dist/tex/generic/babel-english/english.ldf
+(d:/Programy/texlive/2020/texmf-dist/tex/generic/babel-english/english.ldf
 Language: english 2017/06/06 v3.3r English support from the babel system
 Package babel Info: \l@canadian = using hyphenrules for english
 (babel)             (\language0) on input line 102.
@@ -519,15 +518,15 @@ Package babel Info: \l@australian = using hyphenrules for ukenglish
 Package babel Info: \l@newzealand = using hyphenrules for ukenglish
 (babel)             (\language21) on input line 108.
 )
-(d:/texlive/2020/texmf-dist/tex/generic/babel-slovak/slovak.ldf
+(d:/Programy/texlive/2020/texmf-dist/tex/generic/babel-slovak/slovak.ldf
 Language: slovak 2008/07/06 v3.1a Slovak support from the babel system
 Package babel Info: Making ^ an active character on input line 123.
 Package babel Info: Making " an active character on input line 126.
 Package babel Info: Making ' an active character on input line 129.
-\cs@wordlen=\count291
+\cs@wordlen=\count293
 Package babel Info: Making - an active character on input line 294.
 )
-(d:/texlive/2020/texmf-dist/tex/generic/babel-slovak/slovak.ldf
+(d:/Programy/texlive/2020/texmf-dist/tex/generic/babel-slovak/slovak.ldf
 Language: slovak 2008/07/06 v3.1a Slovak support from the babel system
 ))
 *geometry* verbose mode - [ newgeometry ] result:
@@ -658,91 +657,91 @@ Language: slovak 2008/07/06 v3.1a Slovak support from the babel system
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\c@definition=\count292
-\c@theorem=\count293
-\c@remark=\count294
+\c@definition=\count294
+\c@theorem=\count295
+\c@remark=\count296
 
-(d:/texlive/2020/texmf-dist/tex/latex/tools/thb.sty
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/tools/thb.sty
 File: thb.sty 2014/10/28 v2.2c Theorem extension package (FMi)
 )
-\c@Dipl@examplebody=\count295
+\c@Dipl@examplebody=\count297
 Package hyperref Info: Option `unicode' set `true' on input line 369.
 Package hyperref Info: Option `colorlinks' set `true' on input line 369.
 )
-(d:/texlive/2020/texmf-dist/tex/latex/csquotes/csquotes.sty
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/csquotes/csquotes.sty
 Package: csquotes 2021-01-04 v5.2k context-sensitive quotations (JAW)
-\csq@reset=\count296
-\csq@gtype=\count297
-\csq@glevel=\count298
-\csq@qlevel=\count299
-\csq@maxlvl=\count300
-\csq@tshold=\count301
+\csq@reset=\count298
+\csq@gtype=\count299
+\csq@glevel=\count300
+\csq@qlevel=\count301
+\csq@maxlvl=\count302
+\csq@tshold=\count303
 \csq@ltx@everypar=\toks45
 
-(d:/texlive/2020/texmf-dist/tex/latex/csquotes/csquotes.def
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/csquotes/csquotes.def
 File: csquotes.def 2021-01-04 v5.2k csquotes generic definitions (JAW)
 )
 Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
 Package csquotes Info: ... configuration file loaded successfully.
 
-(d:/texlive/2020/texmf-dist/tex/latex/csquotes/csquotes.cfg
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/csquotes/csquotes.cfg
 File: csquotes.cfg 
 )
 Package csquotes Info: Enabling multilingual quotes.
 Package csquotes Info: Redefining alias 'czech' -> 'czech/quotes'.
 )
-(d:/texlive/2020/texmf-dist/tex/latex/biblatex/biblatex.sty
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/biblatex/biblatex.sty
 Package: biblatex 2020/12/31 v3.16 programmable bibliographies (PK/MW)
 
-(d:/texlive/2020/texmf-dist/tex/latex/logreq/logreq.sty
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/logreq/logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count302
+\lrq@indent=\count304
 
-(d:/texlive/2020/texmf-dist/tex/latex/logreq/logreq.def
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/logreq/logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 ))
-\c@tabx@nest=\count303
-\c@listtotal=\count304
-\c@listcount=\count305
-\c@liststart=\count306
-\c@liststop=\count307
-\c@citecount=\count308
-\c@citetotal=\count309
-\c@multicitecount=\count310
-\c@multicitetotal=\count311
-\c@instcount=\count312
-\c@maxnames=\count313
-\c@minnames=\count314
-\c@maxitems=\count315
-\c@minitems=\count316
-\c@citecounter=\count317
-\c@maxcitecounter=\count318
-\c@savedcitecounter=\count319
-\c@uniquelist=\count320
-\c@uniquename=\count321
-\c@refsection=\count322
-\c@refsegment=\count323
-\c@maxextratitle=\count324
-\c@maxextratitleyear=\count325
-\c@maxextraname=\count326
-\c@maxextradate=\count327
-\c@maxextraalpha=\count328
-\c@abbrvpenalty=\count329
-\c@highnamepenalty=\count330
-\c@lownamepenalty=\count331
-\c@maxparens=\count332
-\c@parenlevel=\count333
-\blx@tempcnta=\count334
-\blx@tempcntb=\count335
-\blx@tempcntc=\count336
-\blx@maxsection=\count337
-\blx@maxsegment@0=\count338
-\blx@notetype=\count339
-\blx@parenlevel@text=\count340
-\blx@parenlevel@foot=\count341
-\blx@sectionciteorder@0=\count342
-\blx@entrysetcounter=\count343
-\blx@biblioinstance=\count344
+\c@tabx@nest=\count305
+\c@listtotal=\count306
+\c@listcount=\count307
+\c@liststart=\count308
+\c@liststop=\count309
+\c@citecount=\count310
+\c@citetotal=\count311
+\c@multicitecount=\count312
+\c@multicitetotal=\count313
+\c@instcount=\count314
+\c@maxnames=\count315
+\c@minnames=\count316
+\c@maxitems=\count317
+\c@minitems=\count318
+\c@citecounter=\count319
+\c@maxcitecounter=\count320
+\c@savedcitecounter=\count321
+\c@uniquelist=\count322
+\c@uniquename=\count323
+\c@refsection=\count324
+\c@refsegment=\count325
+\c@maxextratitle=\count326
+\c@maxextratitleyear=\count327
+\c@maxextraname=\count328
+\c@maxextradate=\count329
+\c@maxextraalpha=\count330
+\c@abbrvpenalty=\count331
+\c@highnamepenalty=\count332
+\c@lownamepenalty=\count333
+\c@maxparens=\count334
+\c@parenlevel=\count335
+\blx@tempcnta=\count336
+\blx@tempcntb=\count337
+\blx@tempcntc=\count338
+\blx@maxsection=\count339
+\blx@maxsegment@0=\count340
+\blx@notetype=\count341
+\blx@parenlevel@text=\count342
+\blx@parenlevel@foot=\count343
+\blx@sectionciteorder@0=\count344
+\blx@entrysetcounter=\count345
+\blx@biblioinstance=\count346
 \labelnumberwidth=\skip60
 \labelalphawidth=\skip61
 \biblabelsep=\skip62
@@ -754,93 +753,93 @@ File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 \blx@bcfin=\read4
 \blx@bcfout=\write4
 \blx@langwohyphens=\language87
-\c@mincomprange=\count345
-\c@maxcomprange=\count346
-\c@mincompwidth=\count347
+\c@mincomprange=\count347
+\c@maxcomprange=\count348
+\c@mincompwidth=\count349
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
 
-(d:/texlive/2020/texmf-dist/tex/latex/biblatex/blx-dm.def
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/biblatex/blx-dm.def
 File: blx-dm.def 2020/12/31 v3.16 biblatex localization (PK/MW)
 )
 Package biblatex Info: Trying to load biblatex style data model...
 Package biblatex Info: ... file 'iso-numeric.dbx' found.
 
-(d:/texlive/2020/texmf-dist/tex/latex/biblatex-iso690/iso-numeric.dbx
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/biblatex-iso690/iso-numeric.dbx
 File: iso-numeric.dbx 2020/03/25 v0.4.0 ISO 690 biblatex data model extension
 )
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count348
-\c@savedafterword=\count349
-\c@annotator=\count350
-\c@savedannotator=\count351
-\c@author=\count352
-\c@savedauthor=\count353
-\c@bookauthor=\count354
-\c@savedbookauthor=\count355
-\c@commentator=\count356
-\c@savedcommentator=\count357
-\c@editor=\count358
-\c@savededitor=\count359
-\c@editora=\count360
-\c@savededitora=\count361
-\c@editorb=\count362
-\c@savededitorb=\count363
-\c@editorc=\count364
-\c@savededitorc=\count365
-\c@foreword=\count366
-\c@savedforeword=\count367
-\c@holder=\count368
-\c@savedholder=\count369
-\c@introduction=\count370
-\c@savedintroduction=\count371
-\c@namea=\count372
-\c@savednamea=\count373
-\c@nameb=\count374
-\c@savednameb=\count375
-\c@namec=\count376
-\c@savednamec=\count377
-\c@translator=\count378
-\c@savedtranslator=\count379
-\c@shortauthor=\count380
-\c@savedshortauthor=\count381
-\c@shorteditor=\count382
-\c@savedshorteditor=\count383
-\c@supervisor=\count384
-\c@savedsupervisor=\count385
-\c@labelname=\count386
-\c@savedlabelname=\count387
-\c@institution=\count388
-\c@savedinstitution=\count389
-\c@lista=\count390
-\c@savedlista=\count391
-\c@listb=\count392
-\c@savedlistb=\count393
-\c@listc=\count394
-\c@savedlistc=\count395
-\c@listd=\count396
-\c@savedlistd=\count397
-\c@liste=\count398
-\c@savedliste=\count399
-\c@listf=\count400
-\c@savedlistf=\count401
-\c@location=\count402
-\c@savedlocation=\count403
-\c@organization=\count404
-\c@savedorganization=\count405
-\c@origlocation=\count406
-\c@savedoriglocation=\count407
-\c@origpublisher=\count408
-\c@savedorigpublisher=\count409
-\c@publisher=\count410
-\c@savedpublisher=\count411
-\c@language=\count412
-\c@savedlanguage=\count413
-\c@origlanguage=\count414
-\c@savedoriglanguage=\count415
-\c@pageref=\count416
-\c@savedpageref=\count417
+\c@afterword=\count350
+\c@savedafterword=\count351
+\c@annotator=\count352
+\c@savedannotator=\count353
+\c@author=\count354
+\c@savedauthor=\count355
+\c@bookauthor=\count356
+\c@savedbookauthor=\count357
+\c@commentator=\count358
+\c@savedcommentator=\count359
+\c@editor=\count360
+\c@savededitor=\count361
+\c@editora=\count362
+\c@savededitora=\count363
+\c@editorb=\count364
+\c@savededitorb=\count365
+\c@editorc=\count366
+\c@savededitorc=\count367
+\c@foreword=\count368
+\c@savedforeword=\count369
+\c@holder=\count370
+\c@savedholder=\count371
+\c@introduction=\count372
+\c@savedintroduction=\count373
+\c@namea=\count374
+\c@savednamea=\count375
+\c@nameb=\count376
+\c@savednameb=\count377
+\c@namec=\count378
+\c@savednamec=\count379
+\c@translator=\count380
+\c@savedtranslator=\count381
+\c@shortauthor=\count382
+\c@savedshortauthor=\count383
+\c@shorteditor=\count384
+\c@savedshorteditor=\count385
+\c@supervisor=\count386
+\c@savedsupervisor=\count387
+\c@labelname=\count388
+\c@savedlabelname=\count389
+\c@institution=\count390
+\c@savedinstitution=\count391
+\c@lista=\count392
+\c@savedlista=\count393
+\c@listb=\count394
+\c@savedlistb=\count395
+\c@listc=\count396
+\c@savedlistc=\count397
+\c@listd=\count398
+\c@savedlistd=\count399
+\c@liste=\count400
+\c@savedliste=\count401
+\c@listf=\count402
+\c@savedlistf=\count403
+\c@location=\count404
+\c@savedlocation=\count405
+\c@organization=\count406
+\c@savedorganization=\count407
+\c@origlocation=\count408
+\c@savedoriglocation=\count409
+\c@origpublisher=\count410
+\c@savedorigpublisher=\count411
+\c@publisher=\count412
+\c@savedpublisher=\count413
+\c@language=\count414
+\c@savedlanguage=\count415
+\c@origlanguage=\count416
+\c@savedoriglanguage=\count417
+\c@pageref=\count418
+\c@savedpageref=\count419
 \shorthandwidth=\skip68
 \shortjournalwidth=\skip69
 \shortserieswidth=\skip70
@@ -857,38 +856,37 @@ Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
 \localshorteditorwidth=\skip81
 Package biblatex Info: Trying to load compatibility code...
 Package biblatex Info: ... file 'blx-compat.def' found.
-
-(d:/texlive/2020/texmf-dist/tex/latex/biblatex/blx-compat.def
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/biblatex/blx-compat.def
 File: blx-compat.def 2020/12/31 v3.16 biblatex compatibility (PK/MW)
 )
 Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
 
-(d:/texlive/2020/texmf-dist/tex/latex/biblatex/biblatex.def
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/biblatex/biblatex.def
 File: biblatex.def 2020/12/31 v3.16 biblatex compatibility (PK/MW)
-\c@textcitecount=\count418
-\c@textcitetotal=\count419
-\c@textcitemaxnames=\count420
-\c@biburlbigbreakpenalty=\count421
-\c@biburlbreakpenalty=\count422
-\c@biburlnumpenalty=\count423
-\c@biburlucpenalty=\count424
-\c@biburllcpenalty=\count425
+\c@textcitecount=\count420
+\c@textcitetotal=\count421
+\c@textcitemaxnames=\count422
+\c@biburlbigbreakpenalty=\count423
+\c@biburlbreakpenalty=\count424
+\c@biburlnumpenalty=\count425
+\c@biburlucpenalty=\count426
+\c@biburllcpenalty=\count427
 \biburlbigskip=\muskip17
 \biburlnumskip=\muskip18
 \biburlucskip=\muskip19
 \biburllcskip=\muskip20
-\c@smartand=\count426
+\c@smartand=\count428
 )
 Package biblatex Info: Trying to load bibliography style 'iso-numeric'...
 Package biblatex Info: ... file 'iso-numeric.bbx' found.
 
-(d:/texlive/2020/texmf-dist/tex/latex/biblatex-iso690/iso-numeric.bbx
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/biblatex-iso690/iso-numeric.bbx
 File: iso-numeric.bbx 2020/03/25 v0.4.0 ISO 690 biblatex bibliography style
 Package biblatex Info: Trying to load bibliography style 'iso'...
 Package biblatex Info: ... file 'iso.bbx' found.
 
-(d:/texlive/2020/texmf-dist/tex/latex/biblatex-iso690/iso.bbx
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/biblatex-iso690/iso.bbx
 File: iso.bbx 2020/03/25 v0.4.0 ISO 690 biblatex bibliography style
 Package biblatex-iso690 Info: Space colon enabled: false.
 Package biblatex-iso690 Info: Total pages enabled: false.
@@ -911,12 +909,12 @@ d, overwriting.
 Package biblatex Info: Trying to load citation style 'iso-numeric'...
 Package biblatex Info: ... file 'iso-numeric.cbx' found.
 
-(d:/texlive/2020/texmf-dist/tex/latex/biblatex-iso690/iso-numeric.cbx
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/biblatex-iso690/iso-numeric.cbx
 File: iso-numeric.cbx 2020/03/25 v0.4.0 ISO 690 biblatex citation style
 Package biblatex Info: Trying to load citation style 'numeric'...
 Package biblatex Info: ... file 'numeric.cbx' found.
 
-(d:/texlive/2020/texmf-dist/tex/latex/biblatex/cbx/numeric.cbx
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/biblatex/cbx/numeric.cbx
 File: numeric.cbx 2020/12/31 v3.16 biblatex citation style (PK/MW)
 Package biblatex Info: Redefining '\cite'.
 Package biblatex Info: Redefining '\parencite'.
@@ -933,7 +931,7 @@ Package biblatex Info: Redefining '\smartcites'.
 Package biblatex Info: Trying to load citation style 'iso-fullcite'...
 Package biblatex Info: ... file 'iso-fullcite.cbx' found.
 
-(d:/texlive/2020/texmf-dist/tex/latex/biblatex-iso690/iso-fullcite.cbx
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/biblatex-iso690/iso-fullcite.cbx
 File: iso-fullcite.cbx 2020/03/25 v0.4.0 ISO 690 biblatex fullcite modification
 s
 Package biblatex Info: Redefining '\fullcite'.
@@ -943,14 +941,13 @@ Package biblatex Info: Redefining '\parencite'.
 )
 Package biblatex Info: Trying to load configuration file...
 Package biblatex Info: ... file 'biblatex.cfg' found.
-
-(d:/texlive/2020/texmf-dist/tex/latex/biblatex/biblatex.cfg
+ (d:/Programy/texlive/2020/texmf-dist/tex/latex/biblatex/biblatex.cfg
 File: biblatex.cfg 
 ))
-(d:/texlive/2020/texmf-dist/tex/latex/tools/dcolumn.sty
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/tools/dcolumn.sty
 Package: dcolumn 2014/10/28 v1.06 decimal alignment package (DPC)
 
-(d:/texlive/2020/texmf-dist/tex/latex/tools/array.sty
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/tools/array.sty
 Package: array 2020/10/01 v2.5c Tabular extension package (FMi)
 \col@sep=\dimen180
 \ar@mcellbox=\box53
@@ -960,103 +957,104 @@ Package: array 2020/10/01 v2.5c Tabular extension package (FMi)
 \backup@length=\skip83
 \ar@cellbox=\box54
 ))
-(d:/texlive/2020/texmf-dist/tex/latex/subfig/subfig.sty
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/subfig/subfig.sty
 Package: subfig 2005/06/28 ver: 1.3 subfig package
-\c@KVtest=\count427
+\c@KVtest=\count429
 \sf@farskip=\skip84
 \sf@captopadj=\dimen182
 \sf@capskip=\skip85
 \sf@nearskip=\skip86
-\c@subfigure=\count428
-\c@subfigure@save=\count429
-\c@lofdepth=\count430
-\c@subtable=\count431
-\c@subtable@save=\count432
-\c@lotdepth=\count433
+\c@subfigure=\count430
+\c@subfigure@save=\count431
+\c@lofdepth=\count432
+\c@subtable=\count433
+\c@subtable@save=\count434
+\c@lotdepth=\count435
 \sf@top=\skip87
 \sf@bottom=\skip88
-) (./diplomalst.sty
+)
+(./diplomalst.sty
 Package: diplomalst 2021/03/06 1.0 diplomalst package
 
-(d:/texlive/2020/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count434
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count436
 \lst@gtempboxa=\box55
 \lst@token=\toks47
-\lst@length=\count435
+\lst@length=\count437
 \lst@currlwidth=\dimen183
-\lst@column=\count436
-\lst@pos=\count437
+\lst@column=\count438
+\lst@pos=\count439
 \lst@lostspace=\dimen184
 \lst@width=\dimen185
-\lst@newlines=\count438
-\lst@lineno=\count439
+\lst@newlines=\count440
+\lst@lineno=\count441
 \lst@maxwidth=\dimen186
 
-(d:/texlive/2020/texmf-dist/tex/latex/listings/lstmisc.sty
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
-\c@lstnumber=\count440
-\lst@skipnumbers=\count441
+\c@lstnumber=\count442
+\lst@skipnumbers=\count443
 \lst@framebox=\box56
 )
-(d:/texlive/2020/texmf-dist/tex/latex/listings/listings.cfg
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2020/03/24 1.8d listings configuration
 ))
 Package: listings 2020/03/24 1.8d (Carsten Heinz)
 
-(d:/texlive/2020/texmf-dist/tex/latex/listings/lstlang1.sty
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 ))
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 62
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 64
 .
 
-(d:/texlive/2020/texmf-dist/tex/latex/lm/t1lmr.fd
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-(d:/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
-File: l3backend-pdftex.def 2021-02-06 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count442
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2021-02-18 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count444
 \l__pdf_internal_box=\box57
 )
 (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
- (d:/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+
+(d:/Programy/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count443
+\scratchcounter=\count445
 \scratchdimen=\dimen187
 \scratchbox=\box58
-\nofMPsegments=\count444
-\nofMParguments=\count445
+\nofMPsegments=\count446
+\nofMParguments=\count447
 \everyMPshowfont=\toks48
-\MPscratchCnt=\count446
+\MPscratchCnt=\count448
 \MPscratchDim=\dimen188
-\MPnumerator=\count447
-\makeMPintoPDFobject=\count448
+\MPnumerator=\count449
+\makeMPintoPDFobject=\count450
 \everyMPtoPDFconversion=\toks49
-) (d:/texlive/2020/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+) (d:/Programy/texlive/2020/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
-
-(d:/texlive/2020/texmf-dist/tex/latex/grfext/grfext.sty
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/grfext/grfext.sty
 Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
 )
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -1066,7 +1064,7 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 504.
 
-(d:/texlive/2020/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
@@ -1110,58 +1108,58 @@ Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: rotating package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring ON on input line 62.
-(d:/texlive/2020/texmf-dist/tex/latex/hyperref/nameref.sty
+Package hyperref Info: Link coloring ON on input line 64.
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 
-(d:/texlive/2020/texmf-dist/tex/latex/refcount/refcount.sty
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/refcount/refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 )
-(d:/texlive/2020/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+(d:/Programy/texlive/2020/texmf-dist/tex/generic/gettitlestring/gettitlestring.
+sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count449
+\c@section@level=\count451
 )
-LaTeX Info: Redefining \ref on input line 62.
-LaTeX Info: Redefining \pageref on input line 62.
-LaTeX Info: Redefining \nameref on input line 62.
-
-(./main.out) (./main.out)
+LaTeX Info: Redefining \ref on input line 64.
+LaTeX Info: Redefining \pageref on input line 64.
+LaTeX Info: Redefining \nameref on input line 64.
+ (./main.out) (./main.out)
 \@outlinefile=\write5
 \openout5 = `main.out'.
 
 Package biblatex Info: Trying to load language 'slovak' -> 'slovak-iso'...
 Package biblatex Info: ... file 'slovak-iso.lbx' found.
 
-(d:/texlive/2020/texmf-dist/tex/latex/biblatex-iso690/slovak-iso.lbx
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/biblatex-iso690/slovak-iso.lbx
 File: slovak-iso.lbx 2020/03/25 v0.4.0 ISO 690 extended biblatex localization
 Package biblatex Info: Trying to load language 'slovak'...
 Package biblatex Info: ... file 'slovak.lbx' found.
 
-(d:/texlive/2020/texmf-dist/tex/latex/biblatex/lbx/slovak.lbx
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/biblatex/lbx/slovak.lbx
 File: slovak.lbx 2020/12/31 v3.16 biblatex localization (PK/MW)
 )
 Package biblatex Info: Trying to load language 'slovak'...
 Package biblatex Info: ... file 'slovak.lbx' found.
 
-(d:/texlive/2020/texmf-dist/tex/latex/biblatex/lbx/slovak.lbx
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/biblatex/lbx/slovak.lbx
 File: slovak.lbx 2020/12/31 v3.16 biblatex localization (PK/MW)
 ))
 Package biblatex Info: Trying to load language 'english' -> 'english-iso'...
 Package biblatex Info: ... file 'english-iso.lbx' found.
 
-(d:/texlive/2020/texmf-dist/tex/latex/biblatex-iso690/english-iso.lbx
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/biblatex-iso690/english-iso.lbx
 File: english-iso.lbx 2020/03/25 v0.4.0 ISO 690 extended biblatex localization
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
 
-(d:/texlive/2020/texmf-dist/tex/latex/biblatex/lbx/english.lbx
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/biblatex/lbx/english.lbx
 File: english.lbx 2020/12/31 v3.16 biblatex localization (PK/MW)
 )
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
 
-(d:/texlive/2020/texmf-dist/tex/latex/biblatex/lbx/english.lbx
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/biblatex/lbx/english.lbx
 File: english.lbx 2020/12/31 v3.16 biblatex localization (PK/MW)
 ))
 Package biblatex Info: Input encoding 'utf8' detected.
@@ -1169,32 +1167,34 @@ Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
 Package biblatex Info: Document encoding is UTF8 ....
 
-(d:/texlive/2020/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2021-02-06 L3 programming layer (loader) 
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2021-02-18 L3 programming layer (loader) 
 )
 Package biblatex Info: ... and expl3
-(biblatex)             2021-02-06 L3 programming layer (loader) 
+(biblatex)             2021-02-18 L3 programming layer (loader) 
 (biblatex)             is new enough (at least 2020/04/06),
 (biblatex)             setting 'casechanger=expl3'.
 
-(d:/texlive/2020/texmf-dist/tex/latex/biblatex/blx-case-expl3.sty
-(d:/texlive/2020/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
-(d:/texlive/2020/texmf-dist/tex/latex/l3packages/xparse/xparse-2020-10-01.sty
-(d:/texlive/2020/texmf-dist/tex/latex/l3packages/xparse/xparse-generic.tex)))
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/biblatex/blx-case-expl3.sty
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/l3packages/xparse/xparse-2020-10
+-01.sty
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/l3packages/xparse/xparse-generic
+.tex)))
 Package: blx-case-expl3 2020/12/31 v3.16 expl3 case changing code for biblatex
 )
 \openout4 = `main.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
-
-(./main.bbl)
-Package biblatex Info: Reference section=0 on input line 62.
-Package biblatex Info: Reference segment=0 on input line 62.
-\c@lstlisting=\count450
+ (./main.bbl)
+Package biblatex Info: Reference section=0 on input line 64.
+Package biblatex Info: Reference segment=0 on input line 64.
+\c@lstlisting=\count452
 LaTeX Font Info:    Trying to load font information for T1+lmss on input line 6
-3.
- (d:/texlive/2020/texmf-dist/tex/latex/lm/t1lmss.fd
+5.
+
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 
@@ -1203,37 +1203,37 @@ pdfTeX warning: pdflatex.exe (file ./Pictures/FEI_CZ.pdf): PDF inclusion: found
 <Pictures/FEI_CZ.pdf, id=90, 350.70023pt x 109.21pt>
 File: Pictures/FEI_CZ.pdf Graphic file (type pdf)
 <use Pictures/FEI_CZ.pdf>
-Package pdftex.def Info: Pictures/FEI_CZ.pdf  used on input line 63.
+Package pdftex.def Info: Pictures/FEI_CZ.pdf  used on input line 65.
 (pdftex.def)             Requested size: 274.11765pt x 85.35826pt.
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 6
-3.
-(d:/texlive/2020/texmf-dist/tex/latex/lm/ot1lmr.fd
+5.
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 6
-3.
+5.
 
-(d:/texlive/2020/texmf-dist/tex/latex/lm/omllmm.fd
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-63.
+65.
 
-(d:/texlive/2020/texmf-dist/tex/latex/lm/omslmsy.fd
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-63.
+65.
 
-(d:/texlive/2020/texmf-dist/tex/latex/lm/omxlmex.fd
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 63.
+(Font)              <14.4> on input line 65.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 63.
+(Font)              <10> on input line 65.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 63.
+(Font)              <7> on input line 65.
  [1
 
 
@@ -1284,10 +1284,10 @@ Kapitola 1.
 
 ]
 Kapitola 2.
-<Pictures/perunLogo.pdf, id=219, 9301.75125pt x 6976.0625pt>
+<Pictures/perunLogo.pdf, id=227, 9301.75125pt x 6976.0625pt>
 File: Pictures/perunLogo.pdf Graphic file (type pdf)
 <use Pictures/perunLogo.pdf>
-Package pdftex.def Info: Pictures/perunLogo.pdf  used on input line 86.
+Package pdftex.def Info: Pictures/perunLogo.pdf  used on input line 88.
 (pdftex.def)             Requested size: 236.01561pt x 176.91325pt.
 
 Underfull \vbox (badness 2285) has occurred while \output is active []
@@ -1296,74 +1296,84 @@ Underfull \vbox (badness 2285) has occurred while \output is active []
 
  <./Pictures/PerunLogo.pdf>] [10]
 Kapitola 3.
-<Pictures/platforms.png, id=234, 876.27374pt x 255.95625pt>
-File: Pictures/platforms.png Graphic file (type png)
-<use Pictures/platforms.png>
-Package pdftex.def Info: Pictures/platforms.png  used on input line 109.
-(pdftex.def)             Requested size: 472.03123pt x 137.87842pt.
-[11
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [11
 
 ]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+<Pictures/platforms.png, id=249, 876.27374pt x 255.95625pt>
+File: Pictures/platforms.png Graphic file (type png)
+<use Pictures/platforms.png>
+Package pdftex.def Info: Pictures/platforms.png  used on input line 118.
+(pdftex.def)             Requested size: 472.03123pt x 137.87842pt.
+
+Underfull \vbox (badness 1320) has occurred while \output is active []
 
  [12 <./Pictures/platforms.png>]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
-31.
- (d:/texlive/2020/texmf-dist/tex/latex/lm/ts1lmr.fd
+34.
+
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-<Pictures/gitlab.png, id=254, 1003.75pt x 556.0775pt>
+<Pictures/gitlab.png, id=262, 1003.75pt x 556.0775pt>
 File: Pictures/gitlab.png Graphic file (type png)
 <use Pictures/gitlab.png>
-Package pdftex.def Info: Pictures/gitlab.png  used on input line 141.
-(pdftex.def)             Requested size: 472.03123pt x 261.50919pt.
-
-[13] [14 <./Pictures/gitlab.png>]
+Package pdftex.def Info: Pictures/gitlab.png  used on input line 144.
+(pdftex.def)             Requested size: 424.82523pt x 235.35828pt.
+ [13 <./Pictures/gitlab.png>] [14]
 Kapitola 4.
 [15
 
 ]
-<Pictures/mantis.png, id=276, 444.91219pt x 471.26062pt>
+<Pictures/mantis.png, id=284, 444.91219pt x 471.26062pt>
 File: Pictures/mantis.png Graphic file (type png)
 <use Pictures/mantis.png>
-Package pdftex.def Info: Pictures/mantis.png  used on input line 175.
+Package pdftex.def Info: Pictures/mantis.png  used on input line 180.
 (pdftex.def)             Requested size: 330.42041pt x 349.9858pt.
-
-Overfull \hbox (23.02666pt too wide) in paragraph at lines 172--180
-\T1/lmr/m/n/10.95 Pri pre-skú-ma-vaní moº-ností za-lo-ºe-ných na REST API som n
-a-ra-zil na open source pro-jekt []
- []
-
-[16 <./Pictures/mantis.png>]
+ [16 <./Pictures/mantis.png>]
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 185.
+nput line 190.
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
-85.
- (d:/texlive/2020/texmf-dist/tex/latex/lm/t1lmtt.fd
+90.
+
+(d:/Programy/texlive/2020/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 Underfull \vbox (badness 1259) has occurred while \output is active []
 
  [17]
-[18] [19] [20] [21]
-<Pictures/report.png, id=398, 554.07pt x 322.20375pt>
+[18] [19] [20]
+<Pictures/packet.png, id=377, 1485.8712pt x 803.1606pt>
+File: Pictures/packet.png Graphic file (type png)
+<use Pictures/packet.png>
+Package pdftex.def Info: Pictures/packet.png  used on input line 315.
+(pdftex.def)             Requested size: 472.03123pt x 255.14159pt.
+ [21] [22 <./Pictures/packet.png
+
+pdfTeX warning: pdflatex.exe (file ./Pictures/packet.png): large interlaced PNG
+ might cause out of memory (use non-interlaced PNG to fix this)
+>] [23]
+<Pictures/report.png, id=457, 554.07pt x 322.20375pt>
 File: Pictures/report.png Graphic file (type png)
 <use Pictures/report.png>
-Package pdftex.def Info: Pictures/report.png  used on input line 337.
+Package pdftex.def Info: Pictures/report.png  used on input line 383.
 (pdftex.def)             Requested size: 462.5886pt x 269.00722pt.
- [22]
-<Pictures/pictureEditBox.png, id=429, 1445.4pt x 811.53188pt>
+ [24 <./Pictures/report.png>]
+<Pictures/pictureEditBox.png, id=465, 1445.4pt x 811.53188pt>
 File: Pictures/pictureEditBox.png Graphic file (type png)
 <use Pictures/pictureEditBox.png>
-Package pdftex.def Info: Pictures/pictureEditBox.png  used on input line 351.
+Package pdftex.def Info: Pictures/pictureEditBox.png  used on input line 398.
 (pdftex.def)             Requested size: 472.03123pt x 265.02017pt.
- [23 <./Pictures/report.png>] [24 <./Pictures/pictureEditBox.png>] [25] [26]
-<Pictures/gitlogger.png, id=493, 828.09375pt x 290.58563pt>
+ [25 <./Pictures/pictureEditBox.png>]
+[26] [27] [28]
+<Pictures/gitlogger.png, id=537, 828.09375pt x 290.58563pt>
 File: Pictures/gitlogger.png Graphic file (type png)
 <use Pictures/gitlogger.png>
-Package pdftex.def Info: Pictures/gitlogger.png  used on input line 442.
+Package pdftex.def Info: Pictures/gitlogger.png  used on input line 494.
 (pdftex.def)             Requested size: 472.03123pt x 165.6444pt.
- [27] [28 <./Pictures/gitlogger.png>]
+ [29 <./Pictures/gitlogger.png>] [30]
 
 Package biblatex Warning: '\mainlang' is deprecated in favour of
 (biblatex)                '\textmainlang'.
@@ -1371,35 +1381,37 @@ Package biblatex Warning: '\mainlang' is deprecated in favour of
 (biblatex)                but note that the syntax is different.
 (biblatex)                Using the old, problematic definition.
 
-[29
+[31
 
 ] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 5FAF37F5BEAF26DAB621A12E25E51BFC;4435.
+(rerunfilecheck)             Checksum: D2F73D7A9A44024FD3961171EFEB802A;4425.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 27083 strings out of 479302
- 438289 string characters out of 5871204
- 1264950 words of memory out of 5000000
- 43605 multiletter control sequences out of 15000+600000
- 465596 words of font info for 64 fonts, out of 8000000 for 9000
+ 27105 strings out of 479023
+ 441334 string characters out of 5858895
+ 1292367 words of memory out of 5000000
+ 43885 multiletter control sequences out of 15000+600000
+ 468588 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 103i,8n,131p,1598b,4778s stack positions out of 5000i,500n,10000p,200000b,80000s
-{d:/texlive/2020/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{d:/texlive/2020/tex
-mf-dist/fonts/enc/dvips/lm/lm-ts1.enc}<d:/texlive/2020/texmf-dist/fonts/type1/p
-ublic/lm/lmbx10.pfb><d:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmcsc10.p
-fb><d:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmr10.pfb><d:/texlive/2020
-/texmf-dist/fonts/type1/public/lm/lmri10.pfb><d:/texlive/2020/texmf-dist/fonts/
-type1/public/lm/lmss12.pfb><d:/texlive/2020/texmf-dist/fonts/type1/public/lm/lm
-ss17.pfb><d:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><d:/tex
-live/2020/texmf-dist/fonts/type1/public/lm/lmtt10.pfb><d:/texlive/2020/texmf-di
-st/fonts/type1/public/lm/lmtto10.pfb>
-Output written on main.pdf (29 pages, 2549132 bytes).
+ 103i,8n,131p,1205b,4778s stack positions out of 5000i,500n,10000p,200000b,80000s
+{d:/Programy/texlive/2020/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{d:/Program
+y/texlive/2020/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}<d:/Programy/texlive/20
+20/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><d:/Programy/texlive/2020/texmf-
+dist/fonts/type1/public/lm/lmcsc10.pfb><d:/Programy/texlive/2020/texmf-dist/fon
+ts/type1/public/lm/lmr10.pfb><d:/Programy/texlive/2020/texmf-dist/fonts/type1/p
+ublic/lm/lmr8.pfb><d:/Programy/texlive/2020/texmf-dist/fonts/type1/public/lm/lm
+ri10.pfb><d:/Programy/texlive/2020/texmf-dist/fonts/type1/public/lm/lmss12.pfb>
+<d:/Programy/texlive/2020/texmf-dist/fonts/type1/public/lm/lmss17.pfb><d:/Progr
+amy/texlive/2020/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><d:/Programy/tex
+live/2020/texmf-dist/fonts/type1/public/lm/lmtt10.pfb><d:/Programy/texlive/2020
+/texmf-dist/fonts/type1/public/lm/lmtto10.pfb>
+Output written on main.pdf (31 pages, 2661430 bytes).
 PDF statistics:
- 630 PDF objects out of 1000 (max. 8388607)
- 232 named destinations out of 1000 (max. 500000)
- 221 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 676 PDF objects out of 1000 (max. 8388607)
+ 250 named destinations out of 1000 (max. 500000)
+ 226 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -18,7 +18,7 @@
 
 \lstdefinestyle{Batch}{
 morekeywords={SET, @ECHO, ECHO, IF, EXIT, START, ELSE, GTR},
-deletekeywords={var}
+deletekeywords={var, is}
 }
 
 \makeatletter
@@ -28,16 +28,16 @@ deletekeywords={var}
 \makeatother
 
 \definecolor{methods}{rgb}{.45, .33, .12}
-\definecolor{classes}{rgb}{.12, .45, .16}
+\definecolor{classes}{rgb}{.12, .40, .16}
 \definecolor{words}{rgb}{.17, .57, .69}
 %\definecolor{props}{rgb}{0, 0, 0}
 
 \lstset{
- moremethods={ExecutePost, GetUri, SendIssue, SerializeObject, ReadToEnd, Parse, OnUpdate, StartCreateReport, ZipAndSendToLinkManager, Log, StartCoroutine, LocalIPAddress, ToString, Exists, Delete, WriteAllText, OpenURL, WaitForSeconds, EnumerateFiles, Contains, AddFile, Save, ReadAllBytes, Send_MantisReport, ToBase64String, AcceptTcpClient, GetStream, Read, GetString, CreateReport, GetWindowRect, GetActiveWindow, GetUnityBounds, pictureBoxBcg_MouseDown, pictureBoxBcg_MouseUp, pictureBoxBcg_MouseMove, Invalidate, DrawLine, InvokePowershellScript, AddScript, Invoke, Select, ToArray, Create, Format, ToHex, Matches, FromJson, ReadAllText, PrintListToJsonString, ToJson},
+ moremethods={ExecutePost, GetUri, SendIssue, SerializeObject, ReadToEnd, Parse, OnUpdate, StartCreateReport, ZipAndSendToLinkManager, Log, StartCoroutine, LocalIPAddress, ToString, Exists, Delete, WriteAllText, OpenURL, WaitForSeconds, EnumerateFiles, Contains, AddFile, Save, ReadAllBytes, Send_MantisReport, ToBase64String, AcceptTcpClient, GetStream, Read, GetString, CreateReport, GetWindowRect, GetActiveWindow, GetUnityBounds, pictureBoxBcg_MouseDown, pictureBoxBcg_MouseUp, pictureBoxBcg_MouseMove, Invalidate, DrawLine, InvokePowershellScript, AddScript, Invoke, Select, ToArray, Create, Format, ToHex, Matches, FromJson, ReadAllText, PrintListToJsonString, ToJson, LoadAssetAtPath, FindProperty, OnEnable, OnInspectorGUI, ApplyModifiedProperties, PropertyField},
  methodstyle=\bfseries\color{methods},
- moreclasses={Issue, JsonConvert, JObject, Keyboard, Debug, HBTLink_Manager, GameConfiguration, File, Application, ZipFile, Directory, SearchOption, Convert, TcpClient, NetworkStream, Encoding, Rect, Screen, IntPtr, MouseEventArgs, Point, PowerShell, GitLogger, Regex, Message, Content, Serialize},
+ moreclasses={Issue, JsonConvert, JObject, Keyboard, Debug, HBTLink_Manager, GameConfiguration, File, Application, ZipFile, Directory, SearchOption, Convert, TcpClient, NetworkStream, Encoding, Rect, Screen, IntPtr, MouseEventArgs, Point, PowerShell, GitLogger, Regex, Message, Content, Serialize, MenuItem, DllImport, AssetDatabase, BuildSettings, SerializedProperty, CustomEditor, EditorGUILayout, Editor, BuildSettingsEditor},
  classstyle = \bfseries\color{classes},
- morekeywords={endif, var, yield},
+ morekeywords={endif, var, yield, get, set},
  %properties={isPressed, wasPressedThisFrame, current, f11Key, leftShiftKey, UNITY_EDITOR, sender_ServerIP, Instance, pathConfig, exeFile, mantisArguments, FullName, AllDirectories, System},
  %propsstyle=\bfseries\color{props}
 }
@@ -88,6 +88,7 @@ deletekeywords={var}
 \AddAcronym{URL}{Uniform Resource Locator}
 \AddAcronym{MTU}{Maximum transmission unit}
 \AddAcronym{MSS}{Maximum Segment Size}
+\AddAcronym{SSL}{Secure Sockets Layer}
 
 % Literatúra
 \addbibresource{literature.bib}
@@ -209,7 +210,11 @@ Po preskúmaní ďalších možností a následnej porade s kolegami som sa teda
 \vspace{-5pt}
 \begin{figure}[!htbp]
 	\centering
-	\includegraphics[width=0.7\textwidth]{Pictures/mantis.png}
+	\setlength{\fboxsep}{0pt}
+	\setlength{\fboxrule}{1pt}
+	\fbox {
+		\includegraphics[width=0.68\textwidth]{Pictures/mantis.png}
+	}
 	\caption{Ručné vloženie reportu do služby Mantis Bug Tracker}
 	\label{pic:Mantis}
 \end{figure} \\
@@ -538,7 +543,11 @@ Aplikácia bola nasadená ako externý súbor, ktorý je spustený službou Gitl
 \textbf{Navrhované riešenia:} \\ Prvou možnosťou, ktorá sa však hneď zavrhla bolo použitie riešenia priamo od firmy Unity Technologies a síce ich ponúkaného \enquote{Unity Cloud Buildu}. Táto možnost je dostupná za určitý poplatok závislý od veľkosti repozitára. Tá je v našom prípade značná, čo by toto riešenie predražilo a zároveň by nahrávanie repozitára mimo lokálnu sieť bolo časovo náročné. Po preskúmaní rôznych riešení použiteľných na lokálnom serveri sa finálny výber zúžil na služby Jenkins, TeamCity a Gitlab \mbox{CI/CD}. Voľba nakoniec padla na Gitlab CI/CD nakoľko na firemnom serveri je využívaná služba Gitlab a očakávala sa teda najlepšia kompatibilita spomedzi ponúkaných možností.\\
 \textbf{Realizácia:} \\ Kvôli už spomínanému rozsahu hry nie je vhodné testovať automatizované zostavenie priamo na nej, bolo teda nutné vytvoriť testovací projekt. Zostavenie tohto projektu na pracovnej stanici pomocou metódy \textit{BuildPipeline.BuildPlayer} prebehlo úspešne. Táto metóda prijíma niekoľko nastavení ako napríklad cieľová platforma, scény určené na zostavenie či cestu k zostavenému spustiteľnému súboru a následne sama toto zostavenie vykoná. Kľúčom bolo teda túto metódu spolu s nejakou ďalšou logikou zavolať v rámci reakcie na nejakú udalosť, ktorá nastane na serveri. Táto udalosť môže byť napríklad zlúčenie zmien v rôznych vetvách či nahranie najnovších zmien v kóde do určitej vetvy vo vzdialenom repozitári. Druhú spomínanú variantu sme sa rozhodli využiť a teda spustiť zostavenie po vykonaní príkazu \textit{push} do vetvy master, ktorá je hlavnou vetvou vo verzovacom systéme.
 
-Po úspešnom zostavení projektu na pracovnej stanici pomocou skriptu bolo teda ďalším krokom nasadenie na server. K nasadeniu bolo nutné vytvoriť konfiguračný súbor .gitlab-ci.yml, v ktorom sú uložené príkazy, ktoré majú byť vykonané ako reakcia na konkrétnu udalosť. Tieto príkazy sú organizované do etáp. Každá etapa sa potom stará o určitú sadu úloh, ktoré spolu súvisia. Príkladom by mohli byť etapy ako otestuj, zostav či nasaď. Na prvý pohľad je jasné, čo bude mať daná etapa na starosť. V našom prípade bola nutná iba jedna etapa, je ale možné, že do budúcna sa tento počet bude zvyšovať. Obsah súboru .gitlab-ci.yml, ktorý bol použitý v projekte je možné vidieť vo výpise \ref{src:YML}. 
+Po úspešnom zostavení projektu na pracovnej stanici pomocou skriptu bolo teda ďalším krokom nasadenie na server. K nasadeniu bolo nutné vytvoriť konfiguračný súbor .gitlab-ci.yml, v ktorom sú uložené príkazy, ktoré majú byť vykonané ako reakcia na konkrétnu udalosť. Tieto príkazy sú organizované do etáp. Každá etapa sa potom stará o určitú sadu úloh, ktoré spolu súvisia. Príkladom by mohli byť etapy ako otestuj, zostav či nasaď. Na prvý pohľad je jasné, čo bude mať daná etapa na starosť. 
+
+V našom prípade bola nutná iba etapa \enquote{build}, je ale možné, že do budúcna sa tento počet bude zvyšovať. Obsah súboru .gitlab-ci.yml, ktorý bol použitý v projekte je možné vidieť vo výpise \ref{src:YML}. V tomto súbore môže byť nakonfigurovaná aj pomerne zložitá logika, nakoniec sa však z rôznych dôvodov osvedčilo túto logiku presunúť do separátneho batch súboru a ten len z .gitlab-ci.yml spustiť. Jedným z týchto dôvodov bolo napríklad, že po neúspešnom zostavení hry sa etapa \enquote{build} ukončila úspešne, čo je pomerne zásadný problém, ktorý sa mi nepodarilo vyriešiť. Naopak použitie batch súboru umožnilo jednoducho ukončiť etapu s hodnotou navrátenou enginu Unity. Typicky išlo o kompilačné chyby. Tento postup sa osvedčil aj v prípade chýb prejavených počas zostavovania projektu. V tomto prípade bolo možné nepriamo použiť hodnotu \textit{result} zo štruktúry \textit{BuildReport.summary}, ktorú vracia metóda \textit{BuildPipeline.BuildPlayer}. 
+
+Príkazy zadané v súbore .gitlab-ci.yml vykonáva tzv \enquote{Gitlab runner}. Ten je možné stiahnuť z oficiálnych stránok ako spustiteľný súbor, je ale nutné ho zaregistrovať na konkrétny projekt. Registrácia prebieha v niekoľkých jednoduchých krokoch po spustení programu \enquote{Gitlab runner} z príkazového riadku spolu s príkazom \textit{register}. Jeden z krokov vyžaduje od užívateľa tzv. token, ten je možné nájsť v nastaveniach repozitára vo webovej aplikácií Gitlab. Posledným krokom je potom zvolenie tzv. \enquote{executora}, pomocou ktorého bude  \enquote{Gitlab runner} vykonávať zadané príkazy. V našom prípade bola zvolená možnosť \textit{shell}, čo značí prosté vykonávanie príkazov v príkazovom riadku lokálneho PC.
 
 \vspace{10pt}
 \begin{lstlisting}[language=yml,label=src:YML,caption={Obsah súboru .gitlab-ci.yml}]
@@ -556,7 +565,13 @@ unity-build:
     - unity
 \end{lstlisting}
 
-asdasd
+Registrácia neprebehla úspešne z dôvodu, že server, na ktorom je uložený náš projekt nemá doménu a ani základný SSL certifikát. Ten sa nakoniec podarilo vytvoriť a vlastným podpisom pomocou nástroja OpenSSL. Výsledný certifikát potom musel byť uložený aj na strane servera aj na strane \enquote{Gitlab runnera} aby sa  zabezpečila úspešná registrácia.
+
+Ďalším problémom bola prednastavená \textit{clone/fetch} zložka, do ktorej si \enquote{Gitlab runner} sťahuje najnovšie zmeny na projekte pred zahájením zostavovania. Pri veľkosti nášho repozitára, ktorej hodnota presahuje 100GB by bolo zdĺhavé a nehospodárne mať na serveri dve takéto separátne zložky. Problém by nastal aj pri manuálnych zásahoch do repozitára, ktoré by v réžií samotného Gitlabu boli veľmi zdĺhavé, a tak by sa museli vykonávať ručne na dvoch miestach. Gitlab CI/CD neumožňuje zadanie ľubovolnej cesty do premennej \textit{GIT\_CLONE\_PATH} v súbore .gitlab-ci.yml. Tá sa musí vždy odvíjať od nastavenia \textit{CI\_BUILD\_DIR}. Hodnotu tejto premennej sa napokon po niekoľkých neúspešných pokusoch podarilo nastaviť priamo v konfiguračnom súbore \enquote{Gitlab Runnera}.
+
+Ďalším krokom bolo vytvorenie samotného batch súboru, ktorý bude spúštaný z .gitlab-ci.yml a ktorý bude zároveň spúštať engine za účelom zostavenia projektu. Z toho vyplýva nutnosť mať vždy k dispozícií cestu k editoru Unity. Ten je ale často aktualizovaný a cesta je teda závislá od jeho aktuálnej verzie. Za týmto účelom bol použitý textový súbor ProjectVersion.txt, ktorý obsahuje informácie o aktuálnej verzií projektu. Pokiaľ sa verzia projektu a editoru nebude zhodovať vyústi to do chyby, kvôli neplatnej ceste čo slúži ako impulz k aktualizovaniu editoru na serveri.
+
+Engine Unity ponúka širokú škálu parametrov s ktorými môže byť spustený. Okrem cesty k projektu a cesty k logovaciemu súboru boli použité parametre ako \textit{batchmode}, ktorý spustí program bez užívateľského rozhrania a parameter \textit{quit}, ktorý editor ukončí po vykonaní všetkých naprogramovaných akcií. Nakoniec je ešte nutné uviesť statickú metódu, ktorá má byť zavolaná. Identifikátor tejto metódy musí byť uvedený vrátane všetkých menných priestorov, do ktorých metóda náleží. Návratová hodnota z editoru je následne uložená do premennej \textit{ERRORLEVEL}. Podľa tejto premennej je ukončené vykonávanie batch súboru a zároveň podľa nej .gitlab-ci.yml nastaví výsledok etapy. Po úspešnom zostavení je ešte spustený súbor GitLogger.exe, ktorého účel bol podrobne vysvetlený v sekcií \ref{sec:GitLogger}. Obsah celého batch súboru potom znázorňuje výpis \ref{src:batch}.
 
 \vspace{10pt}
 \begin{lstlisting}[style=Batch,label=src:batch,caption={Skript zabezpečujúci zostavenie hry na serveri}]
@@ -580,6 +595,55 @@ IF %ERRORLEVEL% GTR 0 (
 
 EXIT %errorlevel%
 \end{lstlisting}
+
+Metóda \textit{BuildScript.Build} volá metódu \textit{BuildScript.InternalBuild} s parametrom \textit{closeAfterBuild} nastaveným na hodnotu \textit{true}. Toto riešenie bolo zvolené z dôvodu, aby sa pri manuálnom spustení zostavovania pomocou skriptu, napríklad z horného menu editora Unity, editor neukončil. Úloha metódy \textit{InternalBuild} je potom nájsť a načítať dáta z tzv. \enquote{Scriptable Objectu}, čo je uvedené vo výpise \ref{src:asset}. 
+
+\vspace{10pt}
+\begin{lstlisting}[label=src:asset,caption={Načítanie dát zo scriptable objectu}]
+buildSettings = AssetDatabase.LoadAssetAtPath<BuildSettings>("Assets/Settings/BuildSettings.asset");
+\end{lstlisting}
+
+\enquote{Scriptable Object} BuildSettings.asset slúži ako dátové úložisko všetkých nastavení týkajúcich sa automatizovaného zostavenia. S týmto objektom je potom možné pohodlne pracovať priamo z užívateľského rozhrania enginu nakoľko som implementoval tzv \enquote{Custom editor}. Ten je znázotnený na obrázku \ref{pic:Custom}.
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=.90\textwidth]{Pictures/buildDetail.png}
+	\caption{Custom editor pre Scriptable object BuildSettings.asset}
+	\label{pic:Custom}
+\end{figure}
+
+Samotná trieda \textit{BuildSettings} dedí z triedy \textit{ScriptableObject} a je iba súhrnom relatívne veľkého množstva serializovaných premenných a enumov. \enquote{Custom editor} je potom realizovaný ako trieda \textit{BuildSettingsEditor}, ktorá je potomkom triedy \textit{Editor}. Táto trieda sa nachádza v preddefinovanej \textit{Assembly-CSharp-Editor}, preto je nutné potomkov triedy \textit{Editor} presunúť do zložky Editor alebo ich kód obaliť do direktívy UNITY\_EDITOR zobrazenej aj vo výpise \ref{src:Pragma}. To zabráni vyvolaniu chyby pri pokuse o zostavenie projektu nakoľko \textit{Assembly-CSharp-Editor} z pochopiteľných dôvodov nie je prítomná v zostavenej verzií hry. Základná kostra triedy \textit{BuildSettings}, ktorá vykreslí iba premennú \textit{platforms} je zobrazená vo výpise \ref{src:bseditor}.
+
+\vspace{10pt}
+\begin{lstlisting}[label=src:bseditor,caption={Kostra triedy určenej pre vykreslenie vlastného okna v Editore Unity}]
+[CustomEditor(typeof(BuildSettings))]
+public class BuildSettingsEditor : Editor {
+    private BuildSettings settings;
+    private SerializedProperty platforms;
+    
+    private void OnEnable() {
+        platforms = serializedObject.FindProperty("platforms");
+    }
+    public override void OnInspectorGUI() {
+        settings = AssetDatabase.LoadAssetAtPath<BuildSettings>("Assets/Settings/BuildSettings.asset");
+        
+        EditorGUILayout.PropertyField(platforms);
+        serializedObject.ApplyModifiedProperties();
+    }
+}
+\end{lstlisting}
+
+Finálna trieda, použitá v projekte bola okrem pridania ostatných premenných doplnená o nadpisy, medzery medzi skupinami a v neposlednej rade aj o varovné hlásenia pri nastavení polí \textit{Platform} či \textit{Scenes} na hodnotu \textit{Nothing}. Varovné hlásenie sa objaví aj pri nastavení tzv. \enquote{scripting backendu} na hodnotu inú ako IL2CPP, čo je dôležité nastavenia z hľadiska výkonu finálneho produktu. Pri tomto nastavení je IL kód pred vytvorením spustiteľného súboru prevedený na kód jazyka \mbox{C++ \cite{IL2CPP}}. Ukážka takéhoto varovania je uvedená na obrázku \ref{pic:Warr}.
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=1\textwidth]{Pictures/warr.png}
+	\caption{Varovanie v Custom editore}
+	\label{pic:Warr}
+\end{figure}
+
+
+
 \section{Optimalizácia a prevod hry na ďalšie platformy}
 \label{sec:Port}
 \section{Ostatné projekty}

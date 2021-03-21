@@ -668,7 +668,7 @@ private static bool IsSelected(int EnumMask, Enum enumValue) {
 
 Obdobne prebieha aj práca s maskou platformy. Ak metóda \textit{IsSelected} vráti hodnotu \textit{true} pri dotazovaní na konkrétnu platformu, je spustená príslušná zostavovacia metóda. Tá vykoná samotné zostavenie pomocou metódy \textit{BuildPipeline.BuildPlayer} s nastaveniami špecifickými pre danú platformu. Návratová hodnota sa potom vráti späť metóde \textit{SetUpPlatforms} a pokiaľ neznačí úspech je vyhodená výnimka s popisom, že zostavenie na danej platforme zlyhalo. Ak všetky zvolené zostavenia skončia úspechom, je úspešne ukončený aj celý program. Gro  metódy na zostavenie hry pre OS Windows je znázornený vo výpise \ref{src:bwin}. 
 
-Postupne boli do projektu pridané aj ďalšie možnosti zostavenia. Možnosť \enquote{scriptsOnly} značí, že budú nanovo prekomilované všetky skripty a staré binárne súbory budú nahradené novými bez nutnosti zostaviť celý projekt nanovo. Táto možnosť ale nie je k dispozícií pre \enquote{scripting backend} IL2CPP, takže je určená len na vývojárske využitie, kde je nutné robiť veľa iteratívnych zmien v krátkom čase a hneď ich aj testovať. Druhou implementovanou možnosťou bolo do už zostaveného projektu pridať len tzv. \enquote{bundles}. Tie môžu obsahovať napríklad nové textúry alebo modely a načítavajú sa dynamicky počas vykonávania programu \cite{Bundles}.
+Ako je možné vidieť, metóda \textit{BuildWindows} dostane ako prvý argument nastavenia špecifické pre danú platformu, v tomto prípade je to platforma Windows. Tieto nastavenia momentálne obsahujú iba cestu k zložke do ktorej má byť zostavenie pre danú platformu uložené. Toto riešenie bolo dočasne zvolené z dôvodu, že nie je možné predikovať špecifiká, ktoré si zostavenie na niektoré konzolové platformy bude vyžadovať. Keď budú tieto informácie dostupné plánuje sa zjednotenie všetkých zostavovacích metód do jednej. Táto metóda potom bude ako prvý argument prijímať generalizáciu nejakých konkrétnych nastavení a bude riadená dátami získanými z týchto nastavení.
 
 \vspace{10pt}
 \begin{lstlisting}[label=src:bwin,caption={Extrahovanie zvolených scén pomocou masky}]
@@ -689,21 +689,45 @@ private static bool BuildWindows(WindowsSettings settings, string[] scenes) {
 }
 \end{lstlisting}
 
-Ako je možné vidieť vo výpise \ref{src:bwin} metóda dostane ako prvý argument nastavenia špecifické pre danú platformu, v tomto prípade je to platforma Windows. Tieto nastavenia momentálne obsahujú iba cestu k zložke do ktorej má byť zostavenie pre danú platformu uložené. Toto riešenie bolo dočasne zvolené z dôvodu, že nie je možné predikovať špecifiká, ktoré si zostavenie na danú platformu bude vyžadovať. Keď budú tieto informácie dostupné plánuje sa zjednotenie všetkých zostavovacích metód do jednej. Táto metóda potom dostane ako prvý argument generalizáciu nejakých konkrétnych nastavení a bude riadená dátami získanými z týchto nastavení.
+Postupne boli do projektu pridané aj ďalšie možnosti zostavenia. Možnosť \enquote{scriptsOnly} značí, že budú nanovo prekomilované všetky skripty bez nutnosti zostaviť celý projekt nanovo. Táto možnosť ale nie je k dispozícií pre \enquote{scripting backend} IL2CPP, takže je určená len na vývojárske využitie, kde je nutné robiť veľa iteratívnych zmien v krátkom čase a hneď ich aj testovať. Druhou implementovanou možnosťou bolo v už zostavenom projekte aktualizovať len tzv. \enquote{bundles}. \enquote{Bundles} sú binárne súbory, ktoré môžu obsahovať napríklad nové textúry, modely či konverzácie a načítavajú sa dynamicky počas vykonávania programu \cite{Bundles}. Tieto možnosti teda pridávaju ďalšiu vrstvu optimalizácie tým, že kompletné zostavenie nastane až keď je to nevyhnutné.
 
 \section{Optimalizácia a prevod hry na ďalšie platformy}
 \label{sec:Port}
+\subsection{Optimalizácia a refaktorovanie kódu}
+\label{sec:optim}
+\textbf{Časová náročnosť:} \\ Nasadenie: 3 dni.\\
+\textbf{Úvod do problému:} \\ Ako som spomenul v sekcií \\
+\textbf{Navrhované riešenia:} \\ Nakoľko bola \\
+\textbf{Realizácia:} \\ Pri preskúmavaní mož
+\subsection{Prevod hry na OS Linux}
+\label{sec:linux}
+\textbf{Časová náročnosť:} \\ Nasadenie: 3 dni.\\
+\textbf{Úvod do problému:} \\ Ako som spomenul v sekcií \\
+\textbf{Navrhované riešenia:} \\ Nakoľko bola \\
+\textbf{Realizácia:} \\ Pri preskúmavaní mož
+\subsection{Implementácia Epic Online Services}
+\label{sec:implEOS}
+\textbf{Časová náročnosť:} \\ Nasadenie: 3 dni.\\
+\textbf{Úvod do problému:} \\ Ako som spomenul v sekcií \\
+\textbf{Navrhované riešenia:} \\ Nakoľko bola \\
+\textbf{Realizácia:} \\ Pri preskúmavaní mož
+
 \section{Ostatné projekty}
 \label{sec:Others}
+\subsection{Systém líhania hráčskej postavy}
+\label{sec:sleep}
+\textbf{Časová náročnosť:} \\ Nasadenie: 3 dni.\\
+\textbf{Úvod do problému:} \\ Ako som spomenul v sekcií \\
+\textbf{Navrhované riešenia:} \\ Nakoľko bola \\
+\textbf{Realizácia:} \\ Pri preskúmavaní mož
 
+% End of chapter 4
 
-% End of section 4
-
-% Section 5
+% chapter 5
 %\chapter{Postup riešenia zadaných projektov}
 %\label{sec:Processes}
 %adasd
-% End of section 5
+% End of chapter 5
 
 %d) Teoretické a praktické znalosti a dovednosti získané v průběhu studia uplatněné studentem v průběhu odborné praxe.
 %e) Znalosti či dovednosti scházející studentovi v průběhu odborné praxe.

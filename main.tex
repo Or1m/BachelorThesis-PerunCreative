@@ -33,9 +33,9 @@ deletekeywords={var, is}
 %\definecolor{props}{rgb}{0, 0, 0}
 
 \lstset{
- moremethods={ExecutePost, GetUri, SendIssue, SerializeObject, ReadToEnd, Parse, OnUpdate, StartCreateReport, ZipAndSendToLinkManager, Log, StartCoroutine, LocalIPAddress, ToString, Exists, Delete, WriteAllText, OpenURL, WaitForSeconds, EnumerateFiles, Contains, AddFile, Save, ReadAllBytes, Send_MantisReport, ToBase64String, AcceptTcpClient, GetStream, Read, GetString, CreateReport, GetWindowRect, GetActiveWindow, GetUnityBounds, pictureBoxBcg_MouseDown, pictureBoxBcg_MouseUp, pictureBoxBcg_MouseMove, Invalidate, DrawLine, InvokePowershellScript, AddScript, Invoke, Select, ToArray, Create, Format, ToHex, Matches, FromJson, ReadAllText, PrintListToJsonString, ToJson, LoadAssetAtPath, FindProperty, OnEnable, OnInspectorGUI, ApplyModifiedProperties, PropertyField},
+ moremethods={ExecutePost, GetUri, SendIssue, SerializeObject, ReadToEnd, Parse, OnUpdate, StartCreateReport, ZipAndSendToLinkManager, Log, StartCoroutine, LocalIPAddress, ToString, Exists, Delete, WriteAllText, OpenURL, WaitForSeconds, EnumerateFiles, Contains, AddFile, Save, ReadAllBytes, Send_MantisReport, ToBase64String, AcceptTcpClient, GetStream, Read, GetString, CreateReport, GetWindowRect, GetActiveWindow, GetUnityBounds, pictureBoxBcg_MouseDown, pictureBoxBcg_MouseUp, pictureBoxBcg_MouseMove, Invalidate, DrawLine, InvokePowershellScript, AddScript, Invoke, Select, ToArray, Create, Format, ToHex, Matches, FromJson, ReadAllText, PrintListToJsonString, ToJson, LoadAssetAtPath, FindProperty, OnEnable, OnInspectorGUI, ApplyModifiedProperties, PropertyField, SetUpScenes, Add, GetValues, IsSelected, ToInt32, BuildWindows, BuildPlayer, GetBuildOptions},
  methodstyle=\bfseries\color{methods},
- moreclasses={Issue, JsonConvert, JObject, Keyboard, Debug, HBTLink_Manager, GameConfiguration, File, Application, ZipFile, Directory, SearchOption, Convert, TcpClient, NetworkStream, Encoding, Rect, Screen, IntPtr, MouseEventArgs, Point, PowerShell, GitLogger, Regex, Message, Content, Serialize, MenuItem, DllImport, AssetDatabase, BuildSettings, SerializedProperty, CustomEditor, EditorGUILayout, Editor, BuildSettingsEditor},
+ moreclasses={Issue, JsonConvert, JObject, Keyboard, Debug, HBTLink_Manager, GameConfiguration, File, Application, ZipFile, Directory, SearchOption, Convert, TcpClient, NetworkStream, Encoding, Rect, Screen, IntPtr, MouseEventArgs, Point, PowerShell, GitLogger, Regex, Message, Content, Serialize, MenuItem, DllImport, AssetDatabase, BuildSettings, SerializedProperty, CustomEditor, EditorGUILayout, Editor, BuildSettingsEditor, Enum, Array, List, Scene, BuildPlayerOptions, BuildTarget, BuildTargetGroup, BuildResult, BuildReport, BuildPipeline, WindowsSettings},
  classstyle = \bfseries\color{classes},
  morekeywords={endif, var, yield, get, set},
  %properties={isPressed, wasPressedThisFrame, current, f11Key, leftShiftKey, UNITY_EDITOR, sender_ServerIP, Instance, pathConfig, exeFile, mantisArguments, FullName, AllDirectories, System},
@@ -487,7 +487,7 @@ private string[] InvokePowershellScript(string gitCmd) {
 
 Po vyskúšaní rôznych preddefinovaných variant príkazu \textit{git log} som sa rozhodol zostaviť si vlastný príkaz, nakoľko mi žiadna preddefinovaná varianta úplne nevyhovovala. Hlavným dôvodom bola snaha čo najviac zjednodušiť následnú syntaktickú analýzu. Tento príkaz som sa rozhodol vytvárať dynamicky, aby sa sám aktualizoval po zmene premennej \textit{mainSplitter}. Ukážka tohto postupu je zobrazená vo výpise \ref{src:Log}.
 \vspace{10pt}
-\begin{lstlisting}[label=src:Log,caption={Generovanie vlastného príkazu git log}]
+\begin{lstlisting}[label=src:Log,caption={Dynamické vytváranie vlastného príkazu git log}]
 private const char mainSplitter = '&';
 private string gitLog = "git log ";
 
@@ -596,7 +596,7 @@ IF %ERRORLEVEL% GTR 0 (
 EXIT %errorlevel%
 \end{lstlisting}
 
-Metóda \textit{BuildScript.Build} volá metódu \textit{BuildScript.InternalBuild} s parametrom \textit{closeAfterBuild} nastaveným na hodnotu \textit{true}. Toto riešenie bolo zvolené z dôvodu, aby sa pri manuálnom spustení zostavovania pomocou skriptu, napríklad z horného menu editora Unity, editor neukončil. Úloha metódy \textit{InternalBuild} je potom nájsť a načítať dáta z tzv. \enquote{Scriptable Objectu}, čo je uvedené vo výpise \ref{src:asset}. 
+Metóda \textit{BuildScript.Build} volá metódu \textit{BuildScript.InternalBuild} s parametrom \textit{closeAfterBuild} nastaveným na hodnotu \textit{true}. Toto riešenie bolo zvolené z dôvodu, aby sa pri manuálnom spustení zostavovania pomocou skriptu, napríklad z horného menu editora Unity, editor neukončil. Úloha metódy \textit{InternalBuild} je potom nájsť a načítať dáta z tzv. \enquote{Scriptable Objectu}, čo je uvedené vo výpise \ref{src:asset}, a následne tieto dáta predať metóde \textit{SetUpPlatforms}. Návratová hodnota tejto metódy je potom použítá ako návratová hodnota celého programu.
 
 \vspace{10pt}
 \begin{lstlisting}[label=src:asset,caption={Načítanie dát zo scriptable objectu}]
@@ -608,7 +608,7 @@ buildSettings = AssetDatabase.LoadAssetAtPath<BuildSettings>("Assets/Settings/Bu
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=.90\textwidth]{Pictures/buildDetail.png}
-	\caption{Custom editor pre Scriptable object BuildSettings.asset}
+	\caption{Custom editor pre scriptable object BuildSettings.asset}
 	\label{pic:Custom}
 \end{figure}
 
@@ -638,17 +638,65 @@ Finálna trieda, použitá v projekte bola okrem pridania ostatných premenných
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=1\textwidth]{Pictures/warr.png}
-	\caption{Varovanie v Custom editore}
+	\caption{Varovanie v custom editore}
 	\label{pic:Warr}
 \end{figure}
 
+Metóda \textit{SetUpPlatforms} spomenutá vyššie zo získaných dát od metódy \textit{InternalBuild} extrahuje tzv. masky. Maska platformy určuje, na ktoré platformy sa bude hra zostavovať a maska scény, ktoré scény budú v zostavenom súbore prítomné. Princíp použitia takejto masky je demonštrovaný na získavaní scén zvolených v objekte BuildSettings.asset vo výpise \ref{src:scenes}. Tieto scény sú potom predávané ako argument príslušným zostavovacím metódam. 
 
+\vspace{10pt}
+\begin{lstlisting}[label=src:scenes,caption={Extrahovanie zvolených scén pomocou masky}]
+private static string[] SetUpScenes() {
+    Array enumScenes = Enum.GetValues(typeof(BuildSettings.Scene));
+    List<string> scenesToBuild = new List<string>();
+
+    foreach (var item in enumScenes) {
+        if (IsSelected(sceneMask, (BuildSettings.Scene)item)) {
+            scenesToBuild.Add("Assets/Scenes/" + item + ".unity");
+        }
+    }
+
+    return scenesToBuild.ToArray();
+}
+
+private static bool IsSelected(int EnumMask, Enum enumValue) {
+    int tempMask = 1 << Convert.ToInt32(enumValue);
+    
+    return (EnumMask & tempMask) == 0 ? false : true;
+}
+\end{lstlisting}
+
+Obdobne prebieha aj práca s maskou platformy. Ak metóda \textit{IsSelected} vráti hodnotu \textit{true} pri dotazovaní na konkrétnu platformu, je spustená príslušná zostavovacia metóda. Tá vykoná samotné zostavenie pomocou metódy \textit{BuildPipeline.BuildPlayer} s nastaveniami špecifickými pre danú platformu. Návratová hodnota sa potom vráti späť metóde \textit{SetUpPlatforms} a pokiaľ neznačí úspech je vyhodená výnimka s popisom, že zostavenie na danej platforme zlyhalo. Ak všetky zvolené zostavenia skončia úspechom, je úspešne ukončený aj celý program. Gro  metódy na zostavenie hry pre OS Windows je znázornený vo výpise \ref{src:bwin}. 
+
+Postupne boli do projektu pridané aj ďalšie možnosti zostavenia. Možnosť \enquote{scriptsOnly} značí, že budú nanovo prekomilované všetky skripty a staré binárne súbory budú nahradené novými bez nutnosti zostaviť celý projekt nanovo. Táto možnosť ale nie je k dispozícií pre \enquote{scripting backend} IL2CPP, takže je určená len na vývojárske využitie, kde je nutné robiť veľa iteratívnych zmien v krátkom čase a hneď ich aj testovať. Druhou implementovanou možnosťou bolo do už zostaveného projektu pridať len tzv. \enquote{bundles}. Tie môžu obsahovať napríklad nové textúry alebo modely a načítavajú sa dynamicky počas vykonávania programu \cite{Bundles}.
+
+\vspace{10pt}
+\begin{lstlisting}[label=src:bwin,caption={Extrahovanie zvolených scén pomocou masky}]
+private static bool BuildWindows(WindowsSettings settings, string[] scenes) {
+
+	// ...
+	
+    BuildPlayerOptions options = new BuildPlayerOptions();
+    options.scenes = scenes;
+    options.locationPathName = path + Application.productName + ".exe";
+    options.targetGroup = BuildTargetGroup.Standalone;
+    options.target = BuildTarget.StandaloneWindows64;
+    options.options = GetBuildOptions(); // Development, AllowDebugging, ...
+
+    BuildReport report = BuildPipeline.BuildPlayer(options);
+    
+    return report.summary.result == BuildResult.Succeeded ? true : false;
+}
+\end{lstlisting}
+
+Ako je možné vidieť vo výpise \ref{src:bwin} metóda dostane ako prvý argument nastavenia špecifické pre danú platformu, v tomto prípade je to platforma Windows. Tieto nastavenia momentálne obsahujú iba cestu k zložke do ktorej má byť zostavenie pre danú platformu uložené. Toto riešenie bolo dočasne zvolené z dôvodu, že nie je možné predikovať špecifiká, ktoré si zostavenie na danú platformu bude vyžadovať. Keď budú tieto informácie dostupné plánuje sa zjednotenie všetkých zostavovacích metód do jednej. Táto metóda potom dostane ako prvý argument generalizáciu nejakých konkrétnych nastavení a bude riadená dátami získanými z týchto nastavení.
 
 \section{Optimalizácia a prevod hry na ďalšie platformy}
 \label{sec:Port}
 \section{Ostatné projekty}
 \label{sec:Others}
-asd
+
+
 % End of section 4
 
 % Section 5

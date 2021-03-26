@@ -779,23 +779,7 @@ asd
 
 \printbibliography[title={Literatúra}, heading=bibintoc]
 
-\appendix
-\chapter{Dlouhý zdrojový kód}
-\begin{lstlisting}[label=src:bwin,caption={Extrahovanie zvolených scén pomocou masky}]
-private static bool BuildWindows(WindowsSettings settings, string[] scenes) {
-
-	// ...
-	
-    BuildPlayerOptions options = new BuildPlayerOptions();
-    options.scenes = scenes;
-    options.locationPathName = path + Application.productName + ".exe";
-    options.targetGroup = BuildTargetGroup.Standalone;
-    options.target = BuildTarget.StandaloneWindows64;
-    options.options = GetBuildOptions(); // Development, AllowDebugging, ...
-
-    BuildReport report = BuildPipeline.BuildPlayer(options);
-    
-    return report.summary.result == BuildResult.Succeeded ? true : false;
-}
-\end{lstlisting}
+%\appendix
+%\chapter{Zdrojový kód triedy RestPosition}
+%\lstinputlisting[label=src:lihanie,caption={Algoritmus na zistenie správnej polohy spiacej postavy}]{Ext/RestPosition.cs}
 \end{document}

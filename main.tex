@@ -55,14 +55,13 @@ deletekeywords={var, is}
 % Abstrakty
 \CzechAbstract{Cieľom tejto bakalárskej práce je popísať absolvovanie odbornej praxe v českom nezávislom hernom štúdiu Perun Creative. Prvá časť si kladie za cieľ charakterizovať štúdio ako také a uviesť základnú klasifikáciu vyvíjaného produktu, teda počítačovej hry Hobo: Tough Life. Následne by som chcel špecifikovať moje pracovné zaradenie v rámci štruktúry spoločnosti a uviesť najdôležitejšie technológie, s ktorými som mal možnosť pracovať. Hlavnú časť tejto práce tvorí popis realizácie konkrétnych projektov. Tie sa týkali najmä vývoja pomocných nástrojov, optimalizácie a prevodu hry na iné platformy, ale aj implementácie konkrétnych herných mechaník. Záver je potom venovaný celkovému zhodnoteniu absolvovanej odbornej praxe so zameraním na uplatnené a novonadobudnuté znalosti a zručnosti.}
 
-\CzechKeywords{Unity engine; C\#; herný vývoj, automatizácia, optimalizácia, vývojárske nástroje}
+\CzechKeywords{Unity engine, C\#, herný vývoj, automatizácia, optimalizácia, vývojárske nástroje}
 
 \EnglishAbstract{Main purpose of this bachelor thesis is to describe how my individual professional practise in czech indie game studio Perun Creative went. First part aims to characterize the studio as such and give a basic classification of the developed product, i.e. the computer game Hobo: Tough Life. Afterwards, I would like to specify my position within the company structure and mention the most important technologies that I had the opportunity to work with. The main part of this thesis is dealing with the implementation of specific projects. These were mainly focused on the creation of development tools, optimization and porting of the game to other platforms, but also the implementation of some game mechanics. The conclusion is then aimed to the overall evaluation of the completed individual professional practice with focus on applied and newly acquired knowledge and skills.}
 
-\EnglishKeywords{Unity engine; C\#; game development, automatisation, optimization, development tools}
+\EnglishKeywords{Unity engine, C\#, game development, automatisation, optimization, development tools}
 
 % Skratky
-\AddAcronym{AI}{Artificial intelligence}
 \AddAcronym{API}{Application Programming Interface}
 \AddAcronym{CD}{Continuous Delivery}
 \AddAcronym{CD}{Continuous Deployment}
@@ -117,15 +116,14 @@ Perun Creative s.r.o \cite{Perun} je české nezávislé herné štúdio, ktoré
 Hra samotná by sa dala charakterizovať ako RPG z mestského prostredia, kde sa hráč ocitne v role bezdomovca. Ústrednou hernou mechanikou je snaha prežiť v nehostinnom prostredí ulice. Okrem prežitia na hráča čaká aj pútavý príbeh a možnosť hrať kooperatívne až s troma ďalšími hráčmi. Hobo: Tough Life v súčasnosti vychádza na platformách Microsoft Windows a Linux. V budúcnosti sa počíta aj s vydaním na konzolách novej a starej generácie. 
 
 Štúdio Perun Creative má aktuálne dve pobočky. Prvá sa nachádza v Ostrave a jej osadenstvo tvoria výhradne programátori. Pobočka v Olomouci naopak slúži pre menej technicky zameranú časť firmy a síce pre grafika, herného dizajnéra a komunitného manažéra. Štúdio tvorí menej ako desať vývojárov a teda sa svojou veľkosťou radí k menším. Využíva ale aj služby externých pracovníkov prípadne spoločností špecializovaných na testovanie, zvukovú stránku hry a v neposlednom rade aj na preklad textov do rôznych svetových jazykov.
-\vspace{-20pt}
+\vspace{-5pt}
 \begin{figure}[!htbp]
 	\centering
-	\includegraphics[width=0.5\textwidth]{Pictures/perunLogo.pdf}
-	\vspace{-35pt}
+	\includegraphics[width=0.8\textwidth]{Pictures/logoNew.jpg}
+	\vspace{-5pt}
 	\caption{Logo spoločnosti Perun Creative}
 	\label{pic:perunLogo}
 \end{figure}
-\vspace{-20pt}
 \section{Pracovné zaradenie}
 \label{sec:Me}
 Môj prínos štúdiu Perun Creative spočíval hlavne v automatizácií a zefektívnení jednotlivých interných postupov resp. vývoji pomocných nástrojov pre QA oddelenie či ostatných programátorov. Do tejto kategórie by som zaradil projekty ako automatizované zostavenie hry na serveri, zefektívnenie spôsobu nahlasovania jednotlivých problémov prípadne prepracovanie importovania objektov zo starej verzie projektu do novej. K zefektívneniu práce rozhodne prispel aj návrh a implementácia systému klávesových skratiek v hernom engine Unity (bližšie popísanom v sekcií \ref{sec:Unity}) či  program na vytvorenie tzv. \mbox{\enquote{Patch notes}}. Ten bol primárne určený pre testerov, ale do budúcna sa plánuje jeho využitie aj pri informovaní hráčov o novinkách v rámci hry.
@@ -202,7 +200,7 @@ V tejto kapitole by som rád podrobne prebral konkrétne projekty na ktorých so
 \subsection{Evidovanie chybových reportov (Mantis Report)}
 \label{sec:Report}
 \textbf{Časová náročnosť:} \\ Nasadenie: 8 dní, pridanie ďalšej funkcionality podľa požidaviek: spolu 8 dní.\\
-\textbf{Úvod do problému:} \\ Ako som spomenul v sekcií \ref{sec:GitLab} možnosti automatizovaného testovania hry tohto rozsahu sú na rozdiel od bežného softvéru značne obmedzené. Veľké štúdiá si vytvárajú vlastné nástroje založené na AI, nikdy sa to však úplne neobíde bez tvrdej práce ľudí z QA oddelenia ľudovo nazývaných aj ako testeri. Úlohou testera je teda hrať celú hru alebo jej určené časti, nájsť a následne ohlásiť nájdené chyby. 
+\textbf{Úvod do problému:} \\ Ako som spomenul v sekcií \ref{sec:GitLab} možnosti automatizovaného testovania hry tohto rozsahu sú na rozdiel od bežného softvéru značne obmedzené. Veľké štúdiá si vytvárajú vlastné nástroje založené na umelej inteligencií, nikdy sa to však úplne neobíde bez ľudí z QA oddelenia ľudovo nazývaných aj ako testeri. Úlohou testera je teda hrať celú hru alebo jej určené časti, nájsť a následne ohlásiť nájdené chyby. 
 
 Takéto ohlásenie chyby je značne neefektívny proces nakoľko na pozadí zahŕňa hneď niekoľko ďalších krokov ako minimalizácia hry, otvorenie stránky so službou Mantis Bug Tracker, nahranie snímky obrazovky a nakoniec aj samotné vyplnenie detailov reportu. Niektoré z týchto detailov sa navyše medzi jednotlivými reportmi nemenia ako napríklad informácie o platforme či operačnom systéme. Ručné vyplnenie reportu znázorňuje obrázok \ref{pic:Mantis}.
 Táto neefektívnosť samozrejme priamo úmerne rastie s počtom nájdených chýb, čo môžu byť aj vyššie jednotky denne. Mojou úlohou bolo teda optimalizovať tento postup. \\
@@ -549,7 +547,7 @@ Po úspešnom zostavení projektu na pracovnej stanici pomocou skriptu bolo teda
 
 V našom prípade bola nutná iba etapa \enquote{build}, je ale možné, že do budúcna sa tento počet bude zvyšovať. Obsah súboru .gitlab-ci.yml, ktorý bol použitý v projekte je možné vidieť vo výpise \ref{src:YML}. V tomto súbore môže byť nakonfigurovaná aj pomerne zložitá logika, nakoniec sa však z rôznych dôvodov osvedčilo túto logiku presunúť do separátneho batch súboru a ten len z .gitlab-ci.yml spustiť. Jedným z týchto dôvodov bolo napríklad, že po neúspešnom zostavení hry sa etapa \enquote{build} ukončila úspešne, čo je pomerne zásadný problém, ktorý sa mi nepodarilo vyriešiť. Naopak použitie batch súboru umožnilo jednoducho ukončiť etapu s hodnotou navrátenou enginu Unity. Typicky išlo o kompilačné chyby. Tento postup sa osvedčil aj v prípade chýb prejavených počas zostavovania projektu. V tomto prípade bolo možné nepriamo použiť hodnotu \textit{result} zo štruktúry \textit{BuildReport.summary}, ktorú vracia metóda \textit{BuildPipeline.BuildPlayer}. 
 
-Príkazy zadané v súbore .gitlab-ci.yml vykonáva tzv \enquote{Gitlab runner}. Ten je možné stiahnuť z oficiálnych stránok ako spustiteľný súbor, je ale nutné ho zaregistrovať na konkrétny projekt. Registrácia prebieha v niekoľkých jednoduchých krokoch po spustení programu \enquote{Gitlab runner} z príkazového riadku spolu s príkazom \textit{register}. Jeden z krokov vyžaduje od užívateľa tzv. token, ten je možné nájsť v nastaveniach repozitára vo webovej aplikácií Gitlab. Posledným krokom je potom zvolenie tzv. \enquote{executora}, pomocou ktorého bude  \enquote{Gitlab runner} vykonávať zadané príkazy. V našom prípade bola zvolená možnosť \textit{shell}, čo značí prosté vykonávanie príkazov v príkazovom riadku lokálneho PC.
+Príkazy zadané v súbore .gitlab-ci.yml vykonáva tzv \enquote{Gitlab runner}. Ten je možné stiahnuť z oficiálnych stránok ako spustiteľný súbor a pre zabezpečenie správneho fungovania ho spúšťať po štarte systému. Najskôr je však nutné ho zaregistrovať na konkrétny projekt alebo niekoľko projektov. Registrácia prebieha v niekoľkých jednoduchých krokoch po spustení programu \enquote{Gitlab runner} z príkazového riadku spolu s príkazom \textit{register}. Jeden z krokov vyžaduje od užívateľa tzv. token, ten je možné nájsť v nastaveniach repozitára vo webovej aplikácií Gitlab. Posledným krokom je potom zvolenie tzv. \enquote{executora}, pomocou ktorého bude  \enquote{Gitlab runner} vykonávať zadané príkazy. V našom prípade bola zvolená možnosť \textit{shell}, čo značí prosté vykonávanie príkazov v príkazovom riadku lokálneho PC.
 
 \vspace{10pt}
 \begin{lstlisting}[language=yml,label=src:YML,caption={Obsah súboru .gitlab-ci.yml}]
@@ -575,7 +573,7 @@ Registrácia neprebehla úspešne z dôvodu, že server, na ktorom je uložený 
 
 Engine Unity ponúka širokú škálu parametrov s ktorými môže byť spustený. Okrem cesty k projektu a cesty k logovaciemu súboru boli použité parametre ako \textit{batchmode}, ktorý spustí program bez užívateľského rozhrania a parameter \textit{quit}, ktorý editor ukončí po vykonaní všetkých naprogramovaných akcií. Nakoniec je ešte nutné uviesť statickú metódu, ktorá má byť zavolaná. Identifikátor tejto metódy musí byť uvedený vrátane všetkých menných priestorov, do ktorých metóda náleží. Návratová hodnota z editoru je následne uložená do premennej \textit{ERRORLEVEL}. Podľa tejto premennej je ukončené vykonávanie batch súboru a zároveň podľa nej .gitlab-ci.yml nastaví výsledok etapy. Po úspešnom zostavení je ešte spustený súbor GitLogger.exe, ktorého účel bol podrobne vysvetlený v sekcií \ref{sec:GitLogger}. Obsah celého batch súboru potom znázorňuje výpis \ref{src:batch}.
 
-\vspace{10pt}
+\vspace{5pt}
 \begin{lstlisting}[style=Batch,label=src:batch,caption={Skript zabezpečujúci zostavenie hry na serveri}]
 @ECHO off
 SET project_path="C:\PerunCreative\Projekty\Hobo\HoboTL"
@@ -698,15 +696,15 @@ Postupne boli do projektu pridané aj ďalšie možnosti zostavenia. Možnosť \
 \subsection{Optimalizácia a refaktorovanie kódu}
 \label{sec:optim}
 \textbf{Časová náročnosť:} \\ 4 dni.\\
-\textbf{Úvod do problému:} \\ S rastúcim výkonom výpočtovej techniky sa neustále znižuje dôraz na optimalizáciu a efektivitu. Herný vývoj je ale jedna z disciplín, v ktorých hrá optimalizácia veľmi dôležitú úlohu aj dnes. Rovnako ako narastá výkon tak narastajú aj požiadavky hráčov na vyššiu fotorealistickosť grafiky či viac vykreslených snímkov za sekundu. S tým ide ruku v ruke aj vývoj v ďalších oblastiach hardvéru ako sú napríklad monitory. Najmodernejšie sériovo vyrábané svojím rozlíšením presahujú rozlíšenie 4k a obnovovacou frekvenciou 240Hz. Na dosiahnutie hodnoty 60 snímok za sekundu je potom nutné vykonať všetky potrebné algoritmy v rámci 16 milisekúnd, čo nie je vždy jednoduché. Mojou úlohou bolo teda identifikovať potenciálne úzke hrdlá a pokiaľ možno ich aj optimalizovať \\
+\textbf{Úvod do problému:} \\ S rastúcim výkonom výpočtovej techniky sa neustále znižuje dôraz na optimalizáciu a efektivitu. Herný vývoj je ale jedna z disciplín, v ktorých hrá optimalizácia veľmi dôležitú úlohu aj dnes. Rovnako ako narastá výkon tak narastajú aj požiadavky hráčov na vyššiu fotorealistickosť grafiky či viac vykreslených snímkov za sekundu. S tým ide ruku v ruke aj vývoj v ďalších oblastiach hardvéru ako sú napríklad monitory. Najmodernejšie sériovo vyrábané svojimi parametrami presahujú rozlíšenie 4k a obnovovaciu frekvenciu 240Hz. Na dosiahnutie hodnoty 60 snímok za sekundu je potom nutné vykonať všetky potrebné algoritmy v rámci 16 milisekúnd, čo nie je vždy jednoduché. Mojou úlohou bolo teda identifikovať potenciálne úzke hrdlá a pokiaľ možno ich aj optimalizovať \\
 \textbf{Navrhované riešenia:} \\ Ako som už spomínal v sekcií \ref{sec:QACode} hra Hobo: Tough Life je postavená na hierarchickej štruktúre manažérov. Hlavný manažér obsahuje metódu \textit{Update} a v nej sú postupne volané metódy \textit{OnUpdate} všetkých ostatných manažérov. Z pohľadu výkonu je toto najkritickejšie miesto nakoľko metóda \textit{Update} je vykonávaná počas vykreslenia každej jednej snímky. Prvou vecou, na ktorú bolo nutné sa zamerať bola práve táto hierarchická štruktúra. Druhým návrhom bolo použiť nástroj Unity Profiler, ktorého účelom je zaznamenávať rôzne údaje o výkone hry do jednotlivých grafov. Takto je napríklad možné zobraziť aj presnú metódu, ktorá bola volaná v momente, keď nastal pád snímok. Treťou a poslednou vecou, na ktorú som sa rozhodol zamerať bola celková mikrooptimalizácia založená na vyhľadávaní a oprave drobných neoptimalizovaných častí kódu pochádzajúcich prevažne z ranného štádia vývoja.  \\
-\textbf{Realizácia:} \\ Prvým krokom bolo teda preskúmanie štruktúry metód volaných pri vykresľovaní každej snímky. Veľký prepad snímok na konkrétnom mieste, napríklad pri komunikácií s nejakým NPC je problém,  pokiaľ však takáto situácia nastáva len veľmi zriedka, je výhodnejšie snažiť sa skôr o optimalizáciou často volaných metód. Tým sa zdvihne priemerná hodnota snímok za sekundu a už rozdiel v ráde nižších jednotiek býva v niektorých kritických bodoch hry signifikantný. V často volaných metódach ako napríklad už spomenutá metóda \textit{Update} by sa prakticky nemalo vyskytovať vytváranie nových premenných referenčného typu. Tieto premenné odkazujú na pamäťový priestor vytvorený na halde a spravidla zaberajú rádovo viac pamäte ako bežné, napríklad celočíselné premenné. Táto pamäť alokovaná na halde musí byť následne uvoľnená. Narozdiel od jazykov ako C++, v jazyku C\# sa o toto uvoľňovanie pamäte stará tzv \enquote{Garbage Collector} alebo GC. Ten je volaný v pravidelných intervaloch, ale je možné ho zavolať aj predčasne, napríklad v momente načítavania novej lokácie, keď prudký pád snímok za sekundu nebude hrať žiadnu rolu. Z toho teda vyplýva, že čím menej pamäte bude nutné týmto spôsobom uvoľňovať, tým menší dopad na výkon a prepady snímok bude GC mať. Alokácia novej pamäte by teda mala nastávať pri inicializácií a v niektorých ďalších situáciach ale rozhodne nie pri vykresľovaní každej snímky. Aby sa ešte zmenšila nutnosť alokovania novej pamäte, je v projekte použitý aj tzv \enquote{Object Pool}. Ten slúži na recykláciu určitých objektov, aby ich nebolo nutné znova vytvárať. 
+\textbf{Realizácia:} \\ Prvým krokom bolo teda preskúmanie štruktúry metód volaných pri vykresľovaní každej snímky. Veľký prepad snímok na konkrétnom mieste, napríklad pri komunikácií s nejakým NPC je problém,  pokiaľ však takáto situácia nastáva len veľmi zriedka, je výhodnejšie snažiť sa skôr o optimalizáciou často volaných metód. Tým sa zdvihne priemerná hodnota snímok za sekundu a už rozdiel v ráde nižších jednotiek býva v niektorých kritických bodoch hry signifikantný. V často volaných metódach, ako napríklad už spomenutá metóda \textit{Update}, by sa prakticky nemalo vyskytovať vytváranie nových premenných referenčného typu. Tieto premenné odkazujú na pamäťový priestor vytvorený na halde a spravidla zaberajú rádovo viac pamäte ako bežné, napríklad celočíselné premenné. Táto pamäť alokovaná na halde musí byť následne uvoľnená. Narozdiel od jazykov ako C++, v jazyku C\# sa o toto uvoľňovanie pamäte stará tzv \enquote{Garbage Collector} alebo GC. Ten je volaný v pravidelných intervaloch, ale je možné ho zavolať aj predčasne, napríklad v momente načítavania novej lokácie, keď prudký pád snímok za sekundu nebude hrať žiadnu rolu. Z toho teda vyplýva, že čím menej pamäte bude nutné týmto spôsobom uvoľňovať, tým menší dopad na výkon a prepady snímok bude GC mať. Alokácia novej pamäte by teda mala nastávať pri inicializácií a v niektorých ďalších situáciach, ale rozhodne nie pri vykresľovaní každej snímky. Aby sa ešte zmenšila nutnosť alokovania novej pamäte, je v projekte použitý aj tzv \enquote{Object Pool}. Ten slúži na recykláciu určitých objektov, aby ich nebolo nutné znova vytvárať. 
 
-Ďalšou vecou, ktorá by sa mala nachádzať v takýchto metódach čo najmenej sú pochopiteľne cykly. Nie vždy sa im dá vyhnúť, vždy je však vhodné zvážiť použitie iného spôsobu, napríklad korutiny. Týmto spôsobom by sa počet vykonávaní nejakého cyklu mohol zredukovať napríklad na štvrtinu, čo by vytvorilo možnosť niektoré akcie striedať medzi sebou.
+Ďalšou vecou, ktorá by sa mala nachádzať v takýchto metódach čo najmenej sú pochopiteľne cykly. Nie vždy sa im dá vyhnúť, je však vhodné zvážiť použitie iného spôsobu, napríklad korutiny. Týmto spôsobom by sa počet vykonávaní nejakého cyklu mohol zredukovať napríklad na štvrtinu, čo by vytvorilo možnosť niektoré akcie striedať medzi sebou.
 
-Po podrobnom preskúmaní týchto metód, som nenašiel žiadne závažné úzke hrdlo. Toto zistenie nebolo až tak prekvapivé nakoľko hra prešla počas svojho vývoja niekoľkými optimalizačnými cyklami s dôrazom práve na tieto miesta. Bol som dopredu aj upozornený, že problém optimalizácie je do veľkej miery hľadanie tzv. \enquote{ihly v kope sena}.
+Po podrobnom preskúmaní týchto metód, som nenašiel žiadne závažné úzke hrdlo. Toto zistenie nebolo až tak prekvapivé, nakoľko hra prešla počas svojho vývoja niekoľkými optimalizačnými cyklami s dôrazom práve na tieto miesta. Rovnako som bola aj dopredu upozornený, že problém optimalizácie je do veľkej miery hľadanie tzv. \enquote{ihly v kope sena}.
 
-Druhou optimalizačnou stratégiou bolo použitie nástroja Unity Profiler. Tento nástroj pracuje v dvoch režimoch - štandardnom a hlbokom. Štandardný režim menej ovplyvňuje finálny výkon hry, v praxi sa mi ale veľmi neosvedčil. Umožňoval síce základnú detekciu problémov, od určitej hĺbky zanorenia ale nie je možné dohľadať konkrétne volané metódy. Užitočnosť tohto režimu sa ale ukázali pri hľadaní alokovanej pamäte v danom snímku. Hodnoty namerané v potenciálne problematickom mieste a síce pri otváraní inventára znázorňuje obázok \ref{pic:Prof}.
+Druhou optimalizačnou stratégiou bolo použitie nástroja Unity Profiler. Tento nástroj pracuje v dvoch režimoch - štandardnom a hlbokom. Štandardný režim menej ovplyvňuje finálny výkon hry, v praxi sa mi ale veľmi neosvedčil. Umožňoval síce základnú detekciu problémov, od určitej hĺbky zanorenia ale nie je možné dohľadať konkrétne volané metódy. Užitočnosť tohto režimu sa ale ukázala pri hľadaní alokovanej pamäte v danom snímku. Hodnoty namerané v potenciálne problematickom mieste a síce pri otváraní inventára znázorňuje obázok \ref{pic:Prof}.
 
 \begin{figure}[!htbp]
 	\centering
@@ -715,28 +713,46 @@ Druhou optimalizačnou stratégiou bolo použitie nástroja Unity Profiler. Tent
 	\label{pic:Prof}
 \end{figure}
 
-Po otvorení inventára dôjde k vytvoreniu veľkého množstva objektov, ktoré sa týkajú uživateľského rozhrania. Najväčšiu časť z alokovaných objektov tvorili užívateľom získané predmety. Po porade s kolegami sme dospeli k záveru, že by to bolo možné optimalizovať len nejakou formou stránkovania, čo by ale znamenalo nutnosť prepracovať celý doterajší systém, a to sa ukázalo z časového hľadiska nerealizovateľné. Čo sa ostatných prvkov užívateľského rozhrania inventára týka, žiadny svojou náročnosťou výrazne neprevyšoval ostatné takže sa upustilo od ďalšieho skúmania. Veľká alokácia pamaäte bola ešte samozrejme prítomná pri štarte hry. To sa nám podarilo z velkej miery optimalizovať.
+Po otvorení inventára dôjde k vytvoreniu veľkého množstva objektov, ktoré sa týkajú uživateľského rozhrania. Najväčšiu časť z alokovaných objektov tvorili užívateľom získané predmety. Po porade s kolegami sme dospeli k záveru, že by to bolo možné optimalizovať len nejakou formou stránkovania, čo by ale znamenalo nutnosť prepracovať celý doterajší systém, a to sa ukázalo z časového hľadiska nerealizovateľné. Čo sa ostatných prvkov užívateľského rozhrania inventára týka, žiadny svojou náročnosťou výrazne neprevyšoval ostatné, takže sa upustilo od ďalšieho skúmania. Veľká alokácia pamäte bola ešte samozrejme prítomná pri štarte hry. To sa nám podarilo z velkej miery optimalizovať.
 
 Následné využívanie hlbokého režimu profilera ukazovalo niekoľko potenciálnych problematických miest, všetky sa ale ukázali ako slepé uličky. Niektoré boli spôsobené spustením hry v rámci editoru a v samostatnej zostavenej verzií ich nebolo možné zreprodukovať, iné boli nevyhnutné pre samotný chod hry, prípadne zabezpečovali vykresľovanie grafiky samotnej.
 
-Následné mikrooptimalizácie boli zamerané tzv \enquote{cachovanie premenných}, prevod \textit{foreach} cyklov na klasické \textit{for} cykly, prednastavenie kapacity rôznych dátových štruktúr pri ich vytváraní, používanie lokálneho súradnicového systému na úkor globálneho pokiaľ to bolo možné či zabráneniu zbytočnej serializácií premenných, ktoré nutne serializované byť nemuseli.
+Následné mikrooptimalizácie boli zamerané tzv \enquote{cachovanie premenných}, prevod \textit{foreach} cyklov na klasické \textit{for} cykly, prednastavenie kapacity rôznych dátových štruktúr pri ich vytváraní, používanie lokálneho súradnicového systému na úkor globálneho pokiaľ to bolo možné či zabránenie zbytočnej serializácií premenných, ktoré nutne serializované byť nemuseli.
 
 \enquote{Cachovanie premenných} je jednoduchá technika pri ktorej sa ukladajú získané dáta do nejakej dočasnej premennej aby sa s nimi mohlo ďalej pracovať bez nutnosti neustále sa na ne dotazovať znova. Efektivita takéhoto prístupu sa naviac ukazuje v spojení s \textit{for} cyklom. Namiesto toho, aby sa kód každú iteráciu cyklu vždy dotazoval na dĺžku nejakej dátovej štruktúry je táto dĺžka uložená do premennej a vždy len prečítaná.
 
-\textit{Foreach} cyklus bol v priebehu vývoja postupne nahrádzaný \textit{for} cyklom. Dôvodom bolo, že cyklus \textit{for} vykazuje prakticky vždy lepšie výsledky z hľadiska výkonu. Vo väčšine kľúčových miest bol nahradený už v dobe keď som začínal s projektom pracovať, niekoľko desiatok kde ho bolo potrebné nahradiť sa ale našlo. Išlo o prípady, kde sa tento cyklus používa v rámci čistej hry pre jedného hráča. Zasahovať do cyklov v rámci vývojárskych nástrojov by z hľadiska výkonu nijak nepomohlo a nezasahovalo sa z tohto pohľadu ani do zložky hry pre viac hráčov.
+\textit{Foreach} cyklus bol v priebehu vývoja postupne nahrádzaný \textit{for} cyklom. Dôvodom bolo, že cyklus \textit{for} vykazuje prakticky vždy lepšie výsledky z hľadiska výkonu. Vo väčšine kľúčových miest bol nahradený už v dobe keď som začínal s projektom pracovať, niekoľko desiatok takých, kde ho bolo potrebné nahradiť sa ale našlo. Išlo o prípady, kde sa tento cyklus používa v rámci čistej hry pre jedného hráča. Zasahovať do cyklov v rámci vývojárskych nástrojov by z hľadiska výkonu nijak nepomohlo a nezasahovalo sa z tohto pohľadu ani do zložky hry pre viac hráčov.
 
-Prednastavenie kapacity dátových štruktúr je taktiež veľmi užitočná optimalizácia. Obyčajné pole, ktoré je na projekte preferované, pokiaľ je ho možné použiť, sa vytvára s kapacitou takou, aby dokázalo bezpečne uložiť všetky dáta. Dátové štruktúry ako \textit{List} či \textit{Dictionary} majú naproti tomu výhodu, že môžu svoju kapacitu postupne zväčšovať. Časté zväčšovanie je ale veľmi náročné z hľadiska výpočtového výkonu nakoľko je nutné po presiahnutí pôvodnej kapacity vytvoriť na pozadí novú dátovú štruktúru s väčšou kapacitou a jednotlivé prvky do nej skopírovať. Pokiaľ teda programátor má aspoň približnú predstavu o počte budúcich uložených prvkov je vhodné tomu priblížiť aj prednastavenú kapacitu. V niektorých prípadoch som skutočne našiel takéto prípady a následne ich opravil.
+Prednastavenie kapacity dátových štruktúr je taktiež veľmi užitočná optimalizácia. Obyčajné pole, ktoré je na projekte preferované, pokiaľ ho je možné použiť, sa vytvára s kapacitou takou, aby dokázalo bezpečne uložiť všetky dáta. Dátové štruktúry ako \textit{List} či \textit{Dictionary} majú naproti tomu výhodu, že môžu svoju kapacitu postupne zväčšovať. Časté zväčšovanie je ale veľmi náročné z hľadiska výpočtového výkonu nakoľko je nutné po presiahnutí pôvodnej kapacity vytvoriť na pozadí novú dátovú štruktúru s väčšou kapacitou a jednotlivé prvky do nej skopírovať. Pokiaľ teda programátor má aspoň približnú predstavu o počte budúcich uložených prvkov je vhodné tomu priblížiť aj prednastavenú kapacitu. V niektorých prípadoch som skutočne našiel takéto prípady a následne ich opravil.
 
 Posledné dve vykonávané mikrooptimalizácie úzko súvisia s enginom Unity. Prvá z nich je uprednostnenie lokálneho súradnicového systému oproti globálnemu. To je z dôvodu, že lokálny súradnicový systém je relatívny k rodičovskému objektu a globálne koordináty sa musia vždy vyrátať zo všetkých rodičovských objektov až ku koreňovému objektu, čo značí omnoho vyššiu náročnosť na výpočtový výkon. Čo sa serializácie objektov týka, Unity engine automaticky serializuje všetky verejné premenné objektu. Pokiaľ nie je nutné tieto premenné serializovať nemali by byť označené ako verejné. Tento prístup je zlý aj z hľadiska zapúzdrenia. V projekte sa od ranného vývoja vyskytovali niektoré čisto verejné triedy, mojou úlohou bolo teda skontrolovať, čo je potrebné serializovať a čo nie. Následne bolo nutné upraviť modifikátor prístupu podľa potreby a prakticky všetky verejné premenné nahradiť za tzv \enquote{Properties}. Pri tomto postupe bolo nutné dbať na serializované dáta. Niektoré z týchto dát boli nastavované a následne ladené podľa potreby priamo v editore a strata týchto dát by predstavovala veľký problém. Dáta sa aj automaticky zmažu po premenovaní danej premennej a následnej kompilácií. 
 
-Po jednom nechcenom premenovaní bolo nutné ručne obnovovať niektoré dôležité dáta ako napríklad identifikátory objektov, našťastie sa to stalo iba pri jednej dátovej štruktúre, ktorá nebola veľmi obsiahla. Problémy nastali aj pri niektorých nevhodne \enquote{zacachovaných} premenných, prípadne pri prevode cyklov. Po ich následnej úprave a prekontrolovaní všetkých zmien bola optimalizácia a refaktorovanie ukončené z dôvodu nenájdenia ďalších veľkých problémov a nutnosti venovať sa ďalším projektom. Predtým ale došlo ešte k aplikácií automatizovaných nástrojov na formátovanie kódu či vymazanie nevyužívaných \textit{using} príkazov.
+Po jednom nechcenom premenovaní bolo nutné ručne obnovovať niektoré dôležité dáta ako napríklad identifikátory objektov, našťastie sa to stalo iba pri jednej dátovej štruktúre, ktorá nebola veľmi obsiahla. Problémy nastali aj pri niektorých nevhodne \enquote{zacachovaných} premenných, prípadne pri prevode cyklov. Po ich následnej úprave a prekontrolovaní všetkých zmien Fbola optimalizácia a refaktorovanie ukončené z dôvodu nenájdenia ďalších veľkých problémov a nutnosti venovať sa ďalším projektom. Predtým ale ešte došlo k aplikácií automatizovaných nástrojov na formátovanie kódu či vymazanie nevyužívaných \textit{using} príkazov.
 
 \subsection{Prevod hry na OS Linux}
 \label{sec:linux}
-\textbf{Časová náročnosť:} \\ Nasadenie: 3 dni.\\
-\textbf{Úvod do problému:} \\ Ako som spomenul v sekcií \\
-\textbf{Navrhované riešenia:} \\ Nakoľko bola \\
-\textbf{Realizácia:} \\ Pri preskúmavaní mož
+\textbf{Časová náročnosť:} \\ 6 dní.\\
+\textbf{Úvod do problému:} \\ Hra Hobo: Tough Life vychádza primárne na platforme Steam. Steam bol dlhodobo synonymom pre hranie na OS Windows, dnes ale podporuje aj ďalšie operačné systémy ako Linux či MacOS. Podpora zo strany distribútora je však iba jedna časť. O samotný prevod hry sa musí postarať samotný vývojár či externé štúdio. Podpora však musí byť zaistená aj zo strany enginu, na ktorom je hra vytvorená. Engine Unity umožňuje pomerne jednoduchý prevod hry na iné platformy po doinštalovaní príslušného modulu a zvolení správnych nastavení zostavenia. Sú však veci, ktoré sa chovajú rozdielne na rôznych platformách a mojou úlohou teda bolo tieto veci nájsť, nahlásiť a prípadne aj opraviť. V dobe písania tohto textu sa jednalo iba o prevod na OS Linux, po ostrom vydaní sa však plánujú aj vydania na konzolové platformy.\\
+\textbf{Realizácia:} \\ Testovanie, prípadne oprava chýb, ktoré sa vyskytli v hre spustenej na OS Linux by sa realizovalo len veľmi zle bez prístupu k PC s týmto OS. Narozdiel od OS Windows poskytuje Linux veľké množstvo distribúcií s rôznou úrovňou podpory aj zameraním. Pre účely testovania hry bola zvolená distribúcia Ubuntu z dôvodu, že patrí medzi tie najobľúbenejšie pre bežného používateľa bez špeciálnych požiadaviek. Následne bolo nutné rozhodnúť akým spôsobom bude tento OS nainštalovaný. Distribúcia spustená z prenosného disku rovnako ako virtualizovaná verzia majú rôzne obmedzenia a nedokážu spoľahlivo nasimulovať reálne použitie. Bol teda zvolený tzv. \enquote{dual boot} teda nainštalovania OS Linux \enquote{vedľa} hlavného OS na pracovnej stanici. Inštalácia prebehla v poriadku, problém bol však so spúšťaním. PC bez opýtania bootoval do OS Windows a nebolo možné vybrať OS pri štarte. Tento problém sa nakoniec podarilo vyriešiť zmenou poradia bootovania v rámci jedného disku. Táto možnosť bola pomerne dobre schovaná v BIOSe a bolo nutné uviesť Ubuntu na prvé miesto. To spôsobí, že pri každom štarte sa spustí program GRUB zodpovedný práve za zavádzanie OS a v rámci neho je možné vybrať, ktorý OS bude aktuálne spustený.
+
+Operačný systém bol teda pripravený a mohlo sa prejsť na zostavenie hry. Po niekoľkých neúspešných pokusoch sa zistilo, že IL2CPP zostavenie nie je momentálne možné aj napriek nainštalovanému príslušnému modulu. Jednalo sa o chybu, ktorú som nahlásil spoločnosti Unity Technologies a nasledujúce zostavenia už prebiehali výlučne v režime mono. 
+
+Zostavené verzie hry sa ukladajú na server pripojený do lokálnej siete. Na tomto serveri je nainštalovaný bežný OS Windows a dáta sú prístupné pomocou mechanizmu zdieľanej zložky. Na prístup k tejto zložke z OS Linux bol použitý program Gigolo, ktorý na tento úkon využíva štandard SAMBA. Stačilo sa teda pripojiť na server a spustiť zostavený program.
+
+Tento prístup fungoval s testovacou aplikáciou, problém však nastal pri pokuse spustiť hru priamo vo virtuálnom súborovom systéme GVfs. Hra sa spustila ale všetky pokusy o načítanie herného sveta skončili chybovou hláškou. Možným riešením sa ukázalo kopírovanie zostavenej hry do lokálneho PC. To však nie je veľmi efektívne nakoľko bolo niekoľkokrát denne nutné presúvať herné súbory, ktorých veľkosť presahuje 20GB. Postupne sa zistilo, že spustená hra nedokáže v GVfs získať výlučný zámok na súbory s uloženými pozíciami. Tie sa generujú automaticky pri pokuse o vytvorenie nového herného sveta. Tento problém sa nakoniec podarilo vyriešiť zásahom do kódu hry. Do vytvárania \textit{FileStreamu} zo súboru bolo nutné explicitne pridať parametre \textit{FileMode.Open}, \textit{FileAccess.Read} a \textit{FileShare.Read}. Po tomto zásahu už bolo možné vstúpiť do hry a testovať.
+
+Testovanie ukázalo hneď niekoľko závažných problémov. Prvým viditeľným na prvý pohľad bola absencia intra. Intro je realizované ako videoklip a úlohou enginu Unity je ho len prehrať. Aby sa garantovalo správne prehratie na všetkých platformách zdrojový videoklip musí prejsť tzv. \enquote{transcodingom}. Táto operácia je voliteľná, v projekte sa však využívala. \enquote{Transcoding} má hneď niekoĺko nastaviteľných možností a najdôležitejšou je výstupný kodek. Ten bol nastavený na automatický výber podľa platformy, táto možnosť však nefungovala korektne a bolo nutné explicitne zvoliť kodek vp8, ktorý má natívnu podporu na všetkých cieľových platformách.
+
+Druhý problém sa prejavil pri pokuse zmeniť rozlíšenie hry. Užívateľ môže rozlíšenie nastaviť v nastaveniach hry pomocou šípok doprava a doľava. Tieto rozlíšenia sú zoradené podľa zobrazeného počtu pixelov vzostupne a nie je možné preskakovať mimo poradia. Problém sa prejavoval pri pokuse zmeniť rozlíšenie z 640x480 na 1920x1080 a z rozlíšenia 1680x1050 opäť na 1920x1080. Táto hodnota je natívne rozlíšenie monitora, na ktorom bola hra spustená. Ukázalo sa, metóda \textit{Screen.currentResolution} dostupná v engine Unity vracala rozdielne hodnoty v závislosti od operačného systému. Na OS Windows táto metóda vracala nastavené rozlíšenie hry, ktoré mohol užívateľ ovplyvniť a na OS Linux vracala rozlíšenie monitora. Táto metóda bola použitá z dôvodu optimalizácie a kontrolovala, či zmena rozlíšenia v hre zapríčinená užívateľským kliknutím na šípku nastala medzi dvoma rozdielnymi rozlíšeniami. Nakoľko ale na OS Linux táto metóda vracala vždy 1920x1080, pokusy zmeniť rozlíšenie práve na túto hodnotu vždy zlyhali. Problém vyriešila mierne odlišná implementácia tejto logiky založená na metóde \textit{Screen.safeArea}.
+
+Po vytvorení a vstupe do nového herného sveta sa ako ďalší problém ukázal počet snímkov za sekundu. Ten v priemere dosahoval 15fps, čo nie je hrateľná hodnota. Pripojenie hry na vzdialený PC so spusteným programom Unity Profiler, ktorý bol spomenutý už v sekcií \ref{sec:optim} ukázalo, že ohromné množstvo výkonu využíva metóda zodpovedná za integráciu so službou Steam. Tento problém som nahlásil kolegovi a ten musel aktualizovať Steam API na najnovšiu verziu. Problém bol v tom, že aktuálne využívaná verzia bola stará niekoľko rokov a za tú dobu API prešlo razantnými zmenami v implementácií, ktoré bolo nutné zohľadniť aj v kóde hry.
+
+Posledným závažným problémom bola nemožnosť otáčania hernej kamery resp. rozhliadnutia sa v plnom rozsahu 360$^{\circ}$. Reálne dostupný uhol bol pocitovo asi polovičný. Kurzor myši je v hre skrytý pokiaľ hráč neotvorí menu alebo inventár a práve v inventári bolo vidieť, že moment, kedy prestane byť možné ďalej sa rozhliadať je zároveň momentom, kedy kurzor narazí na kraj obrazovky. Na OS Windows je tento kurzor uzamknutý v strede pokiaľ nie je viditeľný a keď užívateľ otvorí inventár zobrazí sa v strede obrazovky a užívateľ s ním môže manipulovať. Na OS Linux bolo nutné explicitne pri zneviditeľnení kurzora vždy nastaviť aj vlastnosť \textit{Cursor.lockState} na hodnotu \textit{CursorLockMode.Locked}. To umožnilo pohyb kamery v celom rozsahu, stále však boli mierne odlišnosti medzi chovaním na OS Windows a OS Linux. Túto diverzitu sme sa nakoniec rozhodli zachovať, nakoľko nijak neovplyvňuje zážitok z hry.
+
+Jedným z menších problémov, ktoré sa ešte podarilo nájsť bol problém s veľkosťou kurzoru v rámci minihry stieranie žrebu. Ten bol niekoľkonásobné väčší ako na OS Windows. Kurzor mal v rámci tejto minihry nastavený tzv \enquote{sprite} namiesto predvoleného výzoru a na OS Linux nefungovalo správne škálovanie tohto \enquote{spritu}. Tento problém sa podarilo opraviť zmenou veľkosti zdroja priamo na požadovanú hodnotu, ktorá vyhovovala na všetkých operačných systémoch bez nutnosti ďalších úprav tejto veľkosti kódom.
+
+V hre sa aj naďalej vyskytovali menšie problémy, bola však bez problémov hrateľná. Niektoré ďalšie nájdené problémy boli pomocou aplikácie \enquote{Mantis Report} zo sekcie \ref{sec:Report} nahlásené a ďalšie testovanie či opravy chýb boli prenechané povolanejším osobám.
+
 \subsection{Implementácia Epic Online Services}
 \label{sec:implEOS}
 \textbf{Časová náročnosť:} \\ Nasadenie: 3 dni.\\
@@ -752,18 +768,34 @@ Po jednom nechcenom premenovaní bolo nutné ručne obnovovať niektoré dôlež
 \textbf{Úvod do problému:} \\ Ako som spomenul v sekcií \\
 \textbf{Navrhované riešenia:} \\ Nakoľko bola \\
 \textbf{Realizácia:} \\ Pri preskúmavaní mož
+asd
 
-% End of chapter 4
-
-% chapter 5
-%\chapter{Postup riešenia zadaných projektov}
-%\label{sec:Processes}
-%adasd
-% End of chapter 5
-
-%d) Teoretické a praktické znalosti a dovednosti získané v průběhu studia uplatněné studentem v průběhu odborné praxe.
-%e) Znalosti či dovednosti scházející studentovi v průběhu odborné praxe.
-%f) Dosažené výsledky v průběhu odborné praxe a její celkové zhodnocení.
+\chapter{Teoretické a praktické znalosti a zručnosti získané v priebehu štúdia uplatnené v priebehu odbornej praxe}
+\label{sec:techZruc}
+\chapter{Znalosti a zručnosti chýbajúce v priebehu odbornej praxe}
+\label{sec:coNeviem}
+\chapter{Dosiahnuté výsledky v priebehu odbornej praxe a celkové zhodnotenie}
+\label{sec:Results}
 
 \printbibliography[title={Literatúra}, heading=bibintoc]
+
+\appendix
+\chapter{Dlouhý zdrojový kód}
+\begin{lstlisting}[label=src:bwin,caption={Extrahovanie zvolených scén pomocou masky}]
+private static bool BuildWindows(WindowsSettings settings, string[] scenes) {
+
+	// ...
+	
+    BuildPlayerOptions options = new BuildPlayerOptions();
+    options.scenes = scenes;
+    options.locationPathName = path + Application.productName + ".exe";
+    options.targetGroup = BuildTargetGroup.Standalone;
+    options.target = BuildTarget.StandaloneWindows64;
+    options.options = GetBuildOptions(); // Development, AllowDebugging, ...
+
+    BuildReport report = BuildPipeline.BuildPlayer(options);
+    
+    return report.summary.result == BuildResult.Succeeded ? true : false;
+}
+\end{lstlisting}
 \end{document}

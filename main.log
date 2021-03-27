@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.2.19)  27 MAR 2021 00:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.2.19)  27 MAR 2021 18:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1200,7 +1200,7 @@ File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 
 pdfTeX warning: pdflatex.exe (file ./Pictures/FEI_CZ.pdf): PDF inclusion: found
  PDF version <1.6>, but at most version <1.5> allowed
-<Pictures/FEI_CZ.pdf, id=94, 350.70023pt x 109.21pt>
+<Pictures/FEI_CZ.pdf, id=90, 350.70023pt x 109.21pt>
 File: Pictures/FEI_CZ.pdf Graphic file (type pdf)
 <use Pictures/FEI_CZ.pdf>
 Package pdftex.def Info: Pictures/FEI_CZ.pdf  used on input line 99.
@@ -1284,7 +1284,7 @@ Kapitola 1.
 
 ]
 Kapitola 2.
-<Pictures/logoNew.jpg, id=247, 1921.1775pt x 784.9325pt>
+<Pictures/logoNew.jpg, id=254, 1921.1775pt x 784.9325pt>
 File: Pictures/logoNew.jpg Graphic file (type jpg)
 <use Pictures/logoNew.jpg>
 Package pdftex.def Info: Pictures/logoNew.jpg  used on input line 122.
@@ -1299,7 +1299,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [11
 
 ]
-<Pictures/platforms.png, id=269, 876.27374pt x 255.95625pt>
+<Pictures/platforms.png, id=276, 876.27374pt x 255.95625pt>
 File: Pictures/platforms.png Graphic file (type png)
 <use Pictures/platforms.png>
 Package pdftex.def Info: Pictures/platforms.png  used on input line 151.
@@ -1313,86 +1313,92 @@ LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
 
 (d:/Programy/texlive/2020/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [13]
+)
+<Pictures/gitlab.png, id=289, 1003.75pt x 556.0775pt>
+File: Pictures/gitlab.png Graphic file (type png)
+<use Pictures/gitlab.png>
+Package pdftex.def Info: Pictures/gitlab.png  used on input line 177.
+(pdftex.def)             Requested size: 424.82523pt x 235.35828pt.
+ [13 <./Pictures/gitlab.png>]
 Kapitola 4.
 [14
 
 ]
-<Pictures/mantis.png, id=298, 444.91219pt x 471.26062pt>
+<Pictures/mantis.png, id=306, 444.91219pt x 471.26062pt>
 File: Pictures/mantis.png Graphic file (type png)
 <use Pictures/mantis.png>
-Package pdftex.def Info: Pictures/mantis.png  used on input line 209.
+Package pdftex.def Info: Pictures/mantis.png  used on input line 210.
 (pdftex.def)             Requested size: 320.97777pt x 339.98334pt.
 
 Underfull \vbox (badness 2334) has occurred while \output is active []
 
  [15 <./Pictures/mantis.png>]
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 219.
+nput line 220.
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 2
-19.
+20.
  (d:/Programy/texlive/2020/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 220.
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 221.
 
 Underfull \vbox (badness 1259) has occurred while \output is active []
 
  [16]
 [17] [18] [19]
-<Pictures/packet.png, id=392, 1485.8712pt x 803.1606pt>
+<Pictures/packet.png, id=400, 1485.8712pt x 803.1606pt>
 File: Pictures/packet.png Graphic file (type png)
 <use Pictures/packet.png>
-Package pdftex.def Info: Pictures/packet.png  used on input line 344.
+Package pdftex.def Info: Pictures/packet.png  used on input line 345.
 (pdftex.def)             Requested size: 472.03123pt x 255.14159pt.
  [20] [21 <./Pictures/packet.png
 
 pdfTeX warning: pdflatex.exe (file ./Pictures/packet.png): large interlaced PNG
  might cause out of memory (use non-interlaced PNG to fix this)
 >] [22]
-<Pictures/report.png, id=472, 554.07pt x 322.20375pt>
+<Pictures/report.png, id=480, 554.07pt x 322.20375pt>
 File: Pictures/report.png Graphic file (type png)
 <use Pictures/report.png>
-Package pdftex.def Info: Pictures/report.png  used on input line 412.
+Package pdftex.def Info: Pictures/report.png  used on input line 413.
 (pdftex.def)             Requested size: 462.5886pt x 269.00722pt.
  [23 <./Pictures/report.png>]
-<Pictures/pictureEditBox.png, id=480, 1445.4pt x 811.53188pt>
+<Pictures/pictureEditBox.png, id=488, 1445.4pt x 811.53188pt>
 File: Pictures/pictureEditBox.png Graphic file (type png)
 <use Pictures/pictureEditBox.png>
-Package pdftex.def Info: Pictures/pictureEditBox.png  used on input line 427.
+Package pdftex.def Info: Pictures/pictureEditBox.png  used on input line 428.
 (pdftex.def)             Requested size: 472.03123pt x 265.02017pt.
  [24 <./Pictures/pictureEditBox.png>]
 [25] [26] [27]
-<Pictures/gitlogger.png, id=552, 828.09375pt x 290.58563pt>
+<Pictures/gitlogger.png, id=560, 828.09375pt x 290.58563pt>
 File: Pictures/gitlogger.png Graphic file (type png)
 <use Pictures/gitlogger.png>
-Package pdftex.def Info: Pictures/gitlogger.png  used on input line 523.
+Package pdftex.def Info: Pictures/gitlogger.png  used on input line 524.
 (pdftex.def)             Requested size: 472.03123pt x 165.6444pt.
  [28 <./Pictures/gitlogger.png>] [29]
 Underfull \vbox (badness 1789) has occurred while \output is active []
 
  [30]
 [31]
-<Pictures/buildDetail.png, id=614, 479.54156pt x 392.21532pt>
+<Pictures/buildDetail.png, id=622, 479.54156pt x 392.21532pt>
 File: Pictures/buildDetail.png Graphic file (type png)
 <use Pictures/buildDetail.png>
-Package pdftex.def Info: Pictures/buildDetail.png  used on input line 602.
+Package pdftex.def Info: Pictures/buildDetail.png  used on input line 603.
 (pdftex.def)             Requested size: 424.82523pt x 347.46663pt.
  [32 <./Pictures/buildDetail.png>]
-<Pictures/warr.png, id=624, 468.24937pt x 31.61812pt>
+<Pictures/warr.png, id=632, 468.24937pt x 31.61812pt>
 File: Pictures/warr.png Graphic file (type png)
 <use Pictures/warr.png>
-Package pdftex.def Info: Pictures/warr.png  used on input line 632.
+Package pdftex.def Info: Pictures/warr.png  used on input line 633.
 (pdftex.def)             Requested size: 472.03123pt x 31.87517pt.
  [33 <./Pictures/warr.png>] [34] [35]
 Underfull \vbox (badness 5756) has occurred while \output is active []
 
  [36]
-<Pictures/profiler.png, id=698, 497.60907pt x 170.13562pt>
+<Pictures/profiler.png, id=706, 497.60907pt x 170.13562pt>
 File: Pictures/profiler.png Graphic file (type png)
 <use Pictures/profiler.png>
-Package pdftex.def Info: Pictures/profiler.png  used on input line 703.
+Package pdftex.def Info: Pictures/profiler.png  used on input line 704.
 (pdftex.def)             Requested size: 472.03123pt x 161.39426pt.
 
 Underfull \vbox (badness 5008) has occurred while \output is active []
@@ -1401,9 +1407,19 @@ Underfull \vbox (badness 5008) has occurred while \output is active []
 Underfull \vbox (badness 4353) has occurred while \output is active []
 
  [39]
-[40] [41] [42]
+[40] [41]
+<Pictures/algviz.png, id=735, 768.62157pt x 469.00218pt>
+File: Pictures/algviz.png Graphic file (type png)
+<use Pictures/algviz.png>
+Package pdftex.def Info: Pictures/algviz.png  used on input line 769.
+(pdftex.def)             Requested size: 472.03123pt x 288.03029pt.
+ [42] [43 <./Pictures/algviz.png>]
+Underfull \vbox (badness 5787) has occurred while \output is active []
+
+ [44]
+[45] [46] [47]
 Kapitola 5.
-[43
+[48
 
 ]
 
@@ -1413,40 +1429,43 @@ Package biblatex Warning: '\mainlang' is deprecated in favour of
 (biblatex)                but note that the syntax is different.
 (biblatex)                Using the old, problematic definition.
 
-[44
+[49
 
 ] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 4B4EFCEEE334DE4DAABDCD7A8E911AA1;4905.
+(rerunfilecheck)             Checksum: 7BA901631AE5136238043BA6AA800EB7;4744.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 27408 strings out of 479023
- 445807 string characters out of 5858895
- 1295940 words of memory out of 5000000
- 44073 multiletter control sequences out of 15000+600000
+ 27612 strings out of 479023
+ 448932 string characters out of 5858895
+ 1323548 words of memory out of 5000000
+ 44160 multiletter control sequences out of 15000+600000
  468906 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  103i,9n,131p,1803b,4778s stack positions out of 5000i,500n,10000p,200000b,80000s
 {d:/Programy/texlive/2020/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{d:/Program
 y/texlive/2020/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{d:/Programy/texlive
-/2020/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}<d:/Programy/texlive/2020/texmf-
-dist/fonts/type1/public/lm/lmbx10.pfb><d:/Programy/texlive/2020/texmf-dist/font
-s/type1/public/lm/lmcsc10.pfb><d:/Programy/texlive/2020/texmf-dist/fonts/type1/
-public/lm/lmr10.pfb><d:/Programy/texlive/2020/texmf-dist/fonts/type1/public/lm/
-lmr8.pfb><d:/Programy/texlive/2020/texmf-dist/fonts/type1/public/lm/lmri10.pfb>
-<d:/Programy/texlive/2020/texmf-dist/fonts/type1/public/lm/lmss12.pfb><d:/Progr
-amy/texlive/2020/texmf-dist/fonts/type1/public/lm/lmss17.pfb><d:/Programy/texli
-ve/2020/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><d:/Programy/texlive/2020
-/texmf-dist/fonts/type1/public/lm/lmsy8.pfb><d:/Programy/texlive/2020/texmf-dis
-t/fonts/type1/public/lm/lmtk10.pfb><d:/Programy/texlive/2020/texmf-dist/fonts/t
-ype1/public/lm/lmtt10.pfb><d:/Programy/texlive/2020/texmf-dist/fonts/type1/publ
-ic/lm/lmtto10.pfb>
-Output written on main.pdf (44 pages, 2851537 bytes).
+/2020/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{d:/Programy/texlive/2020/tex
+mf-dist/fonts/enc/dvips/lm/lm-rm.enc}{d:/Programy/texlive/2020/texmf-dist/fonts
+/enc/dvips/lm/lm-ts1.enc}<d:/Programy/texlive/2020/texmf-dist/fonts/type1/publi
+c/lm/lmbx10.pfb><d:/Programy/texlive/2020/texmf-dist/fonts/type1/public/lm/lmcs
+c10.pfb><d:/Programy/texlive/2020/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><
+d:/Programy/texlive/2020/texmf-dist/fonts/type1/public/lm/lmr10.pfb><d:/Program
+y/texlive/2020/texmf-dist/fonts/type1/public/lm/lmr8.pfb><d:/Programy/texlive/2
+020/texmf-dist/fonts/type1/public/lm/lmri10.pfb><d:/Programy/texlive/2020/texmf
+-dist/fonts/type1/public/lm/lmss12.pfb><d:/Programy/texlive/2020/texmf-dist/fon
+ts/type1/public/lm/lmss17.pfb><d:/Programy/texlive/2020/texmf-dist/fonts/type1/
+public/lm/lmssbx10.pfb><d:/Programy/texlive/2020/texmf-dist/fonts/type1/public/
+lm/lmsy10.pfb><d:/Programy/texlive/2020/texmf-dist/fonts/type1/public/lm/lmsy8.
+pfb><d:/Programy/texlive/2020/texmf-dist/fonts/type1/public/lm/lmtk10.pfb><d:/P
+rogramy/texlive/2020/texmf-dist/fonts/type1/public/lm/lmtt10.pfb><d:/Programy/t
+exlive/2020/texmf-dist/fonts/type1/public/lm/lmtto10.pfb>
+Output written on main.pdf (49 pages, 3743845 bytes).
 PDF statistics:
- 897 PDF objects out of 1000 (max. 8388607)
- 361 named destinations out of 1000 (max. 500000)
- 244 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1075 PDF objects out of 1200 (max. 8388607)
+ 476 named destinations out of 1000 (max. 500000)
+ 246 words of extra memory for PDF output out of 10000 (max. 10000000)
 

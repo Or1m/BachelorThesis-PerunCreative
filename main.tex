@@ -33,9 +33,9 @@ deletekeywords={var, is}
 %\definecolor{props}{rgb}{0, 0, 0}
 
 \lstset{
- moremethods={ExecutePost, GetUri, SendIssue, SerializeObject, ReadToEnd, Parse, OnUpdate, StartCreateReport, ZipAndSendToLinkManager, Log, StartCoroutine, LocalIPAddress, ToString, Exists, Delete, WriteAllText, OpenURL, WaitForSeconds, EnumerateFiles, Contains, AddFile, Save, ReadAllBytes, Send_MantisReport, ToBase64String, AcceptTcpClient, GetStream, Read, GetString, CreateReport, GetWindowRect, GetActiveWindow, GetUnityBounds, pictureBoxBcg_MouseDown, pictureBoxBcg_MouseUp, pictureBoxBcg_MouseMove, Invalidate, DrawLine, InvokePowershellScript, AddScript, Invoke, Select, ToArray, Create, Format, ToHex, Matches, FromJson, ReadAllText, PrintListToJsonString, ToJson, LoadAssetAtPath, FindProperty, OnEnable, OnInspectorGUI, ApplyModifiedProperties, PropertyField, SetUpScenes, Add, GetValues, IsSelected, ToInt32, BuildWindows, BuildPlayer, GetBuildOptions},
+ moremethods={ExecutePost, GetUri, SendIssue, SerializeObject, ReadToEnd, Parse, OnUpdate, StartCreateReport, ZipAndSendToLinkManager, Log, StartCoroutine, LocalIPAddress, ToString, Exists, Delete, WriteAllText, OpenURL, WaitForSeconds, EnumerateFiles, Contains, AddFile, Save, ReadAllBytes, Send_MantisReport, ToBase64String, AcceptTcpClient, GetStream, Read, GetString, CreateReport, GetWindowRect, GetActiveWindow, GetUnityBounds, pictureBoxBcg_MouseDown, pictureBoxBcg_MouseUp, pictureBoxBcg_MouseMove, Invalidate, DrawLine, InvokePowershellScript, AddScript, Invoke, Select, ToArray, Create, Format, ToHex, Matches, FromJson, ReadAllText, PrintListToJsonString, ToJson, LoadAssetAtPath, FindProperty, OnEnable, OnInspectorGUI, ApplyModifiedProperties, PropertyField, SetUpScenes, Add, GetValues, IsSelected, ToInt32, BuildWindows, BuildPlayer, GetBuildOptions, FindEdges, Raycast, IsNotSimilarToRef, Translate, DestroyImmediate, FindDistanceAndRotation, IsTrue, FindRotation, LookRotation, NeedToReverseDirection, CreatePrimitive, Distance, GetComponent, PointInAABB, InverseTransformPoint, Cross},
  methodstyle=\bfseries\color{methods},
- moreclasses={Issue, JsonConvert, JObject, Keyboard, Debug, HBTLink_Manager, GameConfiguration, File, Application, ZipFile, Directory, SearchOption, Convert, TcpClient, NetworkStream, Encoding, Rect, Screen, IntPtr, MouseEventArgs, Point, PowerShell, GitLogger, Regex, Message, Content, Serialize, MenuItem, DllImport, AssetDatabase, BuildSettings, SerializedProperty, CustomEditor, EditorGUILayout, Editor, BuildSettingsEditor, Enum, Array, List, Scene, BuildPlayerOptions, BuildTarget, BuildTargetGroup, BuildResult, BuildReport, BuildPipeline, WindowsSettings},
+ moreclasses={Issue, JsonConvert, JObject, Keyboard, Debug, HBTLink_Manager, GameConfiguration, File, Application, ZipFile, Directory, SearchOption, Convert, TcpClient, NetworkStream, Encoding, Rect, Screen, IntPtr, MouseEventArgs, Point, PowerShell, GitLogger, Regex, Message, Content, Serialize, MenuItem, DllImport, AssetDatabase, BuildSettings, SerializedProperty, CustomEditor, EditorGUILayout, Editor, BuildSettingsEditor, Enum, Array, List, Scene, BuildPlayerOptions, BuildTarget, BuildTargetGroup, BuildResult, BuildReport, BuildPipeline, WindowsSettings, Vector3, GameObject, HideFlags, Transform, Physics, RaycastHit, Object, PrimitiveType, Quaternion, BoxCollider, Assert},
  classstyle = \bfseries\color{classes},
  morekeywords={endif, var, yield, get, set},
  %properties={isPressed, wasPressedThisFrame, current, f11Key, leftShiftKey, UNITY_EDITOR, sender_ServerIP, Instance, pathConfig, exeFile, mantisArguments, FullName, AllDirectories, System},
@@ -172,17 +172,18 @@ Spoločnou filozofiou týchto metód je teda po každej iteratívnej zmene v pro
 
 V rámci mojej odbornej praxe som sa stretol hlavne s metódou CI. Možnosti automatizovaného testovania hry touto metódou sú veľmi obmedzené, o to viac je ale užitočné automatizované zostavenie na serveri. Zostavenie tohto typu projektu na pracovnej stanici je typicky náročne ako časovo tak aj na výpočtový výkon a do značnej miery teda spomaľuje vývoj ako taký. Bolo teda logickým krokom zamerať sa v rámci optimalizácie interných procesov aj na tento aspekt.
 
-\section{Epic Online Services}
-\label{sec:Eos}
-Epic Online Services alebo EOS \cite{Epic} je skupina nástrojov od spoločnosti Epic Games, ktoré sa snažia zjednodušiť a zjednotiť niektoré aspekty herného vývoja naprieč platformami. Typicky sa zameriavajú na kooperatívnu či kompetetívnu zložku hry pre viacerých hráčov, zahŕňajú však aj služby ako nákup herných predmetov za reálne peniaze, zber hráčskych štatistik, prípadne získavanie herných úspechov. Za normálnych okolností je nutné tieto služby implementovať zvlášť takmer pre každú platformu, na ktorú bude hra vychádzať. EOS sú zdarma dostupné pre vývojárov a podporujú širokú škálu platforiem, čo znamená väčšiu slobodu z pohľadu hráča ale aj z pohľadu vývojára. Hráč môže ďalej ťažiť aj z online synchronizácie postupu hrou naprieč viacerými platformami, prípadne z prístupu k úspechom či priateľom z jedného centrálneho miesta. 
-
-Nakoľko sa do budúcna počíta s vydaním hry Hobo: Tough Life na rôzne platformy, ukázalo sa použitie EOS ako veľmi výhodné na náhradu doterajšieho systému pre hru viacerých hráčov. Hlavnou výhodou tohto riešenia by bola vyššie spomínaná multiplatformovosť. V dobe písania tohto textu sa však počíta s nasadením EOS spolu s niektorými službami dostupnými len na konkrétnej platforme.
-% End of section 3
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=.9\textwidth]{Pictures/gitlab.png}
+	\vspace{-15pt}
+	\caption{Princíp fungovania Gitab CI/CD \cite{Cicd}}
+	\label{pic:Gitlab}
+\end{figure}
 
 % Section 4
 \chapter{Zadané projekty a ich riešenia}
 \label{sec:Projects}
-V tejto kapitole by som rád podrobne prebral konkrétne projekty na ktorých som v rámci mojej odbornej praxe pracoval. Poradie v akom budú prezentované nutne neodzrkadľuje poradie ich vypracovania, ale budú usporiadané do logických celkov podľa typu projektu. 
+V tejto kapitole by som rád podrobne prebral niektoré konkrétne projekty na ktorých som v rámci mojej odbornej praxe pracoval. Poradie v akom budú prezentované nutne neodzrkadľuje poradie ich vypracovania, ale budú usporiadané do logických celkov podľa typu projektu. 
 
 Čo sa časovej náročnosti týka, nie vždy je možné ju určiť presne nakoľko niektoré z projektov boli vyvíjané inkrementálne podľa spätnej väzby QA oddelenia alebo nových požiadaviek od ostatných programátorov.
 %U niektorych prebiehala tvorba inkrementalne a bola zavisla na spatnej vazbe bla bla.
@@ -724,8 +725,8 @@ Po jednom nechcenom premenovaní bolo nutné ručne obnovovať niektoré dôlež
 \subsection{Prevod hry na OS Linux}
 \label{sec:linux}
 \textbf{Časová náročnosť:} \\ 6 dní.\\
-\textbf{Úvod do problému:} \\ Hra Hobo: Tough Life vychádza primárne na platforme Steam. Steam bol dlhodobo synonymom pre hranie na OS Windows, dnes ale podporuje aj ďalšie operačné systémy ako Linux či MacOS. Podpora zo strany distribútora je však iba jedna časť. O samotný prevod hry sa musí postarať samotný vývojár či externé štúdio. Podpora však musí byť zaistená aj zo strany enginu, na ktorom je hra vytvorená. Engine Unity umožňuje pomerne jednoduchý prevod hry na iné platformy po doinštalovaní príslušného modulu a zvolení správnych nastavení zostavenia. Sú však veci, ktoré sa chovajú rozdielne na rôznych platformách a mojou úlohou teda bolo tieto veci nájsť, nahlásiť a prípadne aj opraviť. V dobe písania tohto textu sa jednalo iba o prevod na OS Linux, po ostrom vydaní sa však plánujú aj vydania na konzolové platformy.\\
-\textbf{Realizácia:} \\ Testovanie, prípadne oprava chýb, ktoré sa vyskytli v hre spustenej na OS Linux by sa realizovalo len veľmi zle bez prístupu k PC s týmto OS. Narozdiel od OS Windows poskytuje Linux veľké množstvo distribúcií s rôznou úrovňou podpory aj zameraním. Pre účely testovania hry bola zvolená distribúcia Ubuntu z dôvodu, že patrí medzi tie najobľúbenejšie pre bežného používateľa bez špeciálnych požiadaviek. Následne bolo nutné rozhodnúť akým spôsobom bude tento OS nainštalovaný. Distribúcia spustená z prenosného disku rovnako ako virtualizovaná verzia majú rôzne obmedzenia a nedokážu spoľahlivo nasimulovať reálne použitie. Bol teda zvolený tzv. \enquote{dual boot} teda nainštalovania OS Linux \enquote{vedľa} hlavného OS na pracovnej stanici. Inštalácia prebehla v poriadku, problém bol však so spúšťaním. PC bez opýtania bootoval do OS Windows a nebolo možné vybrať OS pri štarte. Tento problém sa nakoniec podarilo vyriešiť zmenou poradia bootovania v rámci jedného disku. Táto možnosť bola pomerne dobre schovaná v BIOSe a bolo nutné uviesť Ubuntu na prvé miesto. To spôsobí, že pri každom štarte sa spustí program GRUB zodpovedný práve za zavádzanie OS a v rámci neho je možné vybrať, ktorý OS bude aktuálne spustený.
+\textbf{Úvod do problému:} \\ Hra Hobo: Tough Life vychádza primárne na platforme Steam. Steam bol dlhodobo synonymom pre hranie na OS Windows, dnes ale podporuje aj ďalšie operačné systémy ako Linux či MacOS. Podpora zo strany distribútora je však iba jedna časť. O samotný prevod hry sa však musí  postarať vývojár či externé štúdio. Podpora však musí byť zaistená aj zo strany enginu, na ktorom je hra vytvorená. Engine Unity umožňuje pomerne jednoduchý prevod hry na iné platformy po doinštalovaní príslušného modulu a zvolení správnych nastavení zostavenia. Sú však veci, ktoré sa chovajú rozdielne na rôznych platformách a mojou úlohou teda bolo tieto veci nájsť, nahlásiť a prípadne aj opraviť. V dobe písania tohto textu sa jednalo iba o prevod na OS Linux, po ostrom vydaní sa však plánujú aj vydania na konzolové platformy.\\
+\textbf{Realizácia:} \\ Testovanie, prípadne oprava chýb, ktoré sa vyskytli v hre spustenej na OS Linux by sa realizovalo len veľmi zle bez prístupu k PC s týmto OS. Narozdiel od OS Windows poskytuje Linux veľké množstvo distribúcií s rôznou úrovňou podpory aj zameraním. Pre účely testovania hry bola zvolená distribúcia Ubuntu z dôvodu, že patrí medzi tie najobľúbenejšie pre bežného používateľa bez špeciálnych požiadaviek. Následne bolo nutné rozhodnúť, akým spôsobom bude tento OS nainštalovaný. Distribúcia spustená z prenosného disku rovnako ako virtualizovaná verzia majú rôzne obmedzenia a nedokážu spoľahlivo nasimulovať reálne použitie. Zvolili sme tzv. \enquote{dual boot}, teda nainštalovania OS Linux \enquote{vedľa} hlavného OS na pracovnej stanici. Inštalácia prebehla v poriadku, problém bol však so spúšťaním. PC bez opýtania bootoval do OS Windows a nebolo možné vybrať OS pri štarte. Tento problém sa nakoniec podarilo vyriešiť zmenou poradia bootovania v rámci jedného disku. Táto možnosť bola pomerne dobre schovaná v BIOSe a bolo nutné uviesť Ubuntu na prvé miesto. To spôsobí, že pri každom štarte sa spustí program GRUB zodpovedný práve za zavádzanie OS a v rámci neho je možné vybrať, ktorý OS bude aktuálne spustený.
 
 Operačný systém bol teda pripravený a mohlo sa prejsť na zostavenie hry. Po niekoľkých neúspešných pokusoch sa zistilo, že IL2CPP zostavenie nie je momentálne možné aj napriek nainštalovanému príslušnému modulu. Jednalo sa o chybu, ktorú som nahlásil spoločnosti Unity Technologies a nasledujúce zostavenia už prebiehali výlučne v režime mono. 
 
@@ -733,34 +734,179 @@ Zostavené verzie hry sa ukladajú na server pripojený do lokálnej siete. Na t
 
 Tento prístup fungoval s testovacou aplikáciou, problém však nastal pri pokuse spustiť hru priamo vo virtuálnom súborovom systéme GVfs. Hra sa spustila ale všetky pokusy o načítanie herného sveta skončili chybovou hláškou. Možným riešením sa ukázalo kopírovanie zostavenej hry do lokálneho PC. To však nie je veľmi efektívne nakoľko bolo niekoľkokrát denne nutné presúvať herné súbory, ktorých veľkosť presahuje 20GB. Postupne sa zistilo, že spustená hra nedokáže v GVfs získať výlučný zámok na súbory s uloženými pozíciami. Tie sa generujú automaticky pri pokuse o vytvorenie nového herného sveta. Tento problém sa nakoniec podarilo vyriešiť zásahom do kódu hry. Do vytvárania \textit{FileStreamu} zo súboru bolo nutné explicitne pridať parametre \textit{FileMode.Open}, \textit{FileAccess.Read} a \textit{FileShare.Read}. Po tomto zásahu už bolo možné vstúpiť do hry a testovať.
 
-Testovanie ukázalo hneď niekoľko závažných problémov. Prvým viditeľným na prvý pohľad bola absencia intra. Intro je realizované ako videoklip a úlohou enginu Unity je ho len prehrať. Aby sa garantovalo správne prehratie na všetkých platformách zdrojový videoklip musí prejsť tzv. \enquote{transcodingom}. Táto operácia je voliteľná, v projekte sa však využívala. \enquote{Transcoding} má hneď niekoĺko nastaviteľných možností a najdôležitejšou je výstupný kodek. Ten bol nastavený na automatický výber podľa platformy, táto možnosť však nefungovala korektne a bolo nutné explicitne zvoliť kodek vp8, ktorý má natívnu podporu na všetkých cieľových platformách.
+Testovanie ukázalo hneď niekoľko závažných problémov. Jedným z nich, viditeľným na prvý pohľad, bola absencia intra. Intro je realizované ako videoklip a úlohou enginu Unity je ho len prehrať. Aby sa garantovalo správne prehratie na všetkých platformách zdrojový videoklip musí prejsť tzv. \enquote{transcodingom}. Táto operácia je voliteľná, v projekte sa však využívala. \enquote{Transcoding} má hneď niekoĺko nastaviteľných možností a najdôležitejšou je výstupný kodek. Ten bol nastavený na automatický výber podľa platformy, táto možnosť však nefungovala korektne a bolo nutné explicitne zvoliť kodek vp8, ktorý má natívnu podporu na všetkých cieľových platformách.
 
 Druhý problém sa prejavil pri pokuse zmeniť rozlíšenie hry. Užívateľ môže rozlíšenie nastaviť v nastaveniach hry pomocou šípok doprava a doľava. Tieto rozlíšenia sú zoradené podľa zobrazeného počtu pixelov vzostupne a nie je možné preskakovať mimo poradia. Problém sa prejavoval pri pokuse zmeniť rozlíšenie z 640x480 na 1920x1080 a z rozlíšenia 1680x1050 opäť na 1920x1080. Táto hodnota je natívne rozlíšenie monitora, na ktorom bola hra spustená. Ukázalo sa, metóda \textit{Screen.currentResolution} dostupná v engine Unity vracala rozdielne hodnoty v závislosti od operačného systému. Na OS Windows táto metóda vracala nastavené rozlíšenie hry, ktoré mohol užívateľ ovplyvniť a na OS Linux vracala rozlíšenie monitora. Táto metóda bola použitá z dôvodu optimalizácie a kontrolovala, či zmena rozlíšenia v hre zapríčinená užívateľským kliknutím na šípku nastala medzi dvoma rozdielnymi rozlíšeniami. Nakoľko ale na OS Linux táto metóda vracala vždy 1920x1080, pokusy zmeniť rozlíšenie práve na túto hodnotu vždy zlyhali. Problém vyriešila mierne odlišná implementácia tejto logiky založená na metóde \textit{Screen.safeArea}.
 
-Po vytvorení a vstupe do nového herného sveta sa ako ďalší problém ukázal počet snímkov za sekundu. Ten v priemere dosahoval 15fps, čo nie je hrateľná hodnota. Pripojenie hry na vzdialený PC so spusteným programom Unity Profiler, ktorý bol spomenutý už v sekcií \ref{sec:optim} ukázalo, že ohromné množstvo výkonu využíva metóda zodpovedná za integráciu so službou Steam. Tento problém som nahlásil kolegovi a ten musel aktualizovať Steam API na najnovšiu verziu. Problém bol v tom, že aktuálne využívaná verzia bola stará niekoľko rokov a za tú dobu API prešlo razantnými zmenami v implementácií, ktoré bolo nutné zohľadniť aj v kóde hry.
+Po vytvorení a vstupe do nového herného sveta sa ako ďalší problém ukázal počet snímkov za sekundu. Ten v priemere dosahoval 15fps, čo nie je hrateľná hodnota. Pripojenie hry na vzdialený PC so spusteným programom Unity Profiler, ktorý bol spomenutý už v sekcií \ref{sec:optim} ukázalo, že ohromné množstvo výkonu využíva metóda zodpovedná za integráciu so službou Steam. Tento problém som nahlásil kolegovi a ten musel aktualizovať Steam API na najnovšiu verziu. Aktuálne využívaná však bola stará niekoľko rokov, čo činilo problém, nakoľko API za tú dobu prešlo razantnými zmenami v implementácií, ktoré bolo nutné zohľadniť aj v kóde hry.
 
-Posledným závažným problémom bola nemožnosť otáčania hernej kamery resp. rozhliadnutia sa v plnom rozsahu 360$^{\circ}$. Reálne dostupný uhol bol pocitovo asi polovičný. Kurzor myši je v hre skrytý pokiaľ hráč neotvorí menu alebo inventár a práve v inventári bolo vidieť, že moment, kedy prestane byť možné ďalej sa rozhliadať je zároveň momentom, kedy kurzor narazí na kraj obrazovky. Na OS Windows je tento kurzor uzamknutý v strede pokiaľ nie je viditeľný a keď užívateľ otvorí inventár zobrazí sa v strede obrazovky a užívateľ s ním môže manipulovať. Na OS Linux bolo nutné explicitne pri zneviditeľnení kurzora vždy nastaviť aj vlastnosť \textit{Cursor.lockState} na hodnotu \textit{CursorLockMode.Locked}. To umožnilo pohyb kamery v celom rozsahu, stále však boli mierne odlišnosti medzi chovaním na OS Windows a OS Linux. Túto diverzitu sme sa nakoniec rozhodli zachovať, nakoľko nijak neovplyvňuje zážitok z hry.
+Posledným závažným problémom bola nemožnosť otáčania hernej kamery resp. rozhliadnutia sa v plnom rozsahu 360$^{\circ}$. Reálne dostupný uhol bol pocitovo asi polovičný. Kurzor myši je v hre skrytý pokiaľ hráč neotvorí menu alebo inventár a práve v inventári bolo vidieť, že moment, kedy prestane byť možné ďalej sa rozhliadať je zároveň momentom, kedy kurzor narazí na kraj obrazovky. Na OS Windows je však uzamknutý v jej strede, pokiaľ nie je viditeľný. Na OS Linux bolo nutné explicitne pri zneviditeľnení kurzora vždy nastaviť aj vlastnosť \textit{Cursor.lockState} na hodnotu \textit{CursorLockMode.Locked}. To umožnilo pohyb kamery v celom rozsahu, stále však boli mierne odlišnosti medzi chovaním na OS Windows a OS Linux. Túto diverzitu sme sa nakoniec rozhodli zachovať, nakoľko nijak neovplyvňuje zážitok z hry.
 
-Jedným z menších problémov, ktoré sa ešte podarilo nájsť bol problém s veľkosťou kurzoru v rámci minihry stieranie žrebu. Ten bol niekoľkonásobné väčší ako na OS Windows. Kurzor mal v rámci tejto minihry nastavený tzv \enquote{sprite} namiesto predvoleného výzoru a na OS Linux nefungovalo správne škálovanie tohto \enquote{spritu}. Tento problém sa podarilo opraviť zmenou veľkosti zdroja priamo na požadovanú hodnotu, ktorá vyhovovala na všetkých operačných systémoch bez nutnosti ďalších úprav tejto veľkosti kódom.
+Jedným z ďalších nedostatkov, ktoré sa ešte podarilo nájsť bola neprimeraná veľkosť kurzoru v rámci minihry stieranie žrebu. Ten bol niekoľkonásobné väčší ako na OS Windows. Kurzor mal v rámci tejto minihry nastavený tzv \enquote{sprite} namiesto predvoleného výzoru a na OS Linux nefungovalo správne škálovanie tohto \enquote{spritu}. Tento problém sa podarilo opraviť zmenou veľkosti zdroja priamo na požadovanú hodnotu, ktorá vyhovovala na všetkých operačných systémoch bez nutnosti ďalších úprav tejto veľkosti kódom.
 
-V hre sa aj naďalej vyskytovali menšie problémy, bola však bez problémov hrateľná. Niektoré ďalšie nájdené problémy boli pomocou aplikácie \enquote{Mantis Report} zo sekcie \ref{sec:Report} nahlásené a ďalšie testovanie či opravy chýb boli prenechané povolanejším osobám.
-
-\subsection{Implementácia Epic Online Services}
-\label{sec:implEOS}
-\textbf{Časová náročnosť:} \\ Nasadenie: 3 dni.\\
-\textbf{Úvod do problému:} \\ Ako som spomenul v sekcií \\
-\textbf{Navrhované riešenia:} \\ Nakoľko bola \\
-\textbf{Realizácia:} \\ Pri preskúmavaní mož
+V hre sa aj naďalej vyskytovali menšie problémy, bola však bez prekážok hrateľná. Niektoré ďalšie nájdené problémy boli pomocou aplikácie \enquote{Mantis Report} zo sekcie \ref{sec:Report} nahlásené a ďalšie testovanie či opravy chýb boli prenechané povolanejším osobám.
 
 \section{Ostatné projekty}
 \label{sec:Others}
 \subsection{Systém líhania hráčskej postavy}
 \label{sec:sleep}
-\textbf{Časová náročnosť:} \\ Nasadenie: 3 dni.\\
-\textbf{Úvod do problému:} \\ Ako som spomenul v sekcií \\
-\textbf{Navrhované riešenia:} \\ Nakoľko bola \\
-\textbf{Realizácia:} \\ Pri preskúmavaní mož
-asd
+\textbf{Časová náročnosť:} \\ Nasadenie: 6 dní, pridanie dodatočnej funkcionality: 2 dni.\\
+\textbf{Úvod do problému:} \\ V hre Hobo: Tough Life je relatívne veľké množstvo miest, na ktorých sa hráčska postava môže uložiť k spánku. Niektoré sú statické, s inými môže hráč manipulovať. Pôvodný systém, ktorý zabezpečoval, že hráčška postava je pri líhaní na správnom mieste a v správnej rotácií bol založený na tzv. \enquote{collideroch}. Väčšinou ide o zjednodušenú reprezentáciu objektu samotného, ktorá slúži na zabezpečenie korektnej kolízie medzi objektami. Tento prístup však vyžadoval relatívne presný \enquote{collider} okolo objektu určeného na spanie, čo bolo nie vždy zabezpečené. Mojou úlohou bolo teda vytvoriť robustný algoritmus, ktorý zaistí ležanie postavy v správnej polohe a to za každých okolností.  \\
+\textbf{Realizácia:} \\ Po prvotnej analýze problému som sa rozhodol využiť skutočnosti, že každý objekt, na ktorom sa dá späť má nad sebou interakčnú ikonku. Pozíciu tejto ikonky som využil ako vstup môjho algoritmu. Z pozície ikonky som teda vystrelil tzv. \enquote{raycast} smerom dole.\enquote{Raycast} je možné predstaviť si ako vrhnutý lúč z počiatočného bodu určitým smerom, ktorý vráti informáciu o tom, s čím kolidoval.
+
+Prvotný lúč slúžil na zistenie referenčnej vzdialenosti od ikonky, nakoľko sa interakčná ikonka nachádza vždy nad stredom objektu, táto vzdialenosť určovala zároveň výšku nad zemou, v ktorej bude hráč ležať. Táto referenčná vzdialenosť slúžila aj v ďalších krokoch algoritmu. Pri nastavení rozumnej tolerancie bolo možné určiť kde sa ešte nachádza spiaca plocha a kde už je zem, rám postele, operadlo či iný druh opierky. 
+
+V prvej iterácií algoritmu sa počítalo s tým, že po vystrelení prvého lúča sa posunie pozícia bodu z ktorého bol vrhnutý o nejaký malý odstup v smere osy x a z a to najskôr v kladnom smere a potom v zápornom. Z každého takéhoto bodu sa znova vrhne lúč smerom dole a pokiaľ bude vzdialenosť v ktorej s niečím zkoliduje väčšia či menšia ako je tolerovaná hodnota táto pozícia sa zaznamená ako hranica spiacej plochy. Ak by sa takáto hranica nenašla algoritmus mal obmedzený počet lúčov v každom smere, ktoré mohol vrhnúť, aby nedošlo k zacykleniu. Následne už len stačilo vyrátať vzdialenosti medzi získanými štyrmi hraničnými bodmi, čo umožňovalo zistiť dlhšiu stranu, s ktorou bude postava pri ležaní zvierať menší uhol. Tento spôsob sa ukázal ako nedostatočný nakoľko pri určitej rotácií objektu sa postava ukladala po uhlopriečke alebo zachádzala do operadla.
+
+V druhej iterácií sa už nevrhal lúč z prázdneho miesta ale pre lepšiu názornosť bol vytvorený na pozícií interakčnej ikonky prázdny objekt zvaný \enquote{Raycaster}, s ktorým bolo možné pohodlnejšie manipulovať a postupne ho posúvať. Miesto kríža bol zvolený kruh. \enquote{Raycaster} sa teda vždy posunul o nejaký malý určený uhol až kým neobišiel 360$^{\circ}$ okolo pôvodnej pozície a v každom smere sa ešte posúval o malý odstup až kým nenarazil na hranicu spiacej plochy alebo na obmedzenie vyplývajúce z maximálneho počtu vrhnutých lúčov v jednom smere. Súradnice hraničných bodov boli potom uložené do poľa s veľkosťou $360/\alpha$, kde $\alpha$ značí zvolený uhol. 
+
+Pre ladenie algoritmu boli \enquote{raycasty} vykreslené pomocou metódy \textit{Debug.DrawRay}. Bežný lúč bol vyznačený zelenou farbou a krajný červenou. Mohla nastať aj varianta, že podlaha nebude mať \enquote{collider}, prípadne sa \enquote{Raycaster} dostane dovnútra prekážky a vrhnutý lúč nič nezasiahne. Túto situáciu som zvýraznil modrou farbou, pozícia takéhoto bodu bola však validná a teda opäť uložená do poľa. Vizualizáciu algoritmu je možné vidieť na \mbox{obrázku \ref{pic:algviz}}.
+
+Veľkosti uhlov aj odstupov sa ladili pre dosiahnutie čo najlepších výsledkov. Nakoľko tento výpočet prebieha v editore a jeho výstup je serializovaný spolu s ďalšími údajmi o konkrétnom objekte, ako napríklad bonus ku spánku, nebol veľký tlak na pomer cena/výkon. Začínalo sa na uhle 45$^{\circ}$, finálny uhol bol však po testovaní stanovený až na 10$^{\circ}$, čo zabezpečovalo za každých okolností rovnobežnú pozíciu so spiacou plochou. Odstup na výsledok algoritmu nemá až taký veľký vplyv, priveľká benevolentnosť by však mohla spôsobiť, že postava bude zachádzať do rámu postele ši operadla lavičky. Odstup bol teda nastavený na hodnotu \textit{0.15f}. Tolerancia nerovnosti povrchu bola potom \textit{0.1f}. 
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=1\textwidth]{Pictures/algviz.png}
+	\caption{Vizualizácia algoritmu líhania postavy}
+	\label{pic:algviz}
+\end{figure}
+
+Algoritmus môže teda vrhnúť v najhoršom prípade až $360/\alpha * rmax$ lúčov, čo pri veľkosti uhla $\alpha = 10^{\circ}$ a maximálnom možnom počte lúčov v jednom smere $rmax = 15$ znamená až 540 \enquote{raycastov} na každý objekt určný na spanie. Takýchto statických objektov je v hre 42 a manipulovateľných sú nižšie jednotky. Všetky hodnoty sa generujú naraz po spustení príkazu z horného panela v Unity Engine. Konkrétny časový rozsah sa netestoval, nakoľko na pracovných staniciach je tento proces prakticky okamžitý a hráč ním nie je nijak zdržovaný.
+
+Získanie referenčnej vzdialenosti a krajných bodov objektu pomocou \enquote{raycastov} je možné vidieť vo výpise \ref{src:findEdges}.
+
+\vspace{10pt}
+\begin{lstlisting}[label=src:findEdges,caption={Získanie referenčnej vzdialenosti a krajných bodov objektu}]
+private static Vector3[] FindEdges(int dirs, Vector3 iconPos, ref float refDist) {
+    Vector3[] edges = new Vector3[dirs];
+    GameObject rayCaster = new GameObject("RayCaster");
+    rayCaster.hideFlags = HideFlags.DontSaveInEditor;
+    Transform rayCasterTr = rayCaster.transform;
+
+    Physics.Raycast(iconPos, Vector3.down, out RaycastHit rHit, 2f);
+    refDist = rHit.distance;
+
+    if (refDist != 0) {
+        for (int i = 0; i < dirs; i++) {
+            rayCasterTr.position = iconPos;
+            rayCasterTr.eulerAngles = new Vector3(0, i * angle, 0);
+
+            for (int j = 0; j < numOfRaysForDir; j++) {
+                Vector3 currentPos = rayCasterTr.position;
+                Physics.Raycast(currentPos, Vector3.down, out RaycastHit hit, 2f);
+
+                if (hit.transform != null) {
+                    if (IsNotSimilarToRef(hit.distance, refDist)) {
+                        edges[i] = currentPos;
+                        break;
+                    }
+                }
+                else {
+                    edges[i] = currentPos;
+                    break;
+                }
+                rayCasterTr.Translate(new Vector3(0, 0, offset), Space.Self);
+            }
+        }
+        Object.DestroyImmediate(rayCaster);
+        return edges;
+    }
+    Object.DestroyImmediate(rayCaster);
+    return null;
+}
+private static bool IsNotSimilarToRef(float distance, float referenceDistance) {
+    return (distance > referenceDistance + tolerance) || (distance < referenceDistance - tolerance);
+}
+\end{lstlisting}
+
+Na určenie správnej rotácie sa pôvodne zvažovalo riešenie, ktoré by prešlo všetky získané krajné body a hľadalo v ich súradniciach podobnosti. Najväčší počet za sebou idúcich bodov, ktoré by vykazovali takúto podobnosť by bol potom považovaný za priamku rovnobežnú s dlhšou časťou spiacej plochy a podľa nej by sa hráčska postava uložila k spánku. Problém s týmto riešením bol, že len niektoré body vykazovali väčšiu odlišnosť v nejakej súradnici od ostatných a nebolo teda jednoduché určiť, ktoré z nich skutočne ležia na takejto pomyselnej priamke a ktoré už nie. Navyše aj tie, ktoré na priamke ležali vykazovali mierne odchýlky v závislosti od aktuálneho uhla a odstupu.
+
+Zvažovala sa taktiež možnosť postavená na hľadaní najväčšej vzdialenosť medzi dvoma bodmi. Ako sa ukázalo, táto vzdialenosť však vo väčšine prípadov ukazuje na uhlopriečku danej plochy. Rovnako nebolo možné použiť ani variantu s dvoma uhlopriečkami a nejakého spriemerovania súradníc medzi nimi nakoľko v niektorých rotáciách by to nevracalo korektné výsledky. 
+
+Ako lepšie riešenie sa ukázalo použite rovnostranného trojuholníka s vrcholom v bode, kde sa nachádza pozícia ikonky, teda stred objektu. Týmto trojuholníkom by bolo možné rotovať okolo tohto stredu a v každej rotácií zaznamenávať, koľko krajných bodov sa podarilo obsiahnuť. Táto varianta narážala na problém so zvolením veľkosti trojuholníka, ktorá by sa musela v závislosti od danej rotácie meniť, aby lepšie kopírovala objekt nad ktorým rotuje. Na podobnej myšlienke sa však skutočne založilo aj finálne riešenie. Miesto rovnostranného trojuholníka bol však použitý úzky, dlhý kváder, ktorý postupne prejde všetky krajné body a súradnicu svojho stredu nastaví na súradnicu aktuálneho bodu. V tomto momente bolo nutné ešte kvádrom zarotovať, aby sa nasmeroval kolmo k stredovému bodu. V každom bode sa potom pomocou algoritmu AABB zisťovalo, koľko krajných bodov kváder obsahuje. V bode, v ktorom sa podarilo kvádru obsiahnuť najviac krajných bodov, bola jeho rotácia hľadaným výsledkom algoritmu. Tento postup je znázornený vo výpise \ref{src:findRot}
+
+\vspace{10pt}
+\begin{lstlisting}[label=src:findRot,caption={Získanie korektnej rotácie hráča pri ležaní}]
+private static int FindRotation(int dirs, Vector3 iconPos, Vector3[] edges) {
+    GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+    cube.name = "RotationFinder";
+    cube.hideFlags = HideFlags.DontSaveInEditor;
+    Transform cubeTransform = cube.transform;
+    cubeTransform.localScale = new Vector3(0.2f, 0.2f, 2.5f);
+    int resultIdx = -1, max = 0;
+    Vector3 direction;
+    float distance;
+    for (int i = 0; i < dirs; i++) {
+        direction = (iconPos - edges[i]).normalized;
+        distance = Vector3.Distance(edges[i], iconPos);
+
+        cube.transform.position = iconPos - direction * distance;
+        cube.transform.rotation = Quaternion.LookRotation(Vector3.Cross(iconPos - edges[i], Vector3.up));
+
+        int temp = 0;
+        BoxCollider col = cube.GetComponent<BoxCollider>();
+        for (int j = 0; j < dirs; j++) {
+            if (PointInAABB(edges[j], col))
+                temp++;
+        }
+
+        if (temp > max) {
+            max = temp;
+            resultIdx = i;
+        }
+    }
+    Object.DestroyImmediate(cube);
+    return resultIdx;
+}
+private static bool PointInAABB(Vector3 point, BoxCollider box) {
+    point = box.transform.InverseTransformPoint(point) - box.center;
+
+    float halfX = (box.size.x * 0.5f);
+    float halfY = (box.size.y * 0.5f);
+    float halfZ = (box.size.z * 0.5f);
+
+    return point.x < halfX && point.x > -halfX && point.y < halfY && point.y > -halfY && point.z < halfZ && point.z > -halfZ;
+}
+\end{lstlisting}
+
+Posledným problémom nutným riešiť bol smer pohľadu postavy pri ležaní. Keď postava spí, hráč môže stále očami postavy vidieť okolie. To ale nie je možné pokiaľ sa postava otočí na spánok tvárou k stene prípadne operadlu. Z toho dôvodu bola implementovaná metóda \textit{NeedToReverseDirection}, ktorá vrhne dva lúče, každy opačným smerom a pokiaľ to je nutné, vynúti otočenie hráčškej postavy o 180$^{\circ}$. Táto metóda spolu so vstupným bodom algoritmu je znázornená vo výpise \ref{src:entry}.
+
+\vspace{10pt}
+\begin{lstlisting}[label=src:entry,caption={Vstupný bod algoritmu na získanie rozácie a pozície postavy pri ležaní}]
+public static void FindDistanceAndRotation(Vector3 iconPos, ref float distance, ref float restRotationY) {
+    Assert.IsTrue(360 % angle == 0);
+    int dirs = (int)(360 / angle);
+    float referenceDistance = 0;
+    Vector3[] edges = FindEdges(dirs, iconPos, ref referenceDistance);
+
+    if (edges != null) {
+        int resultIdx = FindRotation(dirs, iconPos, edges);
+        Vector3 rawDirection = iconPos - edges[resultIdx];
+        Vector3 rotation = Quaternion.LookRotation(rawDirection, Vector3.up).eulerAngles;
+
+        if (NeedToReverseDirection(iconPos, rawDirection))
+            restRotationY = rotation.y + 180;
+        else
+            restRotationY = rotation.y;
+
+        distance = referenceDistance;
+    }
+}
+private static bool NeedToReverseDirection(Vector3 iconPos, Vector3 rayCastDir, uint id = 0) {
+    Physics.Raycast(iconPos, rayCastDir, out RaycastHit first, 2f);
+    Physics.Raycast(iconPos, -rayCastDir, out RaycastHit second, 2f);
+
+    if (first.distance != 0 && second.distance != 0)
+        return second.distance > first.distance;
+    else
+        return second.distance == 0;
+}
+\end{lstlisting}
+
+Ako som už spomínal, hodnoty, ktoré vráti tento algoritmus sú serializované spolu s ďalšími vlastnosťami objektu určeného na spanie. Keď hráč príde k danému objektu, tieto hodnoty si vyžiada, upraví podľa nich svoju pozíciu a rotáciu a spustí sa animácia líhania.
+
+Objekty, ktoré hráč môže v hre posúvať a rotovať majú tieto hodnoty predpočítané tiež a to na mieru podľa ich pozície a rotácie po vyexportovaní z modelovacieho nástroja. Následná manipulácia s týmito objektami pripočítava príslušné prírastky k týmto predpočítaným hodnotám. Ak teda algoritmus zistí, že správna rotácia je 90$^{\circ}$ a hráč s objektom zarotuje napríklad o ďalších 30$^{\circ}$, pri pokuse ľahnnúť si je hráčskej postave vrátená hodnota 120$^{\circ}$.
+
 \chapter{Záver}
 \section{Teoretické a praktické znalosti a zručnosti získané v priebehu štúdia uplatnené v priebehu odbornej praxe}
 asd

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.2.19)  27 MAR 2021 18:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.2.19)  27 MAR 2021 22:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1419,9 +1419,13 @@ Underfull \vbox (badness 5787) has occurred while \output is active []
  [44]
 [45] [46] [47]
 Kapitola 5.
-[48
+
+Underfull \vbox (badness 4242) has occurred while \output is active []
+
+ [48
 
 ]
+[49]
 
 Package biblatex Warning: '\mainlang' is deprecated in favour of
 (biblatex)                '\textmainlang'.
@@ -1429,7 +1433,7 @@ Package biblatex Warning: '\mainlang' is deprecated in favour of
 (biblatex)                but note that the syntax is different.
 (biblatex)                Using the old, problematic definition.
 
-[49
+[50
 
 ] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
@@ -1439,13 +1443,13 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 27612 strings out of 479023
- 448932 string characters out of 5858895
- 1323548 words of memory out of 5000000
+ 27613 strings out of 479023
+ 448939 string characters out of 5858895
+ 1323558 words of memory out of 5000000
  44160 multiletter control sequences out of 15000+600000
  468906 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 103i,9n,131p,1803b,4778s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 103i,9n,131p,1819b,4778s stack positions out of 5000i,500n,10000p,200000b,80000s
 {d:/Programy/texlive/2020/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{d:/Program
 y/texlive/2020/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{d:/Programy/texlive
 /2020/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{d:/Programy/texlive/2020/tex
@@ -1463,9 +1467,9 @@ lm/lmsy10.pfb><d:/Programy/texlive/2020/texmf-dist/fonts/type1/public/lm/lmsy8.
 pfb><d:/Programy/texlive/2020/texmf-dist/fonts/type1/public/lm/lmtk10.pfb><d:/P
 rogramy/texlive/2020/texmf-dist/fonts/type1/public/lm/lmtt10.pfb><d:/Programy/t
 exlive/2020/texmf-dist/fonts/type1/public/lm/lmtto10.pfb>
-Output written on main.pdf (49 pages, 3743845 bytes).
+Output written on main.pdf (50 pages, 3748510 bytes).
 PDF statistics:
- 1075 PDF objects out of 1200 (max. 8388607)
- 476 named destinations out of 1000 (max. 500000)
+ 1079 PDF objects out of 1200 (max. 8388607)
+ 477 named destinations out of 1000 (max. 500000)
  246 words of extra memory for PDF output out of 10000 (max. 10000000)
 

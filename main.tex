@@ -6,51 +6,71 @@
 \usepackage{dcolumn} % stĺpce tabuľky s číselnými hodnotami
 \usepackage{subfig} % makrá pre "podobrázky" a "podtabuľky"
 \usepackage[csharp]{diplomalst} % sádzanie 
-\usepackage{color}
 
-% Novy druh tabuľkového stĺpca, v kterom sú čísla zarovnané podľa desetinnej čiarky
+% ------------------------------------------------------
+
+% Nový druh tabuľkového stĺpca, v ktorom sú čísla zarovnané podľa desetinnej čiarky
 \newcolumntype{d}[1]{D{,}{,}{#1}}
 
-\lstdefinelanguage{yml}{
+% Odstranenie warningov s underfull vbox
+\raggedbottom
+
+% ------------------------------------------------------
+
+% Vlastný jazyk YML
+\lstdefinelanguage{yml} {
   morekeywords={variables, GIT_CLONE_PATH, GIT_CLEAN_FLAGS, unity-build, stage, only, script, tags},
   alsoletter=-,
 }
 
-\lstdefinestyle{Batch}{
-morekeywords={SET, @ECHO, ECHO, IF, EXIT, START, ELSE, GTR},
-deletekeywords={var, is}
+% Vlastny štýl Batch
+\lstdefinestyle{Batch} {
+  morekeywords={SET, @ECHO, ECHO, IF, EXIT, START, ELSE, GTR},
+  deletekeywords={var, is}
 }
 
+% Definované vlastné metódy, triedy a príslušné farby
 \makeatletter
 \lst@InstallKeywords k{methods}{methodstyle}\slshape{methodstyle}{}ld
 \lst@InstallKeywords k{classes}{classstyle}\slshape{classstyle}{}ld
-\lst@InstallKeywords k{properties}{propsstyle}\slshape{propsstyle}{}ld
 \makeatother
 
 \definecolor{methods}{rgb}{.45, .33, .12}
 \definecolor{classes}{rgb}{.12, .40, .16}
 \definecolor{words}{rgb}{.17, .57, .69}
-%\definecolor{props}{rgb}{0, 0, 0}
 
-\lstset{
+\lstset {
  moremethods={ExecutePost, GetUri, SendIssue, SerializeObject, ReadToEnd, Parse, OnUpdate, StartCreateReport, ZipAndSendToLinkManager, Log, StartCoroutine, LocalIPAddress, ToString, Exists, Delete, WriteAllText, OpenURL, WaitForSeconds, EnumerateFiles, Contains, AddFile, Save, ReadAllBytes, Send_MantisReport, ToBase64String, AcceptTcpClient, GetStream, Read, GetString, CreateReport, GetWindowRect, GetActiveWindow, GetUnityBounds, pictureBoxBcg_MouseDown, pictureBoxBcg_MouseUp, pictureBoxBcg_MouseMove, Invalidate, DrawLine, InvokePowershellScript, AddScript, Invoke, Select, ToArray, Create, Format, ToHex, Matches, FromJson, ReadAllText, PrintListToJsonString, ToJson, LoadAssetAtPath, FindProperty, OnEnable, OnInspectorGUI, ApplyModifiedProperties, PropertyField, SetUpScenes, Add, GetValues, IsSelected, ToInt32, BuildWindows, BuildPlayer, GetBuildOptions, FindEdges, Raycast, IsNotSimilarToRef, Translate, DestroyImmediate, FindDistanceAndRotation, IsTrue, FindRotation, LookRotation, NeedToReverseDirection, CreatePrimitive, Distance, GetComponent, PointInAABB, InverseTransformPoint, Cross},
  methodstyle=\bfseries\color{methods},
  moreclasses={Issue, JsonConvert, JObject, Keyboard, Debug, HBTLink_Manager, GameConfiguration, File, Application, ZipFile, Directory, SearchOption, Convert, TcpClient, NetworkStream, Encoding, Rect, Screen, IntPtr, MouseEventArgs, Point, PowerShell, GitLogger, Regex, Message, Content, Serialize, MenuItem, DllImport, AssetDatabase, BuildSettings, SerializedProperty, CustomEditor, EditorGUILayout, Editor, BuildSettingsEditor, Enum, Array, List, Scene, BuildPlayerOptions, BuildTarget, BuildTargetGroup, BuildResult, BuildReport, BuildPipeline, WindowsSettings, Vector3, GameObject, HideFlags, Transform, Physics, RaycastHit, Object, PrimitiveType, Quaternion, BoxCollider, Assert},
  classstyle = \bfseries\color{classes},
- morekeywords={endif, var, yield, get, set},
- %properties={isPressed, wasPressedThisFrame, current, f11Key, leftShiftKey, UNITY_EDITOR, sender_ServerIP, Instance, pathConfig, exeFile, mantisArguments, FullName, AllDirectories, System},
- %propsstyle=\bfseries\color{props}
+ morekeywords={endif, var, yield, get, set}
 }
 
 % ------------------------------------------------------
 
-% Titulné strany
+%Zásady pro vypracování
+%1. Student vykoná individuální praxi ve firmě: Perun Creative s.r.o.
+%2. Struktura závěrečné zprávy:
+%    a) Popis odborného zaměření firmy, u které student vykonal odbornou praxi a popis pracovního zařazení studenta.
+%     b) Seznam úkolů zadaných studentovi v průběhu odborné praxe s  vyjádřením jejich časové náročnosti.
+%     c) Zvolený postup řešení zadaných úkolů.
+%     d) Teoretické a praktické znalosti a dovednosti získané v průběhu studia uplatněné studentem v průběhu odborné praxe.
+%     e) Znalosti či dovednosti scházející studentovi v průběhu odborné praxe.
+%     f) Dosažené výsledky v průběhu odborné praxe a její celkové zhodnocení.
+
+% Poznámka    
+%Programátor, počítačová hra
+%   Student se v průběhu bakalářské praxe bude podílet na vývoji počítačové hry Hobo: Tough Life. Primární náplní stážisty bude optimalizace stávajícího kódu (detekování úzkých hrdel v časově kritických situacích a jejich následné zefektivnění), kooperace s QA oddělením (vyhodnocování chybových reportů, realizace oprav a vývoj pomocných nástrojů dle požadavků testerů) a portace hry na nové platformy (mac, linux a herní konzole). V rámci praxe se stážista seznámí s herním enginem Unity, setká se s jazykem C# a zapojí se do práce v kolektivu (práce s verzovacím systémem, komunikace a podílení se na řešeních v rámci týmu).
+
+% ------------------------------------------------------
+
+% Titulná strana
 \ThesisAuthor{Miroslav Kačeriak}
 \ThesisSupervisor{Ing. Pavel Dohnálek, Ph.D.}
 \SubmissionYear{2021}
 
-% Poďakovanie
-\Acknowledgement{Rád by som na tomto mieste poďakoval mojím dvom kolegom, a zároveň zakladateľom herného štúdia Perun Creative, Bc. Jánovi Polachovi a Bc. Jirkovi Vašicovi za prejavenú dôveru, trpezlivosť a ochotu pomôcť počas absolvovania odbornej praxe. Poďakovanie patrí aj mojej priateľke za podnetné rady a postrehy poskytnuté pri písaní tejto práce.}
+% ------------------------------------------------------
 
 % Abstrakty
 \CzechAbstract{Cieľom tejto bakalárskej práce je popísať absolvovanie odbornej praxe v českom nezávislom hernom štúdiu Perun Creative. Prvá časť si kladie za cieľ charakterizovať štúdio ako také a uviesť základnú klasifikáciu vyvíjaného produktu, teda počítačovej hry Hobo: Tough Life. Následne by som chcel špecifikovať moje pracovné zaradenie v rámci štruktúry spoločnosti a uviesť najdôležitejšie technológie, s ktorými som mal možnosť pracovať. Hlavnú časť tejto práce tvorí popis realizácie konkrétnych projektov. Tie sa týkali najmä vývoja pomocných nástrojov, optimalizácie a prevodu hry na iné platformy, ale aj implementácie konkrétnych herných mechaník. Záver je potom venovaný celkovému zhodnoteniu absolvovanej odbornej praxe so zameraním na uplatnené a novonadobudnuté znalosti a zručnosti.}
@@ -60,6 +80,13 @@ deletekeywords={var, is}
 \EnglishAbstract{Main purpose of this bachelor thesis is to describe how my individual professional practise in czech indie game studio Perun Creative went. First part aims to characterize the studio as such and give a basic classification of the developed product, i.e. the computer game Hobo: Tough Life. Afterwards, I would like to specify my position within the company structure and mention the most important technologies that I had the opportunity to work with. The main part of this thesis is dealing with the implementation of specific projects. These were mainly focused on the creation of development tools, optimization and porting of the game to other platforms, but also the implementation of some game mechanics. The conclusion is then aimed to the overall evaluation of the completed individual professional practice with focus on applied and newly acquired knowledge and skills.}
 
 \EnglishKeywords{Unity engine, C\#, game development, automatisation, optimization, development tools}
+
+% ------------------------------------------------------
+
+% Poďakovanie
+\Acknowledgement{Rád by som na tomto mieste poďakoval mojím dvom kolegom, a zároveň zakladateľom herného štúdia Perun Creative, Bc. Jánovi Polachovi a Bc. Jirkovi Vašicovi za prejavenú dôveru, trpezlivosť a ochotu pomôcť počas absolvovania odbornej praxe. Poďakovanie patrí aj mojej priateľke za podnetné rady a postrehy poskytnuté pri písaní tejto práce.}
+
+% ------------------------------------------------------
 
 % Skratky
 \AddAcronym{API}{Application Programming Interface}
@@ -91,8 +118,12 @@ deletekeywords={var, is}
 \AddAcronym{WPF}{Windows Presentation Foundation}
 \AddAcronym{XML}{eXtensible Markup Language}
 
+% ------------------------------------------------------
+
 % Literatúra
 \addbibresource{literature.bib}
+
+% ------------------------------------------------------
 
 % Samotný dokument
 \begin{document}
@@ -101,9 +132,9 @@ deletekeywords={var, is}
 % Chapter 1
 \chapter{Úvod}
 \label{sec:Introduction}
-V rámci mojej odbornej praxe som dostal možnosť nahliadnuť za oponu herného vývoja v českom nezávislom štúdiu Perun Creative. Nakoľko sa o hry a herný priemysel dlhodobo zaujímam, táto firma a jej tvorba mi bola vopred známa. Aj po prednáške jej dvoch spoluzakladateľov a zároveň programátorov, ktorá sa uskutočnila v priestoroch Vysokej školy báňskej, som bol stále prekvapený vysokou technologickou úrovňou ich prvého projektu. Firmu som chcel kontaktovať so žiadosťou o prácu nezávisle od odbornej praxe, no keď som sa dozvedel, že už niekoho práve na odbornú prax hľadajú, rozhodol som sa to využiť. Pracovnému pohovoru predchádzalo zaslanie programátorského portfólia zloženého zo školských ale aj vlastných prác. Samotný pohovor potom prebiehal online s oboma programátormi Bc. Jánom Polachom a Bc. Jirkou Vašicou, ktorí sa neskôr stali aj mojimi kolegami.
+V rámci mojej odbornej praxe som dostal možnosť nahliadnuť za oponu herného vývoja v českom nezávislom štúdiu Perun Creative. Nakoľko sa o hry a herný priemysel dlhodobo zaujímam, táto firma a jej tvorba mi bola vopred známa. Aj po prednáške jej dvoch spoluzakladateľov a zároveň programátorov, ktorá sa uskutočnila v priestoroch Vysokej školy báňskej, som bol stále prekvapený vysokou technologickou úrovňou ich prvého projektu. Firmu som chcel kontaktovať so žiadosťou o prácu nezávisle od odbornej praxe, no keď som sa dozvedel, že už niekoho práve na odbornú prax hľadajú, rozhodol som sa to využiť a načerpať touto cestou dnes veľmi cenené skúsenosti z reálneho vývoja. Pracovnému pohovoru predchádzalo zaslanie programátorského portfólia zloženého zo školských ale aj vlastných prác. Samotný pohovor potom prebiehal online s oboma programátormi \mbox{Bc. Jánom} Polachom a Bc. Jirkou Vašicou, ktorí sa po jeho úspešnom zvládnutí stali mojimi kolegami.
 
-Do firmy som nastúpil na konci životného cyklu projektu, takže som sa nemohol podieľať na vývoji základných herných mechaník. Naopak to znamenalo nutnosť dôkladne sa s celým projektom zoznámiť a pochopiť, ako jednotlivé časti fungujú. Počas praxe som sa podieľal na širokej škále väčších aj menších projektov z oblastí ako sú automatizácia a zefektívnenie vývojárskych či testerských postupov, nasadenie projektu, sieťová infraštruktúra a došlo aj na nejaké tie herné mechaniky. Pri riešení rôznych problémov mi okrem kolegov boli nápomocné aj rôzne teoretické znalosti nadobudnuté počas vysokoškolského štúdia.
+Do firmy som nastúpil na konci životného cyklu projektu, takže som sa nemohol podieľať na vývoji základných herných mechaník. Naopak to znamenalo nutnosť dôkladne sa s celým projektom zoznámiť a pochopiť, ako jednotlivé časti fungujú. Počas praxe som sa podieľal na vývoji širokej škály väčších či menších projektov. Tie sa týkali primárne oblastí ako sú automatizácia a zefektívnenie rôznych postupov pri testovaní či vývoji, nasadenie projektu, prevod hry na iné platformy, optimalizácia a došlo aj na vývoj určitých herných mechaník. Pri riešení jednotlivých problémov mi okrem kolegov boli nápomocné aj rôzne teoretické znalosti nadobudnuté počas vysokoškolského štúdia.
 
 % Section 2
 \chapter{Popis firmy a pracovného zaradenia}
@@ -111,11 +142,11 @@ Do firmy som nastúpil na konci životného cyklu projektu, takže som sa nemoho
 % TODO: Overit info u Jirky
 \section{Popis firmy a vyvíjaného produktu}
 \label{sec:Firm}
-Perun Creative s.r.o \cite{Perun} je české nezávislé herné štúdio, ktoré od roku 2015 vyvíja počítačovú hru Hobo: Tough Life \cite{Hobo}.
+Perun Creative s.r.o je české nezávislé herné štúdio, ktoré od roku 2015 vyvíja počítačovú hru Hobo: Tough Life \cite{Perun}.
 
-Hra samotná by sa dala charakterizovať ako RPG z mestského prostredia, kde sa hráč ocitne v role bezdomovca. Ústrednou hernou mechanikou je snaha prežiť v nehostinnom prostredí ulice. Okrem prežitia na hráča čaká aj pútavý príbeh a možnosť hrať kooperatívne až s troma ďalšími hráčmi. Hobo: Tough Life v súčasnosti vychádza na platformách Microsoft Windows a Linux. V budúcnosti sa počíta aj s vydaním na konzolách novej a starej generácie. 
+Hra samotná by sa dala charakterizovať ako RPG z mestského prostredia, kde sa hráč ocitne v role bezdomovca. Ústrednou hernou mechanikou je snaha prežiť v nehostinnom prostredí ulice. Okrem prežitia na hráča čaká aj pútavý príbeh a možnosť hrať kooperatívne až s troma ďalšími hráčmi \cite{Hobo}. Hobo: Tough Life v súčasnosti vychádza na platformách Microsoft Windows a Linux. V budúcnosti sa počíta aj s vydaním na konzolách novej a starej generácie. 
 
-Štúdio Perun Creative má aktuálne dve pobočky. Prvá sa nachádza v Ostrave a jej osadenstvo tvoria výhradne programátori. Pobočka v Olomouci naopak slúži pre menej technicky zameranú časť firmy a síce pre grafika, herného dizajnéra a komunitného manažéra. Štúdio tvorí menej ako desať vývojárov a teda sa svojou veľkosťou radí k menším. Využíva ale aj služby externých pracovníkov prípadne spoločností špecializovaných na testovanie, zvukovú stránku hry a v neposlednom rade aj na preklad textov do rôznych svetových jazykov.
+Štúdio Perun Creative má aktuálne dve pobočky. Prvá sa nachádza v Ostrave a jej osadenstvo tvoria výhradne programátori. Pobočka v Olomouci naopak slúži pre menej technicky zameranú časť firmy a síce pre grafika, herného dizajnéra a komunitného manažéra. Štúdio tvorí menej ako desať vývojárov, svojou veľkosťou sa teda radí k menším. Využíva však aj služby externých pracovníkov prípadne spoločností špecializovaných na testovanie, zvukovú stránku hry a v neposlednom rade aj na preklad textov do rôznych svetových jazykov.
 \vspace{-5pt}
 \begin{figure}[!htbp]
 	\centering
@@ -126,46 +157,46 @@ Hra samotná by sa dala charakterizovať ako RPG z mestského prostredia, kde sa
 \end{figure}
 \section{Pracovné zaradenie}
 \label{sec:Me}
-Môj prínos štúdiu Perun Creative spočíval hlavne v automatizácií a zefektívnení jednotlivých interných postupov resp. vývoji pomocných nástrojov pre QA oddelenie či ostatných programátorov. Do tejto kategórie by som zaradil projekty ako automatizované zostavenie hry na serveri, zefektívnenie spôsobu nahlasovania jednotlivých problémov prípadne prepracovanie importovania objektov zo starej verzie projektu do novej. K zefektívneniu práce rozhodne prispel aj návrh a implementácia systému klávesových skratiek v hernom engine Unity (bližšie popísanom v sekcií \ref{sec:Unity}) či  program na vytvorenie tzv. \mbox{\enquote{Patch notes}}. Ten bol primárne určený pre testerov, ale do budúcna sa plánuje jeho využitie aj pri informovaní hráčov o novinkách v rámci hry.
+Môj prínos štúdiu Perun Creative spočíval hlavne vo vývoji pomocných nástrojov pre QA oddelenie a ostatných programátorov. Primárnym zameraním bola teda automatizácia a zefektívnenie jednotlivých interných postupov. Do tejto kategórie by som zaradil projekty ako automatizované zostavenie hry na serveri, zefektívnenie spôsobu nahlasovania chýb nájdených v hre, prípadne prepracovanie spôsobu importovania objektov zo starej verzie projektu do novej. K zefektívneniu práce rozhodne prispel aj návrh a implementácia systému klávesových skratiek v hernom engine Unity (bližšie popísanom v sekcií \ref{sec:Unity}) či  program na vytvorenie tzv. \mbox{\enquote{Patch notes}}. Ten bol primárne určený pre testerov, do budúcna sa však plánuje jeho využitie aj pri informovaní hráčov o novinkách v rámci hry.
 
-Okrem vyššie uvedených projektov som pracoval na novom systéme líhania postavy k spánku, optimalizácií a uvedeniu hry na OS Linux, prevode online časti hry z platformy Steam na platformu EOS a ďalších menších projektoch.
+Okrem vyššie uvedených projektov som pracoval na novom systéme líhania hráčskej postavy, optimalizácií a uvedeniu hry na OS Linux, prevode online zložky hry z platformy Steam na platformu EOS, prípadne ďalších menších projektoch.
 % End of section 2
 
 % Section 3
 \chapter{Použité technológie}
 \label{sec:Tech}
-V nasledujúcej kapitole by som rád v krátkosti zhrnul najdôležitejšie technológie, s ktorými som sa v rámci odbornej praxe stretol. Niektoré som aktívne využíval počas celého obdobia praxe a ich osvojovanie teda prebiehalo organicky. Iné boli špecifické pre konkrétny projekt a danú technológiu som si musel naštudovať počas realizácie projektu. V niektorých prípadoch bolo nutné sa zoznámiť s viacerými technológiami, aby som bol schopný posúdiť ich výhody a nevýhody pri nasadení na konkrétny projekt a vybrať tú správnu. Informácie som poväčšine čerpal z dokumentácií k daným technológiám aj keď nie vždy bola ich úroveň dostatočná.
+V nasledujúcej kapitole by som rád v krátkosti zhrnul najdôležitejšie technológie, s ktorými som sa v rámci odbornej praxe stretol. Niektoré som aktívne využíval počas celého obdobia praxe a ich osvojovanie teda prebiehalo organicky. Iné boli špecifické pre konkrétny projekt a danú technológiu som si musel naštudovať počas jeho realizácie. V niektorých prípadoch bolo nutné sa zoznámiť s viacerými technológiami, aby som bol schopný posúdiť ich výhody a nevýhody pri nasadení na konkrétny projekt a vybrať tú správnu. Informácie som poväčšine čerpal z dokumentácií k daným technológiám, nie vždy však bola ich úroveň dostatočná.
 
 \section{Programovací jazyk C\# a architektúra .NET}
 \label{sec:CsharpDotNet}
-C\# \cite{CSharpLang} je objektovo orientovaný, typovo bezpečný programovací jazyk umožňujúci vytvárať aplikácie v .NET ekosystéme. Syntax jazyka C\# vychádza z programovacích jazykov C a C++. Narozdiel od nich ale ponúka vyššiu úroveň abstrakcie. Tá sa prejavuje napríklad na úrovni správy pamäte, čo z jazyka C\# robí voľbu číslo jedna pre začínajúcich programátorov, ktorí by si chceli skúsiť herný vývoj na vlastnej koži.
+C\# je objektovo orientovaný, typovo bezpečný programovací jazyk umožňujúci vytvárať aplikácie v .NET ekosystéme. Syntax jazyka C\# vychádza z programovacích jazykov C a C++. Narozdiel od nich však ponúka vyššiu úroveň abstrakcie, ktorá sa prejavuje napríklad na úrovni správy pamäte \cite{CSharpLang}. Táto vlastnosť spolu s ďalšími robí z jazyka C\#  voľbu číslo jedna pre začínajúcich programátorov, ktorí by si chceli skúsiť herný vývoj na vlastnej koži.
 
-Architektúra .NET \cite{CSharpLang} potom ponúka okrem virtuálneho stroja CLR, ktorý vykonáva JIT kompiláciu IL kódu do strojových inštrukcií, aj sadu veľmi užitočných knižníc. Tieto knižnice sú organizované do menných priestorov a poskytujú širokú škálu metód vhodných napríklad na prácu so súbormi či sieťovou infraštruktúrou. Veľmi užitočné sú aj nástroje na syntaktickú analýzu XML prípadne platforma Windows Forms, ktorá sa v rámci mojej odbornej praxe vo firme Perun Creative ukázala byť vhodná hlavne na rýchlu tvorbu vývojárskych nástrojov. Kvôli limitáciám tejto technológie sa ale v budúcnosti plánuje prechod na systém WPF.
+Architektúra .NET potom ponúka okrem virtuálneho stroja CLR, ktorý vykonáva JIT kompiláciu IL kódu do strojových inštrukcií, aj sadu veľmi užitočných knižníc. Tieto knižnice sú organizované do menných priestorov a poskytujú širokú škálu metód vhodných napríklad na prácu so súbormi či sieťovou infraštruktúrou. Veľmi užitočné sú aj nástroje na syntaktickú analýzu XML prípadne platforma Windows Forms \cite{CSharpLang}. Tá sa v rámci mojej odbornej praxe v spoločnosti Perun Creative ukázala byť vhodná hlavne na rýchlu tvorbu vývojárskych nástrojov. Kvôli limitáciám tejto technológie sa však v budúcnosti plánuje prechod na systém WPF.
 
 \section{Unity Engine}
 \label{sec:Unity}
-Unity Engine \cite{Unity} je platforma pre tvorbu 2D a 3D interaktívneho obsahu renderovaného v reálnom čase. Najväčšie uplatnenie nachádza pri tvorbe malých až stredne veľkých hier, ale je čoraz častejšie využívaný aj v iných odvetviach ako napríklad automobilový či filmový priemysel. Je dostupný pre operačné systémy Windows, Linux a Mac OS. Distribuuje sa zdarma pre študentov alebo jednotlivcov do určitého finančného obratu a za ročný poplatok pre firmy, ktorého výška závisí od rôznych faktorov. Samotný engine je napísaný v jazyku C++ a umožňuje vývoj obsahu v jazyku C\# (bližšie popísanom v sekcií \ref{sec:CsharpDotNet}) pre širokú škálu platforiem, čo znázorňuje \mbox{obrázok \ref{pic:UnityPlatforms}}.
+Unity Engine je platforma pre tvorbu 2D a 3D interaktívneho obsahu renderovaného v reálnom čase \cite{Unity}. Najväčšie uplatnenie nachádza pri tvorbe malých až stredne veľkých hier, čoraz častejšie sa sa však využíva aj v iných odvetviach ako napríklad automobilový či filmový priemysel. Je dostupný pre operačné systémy Windows, Linux a Mac OS. Distribuuje sa zdarma pre študentov alebo jednotlivcov do určitého finančného obratu a za ročný poplatok pre firmy, ktorého výška závisí od rôznych faktorov. Samotný engine je napísaný v jazyku C++ a umožňuje vývoj obsahu v jazyku C\# (bližšie popísanom v sekcií \ref{sec:CsharpDotNet}) pre širokú škálu platforiem, čo znázorňuje \mbox{obrázok \ref{pic:UnityPlatforms}}.
 
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=1\textwidth]{Pictures/platforms.png}
-	\caption{Platformy podporované Unity engine-om \cite{UnityMultiplatform}}
+	\caption{Platformy podporované herným enginom Unity \cite{UnityMultiplatform}}
 	\label{pic:UnityPlatforms}
 \end{figure}
 
 \section{Verzovací systém Git}
 \label{sec:Git}
-Git \cite{ProGit} je open source distribuovaný systém na správu verzií vyvinutý Linusom Thorvaldsom a komunitou okolo OS Linux v roku 2005. Umožňuje vrátiť celý projekt alebo vybrané časti do predchádzajúceho stavu, porovnávať zmeny v súboroch, prípadne efektívnu kolaboráciu viacerých vývojárov na spoločnom projekte. Každý člen tímu má k dispozícií kompletný repozitár vrátane histórie jednotlivých súborov, čo pridáva ďalšiu vrstvu ochrany proti výpadkom a poruchám hardvéru. Po každom spustení príkazu \textit{commit} sa uloží aktuálny stav projektu, ktorý je možné spätne dohľadať v prípade nejakého problému.
+Git je open source distribuovaný systém na správu verzií vyvinutý Linusom Thorvaldsom a komunitou okolo OS Linux v roku 2005 \cite{ProGit}. Umožňuje vrátiť celý projekt alebo vybrané časti do predchádzajúceho stavu, porovnávať zmeny v súboroch či efektívnu kolaboráciu viacerých vývojárov na spoločnom projekte. Každý člen tímu má k dispozícií kompletný repozitár vrátane histórie jednotlivých súborov, čo pridáva ďalšiu vrstvu ochrany proti výpadkom a poruchám hardvéru. Po každom spustení príkazu \textit{commit} sa uloží aktuálny stav projektu, ktorý je možné spätne dohľadať v prípade nejakého problému.
 
-S gitom je možné pracovať priamo z príkazového riadku ale pre väčšie projekty ako je aj hra Hobo: Tough Life je takýto prístup značne nepraktický a neefektívny. Existuje ale množstvo programov tretích strán, ktoré umožňujú pracovať s gitom z užívateľského rozhrania. Jedným takým je aj nástroj Sourcetree, s ktorým som v rámci mojej odbornej praxe pracoval.
+S gitom je možné pracovať priamo z príkazového riadku ale pre väčšie projekty ako je aj hra Hobo: Tough Life môže byť takýto prístup značne nepraktický. Veľmi to však závisí od konkrétnych preferencií vývojára. Na trhu existuje množstvo programov tretích strán, ktoré umožňujú pracovať s gitom z užívateľského rozhrania. Jedným takým je aj nástroj Sourcetree, s ktorým som v rámci mojej odbornej praxe pracoval na dennej báze.
 
 Nakoľko git samotný nie je dobre prispôsobený na správu verzií veľkých súborov, bolo nutné využívať aj jeho rozšírenie Git LFS. 
 \section{GitLab CI/CD}
 \label{sec:GitLab}
-Gitlab CI/CD \cite{Cicd} je súčasť nástroja Gitlab a slúži na vývoj softvéru prostredníctvom kontinuálnych metód ako:
+Gitlab CI/CD je súčasť nástroja Gitlab a slúži na vývoj softvéru prostredníctvom kontinuálnych metód definovaných podľa \cite{Cicd} ako:
 \begin{itemize}
   \item \textbf{Continuous Integration (CI)} - pre každé pridanie zmien do repozitára je možné automatizovane spustiť sadu skriptov, ktorých účelom je projekt zostaviť či otestovať.
-  \item \textbf{Continuous Delivery (CD)} - pridáva ďalšiu vrstvu nad rámec CI, umožňuje zostavený a otestovaný kód nasadiť, vyžaduje to ale manuálnu akciu.
+  \item \textbf{Continuous Delivery (CD)} - pridáva ďalšiu vrstvu nad rámec CI, umožňuje zostavený a otestovaný kód nasadiť, vyžaduje to však manuálnu akciu.
   \item \textbf{Continuous Deployment (CD)} - funguje podobne ako Continuous Delivery ale nasadenie prebieha automaticky.
 \end{itemize}
 Spoločnou filozofiou týchto metód je teda po každej iteratívnej zmene v projekte kód zostaviť, otestovať a prípadne aj nasadiť. Hlavnou výhodou takého prístupu je redukovanie množstva chýb, ktoré by sa inak dostávali do ďalších iterácií a mohli by spôsobiť problémy, keby neboli odchytené v zárodku. Zároveň si kladú za cieľ znížiť potrebu manuálneho zásahu do jednotlivých automatizovaných procesov na minimum.
@@ -176,21 +207,20 @@ V rámci mojej odbornej praxe som sa stretol hlavne s metódou CI. Možnosti aut
 	\centering
 	\includegraphics[width=.9\textwidth]{Pictures/gitlab.png}
 	\vspace{-15pt}
-	\caption{Princíp fungovania Gitab CI/CD \cite{Cicd}}
+	\caption{Princíp fungovania služby Gitab CI/CD \cite{Cicd}}
 	\label{pic:Gitlab}
 \end{figure}
 
 % Section 4
 \chapter{Zadané projekty a ich riešenia}
 \label{sec:Projects}
-V tejto kapitole by som rád podrobne prebral niektoré konkrétne projekty na ktorých som v rámci mojej odbornej praxe pracoval. Poradie v akom budú prezentované nutne neodzrkadľuje poradie ich vypracovania, ale budú usporiadané do logických celkov podľa typu projektu. 
+V tejto kapitole by som rád podrobne prebral niektoré konkrétne projekty na ktorých som v rámci mojej odbornej praxe pracoval. Poradie v akom budú prezentované nutne neodzrkadľuje poradie ich vypracovania ale budú usporiadané do logických celkov podľa typu projektu. 
 
-Čo sa časovej náročnosti týka, nie vždy je možné ju určiť presne nakoľko niektoré z projektov boli vyvíjané inkrementálne podľa spätnej väzby QA oddelenia alebo nových požiadaviek od ostatných programátorov.
-%U niektorych prebiehala tvorba inkrementalne a bola zavisla na spatnej vazbe bla bla.
+Nie vždy bolo možné presne určiť časovú náročnosť nakoľko niektoré z projektov boli vyvíjané inkrementálne podľa spätnej väzby QA oddelenia alebo nových požiadaviek od ostatných programátorov.
 
 \section{Vývoj pomocných nástrojov pre QA oddelenie a programátorov}
 \label{sec:QACode}
-\subsection{Evidovanie chybových reportov (Mantis Report)}
+\subsection{Evidovanie chybových záznamov (Mantis Report)}
 \label{sec:Report}
 \textbf{Časová náročnosť:} \\ Nasadenie: 8 dní, pridanie ďalšej funkcionality podľa požidaviek: spolu 8 dní.\\
 \textbf{Úvod do problému:} \\ Ako som spomenul v sekcií \ref{sec:GitLab} možnosti automatizovaného testovania hry tohto rozsahu sú na rozdiel od bežného softvéru značne obmedzené. Veľké štúdiá si vytvárajú vlastné nástroje založené na umelej inteligencií, nikdy sa to však úplne neobíde bez ľudí z QA oddelenia ľudovo nazývaných aj ako testeri. Úlohou testera je teda hrať celú hru alebo jej určené časti, nájsť a následne ohlásiť nájdené chyby. 
@@ -208,7 +238,7 @@ Po preskúmaní ďalších možností a následnej porade s kolegami som sa teda
 	\fbox {
 		\includegraphics[width=0.68\textwidth]{Pictures/mantis.png}
 	}
-	\caption{Ručné vloženie reportu do služby Mantis Bug Tracker}
+	\caption{Ručné vloženie záznamu o chybe do služby Mantis Bug Tracker}
 	\label{pic:Mantis}
 \end{figure} \\
 \textbf{Realizácia:} \\ Pri preskúmavaní možností založených na REST API som narazil na open source projekt MantisSharp \cite{MantisSharp}. Po zoznámení sa s týmto projektom a niekoľkými pokusmi ho \enquote{ohnúť} pre účely môjho projektu som sa rozhodol, že bude jednoduchšie napísať si aplikáciu sám. Využil som k tomu dve triedy z projektu MantisSharp, a síce \textit{RestClient} a \textit{MantisClient}, ktoré som následne ešte ďalej modifikoval. Trieda \textit{RestClient} vykonáva najnižšiu úroveň komunikácie so serverom a síce odosiela GET a POST žiadosti. Trieda \textit{MantisClient} má potom dve úlohy. Na jednej strane prijíma dáta z mojej aplikácie, zabalí ich do formy vhodnej pre transport a následne ich predá triede \textit{RestClient} na odoslanie metódou POST. Na strane druhej transformuje dáta získané zo servera pomocou metódy GET do C\# tried vhodných na následné použitie. Tento postup pridáva určitý level abstrakcie do celej aplikácie.
@@ -217,7 +247,7 @@ Problematiku odosielania dát na server som sa rozhodol demonštrovať na pridan
 
 Služba Mantis Bug Tracker po úspešnom pridaní nového reportu tento report vráti v odpovedi, čo som ďalej využil na informovanie užívateľa o úspešnom zaevidovaní, ktoré som doplnil o serverom pridelený identifikátor.
 \vspace{10pt}
-\begin{lstlisting}[label=src:SendIssue,caption={Odoslanie nového reportu na server}]
+\begin{lstlisting}[label=src:SendIssue,caption={Programové odoslanie záznamu o chybe do služby Mantis Bug Tracker}]
 public int SendIssue(Issue issue) {
 	string uri = this.GetUri(issuesUri);
 	int id = -1;
@@ -278,7 +308,7 @@ Odoslanie reportu na server z lokálneho PC pokračuje vytvorením tzv. \enquote
 Pokiaľ ide o odoslanie reportu zo vzdialeného PC ukázala sa ako problematická doba ukladania snímky obrazovky na disk. Kvôli tomuto problému musí aplikácia najskôr počkať na uloženie súboru a až následne vykonávať ďalšie inštrukcie. Toho som docielil jednoduchou slučkou, ktorá sa sama ukončí v prípade nájdenia požadovaného súboru alebo po pretečení určitého času. To slúži ako ochrana pred zacyklením. 
 
 \vspace{10pt}
-\begin{lstlisting}[label=src:Report,caption={Vytváranie lokálneho a vzdialeného reportu}]
+\begin{lstlisting}[label=src:Report,caption={Vytváranie lokálneho a vzdialeného záznamu o chybe}]
 // Local report
 if (HBTLink_Manager.sender_ServerIP == HBTLink_Manager.Instance.LocalIPAddress().ToString()) {
     string exefile = GameConfiguration.pathConfig.exeFile;
@@ -310,7 +340,7 @@ Na zmenu hodnoty premennej \textit{screenSaved} zareaguje metóda \textit{OnUpda
 
 Rreťazec je následne pomocou TCP protokolu odoslaný na IP adresu určenú v konfiguračnom súbore alebo vybratú z prednastavených možností vo vývojárskej konzole počas hrania. Na vzdialenom PC musí byť spustený nástroj HoboThor a \enquote{počúvať} na určenom porte. Dáta sú po prijatí uložené do dočasnej zložky poskytovanej operačným systémom pomocou metódy \textit{Path.GetTempPath} v mennom priestore \textit{System.IO} a následne rozbalené. Cesta k tejto zložke je opäť zapísaná do \enquote{Mantis argumentu} a HoboThor je následne automaticky spustený znova. To vyústi k otvoreniu okna určeného na nahlasovanie chýb a načítaniu dát zo zložky s reportom.
 \vspace{10pt}
-\begin{lstlisting}[label=src:Zip,caption={Metóda ZipAndSendToLinkManager triedy ReportingManager}]
+\begin{lstlisting}[label=src:Zip,caption={Archivovanie zložky so zachovaním pôvodnej štruktúry}]
 private void ZipAndSendToLinkManager() {
     string pathToZip = directoryReport.FullName + @"\report.zip";
 
@@ -365,7 +395,7 @@ Mojou poslednou úlohou v časti reportovacieho systému na strane hry, ktorá p
 
 Odchytávanie klávesovej skratky bolo tentoraz realizované natívnym postupom zabudovaným do editora Unity. Stačilo vytvoriť statickú metódu \textit{CreateReport} a nad jej definíciu pridať atribút \enquote{MenuItem} ako znázorňuje výpis \ref{src:UnityReport}. To vyústi k vytvoreniu zástupcu tejto metódy v hornom paneli editora. Pozícia metódy v paneli je určená zadanou cestou v parametri atribútu \enquote{MenuItem}. Za túto cestou je potom možné pridať ľubovoľnú klávesovú skratku, ktorá túto akciu vyvolá.
 \vspace{10pt}
-\begin{lstlisting}[label=src:UnityReport,caption={Odchytenie stlačenia klávesovej skratky v editore Unity}]
+\begin{lstlisting}[label=src:UnityReport,caption={Odchytenie stlačenia klávesovej skratky v rámci editora Unity}]
 [MenuItem("Tools/HBT/Reporting/Create report #F11")] // # -> Shift
 static void CreateReport()
 {
@@ -376,7 +406,7 @@ static void CreateReport()
 
 Pôvodný postup vytvorenia snímky obrazovky pomocou metódy \textit{CaptureScreenshotAsTexture} bolo nutné nahradiť metódou \textit{ReadScreenPixel}, ktorá ale potrebuje vedieť presnú lokáciu a rozmery okna. Získať tieto údaje sa mi nakoniec podarilo až volaním C++ metód z user32.dll. Počas testovania na 4K monitore sa ukázalo, že tento prístup nevhodne vyhodnocuje veľkosť okna s nastaveným škálovaním v OS Windows. Toto bolo nutné upraviť ručne, čo ukazuje výpis \ref{src:DLL}.
 \vspace{10pt}
-\begin{lstlisting}[label=src:DLL,caption={Získanie veľkosti okna Unity editoru}]
+\begin{lstlisting}[label=src:DLL,caption={Získanie veľkosti okna spustenej aplikácie}]
 [DllImport("user32.dll")]
 private static extern bool GetWindowRect(IntPtr hwnd, ref Rect rectangle);
 [DllImport("user32.dll")]
@@ -464,7 +494,7 @@ private void pictureBoxBcg_MouseUp(object sender, MouseEventArgs e) {
 
 Ako sa ukázalo, Windows PowerShell v predvolenom nastavení pre český jazyk nepoužíva kódovanie UTF-8, čo zapríčinilo nesprávnu interpretáciu znakov s diakritikou. Bolo nutné v nastaveniach systému v sekcií región túto voľbu ručne zapnúť, nakoľko je stále vo fáze vývoja.
 \vspace{10pt}
-\begin{lstlisting}[label=src:Shell,caption={Metóda na spustenie skriptu v programe Powershell}]
+\begin{lstlisting}[label=src:Shell,caption={Metóda vykonávajúca skript v programe Powershell}]
 private string[] InvokePowershellScript(string gitCmd) {
     string[] results;
     using (PowerShell powershell = PowerShell.Create()) {
@@ -480,7 +510,7 @@ private string[] InvokePowershellScript(string gitCmd) {
 
 Po vyskúšaní rôznych preddefinovaných variant príkazu \textit{git log} som sa rozhodol zostaviť si vlastný príkaz, nakoľko mi žiadna preddefinovaná varianta úplne nevyhovovala. Hlavným dôvodom bola snaha čo najviac zjednodušiť následnú syntaktickú analýzu. Tento príkaz som sa rozhodol vytvárať dynamicky, aby sa sám aktualizoval po zmene premennej \textit{mainSplitter}. Ukážka tohto postupu je zobrazená vo výpise \ref{src:Log}.
 \vspace{10pt}
-\begin{lstlisting}[label=src:Log,caption={Dynamické vytváranie vlastného príkazu git log}]
+\begin{lstlisting}[label=src:Log,caption={Dynamické vytváranie vlastného príkazu \textit{git log}}]
 private const char mainSplitter = '&';
 private string gitLog = "git log ";
 
@@ -492,7 +522,7 @@ public GitLogger() {
 
 Následne bolo nutné v cykle prejsť všetky výsledky od najnovšieho \textit{commitu} až po \textit{commit}, ktorý značil posledné zostavenie hry interne dostupné na platforme Steam. Z týchto výsledkov sa odstránili všetky zlúčenia jednotlivých vetiev a ďalšie  \textit{commity}, ktoré neobsahovali ani opravy chýb ani novo pridané vylepšenia. Opravy boli značené tzv. \enquote{bugMarkerom} (@b) a vylepšenia tzv. \enquote{featureMarkerom} (@f). Tých mohlo byť v jednom \textit{commite} hneď niekoľko, preto bol na každý \textit{commit}, ktorý nejakú z týchto značiek obsahoval, aplikovaný regulárny výraz a jednotlivé časti boli ďalej spracovávané samostatne. Tento regulárny výraz zobrazuje výpis \ref{src:Regex}. Každá časť navyše mohla byť rozdelená na viacero menších častí rovnakého druhu pomocou znaku `;`. Jednotlivé elementárne časti boli následne štruktúrovane uložené do súboru.
 \vspace{10pt}
-\begin{lstlisting}[label=src:Regex,caption={Regulárny výraz na rozdelenie tela \textit{commitu}}]
+\begin{lstlisting}[label=src:Regex,caption={Regulárny výraz určený na syntaktickú analýzu tela \textit{commitu}}]
 var matches = Regex.Matches(body, string.Format("({0}|{1})[^@]*", bugMarker, featureMarker));
 \end{lstlisting}
 
@@ -592,7 +622,7 @@ EXIT %errorlevel%
 Metóda \textit{BuildScript.Build} volá metódu \textit{BuildScript.InternalBuild} s parametrom \textit{closeAfterBuild} nastaveným na hodnotu \textit{true}. Toto riešenie bolo zvolené z dôvodu, aby sa pri manuálnom spustení zostavovania pomocou skriptu, napríklad z horného menu editora Unity, editor neukončil. Úloha metódy \textit{InternalBuild} je potom nájsť a načítať dáta z tzv. \enquote{Scriptable Objectu}, čo je uvedené vo výpise \ref{src:asset}, a následne tieto dáta predať metóde \textit{SetUpPlatforms}. Návratová hodnota tejto metódy je potom použítá ako návratová hodnota celého programu.
 
 \vspace{10pt}
-\begin{lstlisting}[label=src:asset,caption={Načítanie dát zo scriptable objectu}]
+\begin{lstlisting}[label=src:asset,caption={Načítanie dát zo skriptovateľného objektu}]
 buildSettings = AssetDatabase.LoadAssetAtPath<BuildSettings>("Assets/Settings/BuildSettings.asset");
 \end{lstlisting}
 
@@ -601,14 +631,14 @@ buildSettings = AssetDatabase.LoadAssetAtPath<BuildSettings>("Assets/Settings/Bu
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=.90\textwidth]{Pictures/buildDetail.png}
-	\caption{Custom editor pre scriptable object BuildSettings.asset}
+	\caption{Vlastné okno editora pre manipuláciu s objektom BuildSettings}
 	\label{pic:Custom}
 \end{figure}
 
 Samotná trieda \textit{BuildSettings} dedí z triedy \textit{ScriptableObject} a je iba súhrnom relatívne veľkého množstva serializovaných premenných a enumov. \enquote{Custom editor} je potom realizovaný ako trieda \textit{BuildSettingsEditor}, ktorá je potomkom triedy \textit{Editor}. Táto trieda sa nachádza v preddefinovanej \textit{Assembly-CSharp-Editor}, preto je nutné potomkov triedy \textit{Editor} presunúť do zložky Editor alebo ich kód obaliť do direktívy UNITY\_EDITOR zobrazenej aj vo výpise \ref{src:Pragma}. To zabráni vyvolaniu chyby pri pokuse o zostavenie projektu nakoľko \textit{Assembly-CSharp-Editor} z pochopiteľných dôvodov nie je prítomná v zostavenej verzií hry. Základná kostra triedy \textit{BuildSettings}, ktorá vykreslí iba premennú \textit{platforms} je zobrazená vo výpise \ref{src:bseditor}.
 
 \vspace{10pt}
-\begin{lstlisting}[label=src:bseditor,caption={Kostra triedy určenej pre vykreslenie vlastného okna v Editore Unity}]
+\begin{lstlisting}[label=src:bseditor,caption={Kostra triedy určenej pre vykreslenie vlastného okna v editore Unity}]
 [CustomEditor(typeof(BuildSettings))]
 public class BuildSettingsEditor : Editor {
     private BuildSettings settings;
@@ -631,7 +661,7 @@ Finálna trieda, použitá v projekte bola okrem pridania ostatných premenných
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=1\textwidth]{Pictures/warr.png}
-	\caption{Varovanie v custom editore}
+	\caption{Varovanie v okne editora}
 	\label{pic:Warr}
 \end{figure}
 
@@ -664,7 +694,7 @@ Obdobne prebieha aj práca s maskou platformy. Ak metóda \textit{IsSelected} vr
 Ako je možné vidieť, metóda \textit{BuildWindows} dostane ako prvý argument nastavenia špecifické pre danú platformu, v tomto prípade je to platforma Windows. Tieto nastavenia momentálne obsahujú iba cestu k zložke do ktorej má byť zostavenie pre danú platformu uložené. Toto riešenie bolo dočasne zvolené z dôvodu, že nie je možné predikovať špecifiká, ktoré si zostavenie na niektoré konzolové platformy bude vyžadovať. Keď budú tieto informácie dostupné plánuje sa zjednotenie všetkých zostavovacích metód do jednej. Táto metóda potom bude ako prvý argument prijímať generalizáciu nejakých konkrétnych nastavení a bude riadená dátami získanými z týchto nastavení.
 
 \vspace{10pt}
-\begin{lstlisting}[label=src:bwin,caption={Extrahovanie zvolených scén pomocou masky}]
+\begin{lstlisting}[label=src:bwin,caption={Nastavenie a spustenie programového zostavenia hry pre OS Windows}]
 private static bool BuildWindows(WindowsSettings settings, string[] scenes) {
 
 	// ...
@@ -702,7 +732,7 @@ Druhou optimalizačnou stratégiou bolo použitie nástroja Unity Profiler. Tent
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=1\textwidth]{Pictures/profiler.png}
-	\caption{Namerané hodnoty z nástroja Unity Profiler}
+	\caption{Hodnoty namerané nástrojom Unity Profiler}
 	\label{pic:Prof}
 \end{figure}
 
@@ -826,7 +856,7 @@ Zvažovala sa taktiež možnosť postavená na hľadaní najväčšej vzdialenos
 Ako lepšie riešenie sa ukázalo použite rovnostranného trojuholníka s vrcholom v bode, kde sa nachádza pozícia ikonky, teda stred objektu. Týmto trojuholníkom by bolo možné rotovať okolo tohto stredu a v každej rotácií zaznamenávať, koľko krajných bodov sa podarilo obsiahnuť. Táto varianta narážala na problém so zvolením veľkosti trojuholníka, ktorá by sa musela v závislosti od danej rotácie meniť, aby lepšie kopírovala objekt nad ktorým rotuje. Na podobnej myšlienke sa však skutočne založilo aj finálne riešenie. Miesto rovnostranného trojuholníka bol však použitý úzky, dlhý kváder, ktorý postupne prejde všetky krajné body a súradnicu svojho stredu nastaví na súradnicu aktuálneho bodu. V tomto momente bolo nutné ešte kvádrom zarotovať, aby sa nasmeroval kolmo k stredovému bodu. V každom bode sa potom pomocou algoritmu AABB zisťovalo, koľko krajných bodov kváder obsahuje. V bode, v ktorom sa podarilo kvádru obsiahnuť najviac krajných bodov, bola jeho rotácia hľadaným výsledkom algoritmu. Tento postup je znázornený vo výpise \ref{src:findRot}
 
 \vspace{10pt}
-\begin{lstlisting}[label=src:findRot,caption={Získanie korektnej rotácie hráča pri ležaní}]
+\begin{lstlisting}[label=src:findRot,caption={Získanie korektnej rotácie hráčskej postavy pri ležaní}]
 private static int FindRotation(int dirs, Vector3 iconPos, Vector3[] edges) {
     GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
     cube.name = "RotationFinder";
@@ -872,7 +902,7 @@ private static bool PointInAABB(Vector3 point, BoxCollider box) {
 Posledným problémom nutným riešiť bol smer pohľadu postavy pri ležaní. Keď postava spí, hráč môže stále očami postavy vidieť okolie. To ale nie je možné pokiaľ sa postava otočí na spánok tvárou k stene prípadne operadlu. Z toho dôvodu bola implementovaná metóda \textit{NeedToReverseDirection}, ktorá vrhne dva lúče, každy opačným smerom a pokiaľ to je nutné, vynúti otočenie hráčškej postavy o 180$^{\circ}$. Táto metóda spolu so vstupným bodom algoritmu je znázornená vo výpise \ref{src:entry}.
 
 \vspace{10pt}
-\begin{lstlisting}[label=src:entry,caption={Vstupný bod algoritmu na získanie rozácie a pozície postavy pri ležaní}]
+\begin{lstlisting}[label=src:entry,caption={Vstupný bod algoritmu na získanie rotácie a pozície postavy pri ležaní}]
 public static void FindDistanceAndRotation(Vector3 iconPos, ref float distance, ref float restRotationY) {
     Assert.IsTrue(360 % angle == 0);
     int dirs = (int)(360 / angle);
@@ -908,29 +938,26 @@ Ako som už spomínal, hodnoty, ktoré vráti tento algoritmus sú serializovan�
 Objekty, ktoré hráč môže v hre posúvať a rotovať majú tieto hodnoty predpočítané tiež a to na mieru podľa ich pozície a rotácie po vyexportovaní z modelovacieho nástroja. Následná manipulácia s týmito objektami pripočítava príslušné prírastky k týmto predpočítaným hodnotám. Ak teda algoritmus zistí, že správna rotácia je 90$^{\circ}$ a hráč s objektom zarotuje napríklad o ďalších 30$^{\circ}$, pri pokuse ľahnnúť si je hráčskej postave vrátená hodnota 120$^{\circ}$.
 
 \chapter{Záver}
-\section{Teoretické a praktické znalosti a zručnosti získané v priebehu štúdia uplatnené v priebehu odbornej praxe}
+\section{Teoretické a praktické znalosti a zručnosti získané v priebehu štúdia, uplatnené v priebehu odbornej praxe}
 V rámci odbornej praxe som mal možnosť využiť širokú škálu znalostí nadobudnutých počas bakalárskeho štúdia. Menovite šlo o znalosti z predmetov ako Programovací jazyky I \& II, Tvorba aplikací pro mobilní zařízení II, Základy počítačové grafiky, Modelování v grafických aplikacích, Počítačové sítě a ďalších. 
 
-Predmet Programovací jazyky II sa priamo zaoberal jazykom C\# a jeho pokročilejšími možnosťami ako udalosti, delegáti, lamda výrazy či LINQ, ktoré mi boli veľmi nápomocné počas celého obdobia praxe, nakoľko prevažná väčšina projektov prebiehala práve v tomto jazyku. Napriek tomu, že predmet Programovací jazyky I bol zameraný na platformu JAVA, odniesol som si z neho dobré základy syntaktickej analýzy textu či regulárnych výrazov. S tými som sa zároveň stretol aj v predmete Úvod do teoretické informatiky aj keď v trochu inej forme. 
+Predmet Programovací jazyky II sa priamo zaoberal jazykom C\# a jeho pokročilejšími možnosťami ako udalosti, delegáti, lamda výrazy či LINQ, ktoré mi boli veľmi nápomocné počas celého obdobia praxe, nakoľko prevažná väčšina projektov prebiehala práve v tomto jazyku. Napriek tomu, že predmet Programovací jazyky I bol zameraný na platformu JAVA, odniesol som si z neho dobré základy syntaktickej analýzy textu či regulárnych výrazov, ktoré boli použiteľné aj mimo túto platformu. S regulárnymi výrazmi som sa zároveň stretol aj v predmete Úvod do teoretické informatiky i keď v trochu inej forme. Pomohlo mi to však k hlbšiemu pochopeniu danej problematiky. 
 
 V predmetoch Programovací jazyky I a Tvorba aplikací pro mobilní zařízení II som mal zároveň v rámci semestrálnych projektov možnosť pracovať na jednoduchých hrách, čím som okrem základneho povedomia o kruciálnych pojmoch herného vývoja prehĺbil svoje znalosi objektovo orientovaného programovania. To mi neskôr uľahčilo orientáciu v kóde hry Hobo: Tough Life a zároveň aj integráciu vlastných riešení.
 
-Počas štúdia som sa zároveň hneď na niekoľkých predmetoch stretol s tvorbou užívateľského rozhrania vo Windows Forms, čo som následne využil pri tvorbe vývojárských nástrojov. K môjmu prekvapeniu prišli vhod aj znalosti sieťových protokolov nadobudnuté v predmete Počítačové sítě.
+Počas štúdia som sa zároveň hneď na niekoľkých predmetoch stretol s tvorbou užívateľského rozhrania vo Windows Forms, čo som následne využil pri tvorbe vývojárských nástrojov. K môjmu prekvapeniu prišli vhod aj znalosti sieťových protokolov získané v predmete Počítačové sítě.
 
-Veľmi užitočná bola aj znalosť matematických princípov využívaných v počítačovej grafike nadobudnutá v predmete Základy počítačové grafiky či znalosti týkajúce sa textúr, 3D modelov a ďalších vecí získané v predmete Modelování v grafických aplikacích.
+Veľmi užitočné bolo aj povedomie o matematických princípoch využívaných v počítačovej grafike, ktoré som nadobudol v predmete Základy počítačové grafiky či vedomosti týkajúce sa textúr, 3D modelov a ďalších vecí získané v predmete Modelování v grafických aplikacích.
 
 \label{sec:techZruc}
 \section{Znalosti a zručnosti chýbajúce v priebehu odbornej praxe}
 \label{sec:coNeviem}
-V škole som získal solídne základy programovania ako takého, chýbali mi však znalosti z práce v nejakom hernom engine. V predmete Základy počítačové grafiky sme sa síce pokúšali naprogramovať jednoduchý engine prakticky od nuly, čo pomohlo k pochopeniu niektorých princípov, ocenil by som však možnosť v rámci štúdia pracovať aj v nejakom komerčne využívanom. S týmto problémom som ale počítal a snažil sa doplniť potrebné medzery ešte pred nástupom na prax v rámci voľného času. Chýbali mi taktiež skúsenosti s prácou s webovými technológiami ako REST API, klient server architektúrou a celkovo som mal nedostatočné znalosti týkajúce sa problematiky prenosu dát cez internet. Problém som mal taktiež s prácou s rôznymi API od tretích strán či používaním verzovacieho systému v rámci týmu. Tieto nedostatky sa prejavovali primárne v prvých dňoch odbornej praxe.
+Počas vysokoškolského štúdia som získal solídne základy programovania ako takého, chýbali mi však skúsenosti s nejakým herným enginom. V predmete Základy počítačové grafiky sme sa síce pokúšali naprogramovať jednoduchý engine prakticky od nuly, čo pomohlo k pochopeniu niektorých princípov, ocenil by som však možnosť v rámci štúdia pracovať aj v nejakom komerčne využívanom. S týmto problémom som však počítal a snažil sa doplniť potrebné medzery ešte pred nástupom na prax v rámci voľného času. Chýbali mi taktiež skúsenosti s prácou s webovými technológiami ako REST API, klient server architektúrou a celkovo som mal nedostatočné znalosti týkajúce sa problematiky prenosu dát cez internet. Problém som mal taktiež s integráciou rôznych API od tretích strán či používaním verzovacieho systému v rámci týmu. Tieto nedostatky sa prejavovali primárne v prvých dňoch odbornej praxe.
 
 \section{Dosiahnuté výsledky v priebehu odbornej praxe a celkové zhodnotenie}
 \label{sec:Results}
-Odbornú prax v spoločnosti Perun Creative hodnotím ako skvelú pracovnú skúsenosť. Mal som možnosť uplatniť svoje znalosti a zručnosti na veľmi zaujímavom a netradičnom projekte akým je počítačová hra Hobo: Tough Life. Rovnako som nadobudol veľké množstvo tvrdých čí mäkkých zručností, ktoré sú neprenositeľné. Každého človeka zároveň poteší pohľad na to, ako sú plody jeho práce denno denne využívané aby uľahčovali a spríjemňovali prácu ostatným. Z tohto pohľadu výsledky vývoja pomocných nástrojov predčili všetky moje očakávania. Prevod hry na ďalšie platformy je v dobe písania tohoto textu stále relatívne na začiatku a naplno sa rozbehne až po vydaní hry. Hráči sa budú môcť stretnúť s mojou prácou skôr symbolicky, keď si budú líhať na zastávku, lavičku či iné útulné miesto. Dúfam, že tento stav sa zmení v ďalšom projekte, nakoľko plánujem v tomto hernom štúdiu ostať pracovať aj po skončení odbornej praxe.
+Odbornú prax v spoločnosti Perun Creative hodnotím ako skvelú pracovnú skúsenosť. Mal som možnosť uplatniť svoje znalosti a zručnosti na veľmi zaujímavom a netradičnom projekte akým je počítačová hra Hobo: Tough Life. Rovnako som nadobudol veľké množstvo tvrdých čí mäkkých zručností, ktoré sú neprenositeľné. Každého človeka zároveň poteší pohľad na to, ako sú plody jeho práce denno denne využívané aby uľahčovali a spríjemňovali prácu ostatným. Z tohto pohľadu výsledky vývoja pomocných nástrojov predčili všetky moje očakávania. Prevod hry na ďalšie platformy, na ktorom som sa podieľal, je v dobe písania tohto textu stále relatívne na začiatku a naplno sa rozbehne až po vydaní hry. Z mojej strany boli však položené pevné základy, pripravené pre budúce potreby. 
+Hráči sa potom budú môcť stretnúť s mojou prácou skôr symbolicky, keď sa budú ukladať k spánku na zastávke, lavičke či inom útulnom mieste. Dúfam, že tento stav sa zmení v ďalšom projekte, nakoľko plánujem v tomto hernom štúdiu ostať pracovať aj po skončení odbornej praxe a naďalej tak prehlbovať svoje odborné znalosti.
 
 \printbibliography[title={Literatúra}, heading=bibintoc]
-
-%\appendix
-%\chapter{Zdrojový kód triedy RestPosition}
-%\lstinputlisting[label=src:lihanie,caption={Algoritmus na zistenie správnej polohy spiacej postavy}]{Ext/RestPosition.cs}
 \end{document}

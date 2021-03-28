@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.2.19)  28 MAR 2021 19:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.2.19)  28 MAR 2021 20:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1321,19 +1321,19 @@ Kapitola 4.
 <Pictures/mantis.png, id=306, 444.91219pt x 471.26062pt>
 File: Pictures/mantis.png Graphic file (type png)
 <use Pictures/mantis.png>
-Package pdftex.def Info: Pictures/mantis.png  used on input line 240.
+Package pdftex.def Info: Pictures/mantis.png  used on input line 239.
 (pdftex.def)             Requested size: 320.97777pt x 339.98334pt.
  [15 <./Pictures/mantis.png>]
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 250.
+nput line 249.
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 2
-50.
+49.
 
 (d:/Programy/texlive/2020/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 251.
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 250.
  [16] [17] [18]
 [19]
 <Pictures/packet.png, id=400, 1485.8712pt x 803.1606pt>
@@ -1362,31 +1362,31 @@ Package pdftex.def Info: Pictures/pictureEditBox.png  used on input line 458.
 <Pictures/gitlogger.png, id=560, 828.09375pt x 290.58563pt>
 File: Pictures/gitlogger.png Graphic file (type png)
 <use Pictures/gitlogger.png>
-Package pdftex.def Info: Pictures/gitlogger.png  used on input line 554.
+Package pdftex.def Info: Pictures/gitlogger.png  used on input line 553.
 (pdftex.def)             Requested size: 472.03123pt x 165.6444pt.
  [28 <./Pictures/gitlogger.png>] [29] [30] [31]
-<Pictures/buildDetail.png, id=622, 479.54156pt x 392.21532pt>
+<Pictures/buildDetail.png, id=621, 479.54156pt x 392.21532pt>
 File: Pictures/buildDetail.png Graphic file (type png)
 <use Pictures/buildDetail.png>
-Package pdftex.def Info: Pictures/buildDetail.png  used on input line 633.
+Package pdftex.def Info: Pictures/buildDetail.png  used on input line 632.
 (pdftex.def)             Requested size: 424.82523pt x 347.46663pt.
  [32 <./Pictures/buildDetail.png>]
-<Pictures/warr.png, id=632, 468.24937pt x 31.61812pt>
+<Pictures/warr.png, id=631, 468.24937pt x 31.61812pt>
 File: Pictures/warr.png Graphic file (type png)
 <use Pictures/warr.png>
-Package pdftex.def Info: Pictures/warr.png  used on input line 663.
+Package pdftex.def Info: Pictures/warr.png  used on input line 662.
 (pdftex.def)             Requested size: 472.03123pt x 31.87517pt.
  [33 <./Pictures/warr.png>] [34] [35] [36]
-<Pictures/profiler.png, id=706, 497.60907pt x 170.13562pt>
+<Pictures/profiler.png, id=705, 497.60907pt x 170.13562pt>
 File: Pictures/profiler.png Graphic file (type png)
 <use Pictures/profiler.png>
-Package pdftex.def Info: Pictures/profiler.png  used on input line 734.
+Package pdftex.def Info: Pictures/profiler.png  used on input line 733.
 (pdftex.def)             Requested size: 472.03123pt x 161.39426pt.
  [37 <./Pictures/profiler.png>] [38] [39] [40] [41]
-<Pictures/algviz.png, id=735, 768.62157pt x 469.00218pt>
+<Pictures/algviz.png, id=734, 768.62157pt x 469.00218pt>
 File: Pictures/algviz.png Graphic file (type png)
 <use Pictures/algviz.png>
-Package pdftex.def Info: Pictures/algviz.png  used on input line 799.
+Package pdftex.def Info: Pictures/algviz.png  used on input line 798.
 (pdftex.def)             Requested size: 472.03123pt x 288.03029pt.
  [42] [43 <./Pictures/algviz.png>] [44] [45]
 [46] [47]
@@ -1411,8 +1411,8 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 27607 strings out of 479023
- 448828 string characters out of 5858895
+ 27606 strings out of 479023
+ 448812 string characters out of 5858895
  1323583 words of memory out of 5000000
  44154 multiletter control sequences out of 15000+600000
  468906 words of font info for 66 fonts, out of 8000000 for 9000
@@ -1435,9 +1435,9 @@ lm/lmsy10.pfb><d:/Programy/texlive/2020/texmf-dist/fonts/type1/public/lm/lmsy8.
 pfb><d:/Programy/texlive/2020/texmf-dist/fonts/type1/public/lm/lmtk10.pfb><d:/P
 rogramy/texlive/2020/texmf-dist/fonts/type1/public/lm/lmtt10.pfb><d:/Programy/t
 exlive/2020/texmf-dist/fonts/type1/public/lm/lmtto10.pfb>
-Output written on main.pdf (50 pages, 3749662 bytes).
+Output written on main.pdf (50 pages, 3749548 bytes).
 PDF statistics:
- 1080 PDF objects out of 1200 (max. 8388607)
- 477 named destinations out of 1000 (max. 500000)
+ 1079 PDF objects out of 1200 (max. 8388607)
+ 476 named destinations out of 1000 (max. 500000)
  246 words of extra memory for PDF output out of 10000 (max. 10000000)
 

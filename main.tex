@@ -222,15 +222,14 @@ Nie vždy bolo možné presne určiť časovú náročnosť nakoľko niektoré z
 \label{sec:QACode}
 \subsection{Evidovanie chybových záznamov (Mantis Report)}
 \label{sec:Report}
-\textbf{Časová náročnosť:} \\ Nasadenie: 8 dní, pridanie ďalšej funkcionality podľa požidaviek: spolu 8 dní.\\
-\textbf{Úvod do problému:} \\ Ako som spomenul v sekcií \ref{sec:GitLab} možnosti automatizovaného testovania hry tohto rozsahu sú na rozdiel od bežného softvéru značne obmedzené. Veľké štúdiá si vytvárajú vlastné nástroje založené na umelej inteligencií, nikdy sa to však úplne neobíde bez ľudí z QA oddelenia ľudovo nazývaných aj ako testeri. Úlohou testera je teda hrať celú hru alebo jej určené časti, nájsť a následne ohlásiť nájdené chyby. 
+\textbf{Časová náročnosť:} \\ Nasadenie: 8 dní, pridanie ďalšej funkcionality podľa požiadaviek: spolu 8 dní.\\
+\textbf{Úvod do problému:} \\ Ako som spomenul v sekcií \ref{sec:GitLab} možnosti automatizovaného testovania hry tohto rozsahu sú na rozdiel od bežného softvéru značne obmedzené. Veľké štúdiá si vytvárajú vlastné nástroje založené na umelej inteligencií, nikdy sa to však úplne neobíde bez ľudí z QA oddelenia, ľudovo nazývaných aj ako testeri. Úlohou testera je teda hrať celú hru alebo jej určené časti, nájsť a následne ohlásiť nájdené chyby. 
 
-Takéto ohlásenie chyby je značne neefektívny proces nakoľko na pozadí zahŕňa hneď niekoľko ďalších krokov ako minimalizácia hry, otvorenie stránky so službou Mantis Bug Tracker, nahranie snímky obrazovky a nakoniec aj samotné vyplnenie detailov reportu. Niektoré z týchto detailov sa navyše medzi jednotlivými reportmi nemenia ako napríklad informácie o platforme či operačnom systéme. Ručné vyplnenie reportu znázorňuje obrázok \ref{pic:Mantis}.
+Takéto ohlásenie chyby je značne neefektívny proces nakoľko na pozadí zahŕňa hneď niekoľko ďalších krokov ako minimalizácia hry, otvorenie stránky so službou Mantis Bug Tracker, nahranie snímky obrazovky a nakoniec aj samotné vyplnenie detailov záznamu. Niektoré z týchto detailov sa navyše medzi jednotlivými nahláseniami nemenia ako napríklad informácie o platforme či operačnom systéme. Ručné vyplnenie detailov o chybe znázorňuje obrázok \ref{pic:Mantis}.
 Táto neefektívnosť samozrejme priamo úmerne rastie s počtom nájdených chýb, čo môžu byť aj vyššie jednotky denne. Mojou úlohou bolo teda optimalizovať tento postup. \\
-\textbf{Navrhované riešenia:} \\ Nakoľko bola toto moja prvá úloha v rámci odbornej praxe, mal som len minimálne skúsenosti s webovými technológiami ako je REST API a celkovo klient-server architektúrou, navrhol som riešenie postavené na nejakom nástroji na automatizovanie webového prehliadača. Takýmto nástrojom je napríklad Selenium WebDriver, s ktorým som sa stretol pri práci na vlastných projektoch. Ten je veľmi obľúbený napríklad pri testovaní webových aplikácií. Dokázal by zapnúť webový prehliadač, či už s užívateľským rozhraním alebo bez, otvoriť požadovanú stránku a vyplniť detaily reportu za užívateľa. V spojení s nejakým vlastným nástrojom na ukladanie snímky obrazovky, prípadne nástrojom, ktorý by testerovi umožnil vypísať zhrnutie či popis reportu priamo v hre by sa naozaj jednalo o relatívne dobré riešenie. Po užívateľovi by to ale vyžadovalo nutnosť inštalácie nejakého konkrétneho prehliadača v požadovanej verzií, aby bola zaistená správna kompatibilita a veľmi pravdepodobne by sa v budúcnosti objavili aj ďalšie problémy s nasadením či používaním. 
+\textbf{Navrhované riešenia:} \\ Nakoľko bola toto moja prvá úloha v rámci odbornej praxe, mal som len minimálne skúsenosti s webovými technológiami ako je REST API a celkovo klient-server architektúrou, navrhol som riešenie postavené na nejakom nástroji na automatizovanie webového prehliadača. Takýmto nástrojom je napríklad Selenium WebDriver, s ktorým som sa stretol pri práci na vlastných projektoch. Ten je veľmi obľúbený napríklad pri testovaní webových aplikácií. Dokázal by zapnúť webový prehliadač, či už s užívateľským rozhraním alebo bez, otvoriť požadovanú stránku a vyplniť určité detaily o chybe za užívateľa. V spojení s nejakým vlastným nástrojom na ukladanie snímky obrazovky, prípadne nástrojom, ktorý by testerovi umožnil vypísať zhrnutie či popis priamo v hre by sa naozaj jednalo o relatívne dobré riešenie. Po užívateľovi by to ale vyžadovalo nutnosť inštalácie nejakého konkrétneho prehliadača v požadovanej verzií, aby bola zaistená správna kompatibilita a veľmi pravdepodobne by sa v budúcnosti objavili aj ďalšie problémy s nasadením či používaním. 
 
 Po preskúmaní ďalších možností a následnej porade s kolegami som sa teda rozhodol dať prednosť riešeniu postavenému na už spomínanom REST API a ak by sa to ukázalo ako nerealizovateľné spätne sa vrátiť k môjmu prvému nápadu.
-\vspace{-5pt}
 \begin{figure}[!htbp]
 	\centering
 	\setlength{\fboxsep}{0pt}
@@ -241,11 +240,11 @@ Po preskúmaní ďalších možností a následnej porade s kolegami som sa teda
 	\caption{Ručné vloženie záznamu o chybe do služby Mantis Bug Tracker}
 	\label{pic:Mantis}
 \end{figure} \\
-\textbf{Realizácia:} \\ Pri preskúmavaní možností založených na REST API som narazil na open source projekt MantisSharp \cite{MantisSharp}. Po zoznámení sa s týmto projektom a niekoľkými pokusmi ho \enquote{ohnúť} pre účely môjho projektu som sa rozhodol, že bude jednoduchšie napísať si aplikáciu sám. Využil som k tomu dve triedy z projektu MantisSharp, a síce \textit{RestClient} a \textit{MantisClient}, ktoré som následne ešte ďalej modifikoval. Trieda \textit{RestClient} vykonáva najnižšiu úroveň komunikácie so serverom a síce odosiela GET a POST žiadosti. Trieda \textit{MantisClient} má potom dve úlohy. Na jednej strane prijíma dáta z mojej aplikácie, zabalí ich do formy vhodnej pre transport a následne ich predá triede \textit{RestClient} na odoslanie metódou POST. Na strane druhej transformuje dáta získané zo servera pomocou metódy GET do C\# tried vhodných na následné použitie. Tento postup pridáva určitý level abstrakcie do celej aplikácie.
+\textbf{Realizácia:} \\ Pri preskúmavaní možností založených na REST API som narazil na projekt \mbox{MantisSharp \cite{MantisSharp}}. Po zoznámení sa s týmto projektom a niekoľkými pokusmi ho \enquote{ohnúť} pre účely môjho projektu som sa rozhodol, že bude jednoduchšie napísať si aplikáciu sám. Využil som k tomu dve triedy z projektu MantisSharp, a síce \textit{RestClient} a \textit{MantisClient}, ktoré som následne ešte ďalej modifikoval. Trieda \textit{RestClient} vykonáva najnižšiu úroveň komunikácie so serverom a síce odosiela GET a POST žiadosti. Trieda \textit{MantisClient} má potom dve úlohy. Na jednej strane prijíma dáta z mojej aplikácie, zabalí ich do formy vhodnej pre transport a následne ich predá triede \textit{RestClient} na odoslanie metódou POST. Na strane druhej transformuje dáta získané zo servera pomocou metódy GET do C\# tried vhodných na následné použitie. Tento postup pridáva určitý level abstrakcie do celej aplikácie.
 
-Problematiku odosielania dát na server som sa rozhodol demonštrovať na pridaní nového reportu vo výpise \ref{src:SendIssue}. Aplikácia vytvorí na základe vstupných dát inštanciu triedy \textit{Issue}, ktorú predá metóde \textit{SendIssue}. Tá ju následne zabalí ako JSON objekt a ďalej predá v metóde \textit{ExecutePost} na finálne odoslanie. Získavanie dát funguje obdobne len opačným smerom. 
+Problematiku odosielania dát na server som sa rozhodol demonštrovať na pridaní nového záznamu vo výpise \ref{src:SendIssue}. Aplikácia vytvorí na základe vstupných dát inštanciu triedy \textit{Issue}, ktorú predá metóde \textit{SendIssue}. Tá ju následne zabalí ako JSON objekt a ďalej predá v metóde \textit{ExecutePost} na finálne odoslanie. Získavanie dát funguje obdobne len opačným smerom. 
 
-Služba Mantis Bug Tracker po úspešnom pridaní nového reportu tento report vráti v odpovedi, čo som ďalej využil na informovanie užívateľa o úspešnom zaevidovaní, ktoré som doplnil o serverom pridelený identifikátor.
+Služba Mantis Bug Tracker po úspešnom zaevidovaní novej chyby tento záznam vráti v odpovedi, čo som ďalej využil na informovanie užívateľa o úspešnom zaevidovaní, ktoré som doplnil o serverom pridelený identifikátor.
 \vspace{10pt}
 \begin{lstlisting}[label=src:SendIssue,caption={Programové odoslanie záznamu o chybe do služby Mantis Bug Tracker}]
 public int SendIssue(Issue issue) {
@@ -262,15 +261,16 @@ public int SendIssue(Issue issue) {
     return id;
 }
 \end{lstlisting}
+
 Server spočiatku na všetky žiadosti reagoval chybou \enquote{401 Unauthorized}. Po dôkladnom preskúmaní problému sa ukázalo, že chyba je na strane serveru a bolo nutné zasiahnuť do jeho kódu. Nakoľko som k tomuto kódu nemal prístup, požiadal som kolegu, či by mi s tým mohol pomôcť. Ukázalo sa, že server filtroval všetky požiadavky, ktoré sa pokúšali o autorizáciu pomocou tzv. \enquote{Bearer tokenu}. Spoločne sa nám tento problém však podarilo vyriešiť. 
 
-Systém nahlasovania reportov mal byť pôvodne implementovaný ako súčasť hry. To sa ale ukázalo ako problematické z hľadiska zachytávania užívateľského vstupu v Unity engine. V praxi by to znamenalo, že ak by užívateľ popisoval chybu napríklad do nejakého textového poľa, hra samotná by naďalej vykonávala akcie na základe stlačených kláves. Rozhodli sme sa teda začleniť tento systém do už existujúceho vývojárskeho nástroja s názvom HoboThor. Tento nástroj je veľmi komplexný a jeho popis by bol nad rámec tejto kapitoly.
+Nahlasovanie chýb malo byť pôvodne implementované ako súčasť hry. To sa ale ukázalo ako problematické z hľadiska zachytávania užívateľského vstupu v Unity engine. V praxi by to znamenalo, že ak by užívateľ popisoval chybu napríklad do nejakého textového poľa, hra samotná by naďalej vykonávala akcie na základe stlačených kláves. Rozhodli sme sa teda začleniť tento systém do už existujúceho vývojárskeho nástroja s názvom HoboThor. Tento nástroj je veľmi komplexný a jeho popis by bol nad rámec tejto kapitoly.
 
 Logika aplikácie bola teda rozdelená do dvoch častí. Časť, s ktorou interaguje užívateľ bola realizovaná ako Windows Forms aplikácia začlenená do nástroja HoboThor a časť, ktorá túto aplikáciu spustí bola implementovaná priamo do hry a vyvolá sa stlačením klávesovej skratky Shift + F11, ak je hra spustená s podporou vývojárskych nástrojov. 
 
-Kontrola, či boli stlačené konkrétne klávesy musí prebiehať každú snímku, aby sa zabezpečilo, že odchytenie prebehne úspešne. Kód zabezpečujúci túto funkcionalitu bol teda vložený do metódy \textit{OnUpdate} triedy \textit{ReportingManager}, čo znázorňuje výpis \ref{src:OnUpdate}. 
+Kontrola, či boli stlačené konkrétne klávesy musí prebiehať periodicky každú snímku, aby sa zabezpečilo, že odchytenie prebehne úspešne. Kód zabezpečujúci túto funkcionalitu bol teda vložený do metódy \textit{OnUpdate} triedy \textit{ReportingManager}, čo znázorňuje výpis \ref{src:OnUpdate}. 
 
-Projekt Hobo: Tough Life do veľkej miery stojí na hierarchickej štruktúre tried, tzv. \enquote{Manageroch}, ktorí, ako názov napovedá obstarávajú určité časti aplikácie. Metóda \textit{OnUpdate} triedy \textit{ReportingManager} je teda každú snímku volaná inou triedou, ktorá je vyššie v hierarchickej štruktúre projektu. Na najvyššom stupni hierarchie potom stojí trieda \textit{MainManager}. Tá obsahuje metódu \textit{Update}, ktorá je priamo volaná natívnym C++ kódom enginu Unity a táto metóda potom obsahuje volania metód \textit{OnUpdate} jednotlivých \enquote{Managerov}, ktorí jej náležia.
+Projekt Hobo: Tough Life do veľkej miery stojí na hierarchickej štruktúre tried, tzv. \enquote{Manageroch}, ktorí, ako názov napovedá obstarávajú určité časti aplikácie. Metóda \textit{OnUpdate} triedy \textit{ReportingManager} je teda každú snímku volaná inou triedou, ktorá je vyššie v hierarchickej štruktúre projektu. Na najvyššom stupni hierarchie potom stojí trieda \textit{MainManager}. Tá obsahuje metódu \textit{Update}, ktorá je priamo volaná natívnym C++ kódom enginu Unity a obsahuje volania metód \textit{OnUpdate} jednotlivých \enquote{Managerov}, ktorí jej náležia.
 \vspace{10pt}
 \begin{lstlisting}[label=src:OnUpdate,caption={Odchytenie stlačenia klávesovej skratky v spustenej hre}]
 public void OnUpdate() {
@@ -291,7 +291,7 @@ public void OnUpdate() {
 
 Kód vo výpise \ref{src:OnUpdate} teda každú snímku testuje, či bola stlačená klávesa F11 a to práve v tom danom snímku. Toto zabezpečí, že sa blok kódu tejto podmienky vykoná len raz, bez ohľadu na to, ako dlho užívateľ danú klávesu držal stlačenú. Ak je popri tom stlačená aj klávesa Shift, spustí sa tzv. \enquote{Coroutine}. V tomto prípade je ňou mnou definovaná metóda \textit{StartCreateReport}. Výhoda korutiny spočíva v možnosti pozastaviť vykonávanie svojho kódu. Pozastavenie môže byť na programátorom definovanú dobu alebo do doby než nastane určitá udalosť. V tomto prípade bolo tou udalosťou kompletné vykreslenie aktuálneho snímku a to z dôvodu zachytenia tohto snímku ako obrázku.
 
-Metóda \textit{StartCreateReport} má za úlohu zozbierať rôzne dáta o aplikácií alebo systéme, na ktorom je spustená. Ide o dáta ako verzia aplikácie, pozícia a rotácia kamery v momente vyvolania akcie či posledný záznam v logovacom systéme. Tieto dáta sú následne spolu so spomínanou snímkou obrazovky a naposledy uloženým postupom hrou uložené na disk. Zložka, do ktorej sú súbory uložené závisí od toho, či je hra spustená z editoru Unity alebo samostatne. Takéto vetvenie kódu sa realizuje pomocou direktívy UNITY\_EDITOR, ktorá je spolu s ďalšími platformovo závislými direktívami definovaná samotným editorom. Jednoduchý príklad použitia takýchto direktív demonštruje výpis \ref{src:Pragma}. Nakoľko táto zložka obsahuje celú históriu reportov, jednotlivé reporty majú poradové čísla a každý ďalší dostane pridelené poradové číslo o jedna väčšie ako ten predchádzajúci.
+Metóda \textit{StartCreateReport} má za úlohu zozbierať rôzne dáta o aplikácií alebo systéme, na ktorom je spustená. Ide o dáta ako verzia aplikácie, pozícia a rotácia kamery v momente vyvolania akcie či posledný záznam v logovacom systéme. Tieto dáta sú následne spolu so spomínanou snímkou obrazovky a naposledy uloženým postupom hrou uložené na disk. Zložka, do ktorej sú súbory uložené závisí od toho, či je hra spustená z editoru Unity alebo samostatne. Takéto vetvenie kódu sa realizuje pomocou direktívy UNITY\_EDITOR, ktorá je spolu s ďalšími platformovo závislými direktívami definovaná samotným editorom. Jednoduchý príklad použitia takýchto direktív demonštruje \mbox{výpis \ref{src:Pragma}}. Nakoľko táto zložka obsahuje celú históriu chybových záznamov, jednotlivé záznamy majú poradové čísla a každý ďalší dostane pridelené číslo o jedna väčšie ako ten predchádzajúci.
 \vspace{10pt}
 \begin{lstlisting}[label=src:Pragma,caption={Ukážka použitia direktívy UNITY\_EDITOR}]
 #if UNITY_EDITOR
@@ -301,13 +301,13 @@ Metóda \textit{StartCreateReport} má za úlohu zozbierať rôzne dáta o aplik
 #endif
 \end{lstlisting}
 
-Následne sa logika aplikácie delí na dve vetvy. Prvá obstaráva vytvorenie lokálneho reportu, druhá vzdialeného. Možnosť vzdialeného nahlasovania chýb, teda odoslanie reportu z PC na ktorom hra nie je spustená bola pridaná až neskôr v súvislosti s prevodom hry na iné platformy. Oba spôsoby odoslania reportu potom demonštruje výpis \ref{src:Report}.
+Následne sa logika aplikácie delí na dve vetvy. Prvá obstaráva vytvorenie lokálneho chybového záznamu, druhá vzdialeného. Možnosť vzdialeného nahlasovania chýb, teda odoslanie záznamu z PC na ktorom hra nie je spustená bola pridaná až neskôr v súvislosti s prevodom hry na iné platformy. Oba spôsoby manipulácie so záznamom potom demonštruje výpis \ref{src:Report}.
 
-Odoslanie reportu na server z lokálneho PC pokračuje vytvorením tzv. \enquote{Mantis argumentu}. Ide o textový súbor, ktorého obsah je cesta k naposledy vytvorenému reportu. Ten je uložený do zložky, kde sa nachádza spúšťací súbor nástroja HoboThor. Následne je tento nástroj spustený a pokiaľ je pri tomto procese prítomný už spomínaný \enquote{Mantis argument}, nespustí sa hlavné okno aplikácie, ale len okno určené na odoslanie reportu. Po prečítaní obsahu je súbor samozrejme zmazaný, aby neovplyvnil ďalšie spustenie nástroja HoboThor.
+Odoslanie nájdenej chyby na server z lokálneho PC pokračuje vytvorením tzv. \enquote{Mantis argumentu}. Ide o textový súbor, ktorého obsah je cesta k naposledy vytvorenému záznamu. Ten je uložený do zložky, kde sa nachádza spúšťací súbor nástroja HoboThor. Následne je tento nástroj spustený a pokiaľ je pri tomto procese prítomný už spomínaný \enquote{Mantis argument}, nespustí sa hlavné okno aplikácie, ale len okno určené na odoslanie záznamu. Po prečítaní obsahu je súbor samozrejme zmazaný, aby neovplyvnil ďalšie spustenie nástroja HoboThor.
 
-Pokiaľ ide o odoslanie reportu zo vzdialeného PC ukázala sa ako problematická doba ukladania snímky obrazovky na disk. Kvôli tomuto problému musí aplikácia najskôr počkať na uloženie súboru a až následne vykonávať ďalšie inštrukcie. Toho som docielil jednoduchou slučkou, ktorá sa sama ukončí v prípade nájdenia požadovaného súboru alebo po pretečení určitého času. To slúži ako ochrana pred zacyklením. 
+Pokiaľ ide o odoslanie záznamu zo vzdialeného PC ukázala sa ako problematická doba ukladania snímky obrazovky na disk. Kvôli tomuto problému musí aplikácia najskôr počkať na uloženie súboru a až následne vykonávať ďalšie inštrukcie. Toho som docielil jednoduchou slučkou, ktorá sa sama ukončí v prípade nájdenia požadovaného súboru alebo po pretečení určitého času, čo slúži ako ochrana pred zacyklením. 
 
-\vspace{10pt}
+\vspace{15pt}
 \begin{lstlisting}[label=src:Report,caption={Vytváranie lokálneho a vzdialeného záznamu o chybe}]
 // Local report
 if (HBTLink_Manager.sender_ServerIP == HBTLink_Manager.Instance.LocalIPAddress().ToString()) {
@@ -336,9 +336,9 @@ else {
 }
 \end{lstlisting}
 
-Na zmenu hodnoty premennej \textit{screenSaved} zareaguje metóda \textit{OnUpdate} z výpisu \ref{src:OnUpdate} a spustí metódu \textit{ZipAndSendToLinkManager}. Tá pomocou knižnice DotNetZip \cite{DotNetZip} prevedie celú zložku s reportom na zip súbor so zachovaním hierarchickej štruktúry podzložiek a súborov. Následne ho prevedie na reťazec s kódovaním base64 a predá triede HBTLink\_Manager na odoslanie do vzdialeného PC. Táto metóda je znázornená vo výpise \ref{src:Zip}. 
+Na zmenu hodnoty premennej \textit{screenSaved} zareaguje metóda \textit{OnUpdate} z výpisu \ref{src:OnUpdate} a spustí metódu \textit{ZipAndSendToLinkManager}. Tá pomocou knižnice DotNetZip \cite{DotNetZip} prevedie celú zložku so záznamom na zip súbor pri zachovaní hierarchickej štruktúry podzložiek a súborov. Následne ho prevedie na reťazec s kódovaním base64 a predá triede HBTLink\_Manager na odoslanie do vzdialeného PC. Táto metóda je znázornená vo výpise \ref{src:Zip}. 
 
-Rreťazec je následne pomocou TCP protokolu odoslaný na IP adresu určenú v konfiguračnom súbore alebo vybratú z prednastavených možností vo vývojárskej konzole počas hrania. Na vzdialenom PC musí byť spustený nástroj HoboThor a \enquote{počúvať} na určenom porte. Dáta sú po prijatí uložené do dočasnej zložky poskytovanej operačným systémom pomocou metódy \textit{Path.GetTempPath} v mennom priestore \textit{System.IO} a následne rozbalené. Cesta k tejto zložke je opäť zapísaná do \enquote{Mantis argumentu} a HoboThor je následne automaticky spustený znova. To vyústi k otvoreniu okna určeného na nahlasovanie chýb a načítaniu dát zo zložky s reportom.
+Reťazec je následne pomocou TCP protokolu odoslaný na IP adresu určenú v konfiguračnom súbore alebo vybratú z prednastavených možností vo vývojárskej konzole počas hrania. Na vzdialenom PC musí byť spustený nástroj HoboThor a \enquote{počúvať} na určenom porte. Dáta sú po prijatí uložené do dočasnej zložky poskytovanej operačným systémom pomocou metódy \textit{Path.GetTempPath} v mennom priestore \textit{System.IO} a následne rozbalené. Cesta k tejto zložke je opäť zapísaná do \enquote{Mantis argumentu} a HoboThor je následne automaticky spustený znova. To vyústi k otvoreniu okna určeného na nahlasovanie chýb a načítaniu dát zo zložky so záznamom.
 \vspace{10pt}
 \begin{lstlisting}[label=src:Zip,caption={Archivovanie zložky so zachovaním pôvodnej štruktúry}]
 private void ZipAndSendToLinkManager() {
@@ -391,10 +391,10 @@ while ((i = nwStream.Read(buffer, 0, buffer.Length)) != 0)
 \end{lstlisting}
 \vspace{5pt}
 
-Mojou poslednou úlohou v časti reportovacieho systému na strane hry, ktorá prišla ako požiadavka od programátorov bolo pridať možnosť odosielať reporty priamo z editoru bez nutnosti mať spustenú hru. Typický prípad použitia bolo nahlasovanie chýb nájdených popri práci s náhľadom scény. Väčšina kódu bola prebratá z vyššie popísanej časti, museli byť však zmenené niektoré postupy. 
+Mojou poslednou úlohou v časti systému nahlasovania chýb na strane hry, ktorá prišla ako požiadavka od programátorov bolo pridať možnosť odosielať záznamy priamo z editoru bez nutnosti mať spustenú hru. Typický prípad použitia bolo nahlasovanie chýb nájdených popri práci s náhľadom scény. Väčšina kódu bola prebratá z vyššie popísanej časti, museli byť však zmenené niektoré postupy. 
 
 Odchytávanie klávesovej skratky bolo tentoraz realizované natívnym postupom zabudovaným do editora Unity. Stačilo vytvoriť statickú metódu \textit{CreateReport} a nad jej definíciu pridať atribút \enquote{MenuItem} ako znázorňuje výpis \ref{src:UnityReport}. To vyústi k vytvoreniu zástupcu tejto metódy v hornom paneli editora. Pozícia metódy v paneli je určená zadanou cestou v parametri atribútu \enquote{MenuItem}. Za túto cestou je potom možné pridať ľubovoľnú klávesovú skratku, ktorá túto akciu vyvolá.
-\vspace{10pt}
+\vspace{15pt}
 \begin{lstlisting}[label=src:UnityReport,caption={Odchytenie stlačenia klávesovej skratky v rámci editora Unity}]
 [MenuItem("Tools/HBT/Reporting/Create report #F11")] // # -> Shift
 static void CreateReport()
@@ -404,7 +404,7 @@ static void CreateReport()
 \end{lstlisting}
 \vspace{5pt}
 
-Pôvodný postup vytvorenia snímky obrazovky pomocou metódy \textit{CaptureScreenshotAsTexture} bolo nutné nahradiť metódou \textit{ReadScreenPixel}, ktorá ale potrebuje vedieť presnú lokáciu a rozmery okna. Získať tieto údaje sa mi nakoniec podarilo až volaním C++ metód z user32.dll. Počas testovania na 4K monitore sa ukázalo, že tento prístup nevhodne vyhodnocuje veľkosť okna s nastaveným škálovaním v OS Windows. Toto bolo nutné upraviť ručne, čo ukazuje výpis \ref{src:DLL}.
+Pôvodný postup vytvorenia snímky obrazovky pomocou metódy \textit{CaptureScreenshotAsTexture} bolo nutné nahradiť metódou \textit{ReadScreenPixel}, ktorá ale potrebuje vedieť presnú lokáciu a rozmery okna. Získať tieto údaje sa mi nakoniec podarilo až volaním C++ metód z user32.dll. Počas testovania na 4K monitore sa však ukázalo, že tento prístup nevhodne vyhodnocuje veľkosť okna s nastaveným škálovaním v OS Windows. Toto bolo nutné upraviť ručne, čo ukazuje výpis \ref{src:DLL}.
 \vspace{10pt}
 \begin{lstlisting}[label=src:DLL,caption={Získanie veľkosti okna spustenej aplikácie}]
 [DllImport("user32.dll")]
@@ -432,7 +432,7 @@ private static Rect GetUnityBounds() {
 }
 \end{lstlisting}
 
-Na strane Windows Forms aplikácie implementovanej do nástroja HoboThor bolo nutné najskôr vytvoriť sadu tried a enumov, ktoré by po serializácií/deserializácií presne kopírovali štruktúru projektu či reportu s ktorou pracuje služba Mantis Bug Tracker. Následne bolo nutné navrhnúť užívateľské rozhranie. To prechádzalo iteratívnymi zmenami na základe spätnej väzby až do svojej finálnej podoby znázornenej na obrázku \ref{pic:Report}.
+Na strane Windows Forms aplikácie implementovanej do nástroja HoboThor bolo nutné najskôr vytvoriť sadu tried a enumov, ktoré by po serializácií/deserializácií presne kopírovali štruktúru projektu či záznamu s ktorou pracuje služba Mantis Bug Tracker. Následne bolo nutné navrhnúť užívateľské rozhranie. To prechádzalo iteratívnymi zmenami na základe spätnej väzby až do svojej finálnej podoby znázornenej na obrázku \ref{pic:Report}.
 
 \begin{figure}[!htbp]
 	\centering
@@ -445,11 +445,11 @@ Na strane Windows Forms aplikácie implementovanej do nástroja HoboThor bolo nu
 	\label{pic:Report}
 \end{figure}
 
-Po spustení aplikácie sa načíta uložená snímka obrazovky a zobrazí sa v náhľadovom okne na pravej strane. Vzhľadom na to, že v dobe spúšťania tento obrázok ešte nemusí byť plne k dispozícií je táto funkcionalita realizované v separátnom vlákne pomocou tzv. \enquote{Background Workera}. Ten v cykle prehľadáva zložku s reportom kvôli prítomnosti obrázku a až následne, keď je k dispozícií ho zobrazí.
+Po spustení aplikácie sa načíta uložená snímka obrazovky a zobrazí sa v náhľadovom okne na pravej strane. Vzhľadom na to, že v dobe spúšťania tento obrázok ešte nemusí byť plne k dispozícií je táto funkcionalita realizované v separátnom vlákne pomocou tzv. \enquote{Background Workera}. Ten v cykle prehľadáva zložku so záznamom kvôli prítomnosti obrázku a až následne, keď je k dispozícií ho zobrazí.
 
-Po načítaní dát z report zložky do polí \enquote{Shrnutí} a \enquote{Popis} sú odoslané dve GET žiadosti na server. Prvá požaduje dáta o užívateľovi, ktorému náleží príslušný api kľúč odoslaný spolu so žiadosťou a druhá požaduje informácie o projekte. Medzi tieto informácie patria aj kategórie evidované pre daný projekt. Tie sú vložené do kombinovaného poľa \enquote{Kategorie}. Tento postup bol zvolený z dôvodu možných budúcich zmien v štruktúre kategórií na serveri. Ostatné kombinované polia boli vyplnené vopred pripravenými enumami. U nich sa žiadna budúca zmena nepredpokladá.
+Po načítaní dát zo zložky do polí \enquote{Shrnutí} a \enquote{Popis} sú odoslané dve GET žiadosti na server. Prvá požaduje dáta o užívateľovi, ktorému náleží príslušný api kľúč odoslaný spolu so žiadosťou a druhá požaduje informácie o projekte. Medzi tieto informácie patria aj kategórie evidované pre daný projekt. Tie sú vložené do kombinovaného poľa \enquote{Kategorie}. Tento postup bol zvolený z dôvodu možných budúcich zmien v štruktúre kategórií na serveri. Ostatné kombinované polia boli vyplnené vopred pripravenými enumami. U nich sa žiadna budúca zmena nepredpokladá.
 
-Užívateľ zadá dostupné informácie k nájdenej chybe a report odošle na server. Táto akcia zahŕňa získanie dát zo všetkých dostupných polí a následné vytvorenie inštancie triedy \textit{Issue}, ktorá tieto dáta zapúzdruje. Všetky prílohy určené na odoslanie sú potom uložené do príslušných polí bytov, prevedené na reťazce s kódovaním base64 obdobným postupom ako vo výpise \ref{src:Zip} a predané spomínanej inštancií.
+Užívateľ zadá dostupné informácie k nájdenej chybe a záznam odošle na server. Táto akcia zahŕňa získanie dát zo všetkých dostupných polí a následné vytvorenie inštancie triedy \textit{Issue}, ktorá tieto dáta zapúzdruje. Všetky prílohy určené na odoslanie sú potom uložené do príslušných polí bytov, prevedené na reťazce s kódovaním base64 obdobným postupom ako vo výpise \ref{src:Zip} a predané spomínanej inštancií.
 
 V tomto momente bola aplikácia prakticky hotová ale z QA oddelenia prišla požiadavka na možnosť úpravy obrázka pred odoslaním bez nutnosti použitia externých nástrojov. Vytvoril som teda druhé okno pre túto aplikáciu, ktoré sa otvorí po kliknutí na náhľadový obrázok a umožňuje do neho kresliť. Toto okno je znázornené na obrázku \ref{pic:Paint}. 
 
@@ -460,7 +460,7 @@ V tomto momente bola aplikácia prakticky hotová ale z QA oddelenia prišla po�
 	\label{pic:Paint}
 \end{figure}
 
-Postupne bola pridaná podpora viacerých hrúbok a farieb čiar či tlačítko reset, ktoré slúži na návrat k pôvodnému obrázku. Zmeny v tomto okne sú spätne reflektované aj náhľadovým obrázkom v hlavnom okne reportovacej aplikácie. 
+Postupne bola pridaná podpora viacerých hrúbok a farieb čiar či tlačítko reset, ktoré slúži na návrat k pôvodnému obrázku. Zmeny v tomto okne sú spätne reflektované aj náhľadovým obrázkom v hlavnom okne aplikácie. 
 
 Na kreslenie bolo využité vlastné riešenie založené na udalostiach \textit{MouseDown}, \textit{MouseUp} a \textit{MouseMove}. Pri pohybe myši spolu so stlačeným ľavým tlačidlom dôjde k vykresľovaníu čiary medzi dvoma bodmi, čo sa od určitej frekvencie zaznamenávania bodov javí ako súvislý ťah. Tento postup je demonštrovaný vo výpise \ref{src:Paint}.
 \vspace{10pt}
@@ -470,7 +470,6 @@ private void pictureBoxBcg_MouseDown(object sender, MouseEventArgs e) {
     x = e.X;
     y = e.Y;
 }
-
 private void pictureBoxBcg_MouseMove(object sender, MouseEventArgs e) {
     if (moving && x != -1 && y != -1) {
         g.DrawLine(pen, new Point(x, y), e.Location);

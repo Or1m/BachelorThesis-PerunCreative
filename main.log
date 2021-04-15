@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.2.17)  31 MAR 2021 00:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.2.17)  15 APR 2021 21:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -666,8 +666,8 @@ Language: slovak 2008/07/06 v3.1a Slovak support from the babel system
 File: thb.sty 2014/10/28 v2.2c Theorem extension package (FMi)
 )
 \c@Dipl@examplebody=\count295
-Package hyperref Info: Option `unicode' set `true' on input line 369.
-Package hyperref Info: Option `colorlinks' set `true' on input line 369.
+Package hyperref Info: Option `unicode' set `true' on input line 370.
+Package hyperref Info: Option `colorlinks' set `true' on input line 370.
 )
 (d:/texlive/2020/texmf-dist/tex/latex/csquotes/csquotes.sty
 Package: csquotes 2021-01-04 v5.2k context-sensitive quotations (JAW)
@@ -1006,65 +1006,293 @@ Package: listings 2020/03/24 1.8d (Carsten Heinz)
 (d:/texlive/2020/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 ))
+(d:/texlive/2020/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
+Package: tcolorbox 2020/10/09 version 4.42 text color boxes
+
+(d:/texlive/2020/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(d:/texlive/2020/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(d:/texlive/2020/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks48
+\pgfutil@tempdima=\dimen187
+\pgfutil@tempdimb=\dimen188
+
+(d:/texlive/2020/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.tex)
+) (d:/texlive/2020/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box57
+)
+(d:/texlive/2020/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+(d:/texlive/2020/texmf-dist/tex/generic/pgf/pgf.revision.tex)
+Package: pgfrcs 2020/12/27 v3.1.8b (3.1.8b)
+))
+Package: pgf 2020/12/27 v3.1.8b (3.1.8b)
+
+(d:/texlive/2020/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(d:/texlive/2020/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(d:/texlive/2020/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2020/12/27 v3.1.8b (3.1.8b)
+
+(d:/texlive/2020/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks49
+\pgfkeys@temptoks=\toks50
+
+(d:/texlive/2020/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.tex
+\pgfkeys@tmptoks=\toks51
+))
+\pgf@x=\dimen189
+\pgf@y=\dimen190
+\pgf@xa=\dimen191
+\pgf@ya=\dimen192
+\pgf@xb=\dimen193
+\pgf@yb=\dimen194
+\pgf@xc=\dimen195
+\pgf@yc=\dimen196
+\pgf@xd=\dimen197
+\pgf@yd=\dimen198
+\w@pgf@writea=\write5
+\r@pgf@reada=\read5
+\c@pgf@counta=\count442
+\c@pgf@countb=\count443
+\c@pgf@countc=\count444
+\c@pgf@countd=\count445
+\t@pgf@toka=\toks52
+\t@pgf@tokb=\toks53
+\t@pgf@tokc=\toks54
+\pgf@sys@id@count=\count446
+ (d:/texlive/2020/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2020/12/27 v3.1.8b (3.1.8b)
+)
+Driver file for pgf: pgfsys-pdftex.def
+
+(d:/texlive/2020/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+File: pgfsys-pdftex.def 2020/12/27 v3.1.8b (3.1.8b)
+
+(d:/texlive/2020/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
+File: pgfsys-common-pdf.def 2020/12/27 v3.1.8b (3.1.8b)
+)))
+(d:/texlive/2020/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+\pgfsyssoftpath@smallbuffer@items=\count447
+\pgfsyssoftpath@bigbuffer@items=\count448
+)
+(d:/texlive/2020/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+)) (d:/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2020/12/27 v3.1.8b (3.1.8b)
+
+(d:/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(d:/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
+(d:/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(d:/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen199
+\pgfmath@count=\count449
+\pgfmath@box=\box58
+\pgfmath@toks=\toks55
+\pgfmath@stack@operand=\toks56
+\pgfmath@stack@operation=\toks57
+)
+(d:/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex
+(d:/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.te
+x)
+(d:/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric
+.code.tex)
+(d:/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.t
+ex)
+(d:/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.co
+de.tex)
+(d:/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex
+)
+(d:/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.te
+x)
+(d:/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex
+)
+(d:/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithm
+etics.code.tex)))
+(d:/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count450
+))
+(d:/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
+(d:/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
+File: pgfcorepoints.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+\pgf@picminx=\dimen256
+\pgf@picmaxx=\dimen257
+\pgf@picminy=\dimen258
+\pgf@picmaxy=\dimen259
+\pgf@pathminx=\dimen260
+\pgf@pathmaxx=\dimen261
+\pgf@pathminy=\dimen262
+\pgf@pathmaxy=\dimen263
+\pgf@xx=\dimen264
+\pgf@xy=\dimen265
+\pgf@yx=\dimen266
+\pgf@yy=\dimen267
+\pgf@zx=\dimen268
+\pgf@zy=\dimen269
+)
+(d:/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.cod
+e.tex
+File: pgfcorepathconstruct.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+\pgf@path@lastx=\dimen270
+\pgf@path@lasty=\dimen271
+)
+(d:/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.te
+x
+File: pgfcorepathusage.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+\pgf@shorten@end@additional=\dimen272
+\pgf@shorten@start@additional=\dimen273
+)
+(d:/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
+File: pgfcorescopes.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+\pgfpic=\box59
+\pgf@hbox=\box60
+\pgf@layerbox@main=\box61
+\pgf@picture@serial@count=\count451
+)
+(d:/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code
+.tex
+File: pgfcoregraphicstate.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+\pgflinewidth=\dimen274
+)
+(d:/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.c
+ode.tex
+File: pgfcoretransformations.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+\pgf@pt@x=\dimen275
+\pgf@pt@y=\dimen276
+\pgf@pt@temp=\dimen277
+)
+(d:/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+)
+(d:/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
+File: pgfcoreobjects.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+)
+(d:/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.co
+de.tex
+File: pgfcorepathprocessing.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+)
+(d:/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
+File: pgfcorearrows.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+\pgfarrowsep=\dimen278
+)
+(d:/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+\pgf@max=\dimen279
+\pgf@sys@shading@range@num=\count452
+\pgf@shadingcount=\count453
+)
+(d:/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+
+(d:/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
+File: pgfcoreexternal.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+\pgfexternal@startupbox=\box62
+))
+(d:/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
+File: pgfcorelayers.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+)
+(d:/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code
+.tex
+File: pgfcoretransparency.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+)
+(d:/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
+File: pgfcorepatterns.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+) (d:/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex
+File: pgfcorerdf.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+))) (d:/texlive/2020/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.te
+x
+File: pgfmoduleshapes.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+\pgfnodeparttextbox=\box63
+)
+(d:/texlive/2020/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+)
+(d:/texlive/2020/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.st
+y
+Package: pgfcomp-version-0-65 2020/12/27 v3.1.8b (3.1.8b)
+\pgf@nodesepstart=\dimen280
+\pgf@nodesepend=\dimen281
+)
+(d:/texlive/2020/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.st
+y
+Package: pgfcomp-version-1-18 2020/12/27 v3.1.8b (3.1.8b)
+)) (d:/texlive/2020/texmf-dist/tex/latex/tools/verbatim.sty
+Package: verbatim 2020-07-07 v1.5u LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks58
+\verbatim@line=\toks59
+\verbatim@in@stream=\read6
+)
+(d:/texlive/2020/texmf-dist/tex/latex/environ/environ.sty
+Package: environ 2014/05/04 v0.3 A new way to define environments
+
+(d:/texlive/2020/texmf-dist/tex/latex/trimspaces/trimspaces.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+)
+\@envbody=\toks60
+)
+\tcb@titlebox=\box64
+\tcb@upperbox=\box65
+\tcb@lowerbox=\box66
+\tcb@phantombox=\box67
+\c@tcbbreakpart=\count454
+\c@tcblayer=\count455
+\c@tcolorbox@number=\count456
+\tcb@temp=\box68
+\tcb@temp=\box69
+\tcb@temp=\box70
+\tcb@temp=\box71
+\tcb@out=\write6
+\tcb@record@out=\write7
+)
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 12
-9.
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 13
+3.
 
 (d:/texlive/2020/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 (d:/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2021-02-06 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count442
-\l__pdf_internal_box=\box57
+\l__color_backend_stack_int=\count457
+\l__pdf_internal_box=\box72
 )
 (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
  (d:/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count443
-\scratchdimen=\dimen187
-\scratchbox=\box58
-\nofMPsegments=\count444
-\nofMParguments=\count445
-\everyMPshowfont=\toks48
-\MPscratchCnt=\count446
-\MPscratchDim=\dimen188
-\MPnumerator=\count447
-\makeMPintoPDFobject=\count448
-\everyMPtoPDFconversion=\toks49
+\scratchcounter=\count458
+\scratchdimen=\dimen282
+\scratchbox=\box73
+\nofMPsegments=\count459
+\nofMParguments=\count460
+\everyMPshowfont=\toks61
+\MPscratchCnt=\count461
+\MPscratchDim=\dimen283
+\MPnumerator=\count462
+\makeMPintoPDFobject=\count463
+\everyMPtoPDFconversion=\toks62
 ) (d:/texlive/2020/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
-
-(d:/texlive/2020/texmf-dist/tex/latex/grfext/grfext.sty
-Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
-)
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
-Package grfext Info: Graphics extension search list:
-(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
-G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 504.
 
 (d:/texlive/2020/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
@@ -1110,7 +1338,7 @@ Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: rotating package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring ON on input line 129.
+Package hyperref Info: Link coloring ON on input line 133.
 (d:/texlive/2020/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 
@@ -1120,15 +1348,15 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (d:/texlive/2020/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count449
+\c@section@level=\count464
 )
-LaTeX Info: Redefining \ref on input line 129.
-LaTeX Info: Redefining \pageref on input line 129.
-LaTeX Info: Redefining \nameref on input line 129.
+LaTeX Info: Redefining \ref on input line 133.
+LaTeX Info: Redefining \pageref on input line 133.
+LaTeX Info: Redefining \nameref on input line 133.
 
 (./main.out) (./main.out)
-\@outlinefile=\write5
-\openout5 = `main.out'.
+\@outlinefile=\write8
+\openout8 = `main.out'.
 
 Package biblatex Info: Trying to load language 'slovak' -> 'slovak-iso'...
 Package biblatex Info: ... file 'slovak-iso.lbx' found.
@@ -1189,51 +1417,51 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
 
 (./main.bbl)
-Package biblatex Info: Reference section=0 on input line 129.
-Package biblatex Info: Reference segment=0 on input line 129.
-\c@lstlisting=\count450
+Package biblatex Info: Reference section=0 on input line 133.
+Package biblatex Info: Reference segment=0 on input line 133.
+\c@lstlisting=\count465
 LaTeX Font Info:    Trying to load font information for T1+lmss on input line 1
-30.
+34.
  (d:/texlive/2020/texmf-dist/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 
 pdfTeX warning: pdflatex.exe (file ./Pictures/FEI_CZ.pdf): PDF inclusion: found
  PDF version <1.6>, but at most version <1.5> allowed
-<Pictures/FEI_CZ.pdf, id=90, 350.70023pt x 109.21pt>
+<Pictures/FEI_CZ.pdf, id=93, 350.70023pt x 109.21pt>
 File: Pictures/FEI_CZ.pdf Graphic file (type pdf)
 <use Pictures/FEI_CZ.pdf>
-Package pdftex.def Info: Pictures/FEI_CZ.pdf  used on input line 130.
+Package pdftex.def Info: Pictures/FEI_CZ.pdf  used on input line 134.
 (pdftex.def)             Requested size: 274.11765pt x 85.35826pt.
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
-30.
+34.
 (d:/texlive/2020/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
-30.
+34.
 
 (d:/texlive/2020/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-130.
+134.
 
 (d:/texlive/2020/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-130.
+134.
 
 (d:/texlive/2020/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 130.
+(Font)              <14.4> on input line 134.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 130.
+(Font)              <10> on input line 134.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 130.
+(Font)              <7> on input line 134.
  [1
 
 
@@ -1255,8 +1483,8 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 21.
 )
-\tf@toc=\write6
-\openout6 = `main.toc'.
+\tf@toc=\write9
+\openout9 = `main.toc'.
 
  [4
 
@@ -1265,15 +1493,15 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 
 ] (./main.lof)
-\tf@lof=\write7
-\openout7 = `main.lof'.
+\tf@lof=\write10
+\openout10 = `main.lof'.
 
  [6
 
 
 ] (./main.lol)
-\tf@lol=\write8
-\openout8 = `main.lol'.
+\tf@lol=\write11
+\openout11 = `main.lol'.
 
  [7
 
@@ -1284,10 +1512,10 @@ Kapitola 1.
 
 ]
 Kapitola 2.
-<Pictures/logoNew.jpg, id=254, 1921.1775pt x 784.9325pt>
+<Pictures/logoNew.jpg, id=257, 1921.1775pt x 784.9325pt>
 File: Pictures/logoNew.jpg Graphic file (type jpg)
 <use Pictures/logoNew.jpg>
-Package pdftex.def Info: Pictures/logoNew.jpg  used on input line 153.
+Package pdftex.def Info: Pictures/logoNew.jpg  used on input line 157.
 (pdftex.def)             Requested size: 377.62642pt x 154.27689pt.
 [9
 
@@ -1296,49 +1524,49 @@ Kapitola 3.
 [11
 
 ]
-<Pictures/platforms.png, id=276, 876.27374pt x 255.95625pt>
+<Pictures/platforms.png, id=279, 876.27374pt x 255.95625pt>
 File: Pictures/platforms.png Graphic file (type png)
 <use Pictures/platforms.png>
-Package pdftex.def Info: Pictures/platforms.png  used on input line 182.
+Package pdftex.def Info: Pictures/platforms.png  used on input line 186.
 (pdftex.def)             Requested size: 472.03123pt x 137.87842pt.
  [12 <./Pictures/platforms.png>]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
-98.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 2
+02.
 
 (d:/texlive/2020/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-<Pictures/gitlab.png, id=289, 1003.75pt x 556.0775pt>
+<Pictures/gitlab.png, id=292, 1003.75pt x 556.0775pt>
 File: Pictures/gitlab.png Graphic file (type png)
 <use Pictures/gitlab.png>
-Package pdftex.def Info: Pictures/gitlab.png  used on input line 208.
+Package pdftex.def Info: Pictures/gitlab.png  used on input line 212.
 (pdftex.def)             Requested size: 424.82523pt x 235.35828pt.
  [13 <./Pictures/gitlab.png>]
 Kapitola 4.
 [14
 
 ]
-<Pictures/mantis.png, id=306, 444.91219pt x 471.26062pt>
+<Pictures/mantis.png, id=309, 442.65375pt x 469.755pt>
 File: Pictures/mantis.png Graphic file (type png)
 <use Pictures/mantis.png>
-Package pdftex.def Info: Pictures/mantis.png  used on input line 239.
-(pdftex.def)             Requested size: 320.97777pt x 339.98334pt.
- [15 <./Pictures/mantis.png>]
+Package pdftex.def Info: Pictures/mantis.png  used on input line 241.
+(pdftex.def)             Requested size: 311.54234pt x 330.63257pt.
+ [15 <./Pictures/mantis.png (PNG copy)>]
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 249.
+nput line 251.
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 2
-49.
+51.
 
 (d:/texlive/2020/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 250.
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 252.
  [16] [17] [18] [19]
-<Pictures/packet.png, id=400, 1485.8712pt x 803.1606pt>
+<Pictures/packet.png, id=403, 1485.8712pt x 803.1606pt>
 File: Pictures/packet.png Graphic file (type png)
 <use Pictures/packet.png>
-Package pdftex.def Info: Pictures/packet.png  used on input line 375.
+Package pdftex.def Info: Pictures/packet.png  used on input line 377.
 (pdftex.def)             Requested size: 472.03123pt x 255.14159pt.
 
 [20] [21 <./Pictures/packet.png
@@ -1346,47 +1574,47 @@ Package pdftex.def Info: Pictures/packet.png  used on input line 375.
 pdfTeX warning: pdflatex.exe (file ./Pictures/packet.png): large interlaced PNG
  might cause out of memory (use non-interlaced PNG to fix this)
 >] [22]
-<Pictures/report.png, id=479, 554.07pt x 322.20375pt>
+<Pictures/report.png, id=482, 564.60938pt x 335.75438pt>
 File: Pictures/report.png Graphic file (type png)
 <use Pictures/report.png>
 Package pdftex.def Info: Pictures/report.png  used on input line 442.
-(pdftex.def)             Requested size: 462.5886pt x 269.00722pt.
+(pdftex.def)             Requested size: 462.5886pt x 275.08983pt.
  [23 <./Pictures/report.png>]
-<Pictures/pictureEditBox.png, id=487, 1445.4pt x 811.53188pt>
+<Pictures/pictureEditBox.png, id=490, 1348.28719pt x 774.64406pt>
 File: Pictures/pictureEditBox.png Graphic file (type png)
 <use Pictures/pictureEditBox.png>
-Package pdftex.def Info: Pictures/pictureEditBox.png  used on input line 457.
-(pdftex.def)             Requested size: 472.03123pt x 265.02017pt.
+Package pdftex.def Info: Pictures/pictureEditBox.png  used on input line 459.
+(pdftex.def)             Requested size: 462.5886pt x 265.77498pt.
  [24 <./Pictures/pictureEditBox.png>]
 [25] [26] [27]
-<Pictures/gitlogger.png, id=559, 828.09375pt x 290.58563pt>
+<Pictures/gitlogger.png, id=562, 828.09375pt x 290.58563pt>
 File: Pictures/gitlogger.png Graphic file (type png)
 <use Pictures/gitlogger.png>
-Package pdftex.def Info: Pictures/gitlogger.png  used on input line 552.
+Package pdftex.def Info: Pictures/gitlogger.png  used on input line 554.
 (pdftex.def)             Requested size: 472.03123pt x 165.6444pt.
  [28 <./Pictures/gitlogger.png>] [29] [30] [31]
-<Pictures/buildDetail.png, id=620, 479.54156pt x 392.21532pt>
+<Pictures/buildDetail.png, id=624, 479.54156pt x 392.21532pt>
 File: Pictures/buildDetail.png Graphic file (type png)
 <use Pictures/buildDetail.png>
-Package pdftex.def Info: Pictures/buildDetail.png  used on input line 631.
+Package pdftex.def Info: Pictures/buildDetail.png  used on input line 633.
 (pdftex.def)             Requested size: 424.82523pt x 347.46663pt.
  [32 <./Pictures/buildDetail.png>]
-<Pictures/warr.png, id=630, 468.24937pt x 31.61812pt>
+<Pictures/warr.png, id=634, 468.24937pt x 31.61812pt>
 File: Pictures/warr.png Graphic file (type png)
 <use Pictures/warr.png>
-Package pdftex.def Info: Pictures/warr.png  used on input line 661.
+Package pdftex.def Info: Pictures/warr.png  used on input line 663.
 (pdftex.def)             Requested size: 472.03123pt x 31.87517pt.
  [33 <./Pictures/warr.png>] [34] [35] [36]
-<Pictures/profiler.png, id=704, 497.60907pt x 170.13562pt>
+<Pictures/profiler.png, id=708, 497.60907pt x 170.13562pt>
 File: Pictures/profiler.png Graphic file (type png)
 <use Pictures/profiler.png>
-Package pdftex.def Info: Pictures/profiler.png  used on input line 732.
+Package pdftex.def Info: Pictures/profiler.png  used on input line 734.
 (pdftex.def)             Requested size: 472.03123pt x 161.39426pt.
  [37 <./Pictures/profiler.png>] [38] [39] [40] [41]
-<Pictures/algviz.png, id=733, 768.62157pt x 469.00218pt>
+<Pictures/algviz.png, id=737, 768.62157pt x 469.00218pt>
 File: Pictures/algviz.png Graphic file (type png)
 <use Pictures/algviz.png>
-Package pdftex.def Info: Pictures/algviz.png  used on input line 797.
+Package pdftex.def Info: Pictures/algviz.png  used on input line 799.
 (pdftex.def)             Requested size: 472.03123pt x 288.03029pt.
  [42] [43 <./Pictures/algviz.png>] [44] [45]
 [46] [47]
@@ -1404,6 +1632,9 @@ Package biblatex Warning: '\mainlang' is deprecated in favour of
 [50
 
 ] (./main.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: A2FD8188ED930B8972C7AB7DF56DE28C;4749.
 Package logreq Info: Writing requests to 'main.run.xml'.
@@ -1411,13 +1642,13 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 27637 strings out of 479302
- 446603 string characters out of 5871204
- 1314512 words of memory out of 5000000
- 43902 multiletter control sequences out of 15000+600000
+ 36719 strings out of 479302
+ 646907 string characters out of 5871204
+ 1490487 words of memory out of 5000000
+ 52803 multiletter control sequences out of 15000+600000
  468906 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 103i,9n,131p,1834b,4775s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 103i,8n,131p,1834b,4775s stack positions out of 5000i,500n,10000p,200000b,80000s
 {d:/texlive/2020/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{d:/texlive/2020/tex
 mf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{d:/texlive/2020/texmf-dist/fonts/enc/
 dvips/lm/lm-mathit.enc}{d:/texlive/2020/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc
@@ -1433,9 +1664,9 @@ ist/fonts/type1/public/lm/lmsy10.pfb><d:/texlive/2020/texmf-dist/fonts/type1/pu
 blic/lm/lmsy8.pfb><d:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmtk10.pfb>
 <d:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmtt10.pfb><d:/texlive/2020/t
 exmf-dist/fonts/type1/public/lm/lmtto10.pfb>
-Output written on main.pdf (50 pages, 3750119 bytes).
+Output written on main.pdf (50 pages, 4611909 bytes).
 PDF statistics:
- 1085 PDF objects out of 1200 (max. 8388607)
+ 1089 PDF objects out of 1200 (max. 8388607)
  481 named destinations out of 1000 (max. 500000)
- 246 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 258 words of extra memory for PDF output out of 10000 (max. 10000000)
 

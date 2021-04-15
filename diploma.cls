@@ -198,6 +198,7 @@
 \newcommand{\EnglishAbstract}[1]{\Dipl@EnglishAbstract={#1}}
 \newcommand{\EnglishKeywords}[1]{\Dipl@EnglishKeywords={#1}}
 \newcommand{\AddAcronym}[2]{\Dipl@AddTokens{\Dipl@Acronyms}{#1&--&#2\\}}
+\newcommand{\tables}{\total{Dipl@TotalFigures}}
 \newcommand{\MakeTitlePages}
 {
 \pagestyle{empty}

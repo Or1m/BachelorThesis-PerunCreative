@@ -5,7 +5,8 @@
 \usepackage[backend=biber, style=iso-numeric, alldates=iso]{biblatex} % bibliografia
 \usepackage{dcolumn} % stĺpce tabuľky s číselnými hodnotami
 \usepackage{subfig} % makrá pre "podobrázky" a "podtabuľky"
-\usepackage[csharp]{diplomalst} % sádzanie 
+\usepackage[csharp]{diplomalst} % sádzanie
+\usepackage{tcolorbox} % oramovanie
 
 % ------------------------------------------------------
 
@@ -14,6 +15,9 @@
 
 % Odstranenie warningov s underfull vbox
 \raggedbottom
+
+% Nastavenie tex color boxu
+\newtcbox{\mybox}[2][black]{outer arc=0pt,  boxsep=0pt, left=0pt, right=0pt, top=0pt, bottom=0pt, boxrule=2pt}
 
 % ------------------------------------------------------
 
@@ -84,7 +88,7 @@
 % ------------------------------------------------------
 
 % Poďakovanie
-\Acknowledgement{Rád by som na tomto mieste poďakoval mojím dvom kolegom, a zároveň zakladateľom herného štúdia Perun Creative, Bc. Jánovi Polachovi a Bc. Jirkovi Vašicovi za prejavenú dôveru, trpezlivosť a ochotu pomôcť počas absolvovania odbornej praxe. Poďakovanie patrí aj mojej priateľke za podnetné rady a postrehy poskytnuté pri písaní tejto práce.}
+\Acknowledgement{Rád by som na tomto mieste poďakoval mojím dvom kolegom, a zároveň zakladateľom herného štúdia Perun Creative, Bc. Jánovi Polachovi a Bc. Jirkovi Vašicovi za prejavenú dôveru, trpezlivosť a ochotu pomôcť počas absolvovania odbornej praxe. Ďalej by som chcel poďakovať mojej priateľke za podnetné rady a postrehy poskytnuté pri písaní tejto práce. Poďakovanie patrí aj vedúcemu bakalárskej práce Ing. Pavlovi Dohnálkovi, Ph.D. za poskytnutú spätnú väzbu.}
 
 % ------------------------------------------------------
 
@@ -232,10 +236,8 @@ Táto neefektívnosť samozrejme priamo úmerne rastie s počtom nájdených pro
 Po preskúmaní ďalších možností a následnej porade s kolegami som sa teda rozhodol dať prednosť riešeniu postavenému na už spomínanom REST API a ak by sa to ukázalo ako nerealizovateľné spätne sa vrátiť k môjmu prvému nápadu.
 \begin{figure}[!htbp]
 	\centering
-	\setlength{\fboxsep}{0pt}
-	\setlength{\fboxrule}{1pt}
-	\fbox {
-		\includegraphics[width=0.68\textwidth]{Pictures/mantis.png}
+	\mybox{}{
+		\includegraphics[width=0.66\textwidth]{Pictures/mantis.png}
 	}
 	\caption{Ručné vloženie záznamu o chybe do služby Mantis Bug Tracker}
 	\label{pic:Mantis}
@@ -435,9 +437,7 @@ Na strane Windows Forms aplikácie implementovanej do nástroja HoboThor bolo nu
 
 \begin{figure}[!htbp]
 	\centering
-	\setlength{\fboxsep}{0pt}
-	\setlength{\fboxrule}{1pt}
-	\fbox {
+	\mybox{} {
 		\includegraphics[width=.98\textwidth]{Pictures/report.png}
 	}
 	\caption{Užívateľské rozhranie aplikácie Mantis Report}
@@ -454,7 +454,9 @@ V tomto momente bola aplikácia prakticky hotová ale z QA oddelenia prišla po�
 
 \begin{figure}[!htbp]
 	\centering
-	\includegraphics[width=1\textwidth]{Pictures/pictureEditBox.png}
+	\mybox{} {
+		\includegraphics[width=0.98\textwidth]{Pictures/pictureEditBox.png}
+	}
 	\caption{Okno úpravy obrázka aplikácie Mantis Report}
 	\label{pic:Paint}
 \end{figure}

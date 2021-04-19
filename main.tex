@@ -224,24 +224,26 @@ Nie vždy bolo možné presne určiť časovú náročnosť nakoľko niektoré z
 
 \section{Vývoj pomocných nástrojov pre QA oddelenie a programátorov}
 \label{sec:QACode}
+V tejto sekcií by som chcel popísať najdôležitejšie pomocné nástroje, ktoré počas mojej odbornej praxe vyvíjal. Menovite ide o projekty Mantis Report, GitLogger a Build Server. Úlohou nástroja Mantis Report bolo zefektívniť nahlasovanie chýb nájdených v hre. GitLogger prispel k rýchlemu a spoľahlivému šíreniu informácií o opravách chýb či pridaní nového obsahu a to ako smerom k testerom tak aj hráčom. Build Server potom umožnil vykonávať zostavenie hry častejšie a s možnosťou pri tomto procese ďalej vyvíjať. Tieto nástroje spolu signifikantne prispeli k zvýšeniu efektivity vývoja v jeho záverečnej fáze, kde je to najviac potrebné.
 \subsection{Evidovanie chybových záznamov (Mantis Report)}
 \label{sec:Report}
 \textbf{Časová náročnosť:} \\ Nasadenie: 8 dní, pridanie ďalšej funkcionality podľa požiadaviek: spolu 8 dní.\\
 \textbf{Úvod do problému:} \\ Ako som spomenul v sekcií \ref{sec:GitLab} možnosti automatizovaného testovania hry tohto rozsahu sú na rozdiel od bežného softvéru značne obmedzené. Veľké štúdiá si vytvárajú vlastné nástroje založené na umelej inteligencií, nikdy sa to však úplne neobíde bez ľudí z QA oddelenia, ľudovo nazývaných aj ako testeri. Úlohou herného testera je nájsť a nahlásiť čo najväčšie množstvo chýb vyskytujúcich sa v hre. 
 
 Takéto nahlásenie je značne neefektívny proces nakoľko na pozadí zahŕňa hneď niekoľko ďalších krokov ako minimalizácia hry, otvorenie stránky so službou Mantis Bug Tracker, nahranie snímky obrazovky a nakoniec aj samotné vyplnenie detailov záznamu. Niektoré z týchto detailov sa navyše medzi jednotlivými nahláseniami nemenia ako napríklad informácie o platforme či operačnom systéme. Ručné vyplnenie detailov chyby znázorňuje obrázok \ref{pic:Mantis}.
-Táto neefektívnosť samozrejme priamo úmerne rastie s počtom nájdených problémov, čo môžu byť aj vyššie jednotky denne. Mojou úlohou bolo teda optimalizovať tento postup. \\
-\textbf{Navrhované riešenia:} \\ Nakoľko bola toto moja prvá úloha v rámci odbornej praxe, mal som len minimálne skúsenosti s webovými technológiami ako je REST API a celkovo klient-server architektúrou, navrhol som riešenie postavené na nejakom nástroji na automatizovanie webového prehliadača. Takýmto nástrojom je napríklad Selenium WebDriver, s ktorým som sa stretol pri práci na vlastných projektoch. Ten je veľmi obľúbený napríklad pri testovaní webových aplikácií. Dokázal by zapnúť webový prehliadač, či už s užívateľským rozhraním alebo bez, otvoriť požadovanú stránku a vyplniť určité detaily o chybe za užívateľa. V spojení s nejakým vlastným nástrojom na ukladanie snímky obrazovky, prípadne nástrojom, ktorý by testerovi umožnil vypísať zhrnutie či popis priamo v hre by sa naozaj jednalo o relatívne dobré riešenie. Po užívateľovi by to ale vyžadovalo nutnosť inštalácie nejakého konkrétneho prehliadača v požadovanej verzií, aby bola zaistená správna kompatibilita a veľmi pravdepodobne by sa v budúcnosti objavili aj ďalšie problémy s nasadením či používaním. 
-
-Po preskúmaní ďalších možností a následnej porade s kolegami som sa teda rozhodol dať prednosť riešeniu postavenému na už spomínanom REST API a ak by sa to ukázalo ako nerealizovateľné spätne sa vrátiť k môjmu prvému nápadu.
+Táto neefektívnosť samozrejme priamo úmerne rastie s počtom nájdených problémov, čo môžu byť aj vyššie jednotky denne. Mojou úlohou bolo teda optimalizovať tento postup.
 \begin{figure}[!htbp]
 	\centering
 	\mybox{}{
-		\includegraphics[width=0.66\textwidth]{Pictures/mantis.png}
+		\includegraphics[width=0.62\textwidth]{Pictures/mantis.png}
 	}
 	\caption{Ručné vloženie záznamu o chybe do služby Mantis Bug Tracker}
 	\label{pic:Mantis}
 \end{figure} \\
+\textbf{Navrhované riešenia:} \\ Nakoľko bola toto moja prvá úloha v rámci odbornej praxe, mal som len minimálne skúsenosti s webovými technológiami ako je REST API a celkovo klient-server architektúrou, navrhol som riešenie postavené na nejakom nástroji na automatizovanie webového prehliadača. Takýmto nástrojom je napríklad Selenium WebDriver, s ktorým som sa stretol pri práci na vlastných projektoch. Ten je veľmi obľúbený napríklad pri testovaní webových aplikácií. Dokázal by zapnúť webový prehliadač, či už s užívateľským rozhraním alebo bez, otvoriť požadovanú stránku a vyplniť určité detaily o chybe za užívateľa. V spojení s nejakým vlastným nástrojom na ukladanie snímky obrazovky, prípadne nástrojom, ktorý by testerovi umožnil vypísať zhrnutie či popis priamo v hre by sa naozaj jednalo o relatívne dobré riešenie. Po užívateľovi by to ale vyžadovalo nutnosť inštalácie nejakého konkrétneho prehliadača v požadovanej verzií, aby bola zaistená správna kompatibilita a veľmi pravdepodobne by sa v budúcnosti objavili aj ďalšie problémy s nasadením či používaním. 
+
+Po preskúmaní ďalších možností a následnej porade s kolegami som sa teda rozhodol dať prednosť riešeniu postavenému na už spomínanom REST API a ak by sa to ukázalo ako nerealizovateľné spätne sa vrátiť k môjmu prvému nápadu.
+\\
 \textbf{Realizácia:} \\ Pri preskúmavaní možností založených na REST API som narazil na projekt \mbox{MantisSharp \cite{MantisSharp}}. Po zoznámení sa s týmto projektom a niekoľkými pokusmi ho \enquote{ohnúť} pre účely môjho projektu som sa rozhodol, že bude jednoduchšie napísať si aplikáciu sám. Využil som k tomu dve triedy z projektu MantisSharp, a síce \textit{RestClient} a \textit{MantisClient}, ktoré som následne ešte ďalej modifikoval. Trieda \textit{RestClient} vykonáva najnižšiu úroveň komunikácie so serverom a síce odosiela GET a POST žiadosti. Trieda \textit{MantisClient} má potom dve úlohy. Na jednej strane prijíma dáta z mojej aplikácie, zabalí ich do formy vhodnej pre transport a následne ich predá triede \textit{RestClient} na odoslanie metódou POST. Na strane druhej transformuje dáta získané zo servera pomocou metódy GET do C\# tried vhodných na následné použitie. Tento postup pridáva určitý level abstrakcie do celej aplikácie.
 
 Problematiku odosielania dát na server som sa rozhodol demonštrovať na pridaní nového záznamu vo výpise \ref{src:SendIssue}. Aplikácia vytvorí na základe vstupných dát inštanciu triedy \textit{Issue}, ktorú predá metóde \textit{SendIssue}. Tá ju následne zabalí ako JSON objekt a ďalej predá v metóde \textit{ExecutePost} na finálne odoslanie. Získavanie dát funguje obdobne, len opačným smerom. 
@@ -252,28 +254,27 @@ Služba Mantis Bug Tracker po úspešnom zaevidovaní novej chyby tento záznam 
 public int SendIssue(Issue issue) {
 	string uri = this.GetUri(issuesUri);
 	int id = -1;
-
+	
 	restClient.ExecutePost(uri, () => JsonConvert.SerializeObject(issue),
         reader => {
             string answerFromServer = reader.ReadToEnd();
             JObject obj = JObject.Parse(answerFromServer);
             id = (int)obj["issue"]["id"];
         });
-
     return id;
 }
 \end{lstlisting}
 
 Server spočiatku na všetky žiadosti reagoval chybou \enquote{401 Unauthorized}. Po dôkladnom preskúmaní problému sa ukázalo, že chyba je na strane serveru a bolo nutné zasiahnuť do jeho kódu. Nakoľko som k tomuto kódu nemal prístup, požiadal som kolegu, či by mi s tým mohol pomôcť. Ukázalo sa, že server filtroval všetky požiadavky, ktoré sa pokúšali o autorizáciu pomocou tzv. \enquote{Bearer} tokenu. Spoločne sa nám tento problém však podarilo vyriešiť. 
 
-Nahlasovanie chýb malo byť pôvodne implementované ako súčasť hry. To sa ale ukázalo ako problematické z hľadiska zachytávania užívateľského vstupu v Unity engine. V praxi by to znamenalo, že ak by užívateľ popisoval chybu napríklad do nejakého textového poľa, hra samotná by naďalej vykonávala akcie na základe stlačených kláves. Rozhodli sme sa teda začleniť tento systém do už existujúceho vývojárskeho nástroja s názvom HoboThor. Tento nástroj je veľmi komplexný a jeho popis by bol nad rámec tejto kapitoly.
+Nahlasovanie chýb malo byť pôvodne implementované ako súčasť hry. To sa ale ukázalo ako problematické z hľadiska zachytávania užívateľského vstupu v Unity engine. V praxi by to znamenalo, že ak by užívateľ popisoval chybu napríklad do nejakého textového poľa, hra samotná by naďalej vykonávala akcie na základe stlačených kláves. Rozhodli sme sa teda začleniť tento systém do už existujúceho vývojárskeho nástroja s názvom HoboThor.
 
-Logika aplikácie bola teda rozdelená do dvoch častí. Časť, s ktorou interaguje užívateľ bola realizovaná ako Windows Forms aplikácia začlenená do nástroja HoboThor a časť, ktorá túto aplikáciu spustí bola implementovaná priamo do hry a vyvolá sa stlačením klávesovej skratky Shift + F11, ak je hra spustená s podporou vývojárskych nástrojov. 
+Logika aplikácie bola teda rozdelená do dvoch častí. Prvá časť, s ktorou interaguje užívateľ bola realizovaná ako súčasť nástroja HoboThor a teda ako Windows Forms aplikácia. Časť, ktorá túto aplikáciu spustí bola implementovaná priamo do hry a vyvolá sa stlačením klávesovej skratky \mbox{Shift + F11}, ak je hra spustená s podporou vývojárskych nástrojov. 
 
 Kontrola, či boli stlačené konkrétne klávesy musí prebiehať periodicky každú snímku, aby sa zabezpečilo, že odchytenie prebehne správne. Kód zabezpečujúci túto funkcionalitu bol teda vložený do metódy \textit{OnUpdate} triedy \textit{ReportingManager}, čo znázorňuje výpis \ref{src:OnUpdate}. 
 
 Projekt Hobo: Tough Life do veľkej miery stojí na hierarchickej štruktúre tried, tzv. \enquote{Manageroch}, ktorí, ako názov napovedá obstarávajú určité časti aplikácie. Metóda \textit{OnUpdate} triedy \textit{ReportingManager} je teda každú snímku volaná inou triedou, ktorá je vyššie v hierarchickej štruktúre projektu. Na najvyššom stupni hierarchie potom stojí trieda \textit{MainManager}. Tá obsahuje metódu \textit{Update}, ktorá je priamo volaná natívnym C++ kódom enginu Unity a obsahuje volania metód \textit{OnUpdate} jednotlivých \enquote{Managerov}, ktorí jej náležia.
-\vspace{10pt}
+\vspace{8pt}
 \begin{lstlisting}[label=src:OnUpdate,caption={Odchytenie stlačenia klávesovej skratky v spustenej hre}]
 public void OnUpdate() {
     if (Keyboard.current.f11Key.wasPressedThisFrame) {
@@ -283,7 +284,6 @@ public void OnUpdate() {
             return;
         }
     }
-
     if (screenSaved) {
         ZipAndSendToLinkManager();
         screenSaved = false;
@@ -309,7 +309,7 @@ Odoslanie nájdenej chyby na server z lokálneho PC pokračuje vytvorením tzv. 
 
 Pokiaľ ide o odoslanie záznamu zo vzdialeného PC ukázala sa ako problematická doba ukladania snímky obrazovky na disk. Kvôli tomuto problému musí aplikácia najskôr počkať na uloženie súboru a až následne vykonávať ďalšie inštrukcie. Toho som docielil jednoduchou slučkou, ktorá sa sama ukončí v prípade nájdenia požadovaného súboru alebo po pretečení určitého času, čo slúži ako ochrana pred zacyklením. 
 
-\vspace{15pt}
+\vspace{10pt}
 \begin{lstlisting}[label=src:Report,caption={Vytváranie lokálneho a vzdialeného záznamu o chybe}]
 // Local report
 if (HBTLink_Manager.sender_ServerIP == HBTLink_Manager.Instance.LocalIPAddress().ToString()) {
@@ -444,7 +444,7 @@ Na strane Windows Forms aplikácie implementovanej do nástroja HoboThor bolo nu
 	\label{pic:Report}
 \end{figure}
 
-Po spustení aplikácie sa načíta uložená snímka obrazovky a zobrazí sa v náhľadovom okne na pravej strane. Vzhľadom na to, že v dobe spúšťania tento obrázok ešte nemusí byť plne k dispozícií je táto funkcionalita realizované v separátnom vlákne pomocou tzv. \enquote{Background Workera}. Ten v cykle prehľadáva zložku so záznamom kvôli prítomnosti obrázku a až následne, keď je k dispozícií ho zobrazí.
+Po spustení aplikácie sa načíta uložená snímka obrazovky a zobrazí sa v náhľadovom okne. Vzhľadom na to, že v dobe spúšťania tento obrázok ešte nemusí byť plne k dispozícií je táto funkcionalita realizované v separátnom vlákne pomocou tzv. \enquote{Background Workera}. Ten v cykle prehľadáva zložku so záznamom kvôli prítomnosti obrázku a zobrazí ho až keď je k dispozícií.
 
 Po načítaní dát zo zložky do polí \enquote{Shrnutí} a \enquote{Popis} sú odoslané dve GET žiadosti na server. Prvá požaduje dáta o užívateľovi, ktorému náleží príslušný api kľúč odoslaný spolu so žiadosťou a druhá požaduje informácie o projekte. Medzi tieto informácie patria aj kategórie evidované pre daný projekt. Tie sú vložené do kombinovaného poľa \enquote{Kategorie}. Tento postup bol zvolený z dôvodu možných budúcich zmien v štruktúre kategórií na serveri. Ostatné kombinované polia boli vyplnené vopred pripravenými enumami. U nich sa žiadna budúca zmena nepredpokladá.
 
@@ -464,7 +464,7 @@ V tomto momente bola aplikácia prakticky hotová ale z QA oddelenia prišla po�
 Postupne bola pridaná podpora viacerých hrúbok a farieb čiar či tlačítko reset, ktoré slúži na návrat k pôvodnému obrázku. Zmeny v tomto okne sú spätne reflektované aj náhľadovým obrázkom v hlavnom okne aplikácie. 
 
 Na kreslenie bolo využité riešenie založené na udalostiach \textit{MouseDown}, \textit{MouseUp} a \textit{MouseMove}. Princíp spočíval v tom, že pri pohybe myši spolu so stlačeným ľavým tlačidlom dôjde k vykresľovaníu čiary medzi dvoma bodmi, čo sa od určitej frekvencie zaznamenávania bodov javí ako súvislý ťah. Tento postup je demonštrovaný vo výpise \ref{src:Paint}.
-\vspace{10pt}
+\vspace{6pt}
 \begin{lstlisting}[label=src:Paint,caption={Implementácia kreslenia v prostredí Windows Forms}]
 private void pictureBoxBcg_MouseDown(object sender, MouseEventArgs e) {
     moving = true;

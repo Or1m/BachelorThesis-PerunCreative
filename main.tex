@@ -224,7 +224,7 @@ Nie vždy bolo možné presne určiť časovú náročnosť nakoľko niektoré z
 
 \section{Vývoj pomocných nástrojov pre QA oddelenie a programátorov}
 \label{sec:QACode}
-V tejto sekcií by som chcel popísať najdôležitejšie pomocné nástroje, ktoré počas mojej odbornej praxe vyvíjal. Menovite ide o projekty Mantis Report, GitLogger a Build Server. Úlohou nástroja Mantis Report bolo zefektívniť nahlasovanie chýb nájdených v hre. GitLogger prispel k rýchlemu a spoľahlivému šíreniu informácií o opravách chýb či pridaní nového obsahu a to ako smerom k testerom tak aj hráčom. Build Server potom umožnil vykonávať zostavenie hry častejšie a s možnosťou pri tomto procese ďalej vyvíjať. Tieto nástroje spolu signifikantne prispeli k zvýšeniu efektivity vývoja v jeho záverečnej fáze, kde je to najviac potrebné.
+V tejto sekcií by som chcel popísať najdôležitejšie pomocné nástroje, ktoré som počas mojej odbornej praxe vyvíjal. Menovite ide o projekty Mantis Report, GitLogger a Build Server. Úlohou nástroja Mantis Report bolo zefektívniť nahlasovanie chýb nájdených v hre. GitLogger prispel k rýchlemu a spoľahlivému šíreniu informácií o opravách chýb či pridaní nového obsahu, a to ako smerom k testerom, tak aj hráčom. Build Server potom umožnil vykonávať zostavenie hry častejšie, s možnosťou pri tomto procese ďalej vyvíjať. Tieto nástroje spolu signifikantne prispeli k zvýšeniu efektivity vývoja v jeho záverečnej fáze, kde je to najviac potrebné.
 \subsection{Evidovanie chybových záznamov (Mantis Report)}
 \label{sec:Report}
 \textbf{Časová náročnosť:} \\ Nasadenie: 8 dní, pridanie ďalšej funkcionality podľa požiadaviek: spolu 8 dní.\\
@@ -273,7 +273,7 @@ Logika aplikácie bola teda rozdelená do dvoch častí. Prvá časť, s ktorou 
 
 Kontrola, či boli stlačené konkrétne klávesy musí prebiehať periodicky každú snímku, aby sa zabezpečilo, že odchytenie prebehne správne. Kód zabezpečujúci túto funkcionalitu bol teda vložený do metódy \textit{OnUpdate} triedy \textit{ReportingManager}, čo znázorňuje výpis \ref{src:OnUpdate}. 
 
-Projekt Hobo: Tough Life do veľkej miery stojí na hierarchickej štruktúre tried, tzv. \enquote{Manageroch}, ktorí, ako názov napovedá obstarávajú určité časti aplikácie. Metóda \textit{OnUpdate} triedy \textit{ReportingManager} je teda každú snímku volaná inou triedou, ktorá je vyššie v hierarchickej štruktúre projektu. Na najvyššom stupni hierarchie potom stojí trieda \textit{MainManager}. Tá obsahuje metódu \textit{Update}, ktorá je priamo volaná natívnym C++ kódom enginu Unity a obsahuje volania metód \textit{OnUpdate} jednotlivých \enquote{Managerov}, ktorí jej náležia.
+Projekt Hobo: Tough Life do veľkej miery stojí na hierarchickej štruktúre tried, tzv. \enquote{Manageroch}. Tí, ako názov napovedá, obstarávajú určité časti aplikácie. Metóda \textit{OnUpdate} triedy \textit{ReportingManager} je teda každú snímku volaná inou triedou, ktorá je vyššie v hierarchickej štruktúre projektu. Na najvyššom stupni hierarchie potom stojí trieda \textit{MainManager}. Tá obsahuje metódu \textit{Update}, ktorá je priamo volaná natívnym C++ kódom enginu Unity a obsahuje volania metód \textit{OnUpdate} jednotlivých \enquote{Managerov}, ktorí jej náležia.
 \vspace{8pt}
 \begin{lstlisting}[label=src:OnUpdate,caption={Odchytenie stlačenia klávesovej skratky v spustenej hre}]
 public void OnUpdate() {
@@ -716,6 +716,7 @@ Postupne boli do projektu pridané aj ďalšie možnosti zostavenia. Napríklad 
 
 \section{Optimalizácia a prevod hry na ďalšie platformy}
 \label{sec:Port}
+Druhá, relatívne veľká časť mojej odbornej praxe sa venovala problematike optimalizácie kódu a prevodu hry na ďalšie platformy. Optimalizácia prebiehala na úrovni hľadania úzkych hrdiel a odstraňovania neefektívnych miest v kóde. Prevod samotný bol potom zameraný primárne na platformu Linux a problémy s ňou spojené. Nutné úpravy pre konzolové platformy a s tým spojená ďalšia optimalizácia budú predmetom skúmania až po vydaní hry pre OS Windows a Linux. 
 \subsection{Optimalizácia a refaktorovanie kódu}
 \label{sec:optim}
 \textbf{Časová náročnosť:} \\ 4 dni.\\
@@ -778,6 +779,7 @@ V hre sa aj naďalej vyskytovali menšie problémy, bola však bez prekážok hr
 
 \section{Ostatné projekty}
 \label{sec:Others}
+Veľmi zaujímavým projektom, ktorý ale svojím zameraním nespadá do žiadnej z vyššie spomenutých sekcií je problém líhania hráčskej postavy. Išlo o nahradenie pôvodného prístupu založeného na tzv. \enquote{collideroch} novým systémom, ktorý bude spoľahlivo fungovať v každej situácií.
 \subsection{Systém líhania hráčskej postavy}
 \label{sec:sleep}
 \textbf{Časová náročnosť:} \\ Nasadenie: 6 dní, pridanie dodatočnej funkcionality: 2 dni.\\
@@ -796,7 +798,7 @@ Veľkosti uhlov aj odstupov sa ladili pre dosiahnutie čo najlepších výsledko
 
 \begin{figure}[!htbp]
 	\centering
-	\includegraphics[width=1\textwidth]{Pictures/algviz.png}
+	\includegraphics[width=.98\textwidth]{Pictures/algviz.png}
 	\caption{Vizualizácia algoritmu líhania postavy}
 	\label{pic:algviz}
 \end{figure}
@@ -805,15 +807,13 @@ Algoritmus môže teda vrhnúť v najhoršom prípade až $360/\alpha\, *\, rmax
 
 Získanie referenčnej vzdialenosti a krajných bodov objektu pomocou \enquote{raycastov} je možné vidieť vo výpise \ref{src:findEdges}.
 
-\vspace{10pt}
+\vspace{4pt}
 \begin{lstlisting}[label=src:findEdges,caption={Získanie referenčnej vzdialenosti a krajných bodov objektu}]
 private static Vector3[] FindEdges(int dirs, Vector3 iconPos, ref float refDist) {
     Vector3[] edges = new Vector3[dirs];
     GameObject rayCaster = new GameObject("RayCaster");
     Transform rayCasterTr = rayCaster.transform;
-    
     rayCaster.hideFlags = HideFlags.DontSaveInEditor;
-    
     Physics.Raycast(iconPos, Vector3.down, out RaycastHit rHit, 2f);
     refDist = rHit.distance;
 
@@ -863,7 +863,6 @@ private static int FindRotation(int dirs, Vector3 iconPos, Vector3[] edges) {
     Transform cubeTransform = cube.transform;
     Vector3 direction;
     float distance;
-    
     int resultIdx = -1;
     int max = 0;
     
@@ -874,7 +873,6 @@ private static int FindRotation(int dirs, Vector3 iconPos, Vector3[] edges) {
     for (int i = 0; i < dirs; i++) {
         direction = (iconPos - edges[i]).normalized;
         distance = Vector3.Distance(edges[i], iconPos);
-
         cube.transform.position = iconPos - direction * distance;
         cube.transform.rotation = Quaternion.LookRotation(Vector3.Cross(iconPos - edges[i], Vector3.up));
 
@@ -907,35 +905,33 @@ private static bool PointInAABB(Vector3 point, BoxCollider box) {
 
 Posledným problémom nutným riešiť bol smer pohľadu postavy pri ležaní. Keď postava spí, hráč môže stále očami postavy vidieť okolie. To ale nie je možné pokiaľ sa postava otočí na spánok tvárou k stene prípadne operadlu. Z toho dôvodu bola implementovaná metóda \textit{NeedToReverseDirection}, ktorá vrhne dva lúče, každy opačným smerom a pokiaľ to je nutné, vynúti otočenie hráčškej postavy o 180$^{\circ}$. Táto metóda spolu so vstupným bodom algoritmu je znázornená vo výpise \ref{src:entry}.
 
-\vspace{10pt}
+\vspace{15pt}
 \begin{lstlisting}[label=src:entry,caption={Vstupný bod algoritmu na získanie rotácie a pozície postavy pri ležaní}]
 public static void FindDistanceAndRotation(Vector3 iconPos, ref float distance, ref float restRotationY) {
-    Assert.IsTrue(360 % angle == 0);
     int dirs = (int)(360 / angle);
     float referenceDistance = 0;
     Vector3[] edges = FindEdges(dirs, iconPos, ref referenceDistance);
 
     if (edges != null) {
         int resultIdx = FindRotation(dirs, iconPos, edges);
-        Vector3 rawDirection = iconPos - edges[resultIdx];
-        Vector3 rotation = Quaternion.LookRotation(rawDirection, Vector3.up).eulerAngles;
+        Vector3 dir = iconPos - edges[resultIdx];
+        Vector3 rotation = Quaternion.LookRotation(dir, Vector3.up).eulerAngles;
 
-        if (NeedToReverseDirection(iconPos, rawDirection))
+        if (NeedToReverseDirection(iconPos, dir))
             restRotationY = rotation.y + 180;
-        else
-            restRotationY = rotation.y;
+        else 
+        	restRotationY = rotation.y;
 
         distance = referenceDistance;
     }
 }
-private static bool NeedToReverseDirection(Vector3 iconPos, Vector3 rayCastDir, uint id = 0) {
+private static bool NeedToReverseDirection(Vector3 iconPos, Vector3 rayCastDir) {
     Physics.Raycast(iconPos, rayCastDir, out RaycastHit first, 2f);
     Physics.Raycast(iconPos, -rayCastDir, out RaycastHit second, 2f);
-
     if (first.distance != 0 && second.distance != 0)
         return second.distance > first.distance;
-    else
-        return second.distance == 0;
+    else 
+    	return second.distance == 0;
 }
 \end{lstlisting}
 
@@ -947,7 +943,7 @@ Objekty, ktoré hráč môže v hre posúvať a rotovať majú tieto hodnoty pre
 \section{Teoretické a praktické znalosti a zručnosti získané v priebehu štúdia, uplatnené v priebehu odbornej praxe}
 V rámci odbornej praxe som mal možnosť využiť širokú škálu znalostí nadobudnutých počas bakalárskeho štúdia. Menovite šlo o znalosti z predmetov ako Programovací jazyky I \& II, Tvorba aplikací pro mobilní zařízení II, Základy počítačové grafiky, Modelování v grafických aplikacích, Počítačové sítě a ďalších. 
 
-Predmet Programovací jazyky II sa priamo zaoberal jazykom C\# a jeho pokročilejšími možnosťami ako udalosti, delegáti, lamda výrazy či LINQ, ktoré mi boli veľmi nápomocné počas celého obdobia praxe, nakoľko prevažná väčšina projektov prebiehala práve v tomto jazyku. Napriek tomu, že predmet Programovací jazyky I bol zameraný na platformu JAVA, odniesol som si z neho dobré základy syntaktickej analýzy textu či regulárnych výrazov, ktoré boli použiteľné aj mimo túto platformu. S regulárnymi výrazmi som sa zároveň stretol aj v predmete Úvod do teoretické informatiky i keď v trochu inej forme. Pomohlo mi to však k hlbšiemu pochopeniu danej problematiky. 
+Predmet Programovací jazyky II sa priamo zaoberal jazykom C\# a jeho pokročilejšími možnosťami ako udalosti, delegáti, lambda výrazy či LINQ, ktoré mi boli veľmi nápomocné počas celého obdobia praxe, nakoľko prevažná väčšina projektov prebiehala práve v tomto jazyku. Napriek tomu, že predmet Programovací jazyky I bol zameraný na platformu JAVA, odniesol som si z neho dobré základy syntaktickej analýzy textu či regulárnych výrazov, ktoré boli použiteľné aj mimo túto platformu. S regulárnymi výrazmi som sa zároveň stretol aj v predmete Úvod do teoretické informatiky i keď v trochu inej forme. Pomohlo mi to však k hlbšiemu pochopeniu danej problematiky. 
 
 V predmetoch Programovací jazyky I a Tvorba aplikací pro mobilní zařízení II som mal zároveň v rámci semestrálnych projektov možnosť pracovať na jednoduchých hrách, čím som okrem základneho povedomia o kruciálnych pojmoch herného vývoja prehĺbil svoje znalosi objektovo orientovaného programovania. To mi neskôr uľahčilo orientáciu v kóde hry Hobo: Tough Life a zároveň aj integráciu vlastných riešení.
 

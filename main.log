@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.2.17)  20 APR 2021 23:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.2.17)  21 APR 2021 23:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1524,11 +1524,11 @@ Kapitola 3.
 [11
 
 ]
-<Pictures/platforms.png, id=273, 876.27374pt x 255.95625pt>
+<Pictures/platforms.png, id=274, 876.27374pt x 255.95625pt>
 File: Pictures/platforms.png Graphic file (type png)
 <use Pictures/platforms.png>
 Package pdftex.def Info: Pictures/platforms.png  used on input line 186.
-(pdftex.def)             Requested size: 472.03123pt x 137.87842pt.
+(pdftex.def)             Requested size: 434.26787pt x 126.84909pt.
  [12 <./Pictures/platforms.png>]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 2
 02.
@@ -1536,14 +1536,14 @@ LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 2
 (d:/texlive/2020/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-<Pictures/gitlab.png, id=287, 1003.75pt x 556.0775pt>
+<Pictures/gitlab.png, id=288, 1003.75pt x 556.0775pt>
 File: Pictures/gitlab.png Graphic file (type png)
 <use Pictures/gitlab.png>
 Package pdftex.def Info: Pictures/gitlab.png  used on input line 212.
 (pdftex.def)             Requested size: 424.82523pt x 235.35828pt.
  [13 <./Pictures/gitlab.png>]
 Kapitola 4.
-<Pictures/mantis.png, id=300, 442.65375pt x 469.755pt>
+<Pictures/mantis.png, id=301, 442.65375pt x 469.755pt>
 File: Pictures/mantis.png Graphic file (type png)
 <use Pictures/mantis.png>
 Package pdftex.def Info: Pictures/mantis.png  used on input line 239.
@@ -1562,7 +1562,7 @@ File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10.95> not available
 (Font)              Font shape `T1/lmtt/b/n' tried instead on input line 254.
  [16] [17] [18] [19]
-<Pictures/packet.png, id=397, 1485.8712pt x 803.1606pt>
+<Pictures/packet.png, id=398, 1485.8712pt x 803.1606pt>
 File: Pictures/packet.png Graphic file (type png)
 <use Pictures/packet.png>
 Package pdftex.def Info: Pictures/packet.png  used on input line 377.
@@ -1573,44 +1573,44 @@ Package pdftex.def Info: Pictures/packet.png  used on input line 377.
 pdfTeX warning: pdflatex.exe (file ./Pictures/packet.png): large interlaced PNG
  might cause out of memory (use non-interlaced PNG to fix this)
 >] [22]
-<Pictures/report.png, id=477, 564.60938pt x 335.75438pt>
+<Pictures/report.png, id=478, 564.60938pt x 335.75438pt>
 File: Pictures/report.png Graphic file (type png)
 <use Pictures/report.png>
 Package pdftex.def Info: Pictures/report.png  used on input line 442.
 (pdftex.def)             Requested size: 462.5886pt x 275.08983pt.
  [23 <./Pictures/report.png>]
-<Pictures/pictureEditBox.png, id=485, 1348.28719pt x 774.64406pt>
+<Pictures/pictureEditBox.png, id=486, 1348.28719pt x 774.64406pt>
 File: Pictures/pictureEditBox.png Graphic file (type png)
 <use Pictures/pictureEditBox.png>
 Package pdftex.def Info: Pictures/pictureEditBox.png  used on input line 459.
 (pdftex.def)             Requested size: 462.5886pt x 265.77498pt.
  [24 <./Pictures/pictureEditBox.png>]
 [25] [26] [27]
-<Pictures/gitlogger.png, id=558, 828.09375pt x 290.58563pt>
+<Pictures/gitlogger.png, id=559, 828.09375pt x 290.58563pt>
 File: Pictures/gitlogger.png Graphic file (type png)
 <use Pictures/gitlogger.png>
 Package pdftex.def Info: Pictures/gitlogger.png  used on input line 554.
 (pdftex.def)             Requested size: 472.03123pt x 165.6444pt.
  [28 <./Pictures/gitlogger.png>] [29] [30] [31]
-<Pictures/buildDetail.png, id=619, 479.54156pt x 392.21532pt>
+<Pictures/buildDetail.png, id=620, 479.54156pt x 392.21532pt>
 File: Pictures/buildDetail.png Graphic file (type png)
 <use Pictures/buildDetail.png>
 Package pdftex.def Info: Pictures/buildDetail.png  used on input line 633.
 (pdftex.def)             Requested size: 424.82523pt x 347.46663pt.
  [32 <./Pictures/buildDetail.png>]
-<Pictures/warr.png, id=629, 468.24937pt x 31.61812pt>
+<Pictures/warr.png, id=630, 468.24937pt x 31.61812pt>
 File: Pictures/warr.png Graphic file (type png)
 <use Pictures/warr.png>
 Package pdftex.def Info: Pictures/warr.png  used on input line 663.
 (pdftex.def)             Requested size: 472.03123pt x 31.87517pt.
  [33 <./Pictures/warr.png>] [34] [35] [36]
-<Pictures/profiler.png, id=703, 497.60907pt x 170.13562pt>
+<Pictures/profiler.png, id=704, 497.60907pt x 170.13562pt>
 File: Pictures/profiler.png Graphic file (type png)
 <use Pictures/profiler.png>
 Package pdftex.def Info: Pictures/profiler.png  used on input line 735.
 (pdftex.def)             Requested size: 472.03123pt x 161.39426pt.
  [37 <./Pictures/profiler.png>] [38] [39] [40] [41] [42]
-<Pictures/algviz.png, id=738, 768.62157pt x 469.00218pt>
+<Pictures/algviz.png, id=739, 768.62157pt x 469.00218pt>
 File: Pictures/algviz.png Graphic file (type png)
 <use Pictures/algviz.png>
 Package pdftex.def Info: Pictures/algviz.png  used on input line 801.
@@ -1631,9 +1631,6 @@ Package biblatex Warning: '\mainlang' is deprecated in favour of
 [50
 
 ] (./main.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: A2FD8188ED930B8972C7AB7DF56DE28C;4749.
 Package logreq Info: Writing requests to 'main.run.xml'.
@@ -1641,10 +1638,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 36711 strings out of 479302
- 646764 string characters out of 5871204
- 1485447 words of memory out of 5000000
- 52803 multiletter control sequences out of 15000+600000
+ 36714 strings out of 479302
+ 646870 string characters out of 5871204
+ 1485506 words of memory out of 5000000
+ 52805 multiletter control sequences out of 15000+600000
  468906 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  103i,8n,131p,1834b,4775s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1663,9 +1660,9 @@ ist/fonts/type1/public/lm/lmsy10.pfb><d:/texlive/2020/texmf-dist/fonts/type1/pu
 blic/lm/lmsy8.pfb><d:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmtk10.pfb>
 <d:/texlive/2020/texmf-dist/fonts/type1/public/lm/lmtt10.pfb><d:/texlive/2020/t
 exmf-dist/fonts/type1/public/lm/lmtto10.pfb>
-Output written on main.pdf (50 pages, 4611227 bytes).
+Output written on main.pdf (50 pages, 4611896 bytes).
 PDF statistics:
- 1076 PDF objects out of 1200 (max. 8388607)
- 473 named destinations out of 1000 (max. 500000)
+ 1075 PDF objects out of 1200 (max. 8388607)
+ 474 named destinations out of 1000 (max. 500000)
  258 words of extra memory for PDF output out of 10000 (max. 10000000)
 

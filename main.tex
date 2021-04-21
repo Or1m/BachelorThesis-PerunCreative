@@ -88,7 +88,7 @@
 % ------------------------------------------------------
 
 % Poďakovanie
-\Acknowledgement{Rád by som na tomto mieste poďakoval mojím dvom kolegom, a zároveň zakladateľom herného štúdia Perun Creative, Bc. Janovi Polachovi a Bc. Jiřímu Vašicovi za prejavenú dôveru, trpezlivosť a ochotu pomôcť počas absolvovania odbornej praxe. Ďalej by som chcel poďakovať mojej priateľke za podnetné rady a postrehy poskytnuté pri písaní tejto práce. Poďakovanie patrí aj vedúcemu bakalárskej práce Ing. Pavlovi Dohnálkovi, Ph.D. za poskytnutú spätnú väzbu.}
+\Acknowledgement{Rád by som na tomto mieste poďakoval mojím dvom kolegom, a zároveň zakladateľom herného štúdia Perun Creative, Bc. Janovi Polachovi a Bc. Jiřímu Vašicovi za prejavenú dôveru, trpezlivosť a ochotu pomôcť počas absolvovania odbornej praxe. Ďalej by som chcel poďakovať mojej priateľke Zdenke za podnetné rady a postrehy poskytnuté pri písaní tejto práce. Poďakovanie patrí aj vedúcemu bakalárskej práce Ing. Pavlovi Dohnálkovi, Ph.D. za poskytnutú spätnú väzbu.}
 
 % ------------------------------------------------------
 
@@ -173,24 +173,24 @@ V nasledujúcej kapitole by som rád v krátkosti zhrnul najdôležitejšie tech
 
 \section{Programovací jazyk C\# a architektúra .NET}
 \label{sec:CsharpDotNet}
-C\# je objektovo orientovaný, typovo bezpečný programovací jazyk umožňujúci vytvárať aplikácie v .NET ekosystéme. Syntax jazyka C\# vychádza z programovacích jazykov C a C++. Narozdiel od nich však ponúka vyššiu úroveň abstrakcie, ktorá sa prejavuje napríklad na úrovni správy pamäte \cite{CSharpLang}. Táto vlastnosť spolu s ďalšími robí z jazyka C\#  voľbu číslo jedna pre začínajúcich programátorov, ktorí by si chceli skúsiť herný vývoj na vlastnej koži.
+C\# \cite{CSharpUnity} je objektovo orientovaný, typovo bezpečný programovací jazyk umožňujúci vytvárať aplikácie v .NET ekosystéme. Syntax jazyka C\# vychádza z programovacích jazykov C a C++. Narozdiel od nich však ponúka vyššiu úroveň abstrakcie, ktorá sa prejavuje napríklad na úrovni správy pamäte. Táto vlastnosť spolu s ďalšími robí z jazyka C\# veľmi častú voľbu pre začínajúcich programátorov, ktorí by si chceli skúsiť herný vývoj na vlastnej koži.
 
-Architektúra .NET potom ponúka okrem virtuálneho stroja CLR, ktorý vykonáva JIT kompiláciu IL kódu do strojových inštrukcií, aj sadu veľmi užitočných knižníc. Tieto knižnice sú organizované do menných priestorov a poskytujú širokú škálu metód vhodných napríklad na prácu so súbormi či sieťovou infraštruktúrou. Veľmi užitočné sú aj nástroje na syntaktickú analýzu XML prípadne platforma Windows Forms \cite{CSharpLang}. Tá sa v rámci mojej odbornej praxe v spoločnosti Perun Creative ukázala byť vhodná hlavne na rýchlu tvorbu vývojárskych nástrojov. Kvôli limitáciám tejto technológie sa však v budúcnosti plánuje prechod na systém WPF.
+Architektúra .NET \cite{DotNetBook} potom ponúka okrem virtuálneho stroja CLR, ktorý vykonáva JIT kompiláciu IL kódu do strojových inštrukcií, aj sadu veľmi užitočných knižníc. Tie poskytujú širokú škálu metód vhodných napríklad na prácu so súbormi či sieťovou infraštruktúrou a sú v projekte využívané v širokej škále situácií. Veľmi užitočné sú aj nástroje na syntaktickú analýzu XML prípadne platforma Windows Forms. Tá sa v rámci mojej odbornej praxe v spoločnosti Perun Creative ukázala byť vhodná hlavne na rýchlu tvorbu vývojárskych nástrojov. Kvôli limitáciám tejto technológie a menšiemu počtu možností prispôsobenia jednotlivých komponentov sa však v budúcnosti plánuje prechod na systém WPF.
 
 \section{Unity Engine}
 \label{sec:Unity}
-Unity Engine je platforma pre tvorbu 2D a 3D interaktívneho obsahu renderovaného v reálnom čase \cite{Unity}. Najväčšie uplatnenie nachádza pri tvorbe malých až stredne veľkých hier, čoraz častejšie sa sa však využíva aj v iných odvetviach ako napríklad automobilový či filmový priemysel. Je dostupný pre operačné systémy Windows, Linux a Mac OS. Distribuuje sa zdarma pre študentov alebo jednotlivcov do určitého finančného obratu a za ročný poplatok pre firmy, ktorého výška závisí od rôznych faktorov. Samotný engine je napísaný v jazyku C++ a umožňuje vývoj obsahu v jazyku C\# (bližšie popísanom v sekcií \ref{sec:CsharpDotNet}) pre širokú škálu platforiem, čo znázorňuje \mbox{obrázok \ref{pic:UnityPlatforms}}.
+Unity Engine \cite{Unity} je platforma pre tvorbu 2D a 3D interaktívneho obsahu renderovaného v reálnom čase. Najväčšie uplatnenie nachádza pri tvorbe malých až stredne veľkých hier, čoraz častejšie sa sa však využíva aj v iných odvetviach ako napríklad automobilový či filmový priemysel. Je dostupný pre operačné systémy Windows, Linux a Mac OS. Distribuuje sa zdarma pre študentov alebo jednotlivcov do určitého finančného obratu a za ročný poplatok pre firmy, ktorého výška závisí od rôznych faktorov. Samotný engine je napísaný v jazyku C++ a umožňuje vývoj obsahu pre širokú škálu platforiem, čo znázorňuje \mbox{obrázok \ref{pic:UnityPlatforms}}. Tento nástroj bol zvolený primárne kvôli podpore skriptovania v jazyku C\#, bližšie popísanom v sekcií \ref{sec:CsharpDotNet}, v ktorom sú napísané aj všetky vývojárske nástroje a teda s ním programátori vo firme majú najväčšie skúsenosti. 
 
 \begin{figure}[!htbp]
 	\centering
-	\includegraphics[width=1\textwidth]{Pictures/platforms.png}
+	\includegraphics[width=.92\textwidth]{Pictures/platforms.png}
 	\caption[Platformy podporované herným enginom Unity]{Platformy podporované herným enginom Unity \cite{UnityMultiplatform}}
 	\label{pic:UnityPlatforms}
 \end{figure}
 
 \section{Verzovací systém Git}
 \label{sec:Git}
-Git je open source distribuovaný systém na správu verzií vyvinutý Linusom Thorvaldsom a komunitou okolo OS Linux v roku 2005 \cite{ProGit}. Umožňuje vrátiť celý projekt alebo vybrané časti do predchádzajúceho stavu, porovnávať zmeny v súboroch či efektívnu kolaboráciu viacerých vývojárov na spoločnom projekte. Každý člen tímu má k dispozícií kompletný repozitár vrátane histórie jednotlivých súborov, čo pridáva ďalšiu vrstvu ochrany proti výpadkom a poruchám hardvéru. Po každom spustení príkazu \textit{commit} sa uloží aktuálny stav projektu, ktorý je možné spätne dohľadať v prípade nejakého problému.
+Git \cite{ProGit} je open source distribuovaný systém na správu verzií vyvinutý Linusom Thorvaldsom a komunitou okolo OS Linux v roku 2005. Umožňuje vrátiť celý projekt alebo vybrané časti do predchádzajúceho stavu, porovnávať zmeny v súboroch či efektívnu kolaboráciu viacerých vývojárov na spoločnom projekte. Každý člen tímu má k dispozícií kompletný repozitár vrátane histórie jednotlivých súborov, čo pridáva ďalšiu vrstvu ochrany proti výpadkom a poruchám hardvéru. Po každom spustení príkazu \textit{commit} sa uloží aktuálny stav projektu, ktorý je možné spätne dohľadať v prípade nejakého problému.
 
 S gitom je možné pracovať priamo z príkazového riadku ale pre väčšie projekty ako je aj hra Hobo: Tough Life môže byť takýto prístup značne nepraktický. Veľmi to však závisí od konkrétnych preferencií vývojára. Na trhu existuje množstvo programov tretích strán, ktoré umožňujú pracovať s gitom z užívateľského rozhrania. Jedným takým je aj nástroj Sourcetree, s ktorým som v rámci mojej odbornej praxe pracoval na dennej báze.
 
